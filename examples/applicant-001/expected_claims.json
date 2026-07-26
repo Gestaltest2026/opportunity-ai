@@ -1,1 +1,107 @@
-
+{
+  "applicant_id": "applicant-001",
+  "expected_claims": [
+    {
+      "claim": "Transfer student",
+      "category": "Education"
+    },
+    {
+      "claim": "Undergraduate student",
+      "category": "Education"
+    },
+    {
+      "claim": "Legal Studies student",
+      "category": "Education"
+    },
+    {
+      "claim": "Paralegal",
+      "category": "Professional"
+    },
+    {
+      "claim": "Office Manager",
+      "category": "Professional"
+    },
+    {
+      "claim": "Legal Assistant experience",
+      "category": "Professional"
+    },
+    {
+      "claim": "Career progression in legal work",
+      "category": "Trajectory"
+    },
+    {
+      "claim": "Founder of a hula school",
+      "category": "Leadership"
+    },
+    {
+      "claim": "Entrepreneur",
+      "category": "Leadership"
+    },
+    {
+      "claim": "Long-term instructor",
+      "category": "Leadership"
+    },
+    {
+      "claim": "Long-term volunteer",
+      "category": "Community Service"
+    },
+    {
+      "claim": "Community service involving elderly residents",
+      "category": "Community Service"
+    },
+    {
+      "claim": "Community service involving children",
+      "category": "Community Service"
+    },
+    {
+      "claim": "Community service involving individuals with disabilities",
+      "category": "Community Service"
+    },
+    {
+      "claim": "Single-parent history",
+      "category": "Life Context"
+    },
+    {
+      "claim": "Current family caregiver",
+      "category": "Life Context"
+    },
+    {
+      "claim": "Caregiver for spouse with cancer",
+      "category": "Life Context"
+    },
+    {
+      "claim": "Japan-to-Florida relocation experience",
+      "category": "Trajectory"
+    },
+    {
+      "claim": "ESOL experience",
+      "category": "Education"
+    },
+    {
+      "claim": "Working adult returning to higher education",
+      "category": "Trajectory"
+    },
+    {
+      "claim": "Law school aspiration",
+      "category": "Goals"
+    }
+  ],
+  "claims_requiring_caution": [
+    {
+      "claim": "Nontraditional student",
+      "reason": "Strongly supported by trajectory, but should be treated as a derived label rather than an explicit self-description."
+    },
+    {
+      "claim": "Returning adult learner",
+      "reason": "Supported by educational chronology, but should remain a derived classification."
+    }
+  ],
+  "claims_not_to_infer_without_confirmation": [
+    "Asian",
+    "Japanese ethnicity",
+    "First-generation college student",
+    "Low-income",
+    "Financial need",
+    "Immigration status"
+  ]
+}
