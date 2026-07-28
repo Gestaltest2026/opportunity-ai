@@ -1,10 +1,6 @@
 import { createHash } from "node:crypto";
 import { Opportunity } from "../opportunity/schema";
-import {
-  deriveOpportunityRecordStatus,
-  OpportunityDatabank,
-  OpportunityRecord,
-} from "./schema";
+import { OpportunityDatabank, OpportunityRecord } from "./schema";
 
 function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
@@ -43,7 +39,6 @@ export function upsertOpportunity(
 ): OpportunityDatabank {
   const rawSourceHash = hashOpportunitySource(sourceText);
   const semanticHash = hashOpportunitySemantics(opportunity);
-  const recordStatus = deriveOpportunityRecordStatus(opportunity);
   const existingIndex = databank.records.findIndex(
     (record) => record.opportunity.opportunity_id === opportunity.opportunity_id
   );
@@ -55,7 +50,6 @@ export function upsertOpportunity(
       first_seen_at: checkedAt,
       last_checked_at: checkedAt,
       last_changed_at: checkedAt,
-      status: recordStatus,
       raw_source_hash: rawSourceHash,
       semantic_hash: semanticHash,
     };
@@ -74,7 +68,6 @@ export function upsertOpportunity(
     source_url: sourceUrl,
     last_checked_at: checkedAt,
     last_changed_at: semanticChanged ? checkedAt : existing.last_changed_at,
-    status: recordStatus,
     raw_source_hash: rawSourceHash,
     semantic_hash: semanticHash,
     source_hash: undefined,
