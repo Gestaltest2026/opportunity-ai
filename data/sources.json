@@ -1,0 +1,16 @@
+{
+  "sources": [
+    {
+      "source_id": "fgcu-foundation-scholarships",
+      "opportunity_id": "opportunity-001",
+      "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/fgcufoundationscholarships",
+      "provider": "Florida Gulf Coast University",
+      "source_type": "official_opportunity_page",
+      "enabled": true,
+      "refresh_interval_hours": 24,
+      "last_fetched_at": null,
+      "last_success_at": null,
+      "failure_count": 0
+    }
+  ]
+}
