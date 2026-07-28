@@ -6,6 +6,7 @@ import {
   EligibilityStatus,
   Match,
   MatchAnalysis,
+  MatchCriterionEvaluation,
   isMatchAnalysis,
 } from "./schema";
 
@@ -13,12 +14,39 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-function deriveEligibilityStatus(analysis: MatchAnalysis): EligibilityStatus {
-  if (analysis.eligibility_evaluations.some((item) => item.status === "not_met")) {
+function normalize(value: string): string {
+  return value.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+function completeEligibilityEvaluations(
+  opportunity: Opportunity,
+  analysis: MatchAnalysis
+): MatchCriterionEvaluation[] {
+  return opportunity.eligibility.map((criterion) => {
+    const found = analysis.eligibility_evaluations.find(
+      (evaluation) =>
+        normalize(evaluation.criterion) === normalize(criterion.criterion)
+    );
+
+    return (
+      found ?? {
+        criterion: criterion.criterion,
+        status: "unknown",
+        supporting_claims: [],
+        explanation: "Eligibility criterion was not evaluated; clarification is required.",
+      }
+    );
+  });
+}
+
+function deriveEligibilityStatus(
+  evaluations: MatchCriterionEvaluation[]
+): EligibilityStatus {
+  if (evaluations.some((item) => item.status === "not_met")) {
     return "ineligible";
   }
 
-  if (analysis.eligibility_evaluations.some((item) => item.status === "unknown")) {
+  if (evaluations.some((item) => item.status === "unknown")) {
     return "needs_clarification";
   }
 
@@ -57,19 +85,35 @@ export async function evaluateMatch(
     throw new Error("Match analysis failed schema validation.");
   }
 
-  const eligibilityStatus = deriveEligibilityStatus(parsed);
+  const eligibilityEvaluations = completeEligibilityEvaluations(
+    opportunity,
+    parsed
+  );
+  const eligibilityStatus = deriveEligibilityStatus(eligibilityEvaluations);
+  const missingEvaluations = eligibilityEvaluations
+    .filter(
+      (evaluation) =>
+        evaluation.status === "unknown" &&
+        !parsed.eligibility_evaluations.some(
+          (returned) =>
+            normalize(returned.criterion) === normalize(evaluation.criterion)
+        )
+    )
+    .map((evaluation) => evaluation.criterion);
 
   return {
     match_id: `${applicantId}:${opportunity.opportunity_id}`,
     applicant_id: applicantId,
     opportunity_id: opportunity.opportunity_id,
     eligibility_status: eligibilityStatus,
-    eligibility_evaluations: parsed.eligibility_evaluations,
+    eligibility_evaluations: eligibilityEvaluations,
     evidence_score: parsed.evidence_score,
     narrative_fit_score: parsed.narrative_fit_score,
     strategic_value_score: parsed.strategic_value_score,
     blockers: parsed.blockers,
-    missing_information: parsed.missing_information,
+    missing_information: [
+      ...new Set([...parsed.missing_information, ...missingEvaluations]),
+    ],
     supporting_claims: parsed.supporting_claims,
     score: calculateScore(parsed, eligibilityStatus),
     explanation: parsed.explanation,
