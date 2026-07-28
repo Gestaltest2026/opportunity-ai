@@ -17,6 +17,7 @@ export interface OpportunityRecord {
   first_seen_at: string;
   last_checked_at: string;
   last_changed_at: string;
+  /** Derived from opportunity.availability_status; do not treat as an independent source of truth. */
   status: OpportunityRecordStatus;
   raw_source_hash: string;
   semantic_hash: string;
@@ -28,18 +29,35 @@ export interface OpportunityDatabank {
   records: OpportunityRecord[];
 }
 
+export function deriveOpportunityRecordStatus(
+  opportunity: Opportunity
+): OpportunityRecordStatus {
+  switch (opportunity.availability_status) {
+    case "open":
+      return "active";
+    case "closed":
+      return "closed";
+    case "upcoming":
+      return "upcoming";
+    default:
+      return "unknown";
+  }
+}
+
 function isOpportunityRecord(value: unknown): value is OpportunityRecord {
   if (!value || typeof value !== "object") return false;
   const data = value as Record<string, unknown>;
 
+  if (!isOpportunity(data.opportunity)) return false;
+
   return (
-    isOpportunity(data.opportunity) &&
     typeof data.source_url === "string" &&
     typeof data.first_seen_at === "string" &&
     typeof data.last_checked_at === "string" &&
     typeof data.last_changed_at === "string" &&
     typeof data.status === "string" &&
     (OPPORTUNITY_RECORD_STATUSES as readonly string[]).includes(data.status) &&
+    data.status === deriveOpportunityRecordStatus(data.opportunity) &&
     typeof data.raw_source_hash === "string" &&
     typeof data.semantic_hash === "string" &&
     (data.source_hash === undefined || typeof data.source_hash === "string")
