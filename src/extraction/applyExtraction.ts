@@ -1,4 +1,5 @@
 import {
+  APPLICANT_DOMAINS,
   Applicant,
   ApplicantClaim,
   createEmptyApplicant,
@@ -14,9 +15,11 @@ export function applyExtraction(
   applicant: Applicant = createEmptyApplicant(),
   source = "unknown"
 ): Applicant {
-  const next: Applicant = Object.fromEntries(
-    Object.entries(applicant).map(([domain, claims]) => [domain, [...claims]])
-  ) as Applicant;
+  const next = createEmptyApplicant();
+
+  for (const domain of APPLICANT_DOMAINS) {
+    next[domain] = [...applicant[domain]];
+  }
 
   for (const claim of extraction.claims) {
     const canonicalClaim: ApplicantClaim = {
