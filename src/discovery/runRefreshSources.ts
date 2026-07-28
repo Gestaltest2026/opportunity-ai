@@ -1,28 +1,9 @@
-import { readFile, writeFile } from "node:fs/promises";
 import {
   readOpportunityDatabank,
   writeOpportunityDatabank,
 } from "../databank/io";
+import { readSourceRegistry, writeSourceRegistry } from "./io";
 import { refreshSources } from "./refreshSources";
-import { isSourceRegistry, SourceRegistry } from "./schema";
-
-async function readSourceRegistry(path: string): Promise<SourceRegistry> {
-  let raw: unknown;
-
-  try {
-    raw = JSON.parse(await readFile(path, "utf8"));
-  } catch (error) {
-    const code = (error as NodeJS.ErrnoException).code;
-    if (code === "ENOENT") return { sources: [] };
-    throw error;
-  }
-
-  if (!isSourceRegistry(raw)) {
-    throw new Error(`Source registry failed schema validation: ${path}`);
-  }
-
-  return raw;
-}
 
 async function main() {
   const [registryPath, databankPath] = process.argv.slice(2);
@@ -41,7 +22,7 @@ async function main() {
   const result = await refreshSources(registry, databank);
 
   await Promise.all([
-    writeFile(registryPath, `${JSON.stringify(result.registry, null, 2)}\n`, "utf8"),
+    writeSourceRegistry(registryPath, result.registry),
     writeOpportunityDatabank(databankPath, result.databank),
   ]);
 
