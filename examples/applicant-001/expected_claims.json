@@ -3,105 +3,125 @@
   "expected_claims": [
     {
       "claim": "Transfer student",
-      "category": "Education"
+      "domain": "education"
     },
     {
       "claim": "Undergraduate student",
-      "category": "Education"
+      "domain": "education"
     },
     {
       "claim": "Legal Studies student",
-      "category": "Education"
+      "domain": "education"
     },
     {
       "claim": "Paralegal",
-      "category": "Professional"
+      "domain": "career_work_history"
     },
     {
       "claim": "Office Manager",
-      "category": "Professional"
+      "domain": "career_work_history"
     },
     {
       "claim": "Legal Assistant experience",
-      "category": "Professional"
+      "domain": "career_work_history"
     },
     {
       "claim": "Career progression in legal work",
-      "category": "Trajectory"
+      "domain": "career_direction"
     },
     {
       "claim": "Founder of a hula school",
-      "category": "Leadership"
+      "domain": "leadership"
     },
     {
       "claim": "Entrepreneur",
-      "category": "Leadership"
+      "domain": "leadership"
     },
     {
       "claim": "Long-term instructor",
-      "category": "Leadership"
+      "domain": "leadership"
     },
     {
       "claim": "Long-term volunteer",
-      "category": "Community Service"
+      "domain": "community_involvement"
     },
     {
       "claim": "Community service involving elderly residents",
-      "category": "Community Service"
+      "domain": "community_involvement"
     },
     {
       "claim": "Community service involving children",
-      "category": "Community Service"
+      "domain": "community_involvement"
     },
     {
       "claim": "Community service involving individuals with disabilities",
-      "category": "Community Service"
+      "domain": "community_involvement"
     },
     {
       "claim": "Single-parent history",
-      "category": "Life Context"
+      "domain": "lived_experiences"
     },
     {
       "claim": "Current family caregiver",
-      "category": "Life Context"
+      "domain": "constraints"
     },
     {
       "claim": "Caregiver for spouse with cancer",
-      "category": "Life Context"
+      "domain": "constraints"
     },
     {
       "claim": "Japan-to-Florida relocation experience",
-      "category": "Trajectory"
+      "domain": "lived_experiences"
     },
     {
       "claim": "ESOL experience",
-      "category": "Education"
+      "domain": "education"
     },
     {
       "claim": "Working adult returning to higher education",
-      "category": "Trajectory"
+      "domain": "career_direction"
     },
     {
       "claim": "Law school aspiration",
-      "category": "Goals"
+      "domain": "career_direction"
     }
   ],
   "claims_requiring_caution": [
     {
       "claim": "Nontraditional student",
+      "domain": "education",
       "reason": "Strongly supported by trajectory, but should be treated as a derived label rather than an explicit self-description."
     },
     {
       "claim": "Returning adult learner",
+      "domain": "education",
       "reason": "Supported by educational chronology, but should remain a derived classification."
     }
   ],
   "claims_not_to_infer_without_confirmation": [
-    "Asian",
-    "Japanese ethnicity",
-    "First-generation college student",
-    "Low-income",
-    "Financial need",
-    "Immigration status"
+    {
+      "claim": "Asian",
+      "domain": "identity_eligibility_attributes"
+    },
+    {
+      "claim": "Japanese ethnicity",
+      "domain": "identity_eligibility_attributes"
+    },
+    {
+      "claim": "First-generation college student",
+      "domain": "identity_eligibility_attributes"
+    },
+    {
+      "claim": "Low-income",
+      "domain": "financial_context"
+    },
+    {
+      "claim": "Financial need",
+      "domain": "financial_context"
+    },
+    {
+      "claim": "Immigration status",
+      "domain": "identity_eligibility_attributes"
+    }
   ]
 }
