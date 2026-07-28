@@ -14,6 +14,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:databank-schema"],
   },
+  {
+    name: "fixture schema validation",
+    command: "npm",
+    args: ["run", "evaluate:fixtures"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
