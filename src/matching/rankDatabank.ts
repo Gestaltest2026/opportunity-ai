@@ -19,10 +19,12 @@ export async function rankDatabank(
   applicant: Applicant,
   databank: OpportunityDatabank
 ): Promise<RankedMatch[]> {
-  const activeRecords = databank.records.filter((record) => record.status === "active");
+  const openRecords = databank.records.filter(
+    (record) => record.opportunity.availability_status === "open"
+  );
 
   const matches = await Promise.all(
-    activeRecords.map((record) =>
+    openRecords.map((record) =>
       evaluateMatch(applicantId, applicant, record.opportunity)
     )
   );
