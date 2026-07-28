@@ -1,0 +1,29 @@
+{
+  "opportunity_id": "opportunity-001",
+  "expected": {
+    "title_contains": "Foundation Scholarship",
+    "provider_contains": "Florida Gulf Coast University",
+    "opportunity_type": "scholarship",
+    "deadline": null,
+    "eligibility_contains": [
+      "FGCU",
+      "UIN"
+    ],
+    "selection_preferences_contains": [
+      "academic",
+      "financial need"
+    ],
+    "application_requirements_contains": [
+      "UIN",
+      "FAFSA",
+      "essay"
+    ]
+  },
+  "must_not_infer": [
+    "minimum GPA",
+    "specific award amount",
+    "US citizenship requirement",
+    "Florida residency requirement"
+  ],
+  "known_source_state": "closed"
+}
