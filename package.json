@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "extract": "tsx src/extraction/runExtraction.ts"
+    "extract": "tsx src/extraction/runExtraction.ts",
+    "evaluate:applicant-001": "tsx src/extraction/runEvaluation.ts"
   },
   "dependencies": {
     "openai": "^5.0.0"
