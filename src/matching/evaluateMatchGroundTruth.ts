@@ -1,14 +1,23 @@
-import { Match } from "./schema";
+import { z } from "zod";
+import {
+  ActionabilityStatusSchema,
+  EligibilityStatusSchema,
+  Match,
+} from "./schema";
 
-interface MatchGroundTruth {
-  expected: {
-    eligibility_status: Match["eligibility_status"];
-    actionability_status: Match["actionability_status"];
-    supporting_claims_contain_any: string[];
-    blockers_contain: string[];
-  };
-  must_not_claim: string[];
-}
+export const MatchGroundTruthSchema = z.object({
+  applicant_id: z.string(),
+  opportunity_id: z.string(),
+  expected: z.object({
+    eligibility_status: EligibilityStatusSchema,
+    actionability_status: ActionabilityStatusSchema,
+    supporting_claims_contain_any: z.array(z.string()),
+    blockers_contain: z.array(z.string()),
+  }),
+  must_not_claim: z.array(z.string()),
+});
+
+export type MatchGroundTruth = z.infer<typeof MatchGroundTruthSchema>;
 
 export interface MatchGroundTruthEvaluation {
   status_errors: string[];
