@@ -4,6 +4,7 @@ interface ExpectedOpportunity {
   title_contains: string;
   provider_contains: string;
   opportunity_type: Opportunity["opportunity_type"];
+  availability_status: Opportunity["availability_status"];
   deadline: string | null;
   eligibility_contains: string[];
   selection_preferences_contains: string[];
@@ -13,14 +14,12 @@ interface ExpectedOpportunity {
 export interface OpportunityGroundTruth {
   expected: ExpectedOpportunity;
   must_not_infer: string[];
-  known_source_state: "open" | "closed" | "unknown";
 }
 
 export interface OpportunityEvaluation {
   scalar_errors: string[];
   missing_expected_signals: string[];
   prohibited_inferences: string[];
-  known_source_state: OpportunityGroundTruth["known_source_state"];
 }
 
 function normalize(value: string): string {
@@ -36,6 +35,7 @@ function flattenOpportunity(opportunity: Opportunity): string[] {
   return [
     opportunity.title,
     opportunity.provider,
+    opportunity.availability_status,
     opportunity.award.description ?? "",
     opportunity.deadline ?? "",
     ...opportunity.eligibility.flatMap((item) => [item.criterion, item.evidence]),
@@ -67,6 +67,10 @@ export function evaluateOpportunity(
 
   if (opportunity.opportunity_type !== groundTruth.expected.opportunity_type) {
     scalarErrors.push("opportunity_type");
+  }
+
+  if (opportunity.availability_status !== groundTruth.expected.availability_status) {
+    scalarErrors.push("availability_status");
   }
 
   if (opportunity.deadline !== groundTruth.expected.deadline) {
@@ -108,6 +112,5 @@ export function evaluateOpportunity(
     scalar_errors: scalarErrors,
     missing_expected_signals: missingExpectedSignals,
     prohibited_inferences: prohibitedInferences,
-    known_source_state: groundTruth.known_source_state,
   };
 }
