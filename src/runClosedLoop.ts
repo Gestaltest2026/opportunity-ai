@@ -36,6 +36,22 @@ async function main() {
   const opportunity = await extractOpportunity(opportunityId, opportunitySource);
   let match = await evaluateMatch(applicantId, applicant, opportunity);
 
+  if (match.actionability_status !== "actionable") {
+    console.log(
+      JSON.stringify(
+        {
+          stage: "opportunity_not_actionable",
+          applicant,
+          opportunity,
+          match,
+        },
+        null,
+        2
+      )
+    );
+    return;
+  }
+
   if (match.eligibility_status === "needs_clarification") {
     const clarification = await generateClarificationQuestion(
       applicantId,
