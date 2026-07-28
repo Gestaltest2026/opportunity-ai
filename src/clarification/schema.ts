@@ -1,32 +1,26 @@
-import { ApplicantDomain, isApplicantDomain } from "../extraction/applicantSchema";
+import { z } from "zod";
+import { ApplicantDomainSchema } from "../extraction/applicantSchema";
 
-export interface ClarificationQuestion {
-  question_id: string;
-  applicant_id: string;
-  opportunity_id: string;
-  target_domain: ApplicantDomain;
-  question: string;
-  reason: string;
-  expected_information: string;
-}
+export const ClarificationQuestionDraftSchema = z.object({
+  target_domain: ApplicantDomainSchema,
+  question: z.string(),
+  reason: z.string(),
+  expected_information: z.string(),
+});
 
-export interface ClarificationQuestionDraft {
-  target_domain: ApplicantDomain;
-  question: string;
-  reason: string;
-  expected_information: string;
-}
+export const ClarificationQuestionSchema = ClarificationQuestionDraftSchema.extend({
+  question_id: z.string(),
+  applicant_id: z.string(),
+  opportunity_id: z.string(),
+});
+
+export type ClarificationQuestionDraft = z.infer<
+  typeof ClarificationQuestionDraftSchema
+>;
+export type ClarificationQuestion = z.infer<typeof ClarificationQuestionSchema>;
 
 export function isClarificationQuestionDraft(
   value: unknown
 ): value is ClarificationQuestionDraft {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-
-  return (
-    isApplicantDomain(data.target_domain) &&
-    typeof data.question === "string" &&
-    typeof data.reason === "string" &&
-    typeof data.expected_information === "string"
-  );
+  return ClarificationQuestionDraftSchema.safeParse(value).success;
 }
