@@ -8,6 +8,7 @@
     "evaluate:applicant-001": "tsx src/extraction/runEvaluation.ts",
     "evaluate:opportunity-001": "tsx src/opportunity/runEvaluation.ts",
     "evaluate:match-001": "tsx src/matching/runMatchEvaluation.ts",
+    "evaluate:hash": "tsx src/databank/runHashEvaluation.ts",
     "closed-loop": "tsx src/runClosedLoop.ts",
     "databank:upsert": "tsx src/databank/runUpsertOpportunity.ts",
     "databank:rank": "tsx src/matching/runRankDatabank.ts",
