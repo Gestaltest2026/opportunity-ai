@@ -1,6 +1,10 @@
 import { createHash } from "node:crypto";
 import { Opportunity } from "../opportunity/schema";
-import { OpportunityDatabank, OpportunityRecord } from "./schema";
+import {
+  OpportunityDatabank,
+  OpportunityRecord,
+  OpportunityRecordStatus,
+} from "./schema";
 
 function sha256(value: string): string {
   return createHash("sha256").update(value).digest("hex");
@@ -15,6 +19,7 @@ export function canonicalizeOpportunity(opportunity: Opportunity): string {
     title: opportunity.title,
     provider: opportunity.provider,
     opportunity_type: opportunity.opportunity_type,
+    availability_status: opportunity.availability_status,
     award: opportunity.award,
     deadline: opportunity.deadline,
     eligibility: opportunity.eligibility,
@@ -29,6 +34,19 @@ export function hashOpportunitySemantics(opportunity: Opportunity): string {
   return sha256(canonicalizeOpportunity(opportunity));
 }
 
+function deriveRecordStatus(opportunity: Opportunity): OpportunityRecordStatus {
+  switch (opportunity.availability_status) {
+    case "open":
+      return "active";
+    case "closed":
+      return "closed";
+    case "upcoming":
+      return "upcoming";
+    default:
+      return "unknown";
+  }
+}
+
 export function upsertOpportunity(
   databank: OpportunityDatabank,
   opportunity: Opportunity,
@@ -38,6 +56,7 @@ export function upsertOpportunity(
 ): OpportunityDatabank {
   const rawSourceHash = hashOpportunitySource(sourceText);
   const semanticHash = hashOpportunitySemantics(opportunity);
+  const recordStatus = deriveRecordStatus(opportunity);
   const existingIndex = databank.records.findIndex(
     (record) => record.opportunity.opportunity_id === opportunity.opportunity_id
   );
@@ -49,7 +68,7 @@ export function upsertOpportunity(
       first_seen_at: checkedAt,
       last_checked_at: checkedAt,
       last_changed_at: checkedAt,
-      status: "active",
+      status: recordStatus,
       raw_source_hash: rawSourceHash,
       semantic_hash: semanticHash,
     };
@@ -68,6 +87,7 @@ export function upsertOpportunity(
     source_url: sourceUrl,
     last_checked_at: checkedAt,
     last_changed_at: semanticChanged ? checkedAt : existing.last_changed_at,
+    status: recordStatus,
     raw_source_hash: rawSourceHash,
     semantic_hash: semanticHash,
     source_hash: undefined,
