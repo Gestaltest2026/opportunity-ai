@@ -58,9 +58,7 @@ export function upsertOpportunity(
   }
 
   const existing = databank.records[existingIndex];
-  const previousSemanticHash =
-    existing.semantic_hash ?? hashOpportunitySemantics(existing.opportunity);
-  const semanticChanged = previousSemanticHash !== semanticHash;
+  const semanticChanged = existing.semantic_hash !== semanticHash;
 
   const updated: OpportunityRecord = {
     ...existing,
@@ -70,7 +68,6 @@ export function upsertOpportunity(
     last_changed_at: semanticChanged ? checkedAt : existing.last_changed_at,
     raw_source_hash: rawSourceHash,
     semantic_hash: semanticHash,
-    source_hash: undefined,
   };
 
   return {
