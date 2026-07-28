@@ -9,7 +9,10 @@ export interface OpportunityRecord {
   last_checked_at: string;
   last_changed_at: string;
   status: OpportunityRecordStatus;
-  source_hash: string;
+  raw_source_hash: string;
+  semantic_hash: string;
+  /** @deprecated Kept only for reading older databank records during migration. */
+  source_hash?: string;
 }
 
 export interface OpportunityDatabank {
