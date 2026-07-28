@@ -3,6 +3,11 @@ export type EligibilityStatus =
   | "eligible"
   | "ineligible"
   | "needs_clarification";
+export type ActionabilityStatus =
+  | "actionable"
+  | "unavailable"
+  | "upcoming"
+  | "unknown";
 
 export interface MatchCriterionEvaluation {
   criterion: string;
@@ -27,6 +32,7 @@ export interface Match {
   applicant_id: string;
   opportunity_id: string;
   eligibility_status: EligibilityStatus;
+  actionability_status: ActionabilityStatus;
   eligibility_evaluations: MatchCriterionEvaluation[];
   evidence_score: number;
   narrative_fit_score: number;
