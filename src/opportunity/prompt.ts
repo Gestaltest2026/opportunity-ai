@@ -21,6 +21,7 @@ Return these fields:
 - title
 - provider
 - opportunity_type: scholarship | fellowship | grant | program | job | internship | other
+- availability_status: open | closed | upcoming | unknown
 - award: { amount, currency, description }
 - deadline
 - eligibility
@@ -31,6 +32,7 @@ Return these fields:
 - source_evidence
 
 Rules:
+- availability_status must reflect only the supplied material. Use "unknown" when the page does not establish it.
 - Use null for unknown award amount, currency, description, or deadline.
 - Do not convert a preference into an eligibility requirement.
 - Do not infer protected-class requirements unless explicitly supported.
