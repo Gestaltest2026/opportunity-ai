@@ -1,3 +1,5 @@
+import { APPLICANT_DOMAINS } from "./applicantSchema";
+
 export const APPLICANT_EXTRACTION_PROMPT = `
 You are an applicant intelligence extraction system.
 
@@ -22,6 +24,8 @@ For every claim, distinguish between:
 Each extracted claim must include:
 
 - claim: the factual proposition
+- domain: exactly one canonical Applicant domain from this list:
+  ${APPLICANT_DOMAINS.join(", ")}
 - type: "explicit" or "inferred"
 - evidence: the exact or closest supporting passage
 - confidence: a number from 0 to 1
@@ -37,6 +41,7 @@ Rules:
 - Do not infer credentials, affiliations, dates, or outcomes without evidence.
 - Preserve uncertainty.
 - Keep claims atomic: one claim should represent one proposition.
+- Assign every returned claim to exactly one canonical Applicant domain.
 - Evidence must come from the supplied source material.
 - Return only structured JSON.
 `;
