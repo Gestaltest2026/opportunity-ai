@@ -1,33 +1,38 @@
-import { Opportunity, isOpportunity } from "../opportunity/schema";
+import { z } from "zod";
+import {
+  Opportunity,
+  OpportunitySchema,
+} from "../opportunity/schema";
 
 export const OPPORTUNITY_RECORD_STATUSES = [
   "active",
   "upcoming",
-  "expired",
   "closed",
   "unknown",
 ] as const;
 
-export type OpportunityRecordStatus =
-  (typeof OPPORTUNITY_RECORD_STATUSES)[number];
+export const OpportunityRecordStatusSchema = z.enum(OPPORTUNITY_RECORD_STATUSES);
 
-export interface OpportunityRecord {
-  opportunity: Opportunity;
-  source_url: string;
-  first_seen_at: string;
-  last_checked_at: string;
-  last_changed_at: string;
-  /** Derived from opportunity.availability_status; do not treat as an independent source of truth. */
-  status: OpportunityRecordStatus;
-  raw_source_hash: string;
-  semantic_hash: string;
-  /** @deprecated Kept only for reading older databank records during migration. */
-  source_hash?: string;
-}
+export const OpportunityRecordSchema = z.object({
+  opportunity: OpportunitySchema,
+  source_url: z.string(),
+  first_seen_at: z.string(),
+  last_checked_at: z.string(),
+  last_changed_at: z.string(),
+  raw_source_hash: z.string(),
+  semantic_hash: z.string(),
+  source_hash: z.string().optional(),
+});
 
-export interface OpportunityDatabank {
-  records: OpportunityRecord[];
-}
+export const OpportunityDatabankSchema = z.object({
+  records: z.array(OpportunityRecordSchema),
+});
+
+export type OpportunityRecordStatus = z.infer<
+  typeof OpportunityRecordStatusSchema
+>;
+export type OpportunityRecord = z.infer<typeof OpportunityRecordSchema>;
+export type OpportunityDatabank = z.infer<typeof OpportunityDatabankSchema>;
 
 export function deriveOpportunityRecordStatus(
   opportunity: Opportunity
@@ -44,28 +49,6 @@ export function deriveOpportunityRecordStatus(
   }
 }
 
-function isOpportunityRecord(value: unknown): value is OpportunityRecord {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-
-  if (!isOpportunity(data.opportunity)) return false;
-
-  return (
-    typeof data.source_url === "string" &&
-    typeof data.first_seen_at === "string" &&
-    typeof data.last_checked_at === "string" &&
-    typeof data.last_changed_at === "string" &&
-    typeof data.status === "string" &&
-    (OPPORTUNITY_RECORD_STATUSES as readonly string[]).includes(data.status) &&
-    data.status === deriveOpportunityRecordStatus(data.opportunity) &&
-    typeof data.raw_source_hash === "string" &&
-    typeof data.semantic_hash === "string" &&
-    (data.source_hash === undefined || typeof data.source_hash === "string")
-  );
-}
-
 export function isOpportunityDatabank(value: unknown): value is OpportunityDatabank {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-  return Array.isArray(data.records) && data.records.every(isOpportunityRecord);
+  return OpportunityDatabankSchema.safeParse(value).success;
 }
