@@ -1,9 +1,9 @@
 import { createHash } from "node:crypto";
 import { Opportunity } from "../opportunity/schema";
 import {
+  deriveOpportunityRecordStatus,
   OpportunityDatabank,
   OpportunityRecord,
-  OpportunityRecordStatus,
 } from "./schema";
 
 function sha256(value: string): string {
@@ -34,19 +34,6 @@ export function hashOpportunitySemantics(opportunity: Opportunity): string {
   return sha256(canonicalizeOpportunity(opportunity));
 }
 
-function deriveRecordStatus(opportunity: Opportunity): OpportunityRecordStatus {
-  switch (opportunity.availability_status) {
-    case "open":
-      return "active";
-    case "closed":
-      return "closed";
-    case "upcoming":
-      return "upcoming";
-    default:
-      return "unknown";
-  }
-}
-
 export function upsertOpportunity(
   databank: OpportunityDatabank,
   opportunity: Opportunity,
@@ -56,7 +43,7 @@ export function upsertOpportunity(
 ): OpportunityDatabank {
   const rawSourceHash = hashOpportunitySource(sourceText);
   const semanticHash = hashOpportunitySemantics(opportunity);
-  const recordStatus = deriveRecordStatus(opportunity);
+  const recordStatus = deriveOpportunityRecordStatus(opportunity);
   const existingIndex = databank.records.findIndex(
     (record) => record.opportunity.opportunity_id === opportunity.opportunity_id
   );
