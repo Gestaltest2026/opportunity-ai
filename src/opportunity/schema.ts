@@ -8,7 +8,16 @@ export const OPPORTUNITY_TYPES = [
   "other",
 ] as const;
 
+export const OPPORTUNITY_AVAILABILITY_STATUSES = [
+  "open",
+  "closed",
+  "upcoming",
+  "unknown",
+] as const;
+
 export type OpportunityType = (typeof OPPORTUNITY_TYPES)[number];
+export type OpportunityAvailabilityStatus =
+  (typeof OPPORTUNITY_AVAILABILITY_STATUSES)[number];
 
 export interface OpportunityCriterion {
   criterion: string;
@@ -27,6 +36,7 @@ export interface Opportunity {
   title: string;
   provider: string;
   opportunity_type: OpportunityType;
+  availability_status: OpportunityAvailabilityStatus;
   award: OpportunityAward;
   deadline: string | null;
   eligibility: OpportunityCriterion[];
@@ -65,6 +75,10 @@ export function isOpportunity(value: unknown): value is Opportunity {
     typeof data.provider === "string" &&
     typeof data.opportunity_type === "string" &&
     (OPPORTUNITY_TYPES as readonly string[]).includes(data.opportunity_type) &&
+    typeof data.availability_status === "string" &&
+    (OPPORTUNITY_AVAILABILITY_STATUSES as readonly string[]).includes(
+      data.availability_status
+    ) &&
     !!award &&
     (award.amount === null || typeof award.amount === "number") &&
     (award.currency === null || typeof award.currency === "string") &&
