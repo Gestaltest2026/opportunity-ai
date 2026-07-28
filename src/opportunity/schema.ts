@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export const OPPORTUNITY_TYPES = [
   "scholarship",
   "fellowship",
@@ -15,82 +17,47 @@ export const OPPORTUNITY_AVAILABILITY_STATUSES = [
   "unknown",
 ] as const;
 
-export type OpportunityType = (typeof OPPORTUNITY_TYPES)[number];
-export type OpportunityAvailabilityStatus =
-  (typeof OPPORTUNITY_AVAILABILITY_STATUSES)[number];
+export const OpportunityTypeSchema = z.enum(OPPORTUNITY_TYPES);
+export const OpportunityAvailabilityStatusSchema = z.enum(
+  OPPORTUNITY_AVAILABILITY_STATUSES
+);
 
-export interface OpportunityCriterion {
-  criterion: string;
-  evidence: string;
-  confidence: number;
-}
+export const OpportunityCriterionSchema = z.object({
+  criterion: z.string(),
+  evidence: z.string(),
+  confidence: z.number().min(0).max(1),
+});
 
-export interface OpportunityAward {
-  amount: number | null;
-  currency: string | null;
-  description: string | null;
-}
+export const OpportunityAwardSchema = z.object({
+  amount: z.number().nullable(),
+  currency: z.string().nullable(),
+  description: z.string().nullable(),
+});
 
-export interface Opportunity {
-  opportunity_id: string;
-  title: string;
-  provider: string;
-  opportunity_type: OpportunityType;
-  availability_status: OpportunityAvailabilityStatus;
-  award: OpportunityAward;
-  deadline: string | null;
-  eligibility: OpportunityCriterion[];
-  selection_preferences: OpportunityCriterion[];
-  narrative_preferences: string[];
-  application_requirements: string[];
-  restrictions: string[];
-  source_evidence: string[];
-}
+export const OpportunitySchema = z.object({
+  opportunity_id: z.string(),
+  title: z.string(),
+  provider: z.string(),
+  opportunity_type: OpportunityTypeSchema,
+  availability_status: OpportunityAvailabilityStatusSchema,
+  award: OpportunityAwardSchema,
+  deadline: z.string().nullable(),
+  eligibility: z.array(OpportunityCriterionSchema),
+  selection_preferences: z.array(OpportunityCriterionSchema),
+  narrative_preferences: z.array(z.string()),
+  application_requirements: z.array(z.string()),
+  restrictions: z.array(z.string()),
+  source_evidence: z.array(z.string()),
+});
 
-function isStringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string");
-}
-
-function isCriterion(value: unknown): value is OpportunityCriterion {
-  if (!value || typeof value !== "object") return false;
-  const criterion = value as Record<string, unknown>;
-
-  return (
-    typeof criterion.criterion === "string" &&
-    typeof criterion.evidence === "string" &&
-    typeof criterion.confidence === "number" &&
-    criterion.confidence >= 0 &&
-    criterion.confidence <= 1
-  );
-}
+export type OpportunityType = z.infer<typeof OpportunityTypeSchema>;
+export type OpportunityAvailabilityStatus = z.infer<
+  typeof OpportunityAvailabilityStatusSchema
+>;
+export type OpportunityCriterion = z.infer<typeof OpportunityCriterionSchema>;
+export type OpportunityAward = z.infer<typeof OpportunityAwardSchema>;
+export type Opportunity = z.infer<typeof OpportunitySchema>;
 
 export function isOpportunity(value: unknown): value is Opportunity {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-  const award = data.award as Record<string, unknown> | undefined;
-
-  return (
-    typeof data.opportunity_id === "string" &&
-    typeof data.title === "string" &&
-    typeof data.provider === "string" &&
-    typeof data.opportunity_type === "string" &&
-    (OPPORTUNITY_TYPES as readonly string[]).includes(data.opportunity_type) &&
-    typeof data.availability_status === "string" &&
-    (OPPORTUNITY_AVAILABILITY_STATUSES as readonly string[]).includes(
-      data.availability_status
-    ) &&
-    !!award &&
-    (award.amount === null || typeof award.amount === "number") &&
-    (award.currency === null || typeof award.currency === "string") &&
-    (award.description === null || typeof award.description === "string") &&
-    (data.deadline === null || typeof data.deadline === "string") &&
-    Array.isArray(data.eligibility) &&
-    data.eligibility.every(isCriterion) &&
-    Array.isArray(data.selection_preferences) &&
-    data.selection_preferences.every(isCriterion) &&
-    isStringArray(data.narrative_preferences) &&
-    isStringArray(data.application_requirements) &&
-    isStringArray(data.restrictions) &&
-    isStringArray(data.source_evidence)
-  );
+  return OpportunitySchema.safeParse(value).success;
 }
