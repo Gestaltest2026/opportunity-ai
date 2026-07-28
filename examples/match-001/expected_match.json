@@ -1,0 +1,22 @@
+{
+  "applicant_id": "applicant-001",
+  "opportunity_id": "opportunity-001",
+  "expected": {
+    "eligibility_status": "eligible",
+    "actionability_status": "unavailable",
+    "supporting_claims_contain_any": [
+      "Transfer student",
+      "Legal Studies",
+      "Florida Gulf Coast University"
+    ],
+    "blockers_contain": [
+      "closed"
+    ]
+  },
+  "must_not_claim": [
+    "US citizenship required",
+    "Florida residency required",
+    "minimum GPA required",
+    "ineligible because of age"
+  ]
+}
