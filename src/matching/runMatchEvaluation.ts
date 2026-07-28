@@ -1,9 +1,12 @@
-import { readFile } from "fs/promises";
+import { readFile } from "node:fs/promises";
 import { applyExtraction } from "../extraction/applyExtraction";
 import { extractApplicant } from "../extraction/extractApplicant";
 import { extractOpportunity } from "../opportunity/extractOpportunity";
 import { evaluateMatch } from "./evaluateMatch";
-import { evaluateMatchGroundTruth } from "./evaluateMatchGroundTruth";
+import {
+  evaluateMatchGroundTruth,
+  MatchGroundTruthSchema,
+} from "./evaluateMatchGroundTruth";
 
 async function main() {
   const [applicantSource, opportunitySource, groundTruthText] = await Promise.all([
@@ -27,7 +30,7 @@ async function main() {
     opportunitySource
   );
   const match = await evaluateMatch("applicant-001", applicant, opportunity);
-  const groundTruth = JSON.parse(groundTruthText);
+  const groundTruth = MatchGroundTruthSchema.parse(JSON.parse(groundTruthText));
   const evaluation = evaluateMatchGroundTruth(match, groundTruth);
 
   console.log(JSON.stringify({ match, evaluation }, null, 2));
