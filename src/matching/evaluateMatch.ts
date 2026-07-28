@@ -3,6 +3,7 @@ import { Applicant } from "../extraction/applicantSchema";
 import { Opportunity } from "../opportunity/schema";
 import { MATCH_ANALYSIS_PROMPT } from "./prompt";
 import {
+  ActionabilityStatus,
   EligibilityStatus,
   Match,
   MatchAnalysis,
@@ -53,8 +54,27 @@ function deriveEligibilityStatus(
   return "eligible";
 }
 
-function calculateScore(analysis: MatchAnalysis, status: EligibilityStatus): number | null {
-  if (status !== "eligible") return null;
+function deriveActionabilityStatus(opportunity: Opportunity): ActionabilityStatus {
+  switch (opportunity.availability_status) {
+    case "open":
+      return "actionable";
+    case "closed":
+      return "unavailable";
+    case "upcoming":
+      return "upcoming";
+    default:
+      return "unknown";
+  }
+}
+
+function calculateScore(
+  analysis: MatchAnalysis,
+  eligibilityStatus: EligibilityStatus,
+  actionabilityStatus: ActionabilityStatus
+): number | null {
+  if (eligibilityStatus !== "eligible" || actionabilityStatus !== "actionable") {
+    return null;
+  }
 
   return (
     analysis.evidence_score * 0.4 +
@@ -90,6 +110,7 @@ export async function evaluateMatch(
     parsed
   );
   const eligibilityStatus = deriveEligibilityStatus(eligibilityEvaluations);
+  const actionabilityStatus = deriveActionabilityStatus(opportunity);
   const missingEvaluations = eligibilityEvaluations
     .filter(
       (evaluation) =>
@@ -100,22 +121,31 @@ export async function evaluateMatch(
         )
     )
     .map((evaluation) => evaluation.criterion);
+  const availabilityBlocker =
+    actionabilityStatus === "unavailable"
+      ? ["Opportunity is currently closed."]
+      : actionabilityStatus === "upcoming"
+        ? ["Opportunity is not yet open."]
+        : actionabilityStatus === "unknown"
+          ? ["Opportunity availability is unknown."]
+          : [];
 
   return {
     match_id: `${applicantId}:${opportunity.opportunity_id}`,
     applicant_id: applicantId,
     opportunity_id: opportunity.opportunity_id,
     eligibility_status: eligibilityStatus,
+    actionability_status: actionabilityStatus,
     eligibility_evaluations: eligibilityEvaluations,
     evidence_score: parsed.evidence_score,
     narrative_fit_score: parsed.narrative_fit_score,
     strategic_value_score: parsed.strategic_value_score,
-    blockers: parsed.blockers,
+    blockers: [...new Set([...parsed.blockers, ...availabilityBlocker])],
     missing_information: [
       ...new Set([...parsed.missing_information, ...missingEvaluations]),
     ],
     supporting_claims: parsed.supporting_claims,
-    score: calculateScore(parsed, eligibilityStatus),
+    score: calculateScore(parsed, eligibilityStatus, actionabilityStatus),
     explanation: parsed.explanation,
   };
 }
