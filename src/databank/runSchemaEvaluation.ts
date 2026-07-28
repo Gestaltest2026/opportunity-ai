@@ -51,8 +51,8 @@ const malformed = {
 
 const result = {
   accepts_valid_databank: OpportunityDatabankSchema.safeParse(valid).success,
-  strips_or_rejects_persisted_derived_status:
-    !OpportunityDatabankSchema.strict().safeParse(staleDerivedState).success,
+  rejects_persisted_derived_status:
+    !OpportunityDatabankSchema.safeParse(staleDerivedState).success,
   rejects_malformed_record: !OpportunityDatabankSchema.safeParse(malformed).success,
 };
 
