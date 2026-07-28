@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export const SOURCE_TYPES = [
   "official_opportunity_page",
   "provider_index",
@@ -5,48 +7,33 @@ export const SOURCE_TYPES = [
   "other",
 ] as const;
 
-export type SourceType = (typeof SOURCE_TYPES)[number];
+export const SourceTypeSchema = z.enum(SOURCE_TYPES);
 
-export interface OpportunitySource {
-  source_id: string;
-  opportunity_id: string;
-  url: string;
-  provider: string;
-  source_type: SourceType;
-  enabled: boolean;
-  refresh_interval_hours: number;
-  last_fetched_at: string | null;
-  last_success_at: string | null;
-  failure_count: number;
-}
+export const OpportunitySourceSchema = z.object({
+  source_id: z.string(),
+  opportunity_id: z.string(),
+  url: z.string().url(),
+  provider: z.string(),
+  source_type: SourceTypeSchema,
+  enabled: z.boolean(),
+  refresh_interval_hours: z.number().positive(),
+  last_fetched_at: z.string().nullable(),
+  last_success_at: z.string().nullable(),
+  failure_count: z.number().int().nonnegative(),
+});
 
-export interface SourceRegistry {
-  sources: OpportunitySource[];
-}
+export const SourceRegistrySchema = z.object({
+  sources: z.array(OpportunitySourceSchema),
+});
+
+export type SourceType = z.infer<typeof SourceTypeSchema>;
+export type OpportunitySource = z.infer<typeof OpportunitySourceSchema>;
+export type SourceRegistry = z.infer<typeof SourceRegistrySchema>;
 
 export function isOpportunitySource(value: unknown): value is OpportunitySource {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-
-  return (
-    typeof data.source_id === "string" &&
-    typeof data.opportunity_id === "string" &&
-    typeof data.url === "string" &&
-    typeof data.provider === "string" &&
-    typeof data.source_type === "string" &&
-    (SOURCE_TYPES as readonly string[]).includes(data.source_type) &&
-    typeof data.enabled === "boolean" &&
-    typeof data.refresh_interval_hours === "number" &&
-    data.refresh_interval_hours > 0 &&
-    (data.last_fetched_at === null || typeof data.last_fetched_at === "string") &&
-    (data.last_success_at === null || typeof data.last_success_at === "string") &&
-    typeof data.failure_count === "number" &&
-    data.failure_count >= 0
-  );
+  return OpportunitySourceSchema.safeParse(value).success;
 }
 
 export function isSourceRegistry(value: unknown): value is SourceRegistry {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-  return Array.isArray(data.sources) && data.sources.every(isOpportunitySource);
+  return SourceRegistrySchema.safeParse(value).success;
 }
