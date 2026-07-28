@@ -1,22 +1,33 @@
-import { ApplicantDomain, isApplicantDomain } from "./applicantSchema";
+import { z } from "zod";
+import { ApplicantDomainSchema } from "./applicantSchema";
 import { ApplicantExtraction } from "./schema";
 
-interface ExpectedClaim {
-  claim: string;
-  domain: ApplicantDomain;
-}
+export const ExpectedClaimSchema = z.object({
+  claim: z.string(),
+  domain: ApplicantDomainSchema,
+});
 
-interface GroundTruth {
-  expected_claims: ExpectedClaim[];
-  claims_not_to_infer_without_confirmation: ExpectedClaim[];
-}
+export const ApplicantExtractionGroundTruthSchema = z.object({
+  applicant_id: z.string(),
+  expected_claims: z.array(ExpectedClaimSchema),
+  claims_requiring_caution: z.array(
+    ExpectedClaimSchema.extend({
+      reason: z.string(),
+    })
+  ),
+  claims_not_to_infer_without_confirmation: z.array(ExpectedClaimSchema),
+});
+
+export type ExpectedClaim = z.infer<typeof ExpectedClaimSchema>;
+export type ApplicantExtractionGroundTruth = z.infer<
+  typeof ApplicantExtractionGroundTruthSchema
+>;
 
 export interface ExtractionEvaluation {
   expected_total: number;
   matched: ExpectedClaim[];
   missing: ExpectedClaim[];
   prohibited_inferences: ExpectedClaim[];
-  invalid_domains: string[];
 }
 
 function normalize(value: string): string {
@@ -31,7 +42,7 @@ function claimMatches(expected: string, actual: string): boolean {
 
 export function evaluateExtraction(
   extraction: ApplicantExtraction,
-  groundTruth: GroundTruth
+  groundTruth: ApplicantExtractionGroundTruth
 ): ExtractionEvaluation {
   const matched: ExpectedClaim[] = [];
   const missing: ExpectedClaim[] = [];
@@ -55,15 +66,10 @@ export function evaluateExtraction(
       )
     );
 
-  const invalid_domains = extraction.claims
-    .map((claim) => claim.domain as string)
-    .filter((domain) => !isApplicantDomain(domain));
-
   return {
     expected_total: groundTruth.expected_claims.length,
     matched,
     missing,
     prohibited_inferences,
-    invalid_domains,
   };
 }
