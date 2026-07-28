@@ -9,6 +9,11 @@ interface Check {
 const checks: Check[] = [
   { name: "typecheck", command: "npm", args: ["run", "typecheck"] },
   { name: "hash regression", command: "npm", args: ["run", "evaluate:hash"] },
+  {
+    name: "databank schema regression",
+    command: "npm",
+    args: ["run", "evaluate:databank-schema"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
