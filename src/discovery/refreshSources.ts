@@ -4,14 +4,19 @@ import { extractOpportunity } from "../opportunity/extractOpportunity";
 import { fetchSource } from "./fetchSource";
 import { OpportunitySource, SourceRegistry } from "./schema";
 
+export interface RefreshFailure {
+  source_id: string;
+  message: string;
+}
+
 export interface RefreshResult {
   registry: SourceRegistry;
   databank: OpportunityDatabank;
   refreshed_source_ids: string[];
-  failed_source_ids: string[];
+  failed_sources: RefreshFailure[];
 }
 
-function isDue(source: OpportunitySource, now: Date): boolean {
+export function isDue(source: OpportunitySource, now: Date): boolean {
   if (!source.enabled) return false;
   if (!source.last_fetched_at) return true;
 
@@ -22,6 +27,10 @@ function isDue(source: OpportunitySource, now: Date): boolean {
   return now.getTime() - lastFetched >= intervalMs;
 }
 
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
 export async function refreshSources(
   registry: SourceRegistry,
   databank: OpportunityDatabank,
@@ -29,8 +38,7 @@ export async function refreshSources(
 ): Promise<RefreshResult> {
   let nextDatabank = databank;
   const refreshedSourceIds: string[] = [];
-  const failedSourceIds: string[] = [];
-
+  const failedSources: RefreshFailure[] = [];
   const nextSources: OpportunitySource[] = [];
 
   for (const source of registry.sources) {
@@ -64,13 +72,16 @@ export async function refreshSources(
         failure_count: 0,
       });
       refreshedSourceIds.push(source.source_id);
-    } catch {
+    } catch (error) {
       nextSources.push({
         ...source,
         last_fetched_at: attemptedAt,
         failure_count: source.failure_count + 1,
       });
-      failedSourceIds.push(source.source_id);
+      failedSources.push({
+        source_id: source.source_id,
+        message: errorMessage(error),
+      });
     }
   }
 
@@ -78,6 +89,6 @@ export async function refreshSources(
     registry: { sources: nextSources },
     databank: nextDatabank,
     refreshed_source_ids: refreshedSourceIds,
-    failed_source_ids: failedSourceIds,
+    failed_sources: failedSources,
   };
 }
