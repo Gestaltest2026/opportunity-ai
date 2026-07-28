@@ -10,6 +10,10 @@ export function createApplication(
     throw new Error("Cannot create an application from a non-eligible match.");
   }
 
+  if (match.actionability_status !== "actionable") {
+    throw new Error("Cannot create an application for an opportunity that is not currently actionable.");
+  }
+
   return {
     application_id: `${match.applicant_id}:${opportunity.opportunity_id}:application`,
     applicant_id: match.applicant_id,
