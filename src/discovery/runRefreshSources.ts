@@ -1,19 +1,27 @@
 import { readFile, writeFile } from "node:fs/promises";
 import {
-  isOpportunityDatabank,
-  OpportunityDatabank,
-} from "../databank/schema";
+  readOpportunityDatabank,
+  writeOpportunityDatabank,
+} from "../databank/io";
 import { refreshSources } from "./refreshSources";
 import { isSourceRegistry, SourceRegistry } from "./schema";
 
-async function readJson(path: string, fallback: unknown): Promise<unknown> {
+async function readSourceRegistry(path: string): Promise<SourceRegistry> {
+  let raw: unknown;
+
   try {
-    return JSON.parse(await readFile(path, "utf8"));
+    raw = JSON.parse(await readFile(path, "utf8"));
   } catch (error) {
     const code = (error as NodeJS.ErrnoException).code;
-    if (code === "ENOENT") return fallback;
+    if (code === "ENOENT") return { sources: [] };
     throw error;
   }
+
+  if (!isSourceRegistry(raw)) {
+    throw new Error(`Source registry failed schema validation: ${path}`);
+  }
+
+  return raw;
 }
 
 async function main() {
@@ -25,26 +33,16 @@ async function main() {
     );
   }
 
-  const [registryRaw, databankRaw] = await Promise.all([
-    readJson(registryPath, { sources: [] }),
-    readJson(databankPath, { records: [] }),
+  const [registry, databank] = await Promise.all([
+    readSourceRegistry(registryPath),
+    readOpportunityDatabank(databankPath),
   ]);
 
-  if (!isSourceRegistry(registryRaw)) {
-    throw new Error("Source registry failed schema validation.");
-  }
-
-  if (!isOpportunityDatabank(databankRaw)) {
-    throw new Error("Opportunity databank failed schema validation.");
-  }
-
-  const registry: SourceRegistry = registryRaw;
-  const databank: OpportunityDatabank = databankRaw;
   const result = await refreshSources(registry, databank);
 
   await Promise.all([
     writeFile(registryPath, `${JSON.stringify(result.registry, null, 2)}\n`, "utf8"),
-    writeFile(databankPath, `${JSON.stringify(result.databank, null, 2)}\n`, "utf8"),
+    writeOpportunityDatabank(databankPath, result.databank),
   ]);
 
   console.log(
