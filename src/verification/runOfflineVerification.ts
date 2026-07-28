@@ -19,6 +19,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:fixtures"],
   },
+  {
+    name: "pure domain regression",
+    command: "npm",
+    args: ["run", "evaluate:domain"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
