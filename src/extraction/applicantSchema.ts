@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export const APPLICANT_DOMAINS = [
   "education",
   "career_work_history",
@@ -14,31 +16,39 @@ export const APPLICANT_DOMAINS = [
   "narrative_themes",
 ] as const;
 
-export type ApplicantDomain = (typeof APPLICANT_DOMAINS)[number];
-export type ApplicantClaimType = "explicit" | "inferred";
-export type ApplicantClaimStatus =
-  | "unreviewed"
-  | "confirmed"
-  | "edited"
-  | "rejected";
+export const ApplicantDomainSchema = z.enum(APPLICANT_DOMAINS);
+export const ApplicantClaimTypeSchema = z.enum(["explicit", "inferred"]);
+export const ApplicantClaimStatusSchema = z.enum([
+  "unreviewed",
+  "confirmed",
+  "edited",
+  "rejected",
+]);
 
-export interface ApplicantClaim {
-  text: string;
-  type: ApplicantClaimType;
-  evidence: string;
-  confidence: number;
-  source: string;
-  opportunity_relevance: string;
-  status: ApplicantClaimStatus;
-}
+export const ApplicantClaimSchema = z.object({
+  text: z.string(),
+  type: ApplicantClaimTypeSchema,
+  evidence: z.string(),
+  confidence: z.number().min(0).max(1),
+  source: z.string(),
+  opportunity_relevance: z.string(),
+  status: ApplicantClaimStatusSchema,
+});
 
-export type Applicant = Record<ApplicantDomain, ApplicantClaim[]>;
+export const ApplicantSchema = z.object(
+  Object.fromEntries(
+    APPLICANT_DOMAINS.map((domain) => [domain, z.array(ApplicantClaimSchema)])
+  ) as Record<(typeof APPLICANT_DOMAINS)[number], z.ZodArray<typeof ApplicantClaimSchema>>
+);
+
+export type ApplicantDomain = z.infer<typeof ApplicantDomainSchema>;
+export type ApplicantClaimType = z.infer<typeof ApplicantClaimTypeSchema>;
+export type ApplicantClaimStatus = z.infer<typeof ApplicantClaimStatusSchema>;
+export type ApplicantClaim = z.infer<typeof ApplicantClaimSchema>;
+export type Applicant = z.infer<typeof ApplicantSchema>;
 
 export function isApplicantDomain(value: unknown): value is ApplicantDomain {
-  return (
-    typeof value === "string" &&
-    (APPLICANT_DOMAINS as readonly string[]).includes(value)
-  );
+  return ApplicantDomainSchema.safeParse(value).success;
 }
 
 export const createEmptyApplicant = (): Applicant => ({
