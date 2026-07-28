@@ -1,20 +1,29 @@
-import { Opportunity } from "./schema";
+import { z } from "zod";
+import {
+  Opportunity,
+  OpportunityAvailabilityStatusSchema,
+  OpportunityTypeSchema,
+} from "./schema";
 
-interface ExpectedOpportunity {
-  title_contains: string;
-  provider_contains: string;
-  opportunity_type: Opportunity["opportunity_type"];
-  availability_status: Opportunity["availability_status"];
-  deadline: string | null;
-  eligibility_contains: string[];
-  selection_preferences_contains: string[];
-  application_requirements_contains: string[];
-}
+export const ExpectedOpportunitySchema = z.object({
+  title_contains: z.string(),
+  provider_contains: z.string(),
+  opportunity_type: OpportunityTypeSchema,
+  availability_status: OpportunityAvailabilityStatusSchema,
+  deadline: z.string().nullable(),
+  eligibility_contains: z.array(z.string()),
+  selection_preferences_contains: z.array(z.string()),
+  application_requirements_contains: z.array(z.string()),
+});
 
-export interface OpportunityGroundTruth {
-  expected: ExpectedOpportunity;
-  must_not_infer: string[];
-}
+export const OpportunityGroundTruthSchema = z.object({
+  opportunity_id: z.string(),
+  expected: ExpectedOpportunitySchema,
+  must_not_infer: z.array(z.string()),
+});
+
+export type ExpectedOpportunity = z.infer<typeof ExpectedOpportunitySchema>;
+export type OpportunityGroundTruth = z.infer<typeof OpportunityGroundTruthSchema>;
 
 export interface OpportunityEvaluation {
   scalar_errors: string[];
