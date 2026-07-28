@@ -1,8 +1,5 @@
 import { z } from "zod";
-import {
-  Opportunity,
-  OpportunitySchema,
-} from "../opportunity/schema";
+import { Opportunity, OpportunitySchema } from "../opportunity/schema";
 
 export const OPPORTUNITY_RECORD_STATUSES = [
   "active",
@@ -22,7 +19,6 @@ export const OpportunityRecordSchema = z
     last_changed_at: z.string(),
     raw_source_hash: z.string(),
     semantic_hash: z.string(),
-    source_hash: z.string().optional(),
   })
   .strict();
 
@@ -51,8 +47,4 @@ export function deriveOpportunityRecordStatus(
     default:
       return "unknown";
   }
-}
-
-export function isOpportunityDatabank(value: unknown): value is OpportunityDatabank {
-  return OpportunityDatabankSchema.safeParse(value).success;
 }
