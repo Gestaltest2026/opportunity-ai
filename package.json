@@ -11,6 +11,7 @@
     "evaluate:hash": "tsx src/databank/runHashEvaluation.ts",
     "evaluate:databank-schema": "tsx src/databank/runSchemaEvaluation.ts",
     "evaluate:fixtures": "tsx src/verification/runFixtureValidation.ts",
+    "evaluate:domain": "tsx src/verification/runDomainRegression.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:llm": "npm run evaluate:applicant-001 && npm run evaluate:opportunity-001 && npm run evaluate:match-001",
     "closed-loop": "tsx src/runClosedLoop.ts",
