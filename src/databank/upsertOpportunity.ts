@@ -2,8 +2,31 @@ import { createHash } from "node:crypto";
 import { Opportunity } from "../opportunity/schema";
 import { OpportunityDatabank, OpportunityRecord } from "./schema";
 
+function sha256(value: string): string {
+  return createHash("sha256").update(value).digest("hex");
+}
+
 export function hashOpportunitySource(sourceText: string): string {
-  return createHash("sha256").update(sourceText).digest("hex");
+  return sha256(sourceText);
+}
+
+export function canonicalizeOpportunity(opportunity: Opportunity): string {
+  return JSON.stringify({
+    title: opportunity.title,
+    provider: opportunity.provider,
+    opportunity_type: opportunity.opportunity_type,
+    award: opportunity.award,
+    deadline: opportunity.deadline,
+    eligibility: opportunity.eligibility,
+    selection_preferences: opportunity.selection_preferences,
+    narrative_preferences: opportunity.narrative_preferences,
+    application_requirements: opportunity.application_requirements,
+    restrictions: opportunity.restrictions,
+  });
+}
+
+export function hashOpportunitySemantics(opportunity: Opportunity): string {
+  return sha256(canonicalizeOpportunity(opportunity));
 }
 
 export function upsertOpportunity(
@@ -13,7 +36,8 @@ export function upsertOpportunity(
   sourceText: string,
   checkedAt: string = new Date().toISOString()
 ): OpportunityDatabank {
-  const sourceHash = hashOpportunitySource(sourceText);
+  const rawSourceHash = hashOpportunitySource(sourceText);
+  const semanticHash = hashOpportunitySemantics(opportunity);
   const existingIndex = databank.records.findIndex(
     (record) => record.opportunity.opportunity_id === opportunity.opportunity_id
   );
@@ -26,21 +50,27 @@ export function upsertOpportunity(
       last_checked_at: checkedAt,
       last_changed_at: checkedAt,
       status: "active",
-      source_hash: sourceHash,
+      raw_source_hash: rawSourceHash,
+      semantic_hash: semanticHash,
     };
 
     return { records: [...databank.records, record] };
   }
 
   const existing = databank.records[existingIndex];
-  const changed = existing.source_hash !== sourceHash;
+  const previousSemanticHash =
+    existing.semantic_hash ?? hashOpportunitySemantics(existing.opportunity);
+  const semanticChanged = previousSemanticHash !== semanticHash;
+
   const updated: OpportunityRecord = {
     ...existing,
     opportunity,
     source_url: sourceUrl,
     last_checked_at: checkedAt,
-    last_changed_at: changed ? checkedAt : existing.last_changed_at,
-    source_hash: sourceHash,
+    last_changed_at: semanticChanged ? checkedAt : existing.last_changed_at,
+    raw_source_hash: rawSourceHash,
+    semantic_hash: semanticHash,
+    source_hash: undefined,
   };
 
   return {
