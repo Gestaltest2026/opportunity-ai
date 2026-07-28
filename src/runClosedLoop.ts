@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import { buildEvidenceSet } from "./application/buildEvidenceSet";
 import { createApplication } from "./application/createApplication";
+import { applyClarificationAnswer } from "./clarification/applyClarificationAnswer";
 import { generateClarificationQuestion } from "./clarification/generateClarificationQuestion";
 import { applyExtraction } from "./extraction/applyExtraction";
 import { extractApplicant } from "./extraction/extractApplicant";
@@ -8,11 +9,12 @@ import { evaluateMatch } from "./matching/evaluateMatch";
 import { extractOpportunity } from "./opportunity/extractOpportunity";
 
 async function main() {
-  const [applicantSourcePath, opportunitySourcePath] = process.argv.slice(2);
+  const [applicantSourcePath, opportunitySourcePath, clarificationAnswer] =
+    process.argv.slice(2);
 
   if (!applicantSourcePath || !opportunitySourcePath) {
     throw new Error(
-      "Usage: npm run closed-loop -- <applicant-source> <opportunity-source>"
+      "Usage: npm run closed-loop -- <applicant-source> <opportunity-source> [clarification-answer]"
     );
   }
 
@@ -25,14 +27,51 @@ async function main() {
   const opportunityId = "opportunity-001";
 
   const applicantExtraction = await extractApplicant(applicantId, applicantSource);
-  const applicant = applyExtraction(
+  let applicant = applyExtraction(
     applicantExtraction,
     undefined,
     applicantSourcePath
   );
 
   const opportunity = await extractOpportunity(opportunityId, opportunitySource);
-  const match = await evaluateMatch(applicantId, applicant, opportunity);
+  let match = await evaluateMatch(applicantId, applicant, opportunity);
+
+  if (match.eligibility_status === "needs_clarification") {
+    const clarification = await generateClarificationQuestion(
+      applicantId,
+      applicant,
+      opportunity,
+      match
+    );
+
+    if (!clarification) {
+      throw new Error("Match requires clarification but no question was generated.");
+    }
+
+    if (!clarificationAnswer) {
+      console.log(
+        JSON.stringify(
+          {
+            stage: "clarification_required",
+            applicant,
+            opportunity,
+            match,
+            clarification,
+          },
+          null,
+          2
+        )
+      );
+      return;
+    }
+
+    applicant = applyClarificationAnswer(
+      applicant,
+      clarification,
+      clarificationAnswer
+    );
+    match = await evaluateMatch(applicantId, applicant, opportunity);
+  }
 
   if (match.eligibility_status === "ineligible") {
     console.log(
