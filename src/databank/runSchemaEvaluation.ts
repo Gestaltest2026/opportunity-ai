@@ -1,8 +1,4 @@
-import {
-  deriveOpportunityRecordStatus,
-  isOpportunityDatabank,
-  OpportunityDatabank,
-} from "./schema";
+import { OpportunityDatabankSchema } from "./schema";
 import { Opportunity } from "../opportunity/schema";
 
 const opportunity: Opportunity = {
@@ -21,7 +17,7 @@ const opportunity: Opportunity = {
   source_evidence: [],
 };
 
-const valid: OpportunityDatabank = {
+const valid = {
   records: [
     {
       opportunity,
@@ -29,18 +25,17 @@ const valid: OpportunityDatabank = {
       first_seen_at: "2026-07-28T00:00:00.000Z",
       last_checked_at: "2026-07-28T00:00:00.000Z",
       last_changed_at: "2026-07-28T00:00:00.000Z",
-      status: deriveOpportunityRecordStatus(opportunity),
       raw_source_hash: "raw",
       semantic_hash: "semantic",
     },
   ],
 };
 
-const inconsistent = {
+const staleDerivedState = {
   records: [
     {
       ...valid.records[0],
-      status: "closed",
+      status: "active",
     },
   ],
 };
@@ -55,9 +50,10 @@ const malformed = {
 };
 
 const result = {
-  accepts_valid_databank: isOpportunityDatabank(valid),
-  rejects_inconsistent_status: !isOpportunityDatabank(inconsistent),
-  rejects_malformed_record: !isOpportunityDatabank(malformed),
+  accepts_valid_databank: OpportunityDatabankSchema.safeParse(valid).success,
+  strips_or_rejects_persisted_derived_status:
+    !OpportunityDatabankSchema.strict().safeParse(staleDerivedState).success,
+  rejects_malformed_record: !OpportunityDatabankSchema.safeParse(malformed).success,
 };
 
 console.log(JSON.stringify(result, null, 2));
