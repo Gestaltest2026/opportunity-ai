@@ -1,5 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
-import { isOpportunityDatabank, OpportunityDatabank } from "./schema";
+import { OpportunityDatabank, OpportunityDatabankSchema } from "./schema";
 
 export async function readOpportunityDatabank(
   path: string,
@@ -15,11 +15,12 @@ export async function readOpportunityDatabank(
     throw error;
   }
 
-  if (!isOpportunityDatabank(raw)) {
+  const parsed = OpportunityDatabankSchema.safeParse(raw);
+  if (!parsed.success) {
     throw new Error(`Opportunity databank failed schema validation: ${path}`);
   }
 
-  return raw;
+  return parsed.data;
 }
 
 export async function writeOpportunityDatabank(
