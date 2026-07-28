@@ -15,8 +15,24 @@ export const APPLICANT_DOMAINS = [
 ] as const;
 
 export type ApplicantDomain = (typeof APPLICANT_DOMAINS)[number];
+export type ApplicantClaimType = "explicit" | "inferred";
+export type ApplicantClaimStatus =
+  | "unreviewed"
+  | "confirmed"
+  | "edited"
+  | "rejected";
 
-export type Applicant = Record<ApplicantDomain, string[]>;
+export interface ApplicantClaim {
+  text: string;
+  type: ApplicantClaimType;
+  evidence: string;
+  confidence: number;
+  source: string;
+  opportunity_relevance: string;
+  status: ApplicantClaimStatus;
+}
+
+export type Applicant = Record<ApplicantDomain, ApplicantClaim[]>;
 
 export function isApplicantDomain(value: unknown): value is ApplicantDomain {
   return (
