@@ -6,6 +6,7 @@
   "scripts": {
     "extract": "tsx src/extraction/runExtraction.ts",
     "evaluate:applicant-001": "tsx src/extraction/runEvaluation.ts",
+    "closed-loop": "tsx src/runClosedLoop.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
