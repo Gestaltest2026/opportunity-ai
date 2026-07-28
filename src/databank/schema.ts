@@ -13,20 +13,24 @@ export const OPPORTUNITY_RECORD_STATUSES = [
 
 export const OpportunityRecordStatusSchema = z.enum(OPPORTUNITY_RECORD_STATUSES);
 
-export const OpportunityRecordSchema = z.object({
-  opportunity: OpportunitySchema,
-  source_url: z.string(),
-  first_seen_at: z.string(),
-  last_checked_at: z.string(),
-  last_changed_at: z.string(),
-  raw_source_hash: z.string(),
-  semantic_hash: z.string(),
-  source_hash: z.string().optional(),
-});
+export const OpportunityRecordSchema = z
+  .object({
+    opportunity: OpportunitySchema,
+    source_url: z.string(),
+    first_seen_at: z.string(),
+    last_checked_at: z.string(),
+    last_changed_at: z.string(),
+    raw_source_hash: z.string(),
+    semantic_hash: z.string(),
+    source_hash: z.string().optional(),
+  })
+  .strict();
 
-export const OpportunityDatabankSchema = z.object({
-  records: z.array(OpportunityRecordSchema),
-});
+export const OpportunityDatabankSchema = z
+  .object({
+    records: z.array(OpportunityRecordSchema),
+  })
+  .strict();
 
 export type OpportunityRecordStatus = z.infer<
   typeof OpportunityRecordStatusSchema
