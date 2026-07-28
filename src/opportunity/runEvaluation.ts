@@ -1,5 +1,8 @@
-import { readFile } from "fs/promises";
-import { evaluateOpportunity, OpportunityGroundTruth } from "./evaluateOpportunity";
+import { readFile } from "node:fs/promises";
+import {
+  evaluateOpportunity,
+  OpportunityGroundTruthSchema,
+} from "./evaluateOpportunity";
 import { extractOpportunity } from "./extractOpportunity";
 
 async function main() {
@@ -9,7 +12,7 @@ async function main() {
   ]);
 
   const opportunity = await extractOpportunity("opportunity-001", sourceText);
-  const groundTruth = JSON.parse(groundTruthText) as OpportunityGroundTruth;
+  const groundTruth = OpportunityGroundTruthSchema.parse(JSON.parse(groundTruthText));
   const evaluation = evaluateOpportunity(opportunity, groundTruth);
 
   console.log(JSON.stringify({ opportunity, evaluation }, null, 2));
