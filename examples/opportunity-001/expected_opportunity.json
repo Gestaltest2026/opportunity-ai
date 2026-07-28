@@ -4,6 +4,7 @@
     "title_contains": "Foundation Scholarship",
     "provider_contains": "Florida Gulf Coast University",
     "opportunity_type": "scholarship",
+    "availability_status": "closed",
     "deadline": null,
     "eligibility_contains": [
       "FGCU",
@@ -24,6 +25,5 @@
     "specific award amount",
     "US citizenship requirement",
     "Florida residency requirement"
-  ],
-  "known_source_state": "closed"
+  ]
 }
