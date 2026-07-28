@@ -1,7 +1,13 @@
+import {
+  ApplicantDomain,
+  isApplicantDomain,
+} from "./applicantSchema";
+
 export type ClaimType = "explicit" | "inferred";
 
 export interface ExtractedClaim {
   claim: string;
+  domain: ApplicantDomain;
   type: ClaimType;
   evidence: string;
   confidence: number;
@@ -30,6 +36,7 @@ export function isApplicantExtraction(
 
     return (
       typeof c.claim === "string" &&
+      isApplicantDomain(c.domain) &&
       (c.type === "explicit" || c.type === "inferred") &&
       typeof c.evidence === "string" &&
       typeof c.confidence === "number" &&
