@@ -12,6 +12,7 @@
     "closed-loop": "tsx src/runClosedLoop.ts",
     "databank:upsert": "tsx src/databank/runUpsertOpportunity.ts",
     "databank:rank": "tsx src/matching/runRankDatabank.ts",
+    "sources:refresh": "tsx src/discovery/runRefreshSources.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
