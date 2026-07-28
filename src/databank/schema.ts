@@ -1,6 +1,11 @@
 import { Opportunity } from "../opportunity/schema";
 
-export type OpportunityRecordStatus = "active" | "expired" | "closed" | "unknown";
+export type OpportunityRecordStatus =
+  | "active"
+  | "upcoming"
+  | "expired"
+  | "closed"
+  | "unknown";
 
 export interface OpportunityRecord {
   opportunity: Opportunity;
