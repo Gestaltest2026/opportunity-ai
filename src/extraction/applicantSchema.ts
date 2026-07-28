@@ -35,21 +35,27 @@ export const ApplicantClaimSchema = z.object({
   status: ApplicantClaimStatusSchema,
 });
 
-export const ApplicantSchema = z.object(
-  Object.fromEntries(
-    APPLICANT_DOMAINS.map((domain) => [domain, z.array(ApplicantClaimSchema)])
-  ) as Record<(typeof APPLICANT_DOMAINS)[number], z.ZodArray<typeof ApplicantClaimSchema>>
-);
+export const ApplicantSchema = z.object({
+  education: z.array(ApplicantClaimSchema),
+  career_work_history: z.array(ApplicantClaimSchema),
+  achievements: z.array(ApplicantClaimSchema),
+  financial_context: z.array(ApplicantClaimSchema),
+  identity_eligibility_attributes: z.array(ApplicantClaimSchema),
+  community_involvement: z.array(ApplicantClaimSchema),
+  leadership: z.array(ApplicantClaimSchema),
+  research_academic_interests: z.array(ApplicantClaimSchema),
+  career_direction: z.array(ApplicantClaimSchema),
+  lived_experiences: z.array(ApplicantClaimSchema),
+  constraints: z.array(ApplicantClaimSchema),
+  existing_evidence: z.array(ApplicantClaimSchema),
+  narrative_themes: z.array(ApplicantClaimSchema),
+});
 
 export type ApplicantDomain = z.infer<typeof ApplicantDomainSchema>;
 export type ApplicantClaimType = z.infer<typeof ApplicantClaimTypeSchema>;
 export type ApplicantClaimStatus = z.infer<typeof ApplicantClaimStatusSchema>;
 export type ApplicantClaim = z.infer<typeof ApplicantClaimSchema>;
 export type Applicant = z.infer<typeof ApplicantSchema>;
-
-export function isApplicantDomain(value: unknown): value is ApplicantDomain {
-  return ApplicantDomainSchema.safeParse(value).success;
-}
 
 export const createEmptyApplicant = (): Applicant => ({
   education: [],
