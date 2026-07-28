@@ -1,82 +1,54 @@
-export type CriterionStatus = "met" | "not_met" | "unknown";
-export type EligibilityStatus =
-  | "eligible"
-  | "ineligible"
-  | "needs_clarification";
-export type ActionabilityStatus =
-  | "actionable"
-  | "unavailable"
-  | "upcoming"
-  | "unknown";
+import { z } from "zod";
 
-export interface MatchCriterionEvaluation {
-  criterion: string;
-  status: CriterionStatus;
-  supporting_claims: string[];
-  explanation: string;
-}
+export const CriterionStatusSchema = z.enum(["met", "not_met", "unknown"]);
+export const EligibilityStatusSchema = z.enum([
+  "eligible",
+  "ineligible",
+  "needs_clarification",
+]);
+export const ActionabilityStatusSchema = z.enum([
+  "actionable",
+  "unavailable",
+  "upcoming",
+  "unknown",
+]);
 
-export interface MatchAnalysis {
-  eligibility_evaluations: MatchCriterionEvaluation[];
-  evidence_score: number;
-  narrative_fit_score: number;
-  strategic_value_score: number;
-  blockers: string[];
-  missing_information: string[];
-  supporting_claims: string[];
-  explanation: string;
-}
+export const MatchCriterionEvaluationSchema = z.object({
+  criterion: z.string(),
+  status: CriterionStatusSchema,
+  supporting_claims: z.array(z.string()),
+  explanation: z.string(),
+});
 
-export interface Match {
-  match_id: string;
-  applicant_id: string;
-  opportunity_id: string;
-  eligibility_status: EligibilityStatus;
-  actionability_status: ActionabilityStatus;
-  eligibility_evaluations: MatchCriterionEvaluation[];
-  evidence_score: number;
-  narrative_fit_score: number;
-  strategic_value_score: number;
-  blockers: string[];
-  missing_information: string[];
-  supporting_claims: string[];
-  score: number | null;
-  explanation: string;
-}
+export const MatchAnalysisSchema = z.object({
+  eligibility_evaluations: z.array(MatchCriterionEvaluationSchema),
+  evidence_score: z.number().min(0).max(1),
+  narrative_fit_score: z.number().min(0).max(1),
+  strategic_value_score: z.number().min(0).max(1),
+  blockers: z.array(z.string()),
+  missing_information: z.array(z.string()),
+  supporting_claims: z.array(z.string()),
+  explanation: z.string(),
+});
 
-function isStringArray(value: unknown): value is string[] {
-  return Array.isArray(value) && value.every((item) => typeof item === "string");
-}
+export const MatchSchema = MatchAnalysisSchema.extend({
+  match_id: z.string(),
+  applicant_id: z.string(),
+  opportunity_id: z.string(),
+  eligibility_status: EligibilityStatusSchema,
+  actionability_status: ActionabilityStatusSchema,
+  score: z.number().min(0).max(1).nullable(),
+});
 
-function isScore(value: unknown): value is number {
-  return typeof value === "number" && value >= 0 && value <= 1;
-}
-
-function isCriterionEvaluation(value: unknown): value is MatchCriterionEvaluation {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-
-  return (
-    typeof data.criterion === "string" &&
-    (data.status === "met" || data.status === "not_met" || data.status === "unknown") &&
-    isStringArray(data.supporting_claims) &&
-    typeof data.explanation === "string"
-  );
-}
+export type CriterionStatus = z.infer<typeof CriterionStatusSchema>;
+export type EligibilityStatus = z.infer<typeof EligibilityStatusSchema>;
+export type ActionabilityStatus = z.infer<typeof ActionabilityStatusSchema>;
+export type MatchCriterionEvaluation = z.infer<
+  typeof MatchCriterionEvaluationSchema
+>;
+export type MatchAnalysis = z.infer<typeof MatchAnalysisSchema>;
+export type Match = z.infer<typeof MatchSchema>;
 
 export function isMatchAnalysis(value: unknown): value is MatchAnalysis {
-  if (!value || typeof value !== "object") return false;
-  const data = value as Record<string, unknown>;
-
-  return (
-    Array.isArray(data.eligibility_evaluations) &&
-    data.eligibility_evaluations.every(isCriterionEvaluation) &&
-    isScore(data.evidence_score) &&
-    isScore(data.narrative_fit_score) &&
-    isScore(data.strategic_value_score) &&
-    isStringArray(data.blockers) &&
-    isStringArray(data.missing_information) &&
-    isStringArray(data.supporting_claims) &&
-    typeof data.explanation === "string"
-  );
+  return MatchAnalysisSchema.safeParse(value).success;
 }
