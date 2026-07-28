@@ -1,5 +1,5 @@
-import OpenAI from "openai";
 import { Applicant } from "../extraction/applicantSchema";
+import { callStructuredLLM } from "../llm/callStructuredLLM";
 import { Opportunity } from "../opportunity/schema";
 import { MATCH_ANALYSIS_PROMPT } from "./prompt";
 import {
@@ -7,13 +7,9 @@ import {
   EligibilityStatus,
   Match,
   MatchAnalysis,
+  MatchAnalysisSchema,
   MatchCriterionEvaluation,
-  isMatchAnalysis,
 } from "./schema";
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
 function normalize(value: string): string {
   return value.trim().toLowerCase().replace(/\s+/g, " ");
@@ -88,26 +84,15 @@ export async function evaluateMatch(
   applicant: Applicant,
   opportunity: Opportunity
 ): Promise<Match> {
-  const response = await client.responses.create({
-    model: "gpt-5.4-mini",
+  const analysis = await callStructuredLLM({
+    schema: MatchAnalysisSchema,
     instructions: MATCH_ANALYSIS_PROMPT,
     input: JSON.stringify({ applicant, opportunity }),
   });
 
-  let parsed: unknown;
-  try {
-    parsed = JSON.parse(response.output_text);
-  } catch {
-    throw new Error("Match analysis returned invalid JSON.");
-  }
-
-  if (!isMatchAnalysis(parsed)) {
-    throw new Error("Match analysis failed schema validation.");
-  }
-
   const eligibilityEvaluations = completeEligibilityEvaluations(
     opportunity,
-    parsed
+    analysis
   );
   const eligibilityStatus = deriveEligibilityStatus(eligibilityEvaluations);
   const actionabilityStatus = deriveActionabilityStatus(opportunity);
@@ -115,7 +100,7 @@ export async function evaluateMatch(
     .filter(
       (evaluation) =>
         evaluation.status === "unknown" &&
-        !parsed.eligibility_evaluations.some(
+        !analysis.eligibility_evaluations.some(
           (returned) =>
             normalize(returned.criterion) === normalize(evaluation.criterion)
         )
@@ -137,15 +122,15 @@ export async function evaluateMatch(
     eligibility_status: eligibilityStatus,
     actionability_status: actionabilityStatus,
     eligibility_evaluations: eligibilityEvaluations,
-    evidence_score: parsed.evidence_score,
-    narrative_fit_score: parsed.narrative_fit_score,
-    strategic_value_score: parsed.strategic_value_score,
-    blockers: [...new Set([...parsed.blockers, ...availabilityBlocker])],
+    evidence_score: analysis.evidence_score,
+    narrative_fit_score: analysis.narrative_fit_score,
+    strategic_value_score: analysis.strategic_value_score,
+    blockers: [...new Set([...analysis.blockers, ...availabilityBlocker])],
     missing_information: [
-      ...new Set([...parsed.missing_information, ...missingEvaluations]),
+      ...new Set([...analysis.missing_information, ...missingEvaluations]),
     ],
-    supporting_claims: parsed.supporting_claims,
-    score: calculateScore(parsed, eligibilityStatus, actionabilityStatus),
-    explanation: parsed.explanation,
+    supporting_claims: analysis.supporting_claims,
+    score: calculateScore(analysis, eligibilityStatus, actionabilityStatus),
+    explanation: analysis.explanation,
   };
 }
