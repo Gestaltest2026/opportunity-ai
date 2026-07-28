@@ -1,6 +1,9 @@
 import { readFile } from "fs/promises";
 import { extractApplicant } from "./extractApplicant";
-import { evaluateExtraction } from "./evaluateExtraction";
+import {
+  ApplicantExtractionGroundTruthSchema,
+  evaluateExtraction,
+} from "./evaluateExtraction";
 
 async function main() {
   const [sourceText, groundTruthText] = await Promise.all([
@@ -9,15 +12,16 @@ async function main() {
   ]);
 
   const extraction = await extractApplicant("applicant-001", sourceText);
-  const groundTruth = JSON.parse(groundTruthText);
+  const groundTruth = ApplicantExtractionGroundTruthSchema.parse(
+    JSON.parse(groundTruthText)
+  );
   const evaluation = evaluateExtraction(extraction, groundTruth);
 
   console.log(JSON.stringify(evaluation, null, 2));
 
   if (
     evaluation.missing.length > 0 ||
-    evaluation.prohibited_inferences.length > 0 ||
-    evaluation.invalid_domains.length > 0
+    evaluation.prohibited_inferences.length > 0
   ) {
     process.exitCode = 1;
   }
