@@ -49,6 +49,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:change-loop"],
   },
+  {
+    name: "targeted rematch regression",
+    command: "npm",
+    args: ["run", "evaluate:rematch-targets"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
