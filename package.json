@@ -17,6 +17,7 @@
     "evaluate:discovery-classification": "tsx src/discovery/runCandidateClassificationEvaluation.ts",
     "evaluate:opportunity-identity": "tsx src/discovery/runOpportunityIdentityEvaluation.ts",
     "evaluate:change-loop": "tsx src/discovery/runChangeDetectionEvaluation.ts",
+    "evaluate:rematch-targets": "tsx src/matching/runRematchTargetEvaluation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:llm": "npm run evaluate:applicant-001 && npm run evaluate:opportunity-001 && npm run evaluate:match-001",
     "closed-loop": "tsx src/runClosedLoop.ts",
