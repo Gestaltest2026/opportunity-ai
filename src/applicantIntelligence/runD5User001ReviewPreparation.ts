@@ -1,9 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
-import { ApplicantSchema } from "../extraction/applicantSchema";
-import {
-  createApplicantIntelligenceBenchmarkEvidence,
-  createCanonicalApplicantView,
-} from "./canonicalApplicantAdapter";
+import { writeFile } from "node:fs/promises";
 import {
   applicantIntelligenceBaselineGenerationConfig,
   generateCandidateInsights,
@@ -13,14 +8,11 @@ import {
   HumanMeaningReviewBundleSchema,
   HumanMeaningReviewInputSchema,
 } from "./humanMeaningReview";
+import { loadUser001ApplicantIntelligenceBenchmark } from "./loadUser001Benchmark";
 
 async function main() {
-  const raw = JSON.parse(
-    await readFile("examples/applicant-001/canonical-profile-v0.json", "utf8")
-  );
-  const applicant = ApplicantSchema.parse(raw);
-  const canonicalView = createCanonicalApplicantView("applicant-001", applicant);
-  const benchmarkEvidence = createApplicantIntelligenceBenchmarkEvidence(canonicalView);
+  const { canonicalView, benchmarkEvidence } =
+    await loadUser001ApplicantIntelligenceBenchmark();
   const generationConfig = applicantIntelligenceBaselineGenerationConfig();
   const generated = await generateCandidateInsights(benchmarkEvidence);
 
