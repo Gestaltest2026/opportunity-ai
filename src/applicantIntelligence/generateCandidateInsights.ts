@@ -1,6 +1,9 @@
 import { z } from "zod";
 import { callStructuredLLM } from "../llm/callStructuredLLM";
-import type { CanonicalApplicantView } from "./canonicalApplicantAdapter";
+import type {
+  ApplicantIntelligenceBenchmarkEvidence,
+  CanonicalApplicantView,
+} from "./canonicalApplicantAdapter";
 import {
   ApplicantIntelligenceNodeSchema,
   InsightChainSchema,
@@ -21,6 +24,9 @@ const CandidateInsightChainSchema = InsightChainSchema.pick({
 const CandidateInsightGenerationSchema = z.object({
   candidate_chains: z.array(CandidateInsightChainSchema).min(3).max(5),
 });
+
+export const APPLICANT_INTELLIGENCE_BASELINE_MODEL = "gpt-5.4-mini";
+export const APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES = 1;
 
 export type CandidateInsightGeneration = z.infer<
   typeof CandidateInsightGenerationSchema
@@ -45,15 +51,34 @@ Rules:
 - Prefer specific, useful compression over generic labels such as resilience or leadership.
 - Each node must include a concise reasoning_bridge and a condition that could weaken or clarify the claim.
 - Do not generate Opportunity directions, concrete Opportunities, questions, actions, or evaluation yet.
+- The purpose of this benchmark is to discover meaning that is new relative to prior interpretation. Do not receive or imitate prior inferred narrative themes during generation.
 `;
 
+export function applicantIntelligenceBaselineGenerationConfig() {
+  return {
+    treatment: "d3-baseline-v1",
+    model: APPLICANT_INTELLIGENCE_BASELINE_MODEL,
+    transport_retries: APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES,
+    prompt_contract: "FACT->RELATION->PATTERN->ABSTRACTION/CONCEPT->optional HYPOTHESIS",
+  } as const;
+}
+
 export async function generateCandidateInsights(
-  applicant: CanonicalApplicantView
+  applicant: CanonicalApplicantView | ApplicantIntelligenceBenchmarkEvidence
 ): Promise<CandidateInsightGeneration> {
+  const generationInput = "evidence_claims" in applicant
+    ? {
+        applicant_id: applicant.applicant_id,
+        claims: applicant.evidence_claims,
+      }
+    : applicant;
+
   const result = await callStructuredLLM({
     schema: CandidateInsightGenerationSchema,
     instructions: INSTRUCTIONS,
-    input: JSON.stringify(applicant),
+    input: JSON.stringify(generationInput),
+    model: APPLICANT_INTELLIGENCE_BASELINE_MODEL,
+    transport_retries: APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES,
   });
 
   // Re-parse nodes explicitly so this boundary fails closed if future schema changes drift.
