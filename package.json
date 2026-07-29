@@ -14,6 +14,7 @@
     "evaluate:domain": "tsx src/verification/runDomainRegression.ts",
     "evaluate:discovery-url-policy": "tsx src/discovery/runUrlPolicyEvaluation.ts",
     "evaluate:discovery-candidates": "tsx src/discovery/runCandidateExtractionEvaluation.ts",
+    "evaluate:discovery-classification": "tsx src/discovery/runCandidateClassificationEvaluation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:llm": "npm run evaluate:applicant-001 && npm run evaluate:opportunity-001 && npm run evaluate:match-001",
     "closed-loop": "tsx src/runClosedLoop.ts",
