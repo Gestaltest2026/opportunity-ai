@@ -27,14 +27,25 @@
     },
     {
       "opportunity_id": "opportunity-003",
-      "source_url": "https://applynow.fgcu.edu/portal/scholarshiptransfer",
+      "source_url": "https://www.fgcu.edu/admissionsandaid/undergraduateadmissions/scholarshipsandwaivers",
       "source_type": "official",
       "applicant_relevance": "contrast_case",
       "verification_status": "source_verified",
       "expected_branch": "needs_clarification",
       "opportunity_type": "scholarship",
       "availability_status": "unknown",
-      "notes": "FGCU Out-of-State Waiver. Official page requires out-of-state residency and transfer GPA >= 3.4. This is intentionally retained as a contrast case until applicant residency/GPA are explicitly confirmed."
+      "notes": "FGCU Out-of-State Waiver. Official page requires non-Florida tuition residency and transfer GPA >= 3.4. Leadership, civic engagement, demonstrated talents, career goals, and extraordinary circumstances can affect ranking but do not replace hard gates."
+    },
+    {
+      "opportunity_id": "opportunity-004",
+      "source_url": "https://www.fgcu.edu/academics/studyabroad/scholarships",
+      "source_type": "official",
+      "applicant_relevance": "plausible",
+      "verification_status": "source_verified",
+      "expected_branch": "needs_clarification",
+      "opportunity_type": "scholarship",
+      "availability_status": "unknown",
+      "notes": "Perez Family Study Abroad Scholarship. Official source requires a degree-seeking FGCU undergraduate, financial need, qualifying study-abroad participation, GPA >= 2.8, applicable credits, and remaining FGCU coursework. Selection emphasizes academic/career coherence, maturity, personal development, community service, and leadership."
     }
   ]
 }
