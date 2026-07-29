@@ -2,6 +2,7 @@ import type { CanonicalApplicantView } from "./canonicalApplicantAdapter";
 import type {
   ApplicantIntelligenceNode,
   EpistemicState,
+  InsightChainSchema,
   SemanticLevel,
 } from "./benchmarkSchema";
 
@@ -168,4 +169,21 @@ export function guardCandidateChains(
     chain_id: chain.chain_id,
     nodes: chain.nodes.map((node) => guardApplicantIntelligenceNode(node, applicant)),
   }));
+}
+
+export function guardInsightChain<T extends { nodes: ApplicantIntelligenceNode[] }>(
+  chain: T,
+  applicant: CanonicalApplicantView
+): { chain: T; disposition: GuardDisposition; findings: GuardFinding[] } {
+  const guardedNodes = chain.nodes.map((node) => guardApplicantIntelligenceNode(node, applicant));
+  const findings = guardedNodes.flatMap((result) => result.findings);
+  const dispositions = guardedNodes.map((result) => result.disposition);
+
+  let disposition: GuardDisposition = "accept";
+  if (dispositions.includes("reject")) disposition = "reject";
+  else if (dispositions.includes("unknown")) disposition = "unknown";
+  else if (dispositions.includes("hypothesis_only")) disposition = "hypothesis_only";
+  else if (dispositions.includes("revise")) disposition = "revise";
+
+  return { chain, disposition, findings };
 }
