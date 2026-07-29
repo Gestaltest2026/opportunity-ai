@@ -4,6 +4,9 @@ import { extractOpportunity } from "../opportunity/extractOpportunity";
 import { detectOpportunityChange, OpportunityChangeSignal, opportunitiesNeedingRematch } from "./changeDetection";
 import { fetchSource } from "./fetchSource";
 import { OpportunitySource, SourceRegistry } from "./schema";
+import { isStale } from "./staleness";
+
+export { isStale } from "./staleness";
 
 export interface RefreshFailure {
   source_id: string;
@@ -36,17 +39,6 @@ export function isDue(source: OpportunitySource, now: Date): boolean {
 
   const intervalMs = source.refresh_interval_hours * 60 * 60 * 1000;
   return now.getTime() - lastFetched >= intervalMs;
-}
-
-export function isStale(source: OpportunitySource, now: Date): boolean {
-  if (!source.enabled) return false;
-  if (!source.last_success_at) return source.failure_count > 0;
-
-  const lastSuccess = new Date(source.last_success_at).getTime();
-  if (!Number.isFinite(lastSuccess)) return true;
-
-  const staleAfterMs = source.refresh_interval_hours * 2 * 60 * 60 * 1000;
-  return source.failure_count > 0 && now.getTime() - lastSuccess >= staleAfterMs;
 }
 
 function errorMessage(error: unknown): string {
