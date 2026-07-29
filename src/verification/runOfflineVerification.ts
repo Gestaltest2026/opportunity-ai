@@ -44,6 +44,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:opportunity-identity"],
   },
+  {
+    name: "change loop regression",
+    command: "npm",
+    args: ["run", "evaluate:change-loop"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
