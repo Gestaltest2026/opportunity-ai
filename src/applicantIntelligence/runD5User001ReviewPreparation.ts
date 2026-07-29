@@ -4,7 +4,10 @@ import {
   createApplicantIntelligenceBenchmarkEvidence,
   createCanonicalApplicantView,
 } from "./canonicalApplicantAdapter";
-import { generateCandidateInsights } from "./generateCandidateInsights";
+import {
+  applicantIntelligenceBaselineGenerationConfig,
+  generateCandidateInsights,
+} from "./generateCandidateInsights";
 import { guardInsightChain } from "./epistemicGuard";
 import {
   HumanMeaningReviewBundleSchema,
@@ -18,6 +21,7 @@ async function main() {
   const applicant = ApplicantSchema.parse(raw);
   const canonicalView = createCanonicalApplicantView("applicant-001", applicant);
   const benchmarkEvidence = createApplicantIntelligenceBenchmarkEvidence(canonicalView);
+  const generationConfig = applicantIntelligenceBaselineGenerationConfig();
   const generated = await generateCandidateInsights(benchmarkEvidence);
 
   const guardedResults = generated.candidate_chains.map((chain) =>
@@ -82,6 +86,24 @@ async function main() {
   const outputPath = "examples/applicant-001/d5-human-review-input.json";
   const diagnosticsPath = "examples/applicant-001/d5-epistemic-diagnostics.json";
   const reviewTemplatePath = "examples/applicant-001/d5-human-review-template.json";
+  const manifestPath = "examples/applicant-001/d5-baseline-manifest.json";
+
+  const manifest = {
+    applicant_id: canonicalView.applicant_id,
+    treatment: generationConfig.treatment,
+    generation_config: generationConfig,
+    evidence_contract: {
+      generation_input: "explicit-confirmed-only",
+      prior_interpretations_usage: "novelty-reference-only",
+      generation_evidence_count: benchmarkEvidence.evidence_claims.length,
+      prior_interpretation_count: benchmarkEvidence.prior_interpretations.length,
+    },
+    outputs: {
+      review_input: outputPath,
+      epistemic_diagnostics: diagnosticsPath,
+      human_review_template: reviewTemplatePath,
+    },
+  };
 
   await Promise.all([
     writeFile(outputPath, `${JSON.stringify(reviewInput, null, 2)}\n`, "utf8"),
@@ -90,6 +112,8 @@ async function main() {
       `${JSON.stringify(
         {
           applicant_id: canonicalView.applicant_id,
+          treatment: generationConfig.treatment,
+          generation_config: generationConfig,
           generated_chain_count: generated.candidate_chains.length,
           reviewable_chain_count: reviewableChains.length,
           blocked_chain_count: blockedChains.length,
@@ -101,12 +125,15 @@ async function main() {
       "utf8"
     ),
     writeFile(reviewTemplatePath, `${JSON.stringify(reviewTemplate, null, 2)}\n`, "utf8"),
+    writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8"),
   ]);
 
   console.log(
     JSON.stringify(
       {
         applicant_id: canonicalView.applicant_id,
+        treatment: generationConfig.treatment,
+        model: generationConfig.model,
         generation_evidence_count: benchmarkEvidence.evidence_claims.length,
         prior_interpretation_count: benchmarkEvidence.prior_interpretations.length,
         generated_chain_count: generated.candidate_chains.length,
@@ -115,6 +142,7 @@ async function main() {
         output_path: outputPath,
         diagnostics_path: diagnosticsPath,
         review_template_path: reviewTemplatePath,
+        baseline_manifest_path: manifestPath,
       },
       null,
       2
