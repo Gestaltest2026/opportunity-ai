@@ -2,7 +2,6 @@ import type { CanonicalApplicantView } from "./canonicalApplicantAdapter";
 import type {
   ApplicantIntelligenceNode,
   EpistemicState,
-  InsightChainSchema,
   SemanticLevel,
 } from "./benchmarkSchema";
 
