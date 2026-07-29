@@ -6,7 +6,10 @@ import {
 } from "./canonicalApplicantAdapter";
 import { generateCandidateInsights } from "./generateCandidateInsights";
 import { guardInsightChain } from "./epistemicGuard";
-import { HumanMeaningReviewInputSchema } from "./humanMeaningReview";
+import {
+  HumanMeaningReviewBundleSchema,
+  HumanMeaningReviewInputSchema,
+} from "./humanMeaningReview";
 
 async function main() {
   const raw = JSON.parse(
@@ -49,8 +52,36 @@ async function main() {
     })),
   });
 
+  const reviewTemplate = HumanMeaningReviewBundleSchema.parse({
+    applicant_id: canonicalView.applicant_id,
+    reviews: reviewableChains.map((chain) => ({
+      chain_id: chain.chain_id,
+      evaluation: {
+        disposition: "reject",
+        scores: {
+          groundedness: 0,
+          novelty: 0,
+          recognition: 0,
+          compression: 0,
+          external_legibility: 0,
+        },
+        strategic_lift: {
+          occurred: false,
+          changes: [],
+          notes: "Not tested at D5; score only meaning quality here.",
+        },
+        failure_codes: ["UNREVIEWED"],
+        notes: "Replace placeholder scores/disposition after direct human review.",
+      },
+      corrected_wording: null,
+      missing_evidence: [],
+      alternative_explanation: null,
+    })),
+  });
+
   const outputPath = "examples/applicant-001/d5-human-review-input.json";
   const diagnosticsPath = "examples/applicant-001/d5-epistemic-diagnostics.json";
+  const reviewTemplatePath = "examples/applicant-001/d5-human-review-template.json";
 
   await Promise.all([
     writeFile(outputPath, `${JSON.stringify(reviewInput, null, 2)}\n`, "utf8"),
@@ -69,6 +100,7 @@ async function main() {
       )}\n`,
       "utf8"
     ),
+    writeFile(reviewTemplatePath, `${JSON.stringify(reviewTemplate, null, 2)}\n`, "utf8"),
   ]);
 
   console.log(
@@ -82,6 +114,7 @@ async function main() {
         blocked_chain_count: blockedChains.length,
         output_path: outputPath,
         diagnostics_path: diagnosticsPath,
+        review_template_path: reviewTemplatePath,
       },
       null,
       2
