@@ -40,17 +40,17 @@ Opportunity Acquisition
 
 The strategy phase defines Applicant Intelligence before implementation.
 
-## Updated product thesis from founder Q1-Q4
+## Updated product thesis from founder Q1-Q5
 
 Opportunity AI is not merely a search, matching, or profile-enrichment system.
 
 Its stronger thesis is:
 
-> Opportunity AI should discover evidence-grounded meaning in a person's history, translate that meaning into forms that other people and institutions can understand, and use that understanding to improve how resources and opportunities reach that person.
+> Opportunity AI should discover evidence-grounded meaning in a person's history, translate that meaning into forms that other people and institutions can understand, continuously map the external Opportunity world, and use that combined intelligence to improve how resources and opportunities reach that person.
 
 The current product wedge is narrower:
 
-> Use the Applicant's existing evidence to discover under-recognized value and improve the discovery, selection, representation, and pursuit of near-term Opportunities.
+> Use the Applicant's existing evidence to discover under-recognized value, reveal Opportunity-spaces the Applicant may not have considered, and improve the discovery, selection, representation, prioritization, and pursuit of near-term Opportunities.
 
 The current working pipeline is:
 
@@ -64,7 +64,9 @@ Raw Evidence
 → Hypotheses
 → Strategic Directions
 → Opportunity-space
+→ Opportunity Acquisition
 → Matching
+→ Application Strategy
 → Application
 → Economic / Opportunity Outcome
 ```
@@ -148,7 +150,7 @@ Applicant understanding should therefore be capable of expanding the Source Univ
 
 ## External-world understanding is required
 
-Founder Q3 adds an important constraint: the system cannot judge Applicant value from Applicant data alone.
+Founder Q3-Q5 add an important constraint: the system cannot judge Applicant value from Applicant data alone.
 
 A useful working model is:
 
@@ -166,7 +168,9 @@ The system should eventually be able to distinguish between:
 - something a particular Resource Holder is likely to value;
 - something that can materially improve Opportunity pursuit.
 
-This suggests future knowledge layers such as Applicant knowledge, Opportunity knowledge, Resource-holder knowledge, selection knowledge, and external benchmark knowledge. These are architectural possibilities, not current implementation commitments.
+This suggests future knowledge layers such as Applicant knowledge, Opportunity knowledge, Resource-holder knowledge, selection knowledge, external benchmark knowledge, and longitudinal outcome knowledge. These are architectural possibilities, not current implementation commitments.
+
+Founder Q5 strengthens the role of Opportunity Acquisition: continuously refreshed, official-source-grounded Opportunity knowledge is not merely back-office plumbing. It is one of the assets that makes the user experience meaningfully different from a generic chat model.
 
 ## Opportunity-space expansion
 
@@ -386,7 +390,7 @@ A provisional heuristic is:
 Question Value ∝ Uncertainty × Strategic Consequence
 ```
 
-This is a design principle, not a locked algorithm. Q5 may add additional factors such as user burden, evidence gain, psychological sensitivity, or timing.
+This is a design principle, not a locked algorithm. Q5 adds likely additional factors such as user burden, evidence gain, psychological sensitivity, timing, and whether asking now delays immediate short-horizon action.
 
 ### Current inference rule
 
@@ -398,26 +402,78 @@ The system may generate evidence-grounded external-fit hypotheses without waitin
 - ask the Applicant when intent, preference, or strategically consequential missing information cannot be safely inferred;
 - allow market-facing interpretations to coexist with, rather than overwrite, the Applicant's self-conception.
 
-## Questioning / Akinator direction
+## Q5 — Product behavior / UX contract
 
-The future questioning system should not merely fill missing profile fields or optimize generic information gain.
+Founder Q5 clarifies the desired short-horizon user experience.
 
-A useful question may create different kinds of value:
+The ideal 30-minute interaction should not end with a generic profile summary. It should leave the Applicant with materially improved optionality and a concrete next move.
+
+A working journey is:
 
 ```text
-Eligibility Gain
-Evidence Gain
-Understanding Gain
-Opportunity-space Gain
+Applicant input / evidence
+↓
+Grounded understanding
+↓
+Connection / abstraction / hidden-fit discovery
+↓
+New keywords, categories, roles, or Opportunity-spaces
+↓
+Concrete Opportunities from a fresh trusted universe
+↓
+Why each Opportunity fits this Applicant
+↓
+Priority under current constraints
+↓
+Next action / application strategy
 ```
 
-The system should ask individualized questions because of what it already knows about the Applicant, not because every Applicant receives the same questionnaire.
+### Minimum useful 30-minute output
 
-Generic Next Best Question machinery remains frozen until the Applicant Intelligence benchmark shows which question types actually improve outcomes.
+At minimum, a first-session user should leave with:
+
+1. one or more evidence-grounded insights they had not already articulated;
+2. one or more new Opportunity-space directions or search terms;
+3. a prioritized set of concrete, currently relevant Opportunities where available;
+4. an explanation of why each high-priority Opportunity fits;
+5. the most important missing information or evidence that could change the decision;
+6. a concrete next action for the current session or immediately afterward.
+
+The system should not promise guaranteed immediate cash. Founder Q5 used a small cash outcome as an intuitive symbol of user value, but the current product contract is to improve actionable access to resources, not to guarantee a payment within 30 minutes.
+
+### Difference from generic ChatGPT
+
+Opportunity AI should become meaningfully different from a general-purpose chat model through the combination of:
+
+```text
+Persistent Applicant Memory
+× Evidence-grounded Applicant Intelligence
+× Fresh, continuously updated Opportunity Universe
+× Opportunity / Resource-holder understanding
+× Closed-loop application and outcome learning
+```
+
+The differentiation is therefore systemic rather than merely conversational.
+
+A general model may generate good advice from a resume. Opportunity AI should know the Applicant longitudinally, know the Opportunity environment continuously, preserve evidence and uncertainty, and turn those two knowledge systems into persistent decisions and actions.
+
+### World coverage and trusted-source discipline
+
+Founder Q5 emphasizes breadth: the long-run system should have a global Opportunity horizon rather than forcing many Applicants into the same small set of visible programs.
+
+However, breadth must not override trust. Current acquisition principles remain:
+
+- prefer official or trusted sources;
+- track freshness and semantic change;
+- preserve provenance;
+- avoid silently ingesting low-trust or malicious content;
+- expand the Source Universe deliberately rather than treating arbitrary open-web content as canonical truth.
+
+Global coverage is a strategic direction, not a requirement to build unrestricted crawling now.
 
 ## Two-sided strategic model
 
-Founder Q2 identifies a second side of the market.
+Founder Q2 identifies a second side of the market, and Q5 sharpens the long-term position.
 
 ### Side A — Resource Seeker
 
@@ -464,7 +520,7 @@ Side B is a **future product hypothesis and a current architectural constraint**
 
 ## Future strategic theses — not current product requirements
 
-Q4 surfaces larger possibilities that should be preserved without contaminating the current MVP.
+Q4-Q5 surface larger possibilities that should be preserved without contaminating the current MVP.
 
 Potential future theses include:
 
@@ -473,11 +529,30 @@ Potential future theses include:
 - standardized or semi-standardized capability assessment across Applicants;
 - Resource Holder reports about talent availability, missing capabilities, or market bottlenecks;
 - aggregate Talent Intelligence derived from many Applicants;
-- a multi-provider ecosystem in which multiple assessment providers reduce monopoly risk.
+- a multi-provider ecosystem in which multiple assessment providers reduce monopoly risk;
+- Opportunity AI helping Resource Holders design or create new funding programs when existing Opportunity supply does not match observed human potential or social needs;
+- Opportunity AI becoming a trusted intermediary whose value comes partly from longitudinal evidence and consistent assessment rather than one-off self-report.
 
 The credit-score analogy is a useful strategic metaphor for independent signaling, but **do not** build an Applicant score, universal ranking, credit-score analogue, or institutional decision product during the current phase.
 
-These future theses introduce major concerns—gaming, verification, appeal rights, transparency, bias, feedback loops, and legitimacy—and require separate validation before implementation.
+The "0→1" thesis is also future-facing: current work optimizes access to existing Opportunities (1→100). Future work may help create new resource-allocation channels or Opportunities themselves (0→1). Do not mix these in the current implementation.
+
+These future theses introduce major concerns—gaming, verification, appeal rights, transparency, bias, feedback loops, legitimacy, and power concentration—and require separate validation before implementation.
+
+## Business-model hypothesis — preserve, do not implement
+
+Founder Q5 raises an important alignment constraint: users seeking scholarships or grants are often resource-constrained, so extracting large fees from Side A may conflict with the mission.
+
+A future working hypothesis is:
+
+```text
+Side A: free or very low-friction access
+Side B: potential institutional revenue
+```
+
+Possible future Side B revenue categories include institutional intelligence, sourcing, program design, sponsored Opportunity creation, allocation analytics, or other services to Resource Holders.
+
+No pricing model is selected. Do not implement success fees, transaction fees, institutional billing, or marketplace economics during the current phase.
 
 ## Model-provider strategy
 
@@ -512,15 +587,18 @@ No multi-model routing should be implemented until a benchmark demonstrates that
 - Build the short-horizon wedge first; preserve long-horizon development as a future thesis.
 - Do not confuse Applicant self-esteem uplift with strategic or economic value.
 - Do not build universal Applicant scoring or third-party institutional decision infrastructure in the current phase.
+- Do not confuse global Opportunity ambition with unrestricted crawling or low-trust ingestion.
+- The first-session UX should produce concrete optionality and action, not merely insight.
+- The product's moat should come from persistent knowledge, fresh Opportunity data, evidence-grounded reasoning, and closed-loop learning—not from a single clever prompt.
 
-## Frozen areas until strategy is resolved
+## Frozen areas until strategy synthesis is converted into an implementation contract
 
-Do not expand these areas during the strategy phase unless a concrete blocking defect appears:
+Do not expand these areas unless a concrete blocking defect appears:
 
 - Opportunity Acquisition D1–D7
 - generic Next Best Question / information-gain optimization
 - vector DB / RAG
-- open-web crawling
+- unrestricted open-web crawling
 - large-scale source expansion
 - UI redesign
 - persistence migration (SQLite/Supabase/etc.)
@@ -533,33 +611,40 @@ Do not expand these areas during the strategy phase unless a concrete blocking d
 - Applicant scoring / credit-score analogues
 - institutional Applicant assessment products
 - aggregate Talent Intelligence
+- new Opportunity creation / 0→1 institutional program design
+- pricing / transaction / success-fee systems
 
-## Remaining strategy questions
+## Founder strategy status
 
-Q1, Q2, Q3, and Q4 have now been answered provisionally and incorporated above.
+Q1-Q5 have now been answered provisionally and incorporated into this strategy checkpoint.
 
-The remaining question should focus on behavior:
+```text
+Q1 — Understanding                 SYNTHESIZED
+Q2 — Meaning generation            SYNTHESIZED
+Q3 — Objective / meaning quality   SYNTHESIZED
+Q4 — Inference boundary            SYNTHESIZED
+Q5 — Product behavior / UX         SYNTHESIZED
+```
 
-1. **Q5 — Product behavior / UX:** After an ideal interaction, what should materially change for the Applicant, and how should questioning, insights, search, and action fit together?
+The founder-question phase is complete.
 
-This answer should be grounded in a realistic short-horizon Applicant journey rather than abstract preference alone.
+## Implementation gate — next work
 
-## Implementation gate
+Do not create an Applicant Intelligence schema, service, class hierarchy, graph model, or LLM prompt architecture until the complete strategy above has been converted into:
 
-Do not create an Applicant Intelligence schema, service, class hierarchy, graph model, or LLM prompt architecture until Q5 has been answered and the complete strategy has been synthesized into:
-
-1. product behavior requirements
-2. epistemic rules (fact vs relation vs pattern vs abstraction vs concept vs hypothesis)
-3. evaluation criteria
-4. minimal architecture
-5. development sequence
+1. product behavior requirements;
+2. epistemic rules (fact vs relation vs pattern vs abstraction vs concept vs hypothesis vs unknown vs question);
+3. evaluation criteria;
+4. minimal architecture;
+5. development sequence;
+6. first end-to-end benchmark using User #1.
 
 Sequence:
 
 ```text
-Founder answers
-→ Strategy synthesis
-→ Product requirements
+Founder answers                DONE
+→ Strategy synthesis           DONE
+→ Product requirements         NEXT
 → Evaluation design
 → Architecture
 → Smallest real experiment
@@ -598,7 +683,18 @@ External Legibility
 Strategic change caused
 ```
 
-The first objective is not to prove scholarship win-rate improvement. It is to establish whether Opportunity AI can reliably generate defensible new meaning that changes understanding or short-horizon strategic search direction, while preserving eventual Resource Outcome as the terminal objective.
+The first benchmark should also record whether the output produces the minimum useful short-horizon session artifact:
+
+```text
+new insight
++ new Opportunity-space
++ concrete Opportunity candidate(s)
++ fit explanation
++ missing evidence / key question
++ next action
+```
+
+The first objective is not to prove scholarship win-rate improvement or immediate cash delivery. It is to establish whether Opportunity AI can reliably generate defensible new meaning that changes understanding or short-horizon strategic search direction and produces actionable Opportunity pursuit, while preserving eventual Resource Outcome as the terminal objective.
 
 ## Phase transition status
 
@@ -610,6 +706,8 @@ Founder strategy Q1                    SYNTHESIZED
 Founder strategy Q2                    SYNTHESIZED
 Founder strategy Q3                    SYNTHESIZED
 Founder strategy Q4                    SYNTHESIZED
-Remaining strategy questions           Q5 OPEN
+Founder strategy Q5                    SYNTHESIZED
+Founder-question phase                 COMPLETE
 Applicant Intelligence implementation  NOT STARTED
+Next step                               PRODUCT REQUIREMENTS
 ```
