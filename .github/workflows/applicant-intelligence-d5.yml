@@ -1,0 +1,34 @@
+name: Applicant Intelligence D5 Review Prep
+
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare-d5-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prepare D5 review input
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run prepare:applicant-intelligence-d5
+
+      - name: Upload D5 review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: applicant-intelligence-d5-review-input
+          path: examples/applicant-001/d5-human-review-input.json
+          if-no-files-found: error
