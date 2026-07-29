@@ -21,6 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Verify deterministic boundaries
+        run: npm run verify
+
       - name: Prepare D5 review input
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -29,9 +35,14 @@ jobs:
       - name: Print D5 review input
         run: cat examples/applicant-001/d5-human-review-input.json
 
-      - name: Upload D5 review artifact
+      - name: Print D5 epistemic diagnostics
+        run: cat examples/applicant-001/d5-epistemic-diagnostics.json
+
+      - name: Upload D5 review artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: applicant-intelligence-d5-review-input
-          path: examples/applicant-001/d5-human-review-input.json
+          name: applicant-intelligence-d5-review
+          path: |
+            examples/applicant-001/d5-human-review-input.json
+            examples/applicant-001/d5-epistemic-diagnostics.json
           if-no-files-found: error
