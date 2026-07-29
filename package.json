@@ -26,6 +26,7 @@
     "evaluate:applicant-intelligence-adapter": "tsx src/applicantIntelligence/runCanonicalApplicantAdapterEvaluation.ts",
     "evaluate:applicant-intelligence-insights": "tsx src/applicantIntelligence/runCandidateInsightEvaluation.ts",
     "evaluate:applicant-intelligence-guard": "tsx src/applicantIntelligence/runEpistemicGuardEvaluation.ts",
+    "evaluate:applicant-intelligence-human-review": "tsx src/applicantIntelligence/runHumanMeaningReviewEvaluation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:llm": "npm run evaluate:applicant-001 && npm run evaluate:opportunity-001 && npm run evaluate:match-001",
     "closed-loop": "tsx src/runClosedLoop.ts",
