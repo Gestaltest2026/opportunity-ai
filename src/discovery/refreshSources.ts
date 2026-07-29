@@ -1,6 +1,7 @@
 import { OpportunityDatabank } from "../databank/schema";
 import { upsertOpportunity } from "../databank/upsertOpportunity";
 import { extractOpportunity } from "../opportunity/extractOpportunity";
+import { detectOpportunityChange, OpportunityChangeSignal, opportunitiesNeedingRematch } from "./changeDetection";
 import { fetchSource } from "./fetchSource";
 import { OpportunitySource, SourceRegistry } from "./schema";
 
@@ -9,11 +10,21 @@ export interface RefreshFailure {
   message: string;
 }
 
+export interface StaleSource {
+  source_id: string;
+  opportunity_id: string;
+  last_success_at: string | null;
+  failure_count: number;
+}
+
 export interface RefreshResult {
   registry: SourceRegistry;
   databank: OpportunityDatabank;
   refreshed_source_ids: string[];
   failed_sources: RefreshFailure[];
+  changes: OpportunityChangeSignal[];
+  opportunity_ids_needing_rematch: string[];
+  stale_sources: StaleSource[];
 }
 
 export function isDue(source: OpportunitySource, now: Date): boolean {
@@ -25,6 +36,17 @@ export function isDue(source: OpportunitySource, now: Date): boolean {
 
   const intervalMs = source.refresh_interval_hours * 60 * 60 * 1000;
   return now.getTime() - lastFetched >= intervalMs;
+}
+
+export function isStale(source: OpportunitySource, now: Date): boolean {
+  if (!source.enabled) return false;
+  if (!source.last_success_at) return source.failure_count > 0;
+
+  const lastSuccess = new Date(source.last_success_at).getTime();
+  if (!Number.isFinite(lastSuccess)) return true;
+
+  const staleAfterMs = source.refresh_interval_hours * 2 * 60 * 60 * 1000;
+  return source.failure_count > 0 && now.getTime() - lastSuccess >= staleAfterMs;
 }
 
 function errorMessage(error: unknown): string {
@@ -39,6 +61,7 @@ export async function refreshSources(
   let nextDatabank = databank;
   const refreshedSourceIds: string[] = [];
   const failedSources: RefreshFailure[] = [];
+  const changes: OpportunityChangeSignal[] = [];
   const nextSources: OpportunitySource[] = [];
 
   for (const source of registry.sources) {
@@ -55,6 +78,7 @@ export async function refreshSources(
         source.opportunity_id,
         fetched.source_text
       );
+      const beforeUpsert = nextDatabank;
 
       nextDatabank = upsertOpportunity(
         nextDatabank,
@@ -62,6 +86,15 @@ export async function refreshSources(
         fetched.url,
         fetched.source_text,
         attemptedAt
+      );
+
+      changes.push(
+        detectOpportunityChange(
+          beforeUpsert,
+          nextDatabank,
+          source.source_id,
+          source.opportunity_id
+        )
       );
 
       nextSources.push({
@@ -85,10 +118,22 @@ export async function refreshSources(
     }
   }
 
+  const nextRegistry = { sources: nextSources };
+
   return {
-    registry: { sources: nextSources },
+    registry: nextRegistry,
     databank: nextDatabank,
     refreshed_source_ids: refreshedSourceIds,
     failed_sources: failedSources,
+    changes,
+    opportunity_ids_needing_rematch: opportunitiesNeedingRematch(changes),
+    stale_sources: nextSources
+      .filter((source) => isStale(source, now))
+      .map((source) => ({
+        source_id: source.source_id,
+        opportunity_id: source.opportunity_id,
+        last_success_at: source.last_success_at,
+        failure_count: source.failure_count,
+      })),
   };
 }
