@@ -26,6 +26,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: npm run prepare:applicant-intelligence-d5
 
+      - name: Print D5 review input
+        run: cat examples/applicant-001/d5-human-review-input.json
+
       - name: Upload D5 review artifact
         uses: actions/upload-artifact@v4
         with:
