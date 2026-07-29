@@ -3,6 +3,7 @@ import { ApplicationSchema } from "../application/schema";
 import { OpportunityDatabankSchema } from "../databank/schema";
 import { SourceRegistrySchema } from "../discovery/schema";
 import { ApplicantExtractionGroundTruthSchema } from "../extraction/evaluateExtraction";
+import { ApplicantSchema } from "../extraction/applicantSchema";
 import { OpportunityFeedbackSchema } from "../feedback/schema";
 import { MatchGroundTruthSchema } from "../matching/evaluateMatchGroundTruth";
 import { OpportunityGroundTruthSchema } from "../opportunity/evaluateOpportunity";
@@ -16,6 +17,7 @@ async function readJson(path: string): Promise<unknown> {
 async function main() {
   const [
     applicantGroundTruth,
+    canonicalApplicant,
     opportunityGroundTruth,
     matchGroundTruth,
     sourceRegistry,
@@ -23,6 +25,7 @@ async function main() {
     realityDataset,
   ] = await Promise.all([
     readJson("examples/applicant-001/expected_claims.json"),
+    readJson("examples/applicant-001/canonical-profile-v0.json"),
     readJson("examples/opportunity-001/expected_opportunity.json"),
     readJson("examples/match-001/expected_match.json"),
     readJson("data/sources.json"),
@@ -31,11 +34,33 @@ async function main() {
   ]);
 
   ApplicantExtractionGroundTruthSchema.parse(applicantGroundTruth);
+  const parsedCanonicalApplicant = ApplicantSchema.parse(canonicalApplicant);
   OpportunityGroundTruthSchema.parse(opportunityGroundTruth);
   MatchGroundTruthSchema.parse(matchGroundTruth);
   SourceRegistrySchema.parse(sourceRegistry);
   OpportunityDatabankSchema.parse(databank);
   RealityDatasetManifestSchema.parse(realityDataset);
+
+  const prohibitedApplicantSignals = [
+    "asian",
+    "japanese ethnicity",
+    "first-generation college student",
+    "low-income",
+    "financial need",
+    "immigration status",
+  ];
+  const canonicalApplicantText = Object.values(parsedCanonicalApplicant)
+    .flat()
+    .map((claim) => `${claim.text} ${claim.evidence}`.toLowerCase())
+    .join("\n");
+
+  for (const prohibitedSignal of prohibitedApplicantSignals) {
+    if (canonicalApplicantText.includes(prohibitedSignal)) {
+      throw new Error(
+        `Canonical applicant profile contains prohibited unconfirmed inference: ${prohibitedSignal}`
+      );
+    }
+  }
 
   ApplicationSchema.parse({
     application_id: "fixture-application",
@@ -78,6 +103,8 @@ async function main() {
     JSON.stringify(
       {
         applicant_ground_truth: "valid",
+        canonical_applicant_profile: "valid",
+        prohibited_applicant_inferences: "absent",
         opportunity_ground_truth: "valid",
         match_ground_truth: "valid",
         source_registry: "valid",
