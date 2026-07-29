@@ -48,8 +48,14 @@ jobs:
       - name: Opportunity identity regression
         run: npm run evaluate:opportunity-identity
 
-      - name: Change loop regression
-        run: npm run evaluate:change-loop
+      - name: Raw change regression
+        run: npm run evaluate:raw-change
+
+      - name: Semantic change regression
+        run: npm run evaluate:semantic-change
+
+      - name: Stale source regression
+        run: npm run evaluate:stale-source
 
       - name: Targeted rematch regression
         run: npm run evaluate:rematch-targets
