@@ -27,6 +27,7 @@
     "evaluate:applicant-intelligence-insights": "tsx src/applicantIntelligence/runCandidateInsightEvaluation.ts",
     "evaluate:applicant-intelligence-guard": "tsx src/applicantIntelligence/runEpistemicGuardEvaluation.ts",
     "evaluate:applicant-intelligence-human-review": "tsx src/applicantIntelligence/runHumanMeaningReviewEvaluation.ts",
+    "evaluate:curated-watchlist": "tsx src/opportunitySourceUniverse/runCuratedWatchlistEvaluation.ts",
     "prepare:applicant-intelligence-d5": "tsx src/applicantIntelligence/runD5User001ReviewPreparation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:applicant-intelligence": "tsx src/verification/runApplicantIntelligenceVerification.ts",
@@ -35,6 +36,7 @@
     "databank:upsert": "tsx src/databank/runUpsertOpportunity.ts",
     "databank:rank": "tsx src/matching/runRankDatabank.ts",
     "sources:refresh": "tsx src/discovery/runRefreshSources.ts",
+    "watchlist:user-001": "tsx src/opportunitySourceUniverse/runCuratedWatchlist.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
