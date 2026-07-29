@@ -40,7 +40,7 @@ Opportunity Acquisition
 
 The strategy phase defines Applicant Intelligence before implementation.
 
-## Updated product thesis from founder Q1-Q3
+## Updated product thesis from founder Q1-Q4
 
 Opportunity AI is not merely a search, matching, or profile-enrichment system.
 
@@ -323,6 +323,81 @@ A useful mission formulation is:
 
 This is compatible with the longer-term two-sided allocation thesis without requiring a Side B product now.
 
+## Q4 — Inference boundary and epistemic separation
+
+Founder Q4 adds two important separations: **Applicant self-understanding** is not the same thing as **market-facing assessment**, and a derived interpretation is not the same thing as an observed fact.
+
+### Self Model vs Market Model
+
+The system should preserve two different views rather than collapsing them into one.
+
+**Self Model** may contain:
+
+- what the Applicant wants;
+- how the Applicant describes themselves;
+- future directions the Applicant explicitly endorses;
+- subjective priorities and constraints.
+
+**Market Model** may contain:
+
+- what the Applicant's evidence appears to demonstrate;
+- which capabilities or patterns may be scarce or valuable externally;
+- which Opportunity-spaces may value those patterns;
+- which Resource Holder needs may plausibly align with the Applicant.
+
+The system may identify a mismatch between Self Model and Market Model as an insight, but it must not silently rewrite Applicant intent.
+
+A useful principle is:
+
+> Applicant intent should normally be asked or explicitly provided; external fit may be inferred from evidence and market context, with uncertainty preserved.
+
+### Provisional epistemic states
+
+Do not encode these as a final schema yet. Use them as the current reasoning contract to be tested on User #1.
+
+```text
+OBSERVED
+Directly supported by source evidence or explicit Applicant statement.
+
+DERIVED
+A defensible relationship or pattern generated from supporting evidence.
+
+HYPOTHESIZED
+Plausible and potentially useful, but materially sensitive to missing evidence or alternative explanations.
+
+UNKNOWN
+Insufficient evidence to make a useful claim.
+
+QUESTION
+An unresolved item worth asking because the answer may materially change understanding or strategy.
+```
+
+These states are intentionally categorical for now. Do not introduce a numeric confidence score until the benchmark shows that a score improves decisions.
+
+### Question-value principle
+
+Do not ask every uncertain question.
+
+A candidate question becomes more valuable when uncertainty is meaningful **and** the answer could materially change strategy.
+
+A provisional heuristic is:
+
+```text
+Question Value ∝ Uncertainty × Strategic Consequence
+```
+
+This is a design principle, not a locked algorithm. Q5 may add additional factors such as user burden, evidence gain, psychological sensitivity, or timing.
+
+### Current inference rule
+
+The system may generate evidence-grounded external-fit hypotheses without waiting for Applicant confirmation, but it must:
+
+- preserve provenance;
+- preserve the epistemic state;
+- avoid presenting hypotheses as facts;
+- ask the Applicant when intent, preference, or strategically consequential missing information cannot be safely inferred;
+- allow market-facing interpretations to coexist with, rather than overwrite, the Applicant's self-conception.
+
 ## Questioning / Akinator direction
 
 The future questioning system should not merely fill missing profile fields or optimize generic information gain.
@@ -387,6 +462,23 @@ Do **not** build a Side B product, foundation dashboard, donor marketplace, or i
 
 Side B is a **future product hypothesis and a current architectural constraint**: internal representations should avoid assumptions that make the system permanently one-directional, but current experiments remain Applicant-first.
 
+## Future strategic theses — not current product requirements
+
+Q4 surfaces larger possibilities that should be preserved without contaminating the current MVP.
+
+Potential future theses include:
+
+- Opportunity AI as an independent third-party assessment layer between Applicant claims and Resource Holder decisions;
+- evidence-backed Applicant signaling infrastructure;
+- standardized or semi-standardized capability assessment across Applicants;
+- Resource Holder reports about talent availability, missing capabilities, or market bottlenecks;
+- aggregate Talent Intelligence derived from many Applicants;
+- a multi-provider ecosystem in which multiple assessment providers reduce monopoly risk.
+
+The credit-score analogy is a useful strategic metaphor for independent signaling, but **do not** build an Applicant score, universal ranking, credit-score analogue, or institutional decision product during the current phase.
+
+These future theses introduce major concerns—gaming, verification, appeal rights, transparency, bias, feedback loops, and legitimacy—and require separate validation before implementation.
+
 ## Model-provider strategy
 
 Do not hard-code the strategy around a specific model vendor.
@@ -407,8 +499,10 @@ No multi-model routing should be implemented until a benchmark demonstrates that
 ## Design principles to preserve
 
 - Canonical facts and derived inference must remain distinguishable.
+- Self Model and Market Model must remain distinguishable.
+- Applicant intent must not be silently inferred and written back as fact.
 - Relations, patterns, abstractions, concepts, and hypotheses are not interchangeable epistemic states.
-- Derived claims need evidence, confidence, and reviewability.
+- Derived claims need evidence, uncertainty, and reviewability.
 - Creative language must never sever traceability to evidence.
 - Opportunity-specific representation must not rewrite canonical facts.
 - Human review should be concentrated at ambiguity/decision boundaries, not routine data movement.
@@ -417,6 +511,7 @@ No multi-model routing should be implemented until a benchmark demonstrates that
 - Applicant Intelligence should ultimately cash out into real resource or opportunity outcomes.
 - Build the short-horizon wedge first; preserve long-horizon development as a future thesis.
 - Do not confuse Applicant self-esteem uplift with strategic or economic value.
+- Do not build universal Applicant scoring or third-party institutional decision infrastructure in the current phase.
 
 ## Frozen areas until strategy is resolved
 
@@ -435,21 +530,23 @@ Do not expand these areas during the strategy phase unless a concrete blocking d
 - donor/foundation marketplace features
 - multi-model provider routing
 - long-horizon Applicant Development / Opportunity Engineering
+- Applicant scoring / credit-score analogues
+- institutional Applicant assessment products
+- aggregate Talent Intelligence
 
 ## Remaining strategy questions
 
-Q1, Q2, and Q3 have now been answered provisionally and incorporated above.
+Q1, Q2, Q3, and Q4 have now been answered provisionally and incorporated above.
 
-The remaining questions should focus on boundaries and behavior:
+The remaining question should focus on behavior:
 
-1. **Q4 — Inference boundary:** How far may the system infer beyond explicit Applicant facts before it must label something a hypothesis or ask the Applicant?
-2. **Q5 — Product behavior / UX:** After an ideal interaction, what should materially change for the Applicant, and how should questioning, insights, search, and action fit together?
+1. **Q5 — Product behavior / UX:** After an ideal interaction, what should materially change for the Applicant, and how should questioning, insights, search, and action fit together?
 
-These answers should be grounded in real examples rather than abstract preference alone.
+This answer should be grounded in a realistic short-horizon Applicant journey rather than abstract preference alone.
 
 ## Implementation gate
 
-Do not create an Applicant Intelligence schema, service, class hierarchy, graph model, or LLM prompt architecture until the remaining strategy questions have been answered and the complete strategy has been synthesized into:
+Do not create an Applicant Intelligence schema, service, class hierarchy, graph model, or LLM prompt architecture until Q5 has been answered and the complete strategy has been synthesized into:
 
 1. product behavior requirements
 2. epistemic rules (fact vs relation vs pattern vs abstraction vs concept vs hypothesis)
@@ -486,7 +583,7 @@ Facts
 → Unknown / next useful question
 ```
 
-Each candidate insight should preserve provenance back to supporting evidence.
+Each candidate insight should preserve provenance back to supporting evidence and be tagged using the provisional epistemic states where appropriate.
 
 Human evaluation should initially score Level 1 insight quality, then record whether each accepted insight creates observable Level 2 strategic lift.
 
@@ -512,6 +609,7 @@ Engineering closeout / CI              VERIFIED
 Founder strategy Q1                    SYNTHESIZED
 Founder strategy Q2                    SYNTHESIZED
 Founder strategy Q3                    SYNTHESIZED
-Remaining strategy questions           Q4-Q5 OPEN
+Founder strategy Q4                    SYNTHESIZED
+Remaining strategy questions           Q5 OPEN
 Applicant Intelligence implementation  NOT STARTED
 ```
