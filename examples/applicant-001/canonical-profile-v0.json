@@ -1,0 +1,278 @@
+{
+  "education": [
+    {
+      "text": "Transfer student in Legal Studies at Florida Gulf Coast University, expected graduation in 2027.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: Current",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "May establish current-student, transfer-student, undergraduate, and field-of-study eligibility where explicitly required.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Studied English Literature through distance education at Nihon University from 2023 to 2025.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2023–2025",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Supports returning-learner and sustained-education narratives; not by itself an eligibility claim unless a program values prior study.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Studied English through an ESOL program after moving to Florida around 2019.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: Approx. 2019",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Supports educational persistence and language-transition narratives.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Completed junior college in Japan in 2000.",
+      "type": "explicit",
+      "evidence": "Personal Statement and Personal and Professional Background",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Relevant to educational chronology and nontraditional academic trajectory.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Nontraditional student.",
+      "type": "inferred",
+      "evidence": "Derived from the educational chronology and current return to undergraduate study after a long professional career.",
+      "confidence": 0.9,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potentially relevant to awards for adult, returning, or nontraditional learners, but must not be treated as an explicit self-description or hard eligibility fact without source-specific definition.",
+      "status": "unreviewed"
+    }
+  ],
+  "career_work_history": [
+    {
+      "text": "Works at Law Office of Morrie I. Levine, P.A.; progressed from Legal Assistant to Paralegal and Office Manager since 2020.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2020–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Strong evidence for legal-sector experience, professional advancement, responsibility, and career transition.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Legal work includes legal research, litigation support, drafting, filings, scheduling, office operations, and QuickBooks bookkeeping.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2020–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Provides concrete evidence for professional skill, responsibility, and readiness for legal or public-service opportunities.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Worked at Kikkoman Co., Ltd. in order processing from 2006 to 2008.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2006–2008",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Supports long-term administrative and client-service experience.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Worked as a receptionist at Chrysler Jeep Co., Ltd., Setagaya Branch, Tokyo from 2004 to 2006.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2004–2006",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Supports professional chronology and customer-facing experience.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Worked at DuPont Electronic Polymer Co., Ltd. in Tokyo in international trade and as secretary to the president from 2000 to 2004.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2000–2004",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Supports international, administrative, and executive-support experience.",
+      "status": "confirmed"
+    }
+  ],
+  "achievements": [
+    {
+      "text": "Advanced from Legal Assistant to Paralegal and Office Manager within the same Florida law office.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2020–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Concrete evidence of professional progression and increased responsibility.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Founded and sustained a Hawaiian hula school from 2007 to the present.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2007–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Evidence of sustained entrepreneurship, leadership, teaching, and long-term commitment.",
+      "status": "confirmed"
+    }
+  ],
+  "financial_context": [],
+  "identity_eligibility_attributes": [],
+  "community_involvement": [
+    {
+      "text": "Has volunteered since 2007 by teaching and performing hula for nursing homes, children's centers, elementary schools, city halls, and individuals with disabilities.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2007–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Strong evidence for sustained community service and service across age and ability groups.",
+      "status": "confirmed"
+    }
+  ],
+  "leadership": [
+    {
+      "text": "Founded and leads Ke Ala O Ka Lei Pikake Hula School and currently teaches students online in Japan.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: 2007–Present",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Strong evidence for entrepreneurship, instructional leadership, continuity, and community-building.",
+      "status": "confirmed"
+    }
+  ],
+  "research_academic_interests": [
+    {
+      "text": "Interested in how law, institutions, education, and guidance can prevent conflict from hardening into crisis.",
+      "type": "explicit",
+      "evidence": "Personal Statement",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Relevant to legal, public-service, institutional-design, and prevention-oriented opportunities.",
+      "status": "confirmed"
+    }
+  ],
+  "career_direction": [
+    {
+      "text": "Aspires to attend law school and pursue a career centered on prevention, advocacy, and public contribution.",
+      "type": "explicit",
+      "evidence": "Personal Statement",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Strong strategic fit for pre-law, legal studies, public-service, and professional-transition opportunities.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Working adult returning to higher education after a long professional career.",
+      "type": "inferred",
+      "evidence": "Derived from the chronology of employment, prior study, and current undergraduate enrollment.",
+      "confidence": 0.95,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potentially important for adult learner and career-transition opportunities; should remain a derived characterization.",
+      "status": "unreviewed"
+    }
+  ],
+  "lived_experiences": [
+    {
+      "text": "Raised a child as a single parent.",
+      "type": "explicit",
+      "evidence": "Personal Statement and Personal and Professional Background",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Relevant to resilience, responsibility, family leadership, and nontraditional trajectory narratives when appropriate.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Moved from Japan to Florida around 2019 and subsequently studied English through ESOL.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: Approx. 2019",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Relevant to relocation, adaptation, language learning, and cross-context professional development.",
+      "status": "confirmed"
+    }
+  ],
+  "constraints": [
+    {
+      "text": "Current caregiver for husband with cancer.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: Current",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "May materially affect time, format, financial, and caregiving considerations and can be relevant where caregiver experience is explicitly valued.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Balances undergraduate study with legal employment, family responsibilities, and continued community involvement.",
+      "type": "inferred",
+      "evidence": "Derived from current education, employment, caregiving, and ongoing hula-school/community activities.",
+      "confidence": 0.95,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Relevant to workload and feasibility of applications; should not be converted into financial-need or hardship claims without confirmation.",
+      "status": "unreviewed"
+    }
+  ],
+  "existing_evidence": [
+    {
+      "text": "Personal Statement documenting educational, professional, community, family, and legal-career trajectory.",
+      "type": "explicit",
+      "evidence": "Source 1: Personal Statement",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Reusable evidence source for narrative development and claim verification.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Personal and Professional Background documenting chronological education, employment, entrepreneurship, caregiving, and community service.",
+      "type": "explicit",
+      "evidence": "Source 2: Personal and Professional Background",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Primary factual evidence source for eligibility and fit assessment.",
+      "status": "confirmed"
+    },
+    {
+      "text": "Active Florida Notary Public; caregiver training and childcare certificate in 2017.",
+      "type": "explicit",
+      "evidence": "Personal and Professional Background: Additional",
+      "confidence": 1,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potential supporting evidence for legal-adjacent, responsibility, caregiving, or community-service opportunities.",
+      "status": "confirmed"
+    }
+  ],
+  "narrative_themes": [
+    {
+      "text": "Professional-to-academic legal transition.",
+      "type": "inferred",
+      "evidence": "Legal Assistant → Paralegal → Office Manager progression combined with current Legal Studies enrollment and law-school aspiration.",
+      "confidence": 0.95,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potential primary representation for legal, pre-law, adult-learner, and career-transition opportunities.",
+      "status": "unreviewed"
+    },
+    {
+      "text": "Structure, guidance, dignity, and prevention as a recurring through-line across law, parenting, teaching, and community service.",
+      "type": "inferred",
+      "evidence": "Repeated explicit themes across the Personal Statement.",
+      "confidence": 0.9,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potential primary representation for service, institutional, legal, education, and community-oriented opportunities.",
+      "status": "unreviewed"
+    },
+    {
+      "text": "Long-term community leadership through teaching and service.",
+      "type": "inferred",
+      "evidence": "Hula school founded in 2007 plus sustained volunteer teaching/performing across community settings.",
+      "confidence": 0.95,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potential primary representation for leadership, community-service, and civic opportunities.",
+      "status": "unreviewed"
+    },
+    {
+      "text": "Persistence across relocation, language transition, caregiving, work, and return to higher education.",
+      "type": "inferred",
+      "evidence": "Chronology spanning Japan-to-Florida relocation, ESOL, legal work, current caregiving, and current undergraduate study.",
+      "confidence": 0.9,
+      "source": "examples/applicant-001/source.md",
+      "opportunity_relevance": "Potential representation for resilience, returning-learner, caregiver, and nontraditional-student opportunities.",
+      "status": "unreviewed"
+    }
+  ]
+}
