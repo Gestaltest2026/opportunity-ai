@@ -1,4 +1,4 @@
-import { isStale } from "./refreshSources";
+import { isStale } from "./staleness";
 import type { OpportunitySource } from "./schema";
 
 function assert(condition: unknown, message: string): asserts condition {
