@@ -7,6 +7,7 @@ import { OpportunityFeedbackSchema } from "../feedback/schema";
 import { MatchGroundTruthSchema } from "../matching/evaluateMatchGroundTruth";
 import { OpportunityGroundTruthSchema } from "../opportunity/evaluateOpportunity";
 import { OutcomeSchema } from "../outcome/schema";
+import { RealityDatasetManifestSchema } from "../reality/schema";
 
 async function readJson(path: string): Promise<unknown> {
   return JSON.parse(await readFile(path, "utf8"));
@@ -19,12 +20,14 @@ async function main() {
     matchGroundTruth,
     sourceRegistry,
     databank,
+    realityDataset,
   ] = await Promise.all([
     readJson("examples/applicant-001/expected_claims.json"),
     readJson("examples/opportunity-001/expected_opportunity.json"),
     readJson("examples/match-001/expected_match.json"),
     readJson("data/sources.json"),
     readJson("data/opportunities.json"),
+    readJson("examples/reality-dataset/manifest.json"),
   ]);
 
   ApplicantExtractionGroundTruthSchema.parse(applicantGroundTruth);
@@ -32,6 +35,7 @@ async function main() {
   MatchGroundTruthSchema.parse(matchGroundTruth);
   SourceRegistrySchema.parse(sourceRegistry);
   OpportunityDatabankSchema.parse(databank);
+  RealityDatasetManifestSchema.parse(realityDataset);
 
   ApplicationSchema.parse({
     application_id: "fixture-application",
@@ -78,6 +82,7 @@ async function main() {
         match_ground_truth: "valid",
         source_registry: "valid",
         databank: "valid",
+        reality_dataset: "valid",
         application_schema: "valid",
         outcome_schema: "valid",
         feedback_schema: "valid",
