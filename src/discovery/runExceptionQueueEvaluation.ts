@@ -2,10 +2,10 @@ import { CandidateClassificationSchema } from "./classifyCandidate";
 import { DiscoveryCandidateSchema } from "./candidateSchema";
 import {
   enqueueException,
-  HumanException,
   HumanExceptionQueueSchema,
   resolveException,
 } from "./exceptionQueue";
+import type { HumanException } from "./exceptionQueue";
 import {
   createAcquisitionException,
   exceptionFromCandidateClassification,
