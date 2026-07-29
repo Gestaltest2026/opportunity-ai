@@ -1,0 +1,41 @@
+[
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-001",
+    "eligibility": "eligible",
+    "evidence_fit": "strong",
+    "narrative_fit": "strong",
+    "strategic_value": "medium",
+    "pursue_judgment": "conditional",
+    "strongest_reason_to_pursue": "The applicant has a credible current-FGCU, nontraditional persistence story supported by legal-career progression, caregiving responsibility, and long-term community service.",
+    "strongest_reason_not_to_pursue": "The current cycle is closed and the broad Foundation pool does not yet identify which specific donor-funded awards best fit the applicant.",
+    "single_fact_most_likely_to_change_judgment": "Which specific Foundation awards are open and applicable in the next cycle.",
+    "reasoning": "This is the strongest broad institutional fit among the three cases because the applicant has multiple supported dimensions that can map to donor criteria. Representation quality is meaningful here, but actionability is currently blocked by cycle status and lack of award-level specificity."
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-003",
+    "eligibility": "unknown",
+    "evidence_fit": "strong",
+    "narrative_fit": "strong",
+    "strategic_value": "high",
+    "pursue_judgment": "conditional",
+    "strongest_reason_to_pursue": "Leadership, civic engagement, sustained volunteerism, and professional progression align unusually well with the waiver's published ranking and narrative signals.",
+    "strongest_reason_not_to_pursue": "Two hard gates are unresolved: non-Florida tuition residency classification and transfer GPA of at least 3.4.",
+    "single_fact_most_likely_to_change_judgment": "Whether the applicant is classified as a non-Florida resident for tuition purposes.",
+    "reasoning": "This case best demonstrates the distinction between fit and eligibility. The representation is strong and strategically compelling, but none of those strengths can substitute for the residency and GPA gates. If the hard gates are met, this would likely become a high-priority pursue case."
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-004",
+    "eligibility": "unknown",
+    "evidence_fit": "moderate",
+    "narrative_fit": "strong",
+    "strategic_value": "medium",
+    "pursue_judgment": "conditional",
+    "strongest_reason_to_pursue": "The applicant's Japan-to-Florida adaptation, ESOL and English-literature study, legal-studies trajectory, law-school direction, and community service create a coherent narrative for maturity and international learning.",
+    "strongest_reason_not_to_pursue": "Several core qualifications are unresolved, including approved study-abroad participation, qualifying GPA, remaining coursework, credit applicability, and documented financial need.",
+    "single_fact_most_likely_to_change_judgment": "Whether the applicant is admitted to or applying for an FGCU-approved study-abroad program.",
+    "reasoning": "The narrative fit is real and materially different from the waiver case, but the current evidence does not establish the operational prerequisites for this scholarship. It is a useful representation test but not yet a strong execution candidate."
+  }
+]
