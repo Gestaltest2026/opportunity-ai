@@ -1,0 +1,40 @@
+{
+  "dataset_id": "mother-opportunity-reality-v0",
+  "applicant_id": "applicant-001",
+  "target_size": 12,
+  "entries": [
+    {
+      "opportunity_id": "opportunity-001",
+      "source_url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/fgcufoundationscholarships",
+      "source_type": "official",
+      "applicant_relevance": "direct",
+      "verification_status": "ground_truth_verified",
+      "expected_branch": "eligible_unavailable",
+      "opportunity_type": "scholarship",
+      "availability_status": "closed",
+      "notes": "Existing FGCU Foundation Scholarship fixture. Current cycle is closed; applicant is a current FGCU undergraduate transfer student."
+    },
+    {
+      "opportunity_id": "opportunity-002",
+      "source_url": "https://applynow.fgcu.edu/portal/scholarshiptransfer",
+      "source_type": "official",
+      "applicant_relevance": "plausible",
+      "verification_status": "source_verified",
+      "expected_branch": "needs_clarification",
+      "opportunity_type": "scholarship",
+      "availability_status": "unknown",
+      "notes": "Eagle Transfer Scholarship. Official page requires an AA/AS degree, Florida residency for tuition purposes, FAFSA, and transfer GPA >= 3.0. Applicant record does not currently confirm all of these facts."
+    },
+    {
+      "opportunity_id": "opportunity-003",
+      "source_url": "https://applynow.fgcu.edu/portal/scholarshiptransfer",
+      "source_type": "official",
+      "applicant_relevance": "contrast_case",
+      "verification_status": "source_verified",
+      "expected_branch": "needs_clarification",
+      "opportunity_type": "scholarship",
+      "availability_status": "unknown",
+      "notes": "FGCU Out-of-State Waiver. Official page requires out-of-state residency and transfer GPA >= 3.4. This is intentionally retained as a contrast case until applicant residency/GPA are explicitly confirmed."
+    }
+  ]
+}
