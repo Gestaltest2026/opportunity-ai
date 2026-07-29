@@ -1,0 +1,188 @@
+[
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-001",
+    "selected_claims": [
+      {
+        "domain": "education",
+        "claim_text": "Transfer student in Legal Studies at Florida Gulf Coast University, expected graduation in 2027.",
+        "role": "primary",
+        "rationale": "Current FGCU enrollment and legal-studies direction anchor the institutional scholarship case."
+      },
+      {
+        "domain": "constraints",
+        "claim_text": "Current caregiver for husband with cancer.",
+        "role": "primary",
+        "rationale": "Caregiving materially contextualizes persistence and competing responsibilities without implying financial need."
+      },
+      {
+        "domain": "community_involvement",
+        "claim_text": "Has volunteered since 2007 by teaching and performing hula for nursing homes, children's centers, elementary schools, city halls, and individuals with disabilities.",
+        "role": "supporting",
+        "rationale": "Shows sustained contribution beyond academics and employment."
+      },
+      {
+        "domain": "career_direction",
+        "claim_text": "Aspires to attend law school and pursue a career centered on prevention, advocacy, and public contribution.",
+        "role": "supporting",
+        "rationale": "Provides a forward-looking reason for educational investment."
+      },
+      {
+        "domain": "career_work_history",
+        "claim_text": "Worked at Kikkoman Co., Ltd. in order processing from 2006 to 2008.",
+        "role": "deprioritized",
+        "rationale": "Valid background, but weakly differentiating for a broad institutional scholarship case compared with current study, caregiving, and service."
+      }
+    ],
+    "primary_narrative_themes": [
+      "Persistence across work, caregiving, relocation, and return to higher education",
+      "Professional-to-academic legal transition",
+      "Long-term community contribution"
+    ],
+    "supporting_evidence": [
+      "Current FGCU Legal Studies enrollment",
+      "Caregiver responsibility for spouse with cancer",
+      "Long-term volunteer service since 2007",
+      "Legal Assistant to Paralegal to Office Manager progression",
+      "Law-school aspiration"
+    ],
+    "fit_rationale": "This representation frames the applicant as a persistent current FGCU student whose academic return is supported by sustained professional responsibility, caregiving, service, and a coherent legal-career direction. It intentionally avoids claiming financial need or donor-specific eligibility that is not yet documented.",
+    "unresolved_high_value_facts": [
+      "Current cumulative GPA",
+      "FAFSA / documented financial need status",
+      "Which specific Foundation awards are open and applicable in the next cycle"
+    ],
+    "prohibited_inferences": [
+      "Low-income",
+      "Financial need",
+      "First-generation college student",
+      "Japanese ethnicity",
+      "Asian identity",
+      "Immigration status"
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-003",
+    "selected_claims": [
+      {
+        "domain": "leadership",
+        "claim_text": "Founded and leads Ke Ala O Ka Lei Pikake Hula School and currently teaches students online in Japan.",
+        "role": "primary",
+        "rationale": "Direct evidence of sustained leadership and institution-building relevant to the waiver's leadership and activity signals."
+      },
+      {
+        "domain": "community_involvement",
+        "claim_text": "Has volunteered since 2007 by teaching and performing hula for nursing homes, children's centers, elementary schools, city halls, and individuals with disabilities.",
+        "role": "primary",
+        "rationale": "Directly supports civic engagement and volunteer activity."
+      },
+      {
+        "domain": "achievements",
+        "claim_text": "Advanced from Legal Assistant to Paralegal and Office Manager within the same Florida law office.",
+        "role": "supporting",
+        "rationale": "Shows increasing responsibility and professional achievement."
+      },
+      {
+        "domain": "career_direction",
+        "claim_text": "Aspires to attend law school and pursue a career centered on prevention, advocacy, and public contribution.",
+        "role": "supporting",
+        "rationale": "Provides clear future plans and career goals for the application narrative."
+      },
+      {
+        "domain": "education",
+        "claim_text": "Studied English Literature through distance education at Nihon University from 2023 to 2025.",
+        "role": "deprioritized",
+        "rationale": "Valid evidence of persistence, but less directly tied to the waiver's published ranking signals than leadership, civic engagement, GPA, and future plans."
+      }
+    ],
+    "primary_narrative_themes": [
+      "Long-term community leadership",
+      "Civic engagement through sustained service",
+      "Professional progression toward a legal career"
+    ],
+    "supporting_evidence": [
+      "Founder and long-term leader of hula school",
+      "Volunteer service across elderly, children, public institutions, and people with disabilities",
+      "Legal Assistant to Paralegal to Office Manager progression",
+      "Law-school and public-contribution career goal"
+    ],
+    "fit_rationale": "This representation foregrounds leadership, civic engagement, sustained volunteerism, and professional progression because those are explicit ranking or narrative signals for the waiver. These strengths cannot compensate for missing hard eligibility gates such as non-Florida tuition residency and the required transfer GPA.",
+    "unresolved_high_value_facts": [
+      "Whether applicant is classified as a non-Florida resident for tuition purposes",
+      "Transfer GPA and whether it is at least 3.4",
+      "Whether applicant falls within the relevant newly admitted transfer-student timing window"
+    ],
+    "prohibited_inferences": [
+      "Out-of-state tuition residency",
+      "Transfer GPA at or above 3.4",
+      "Low-income",
+      "Financial need",
+      "First-generation college student"
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "opportunity-004",
+    "selected_claims": [
+      {
+        "domain": "lived_experiences",
+        "claim_text": "Moved from Japan to Florida around 2019 and subsequently studied English through ESOL.",
+        "role": "primary",
+        "rationale": "Direct evidence of adaptation across countries and language contexts, relevant to maturity and capacity to benefit from international study."
+      },
+      {
+        "domain": "education",
+        "claim_text": "Studied English Literature through distance education at Nihon University from 2023 to 2025.",
+        "role": "primary",
+        "rationale": "Supports continued academic development across international and language contexts."
+      },
+      {
+        "domain": "career_direction",
+        "claim_text": "Aspires to attend law school and pursue a career centered on prevention, advocacy, and public contribution.",
+        "role": "primary",
+        "rationale": "Creates a concrete future academic and career destination against which a proposed study-abroad experience could be evaluated."
+      },
+      {
+        "domain": "community_involvement",
+        "claim_text": "Has volunteered since 2007 by teaching and performing hula for nursing homes, children's centers, elementary schools, city halls, and individuals with disabilities.",
+        "role": "supporting",
+        "rationale": "Directly supports the scholarship's community-service preference."
+      },
+      {
+        "domain": "career_work_history",
+        "claim_text": "Legal work includes legal research, litigation support, drafting, filings, scheduling, office operations, and QuickBooks bookkeeping.",
+        "role": "deprioritized",
+        "rationale": "Shows responsibility, but the detailed task list is less central than international adaptation, academic direction, and service for this study-abroad case."
+      }
+    ],
+    "primary_narrative_themes": [
+      "International adaptation and mature cross-context learning",
+      "Study abroad as an extension of a coherent legal and public-service trajectory",
+      "Community service as a durable part of personal development"
+    ],
+    "supporting_evidence": [
+      "Japan-to-Florida relocation and ESOL study",
+      "English Literature study at Nihon University",
+      "Current FGCU Legal Studies enrollment",
+      "Law-school aspiration",
+      "Long-term community service"
+    ],
+    "fit_rationale": "This representation treats international experience not as identity but as demonstrated adaptation and sustained learning across contexts. It connects future study abroad to legal education, law-school plans, personal development, and community service. It does not claim the applicant currently has an approved study-abroad program, qualifying GPA, remaining coursework, or documented financial need.",
+    "unresolved_high_value_facts": [
+      "Whether applicant is admitted to or applying for an FGCU-approved study-abroad program",
+      "Cumulative GPA and whether it is at least 2.8",
+      "Whether study-abroad credits apply toward degree completion",
+      "Whether at least one full semester of FGCU coursework remains after study abroad",
+      "Documented financial need"
+    ],
+    "prohibited_inferences": [
+      "Financial need",
+      "GPA at or above 2.8",
+      "Approved study-abroad participation",
+      "Japanese ethnicity",
+      "Asian identity",
+      "Immigration status"
+    ]
+  }
+]
