@@ -5,9 +5,16 @@ import {
   type ApplicantIntelligenceBenchmark,
 } from "./benchmarkSchema";
 
+const PriorInterpretationReferenceSchema = z.object({
+  claim_id: z.string(),
+  domain: z.string(),
+  text: z.string(),
+});
+
 export const HumanMeaningReviewInputSchema = z.object({
   applicant_id: z.string(),
   candidate_chains: z.array(InsightChainSchema).min(1),
+  prior_interpretations: z.array(PriorInterpretationReferenceSchema).default([]),
 });
 
 export const HumanMeaningReviewRecordSchema = z.object({
