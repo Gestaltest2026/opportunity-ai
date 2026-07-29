@@ -27,21 +27,21 @@ export class LLMSchemaError extends Error {
   }
 }
 
-export interface StructuredLLMRequest<T> {
-  schema: z.ZodType<T>;
+export interface StructuredLLMRequest<TSchema extends z.ZodTypeAny> {
+  schema: TSchema;
   instructions: string;
   input: string;
   model?: string;
   transport_retries?: number;
 }
 
-export async function callStructuredLLM<T>({
+export async function callStructuredLLM<TSchema extends z.ZodTypeAny>({
   schema,
   instructions,
   input,
   model = "gpt-5.4-mini",
   transport_retries = 1,
-}: StructuredLLMRequest<T>): Promise<T> {
+}: StructuredLLMRequest<TSchema>): Promise<z.output<TSchema>> {
   let responseText: string | undefined;
   let lastTransportError: unknown;
 
