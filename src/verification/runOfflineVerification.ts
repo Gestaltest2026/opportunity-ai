@@ -39,6 +39,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:discovery-classification"],
   },
+  {
+    name: "opportunity identity regression",
+    command: "npm",
+    args: ["run", "evaluate:opportunity-identity"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
