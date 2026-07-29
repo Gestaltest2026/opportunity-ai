@@ -59,6 +59,26 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:exception-queue"],
   },
+  {
+    name: "Applicant Intelligence benchmark fixture regression",
+    command: "npm",
+    args: ["run", "evaluate:applicant-intelligence-fixture"],
+  },
+  {
+    name: "Applicant Intelligence canonical adapter regression",
+    command: "npm",
+    args: ["run", "evaluate:applicant-intelligence-adapter"],
+  },
+  {
+    name: "Applicant Intelligence epistemic guard regression",
+    command: "npm",
+    args: ["run", "evaluate:applicant-intelligence-guard"],
+  },
+  {
+    name: "Applicant Intelligence human review gate regression",
+    command: "npm",
+    args: ["run", "evaluate:applicant-intelligence-human-review"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
