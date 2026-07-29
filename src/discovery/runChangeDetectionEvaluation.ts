@@ -92,7 +92,7 @@ const staleSource = OpportunitySourceSchema.parse({
   enabled: true,
   refresh_interval_hours: 24,
   last_fetched_at: "2026-07-29T00:00:00.000Z",
-  last_success_at: "2026-07-27T00:00:00.000Z",
+  last_success_at: "2026-07-26T00:00:00.000Z",
   failure_count: 2,
 });
 assertStep(
