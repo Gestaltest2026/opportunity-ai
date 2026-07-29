@@ -1,6 +1,9 @@
 import { z } from "zod";
 import { callStructuredLLM } from "../llm/callStructuredLLM";
-import type { CanonicalApplicantView } from "./canonicalApplicantAdapter";
+import type {
+  ApplicantIntelligenceBenchmarkEvidence,
+  CanonicalApplicantView,
+} from "./canonicalApplicantAdapter";
 import {
   ApplicantIntelligenceNodeSchema,
   InsightChainSchema,
@@ -45,15 +48,23 @@ Rules:
 - Prefer specific, useful compression over generic labels such as resilience or leadership.
 - Each node must include a concise reasoning_bridge and a condition that could weaken or clarify the claim.
 - Do not generate Opportunity directions, concrete Opportunities, questions, actions, or evaluation yet.
+- The purpose of this benchmark is to discover meaning that is new relative to prior interpretation. Do not receive or imitate prior inferred narrative themes during generation.
 `;
 
 export async function generateCandidateInsights(
-  applicant: CanonicalApplicantView
+  applicant: CanonicalApplicantView | ApplicantIntelligenceBenchmarkEvidence
 ): Promise<CandidateInsightGeneration> {
+  const generationInput = "evidence_claims" in applicant
+    ? {
+        applicant_id: applicant.applicant_id,
+        claims: applicant.evidence_claims,
+      }
+    : applicant;
+
   const result = await callStructuredLLM({
     schema: CandidateInsightGenerationSchema,
     instructions: INSTRUCTIONS,
-    input: JSON.stringify(applicant),
+    input: JSON.stringify(generationInput),
   });
 
   // Re-parse nodes explicitly so this boundary fails closed if future schema changes drift.
