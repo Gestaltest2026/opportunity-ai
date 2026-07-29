@@ -32,6 +32,9 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: npm run prepare:applicant-intelligence-d5
 
+      - name: Print D5 baseline manifest
+        run: cat examples/applicant-001/d5-baseline-manifest.json
+
       - name: Print D5 review input
         run: cat examples/applicant-001/d5-human-review-input.json
 
@@ -46,6 +49,7 @@ jobs:
         with:
           name: applicant-intelligence-d5-review
           path: |
+            examples/applicant-001/d5-baseline-manifest.json
             examples/applicant-001/d5-human-review-input.json
             examples/applicant-001/d5-epistemic-diagnostics.json
             examples/applicant-001/d5-human-review-template.json
