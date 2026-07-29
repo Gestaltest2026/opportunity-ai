@@ -9,6 +9,7 @@ import { MatchGroundTruthSchema } from "../matching/evaluateMatchGroundTruth";
 import { OpportunityGroundTruthSchema } from "../opportunity/evaluateOpportunity";
 import { OutcomeSchema } from "../outcome/schema";
 import { RealityDatasetManifestSchema } from "../reality/schema";
+import { HumanMatchReviewSchema } from "../representation/humanMatchReviewSchema";
 
 async function readJson(path: string): Promise<unknown> {
   return JSON.parse(await readFile(path, "utf8"));
@@ -23,6 +24,7 @@ async function main() {
     sourceRegistry,
     databank,
     realityDataset,
+    humanMatchReviews,
   ] = await Promise.all([
     readJson("examples/applicant-001/expected_claims.json"),
     readJson("examples/applicant-001/canonical-profile-v0.json"),
@@ -31,6 +33,7 @@ async function main() {
     readJson("data/sources.json"),
     readJson("data/opportunities.json"),
     readJson("examples/reality-dataset/manifest.json"),
+    readJson("examples/applicant-001/human-match-reviews-v0.json"),
   ]);
 
   ApplicantExtractionGroundTruthSchema.parse(applicantGroundTruth);
@@ -40,6 +43,7 @@ async function main() {
   SourceRegistrySchema.parse(sourceRegistry);
   OpportunityDatabankSchema.parse(databank);
   RealityDatasetManifestSchema.parse(realityDataset);
+  const parsedHumanMatchReviews = HumanMatchReviewSchema.array().parse(humanMatchReviews);
 
   const prohibitedApplicantSignals = [
     "asian",
@@ -60,6 +64,12 @@ async function main() {
         `Canonical applicant profile contains prohibited unconfirmed inference: ${prohibitedSignal}`
       );
     }
+  }
+
+  if (parsedHumanMatchReviews.length !== 3) {
+    throw new Error(
+      `Expected exactly 3 User #1 human match reviews, found ${parsedHumanMatchReviews.length}`
+    );
   }
 
   ApplicationSchema.parse({
@@ -110,6 +120,7 @@ async function main() {
         source_registry: "valid",
         databank: "valid",
         reality_dataset: "valid",
+        human_match_reviews: "valid",
         application_schema: "valid",
         outcome_schema: "valid",
         feedback_schema: "valid",
