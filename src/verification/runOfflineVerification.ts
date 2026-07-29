@@ -54,6 +54,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:rematch-targets"],
   },
+  {
+    name: "human exception queue regression",
+    command: "npm",
+    args: ["run", "evaluate:exception-queue"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
