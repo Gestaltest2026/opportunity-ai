@@ -1,0 +1,49 @@
+name: User #1 Opportunity Watchlist
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_sources:
+        description: "Maximum due sources to fetch in this run"
+        default: "20"
+        required: false
+  schedule:
+    - cron: "17 */6 * * *"
+
+concurrency:
+  group: user-001-opportunity-watchlist
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  monitor-watchlist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Verify curated watchlist monitor
+        run: npm run evaluate:curated-watchlist
+
+      - name: Monitor curated User #1 opportunity sources
+        run: npm run watchlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md --max-sources=${{ inputs.max_sources || 20 }}
+
+      - name: Commit watchlist updates
+        run: |
+          git config user.name "opportunity-ai-bot"
+          git config user.email "opportunity-ai-bot@users.noreply.github.com"
+          git add data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md
+          git commit -m "Update User #1 opportunity watchlist" || echo "No watchlist changes"
+          git push
