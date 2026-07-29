@@ -1,0 +1,67 @@
+# User #1 Curated Opportunity Watchlist Report
+
+Generated at: 2026-07-29T19:47:38.742Z
+Applicant: applicant-001
+
+## Scope
+
+This report monitors a small, human-curated set of high-trust opportunity sources for User #1. It is not a web-wide crawler, it does not use an LLM, and it must not turn rough observations into recommendations without source-specific verification.
+
+## Run Summary
+
+| Metric | Count |
+| --- | ---: |
+| Total sources | 13 |
+| Attempted sources | 13 |
+| Skipped: not due | 0 |
+| Skipped: disabled | 0 |
+| Skipped: run limit | 0 |
+| First observations | 10 |
+| Changed sources | 0 |
+| Unchanged sources | 0 |
+| Failed sources | 3 |
+
+## First Observations
+
+- fgcu-foundation-scholarships-official
+- fgcu-scholarship-application-portal
+- fgcu-transfer-aid-official
+- fgcu-admissions-scholarships-waivers
+- fgcu-undergraduate-scholarships-overview
+- patsy-mink-education-support-award
+- jeannette-rankin-scholar-grants
+- peo-program-for-continuing-education
+- peo-pce-eligibility-process
+- college-board-bigfuture-scholarship-directory
+
+## Changed Sources
+
+- None
+
+## Failed Sources
+
+- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
+- careeronestop-scholarship-finder: Source fetch returned empty text.
+- aauw-career-development-grants: Source fetch failed: 403 Forbidden
+
+## High-Relevance Actionable Sources
+
+| Source | Status | Actionability | Verification policy | Last observed signals |
+| --- | --- | --- | --- | --- |
+| fgcu-foundation-scholarships-official | closed | watch_next_cycle | official_source_required | signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 APPLY HERE Frequently Asked Questions: Expand All What are Foundation Scholarships; amount_text=$6 |
+| fgcu-scholarship-application-portal | recurring | watch_next_cycle | official_source_required | signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2026 Final deadline - May 1, 2026 FGCU foundation scholarships are awarded annually based on academic achievement, financial nee |
+| fgcu-transfer-aid-official | unknown | needs_verification | official_source_required | signal_hits=transfer scholarship, transfer student; deadline_text=apply by January 1 of each year will be given priority |
+| fgcu-admissions-scholarships-waivers | recurring | needs_verification | official_source_required | signal_hits=transfer scholarship, admissions scholarship, tuition waiver, transfer student, GPA, AA degree, Florida resident, academic achievement; deadline_text=Application Deadlines Transfer Student Specialized Admissions Programs Admission Forms Non-Degree Student Admissions Returning Student Admissions International; amount_text=$10,000 |
+| patsy-mink-education-support-award | unknown | needs_verification | official_source_required | signal_hits=education support award, scholarship, grant, woman, mother, full time enrollment; deadline_text=deadlines; amount_text=$5000 |
+| jeannette-rankin-scholar-grants | upcoming | watch_next_cycle | official_source_required | signal_hits=scholar grant, nonbinary, accredited U.S. institution, nontraditional student; deadline_text=deadline: Feb |
+| peo-program-for-continuing-education | recurring | needs_verification | official_source_required | signal_hits=need-based grant, woman, degree, certification, job skills, marketable skills; amount_text=$4,000 |
+| peo-pce-eligibility-process | recurring | needs_verification | official_source_required | signal_hits=continuing education grant, woman, sponsorship, degree, certification; amount_text=$4,000 |
+
+## Guardrails
+
+- This watchlist is curated monitoring, not autonomous web discovery.
+- Rough observations are not recommendations.
+- Official-source verification is required before any application, email, or applicant-facing claim.
+- Aggregator entries may discover opportunities but cannot prove current eligibility.
+- Expired or closed sources remain useful for cycle prediction and pattern learning, but they must not be treated as currently actionable.
+- UNKNOWN applicant facts must remain unknown until User #1 or source evidence confirms them.

@@ -18,24 +18,47 @@
       "provider": "Florida Gulf Coast University",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["university internal scholarship", "foundation scholarship", "undergraduate scholarship"],
-      "eligibility_signals": ["FGCU undergraduate", "financial need", "major of study", "academic achievement", "FAFSA"],
-      "narrative_signals": ["institutional fit", "student persistence", "donor alignment"],
-      "funder_intent_signals": ["donor_identity_alignment", "need_based_mobility", "merit_retention"],
+      "opportunity_classes": [
+        "university internal scholarship",
+        "foundation scholarship",
+        "undergraduate scholarship"
+      ],
+      "eligibility_signals": [
+        "FGCU undergraduate",
+        "financial need",
+        "major of study",
+        "academic achievement",
+        "FAFSA"
+      ],
+      "narrative_signals": [
+        "institutional fit",
+        "student persistence",
+        "donor alignment"
+      ],
+      "funder_intent_signals": [
+        "donor_identity_alignment",
+        "need_based_mobility",
+        "merit_retention"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["User #1 is an FGCU Legal Studies transfer student", "Primary institutional scholarship source"],
+      "watch_reason": [
+        "User #1 is an FGCU Legal Studies transfer student",
+        "Primary institutional scholarship source"
+      ],
       "actionability": "watch_next_cycle",
       "current_status": "closed",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 24,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "4c88245990d2ff9f867502c6cf77b99f2c7be9bfa943b54f811dad16295d737c",
+      "last_observed_signal_summary": "signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 APPLY HERE Frequently Asked Questions: Expand All What are Foundation Scholarships; amount_text=$6",
       "failure_count": 0,
-      "notes": ["Use for next-cycle monitoring and donor-specific opportunity discovery."]
+      "notes": [
+        "Use for next-cycle monitoring and donor-specific opportunity discovery."
+      ]
     },
     {
       "source_id": "fgcu-scholarship-application-portal",
@@ -44,24 +67,44 @@
       "provider": "Florida Gulf Coast University",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["university internal scholarship", "application portal"],
-      "eligibility_signals": ["FGCU student", "FAFSA", "academic achievement", "financial need", "major of study"],
-      "narrative_signals": ["student persistence", "institutional fit"],
-      "funder_intent_signals": ["donor_identity_alignment", "need_based_mobility"],
+      "opportunity_classes": [
+        "university internal scholarship",
+        "application portal"
+      ],
+      "eligibility_signals": [
+        "FGCU student",
+        "FAFSA",
+        "academic achievement",
+        "financial need",
+        "major of study"
+      ],
+      "narrative_signals": [
+        "student persistence",
+        "institutional fit"
+      ],
+      "funder_intent_signals": [
+        "donor_identity_alignment",
+        "need_based_mobility"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["Direct application portal for FGCU foundation scholarships", "High action value when the next cycle opens"],
+      "watch_reason": [
+        "Direct application portal for FGCU foundation scholarships",
+        "High action value when the next cycle opens"
+      ],
       "actionability": "watch_next_cycle",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 24,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "6c0a48b94af4adb49aaa07b44710a6b142db144c8058a830d3a04e93d9f02f35",
+      "last_observed_signal_summary": "signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2026 Final deadline - May 1, 2026 FGCU foundation scholarships are awarded annually based on academic achievement, financial nee",
       "failure_count": 0,
-      "notes": ["Portal observations should be confirmed with User #1 login/application status before action."]
+      "notes": [
+        "Portal observations should be confirmed with User #1 login/application status before action."
+      ]
     },
     {
       "source_id": "fgcu-transfer-aid-official",
@@ -70,24 +113,44 @@
       "provider": "Florida Gulf Coast University",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["transfer scholarship", "transfer aid", "undergraduate aid"],
-      "eligibility_signals": ["transfer student", "AA degree", "Florida college", "priority deadline"],
-      "narrative_signals": ["institutional transition", "academic persistence"],
-      "funder_intent_signals": ["merit_retention", "transfer_pipeline"],
+      "opportunity_classes": [
+        "transfer scholarship",
+        "transfer aid",
+        "undergraduate aid"
+      ],
+      "eligibility_signals": [
+        "transfer student",
+        "AA degree",
+        "Florida college",
+        "priority deadline"
+      ],
+      "narrative_signals": [
+        "institutional transition",
+        "academic persistence"
+      ],
+      "funder_intent_signals": [
+        "merit_retention",
+        "transfer_pipeline"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["User #1 is a transfer student", "Transfer-specific funding may be automatic or deadline-driven"],
+      "watch_reason": [
+        "User #1 is a transfer student",
+        "Transfer-specific funding may be automatic or deadline-driven"
+      ],
       "actionability": "needs_verification",
       "current_status": "unknown",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 72,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "b1824ff8b1307c86e43655dc8a026eb369121f41f15cbe3673c4b07e13e8234c",
+      "last_observed_signal_summary": "signal_hits=transfer scholarship, transfer student; deadline_text=apply by January 1 of each year will be given priority",
       "failure_count": 0,
-      "notes": ["Requires User #1 GPA, AA-degree status, residency, and admissions timeline verification."]
+      "notes": [
+        "Requires User #1 GPA, AA-degree status, residency, and admissions timeline verification."
+      ]
     },
     {
       "source_id": "fgcu-admissions-scholarships-waivers",
@@ -96,24 +159,44 @@
       "provider": "Florida Gulf Coast University",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["transfer scholarship", "admissions scholarship", "tuition waiver"],
-      "eligibility_signals": ["transfer student", "GPA", "AA degree", "Florida resident"],
-      "narrative_signals": ["institutional transition", "academic achievement"],
-      "funder_intent_signals": ["merit_retention", "transfer_pipeline"],
+      "opportunity_classes": [
+        "transfer scholarship",
+        "admissions scholarship",
+        "tuition waiver"
+      ],
+      "eligibility_signals": [
+        "transfer student",
+        "GPA",
+        "AA degree",
+        "Florida resident"
+      ],
+      "narrative_signals": [
+        "institutional transition",
+        "academic achievement"
+      ],
+      "funder_intent_signals": [
+        "merit_retention",
+        "transfer_pipeline"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["Contains transfer scholarship rules relevant to User #1", "May identify automatic-consideration scholarships"],
+      "watch_reason": [
+        "Contains transfer scholarship rules relevant to User #1",
+        "May identify automatic-consideration scholarships"
+      ],
       "actionability": "needs_verification",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 72,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "152c570e89682a785d1a1845fb07fc5125aa8dd81b6c956e143690d28cd572ec",
+      "last_observed_signal_summary": "signal_hits=transfer scholarship, admissions scholarship, tuition waiver, transfer student, GPA, AA degree, Florida resident, academic achievement; deadline_text=Application Deadlines Transfer Student Specialized Admissions Programs Admission Forms Non-Degree Student Admissions Returning Student Admissions International; amount_text=$10,000",
       "failure_count": 0,
-      "notes": ["Do not infer eligibility until GPA, AA degree, Florida residency, and application timing are confirmed."]
+      "notes": [
+        "Do not infer eligibility until GPA, AA degree, Florida residency, and application timing are confirmed."
+      ]
     },
     {
       "source_id": "fgcu-undergraduate-scholarships-overview",
@@ -122,24 +205,41 @@
       "provider": "Florida Gulf Coast University",
       "source_tier": "official",
       "source_role": "monitoring_source",
-      "opportunity_classes": ["outside scholarship", "university scholarship", "undergraduate scholarship"],
-      "eligibility_signals": ["FGCU undergraduate", "outside scholarship", "financial aid"],
-      "narrative_signals": ["institutional process", "aid strategy"],
-      "funder_intent_signals": ["student_financing_navigation"],
+      "opportunity_classes": [
+        "outside scholarship",
+        "university scholarship",
+        "undergraduate scholarship"
+      ],
+      "eligibility_signals": [
+        "FGCU undergraduate",
+        "outside scholarship",
+        "financial aid"
+      ],
+      "narrative_signals": [
+        "institutional process",
+        "aid strategy"
+      ],
+      "funder_intent_signals": [
+        "student_financing_navigation"
+      ],
       "user_001_relevance": "medium",
-      "watch_reason": ["Institutional overview may redirect to internal and outside scholarship process changes"],
+      "watch_reason": [
+        "Institutional overview may redirect to internal and outside scholarship process changes"
+      ],
       "actionability": "monitor_only",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "0c85f1f53afb8ac5b5c5710f1134ee501e5cdb18de8eb832c4ecb82e1ef29ae1",
+      "last_observed_signal_summary": "signal_hits=outside scholarship, undergraduate scholarship, financial aid; amount_text=$30",
       "failure_count": 0,
-      "notes": ["Use as process context, not as a standalone opportunity."]
+      "notes": [
+        "Use as process context, not as a standalone opportunity."
+      ]
     },
     {
       "source_id": "patsy-mink-education-support-award",
@@ -148,24 +248,49 @@
       "provider": "Patsy Takemoto Mink Education Foundation",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["education support award", "scholarship", "grant"],
-      "eligibility_signals": ["woman", "mother", "low income", "U.S. residency", "full time enrollment", "not-for-profit accredited institution"],
-      "narrative_signals": ["mother pursuing education", "family responsibility", "economic mobility", "education continuation"],
-      "funder_intent_signals": ["need_based_mobility", "women_advancement", "family_stability"],
+      "opportunity_classes": [
+        "education support award",
+        "scholarship",
+        "grant"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "mother",
+        "low income",
+        "U.S. residency",
+        "full time enrollment",
+        "not-for-profit accredited institution"
+      ],
+      "narrative_signals": [
+        "mother pursuing education",
+        "family responsibility",
+        "economic mobility",
+        "education continuation"
+      ],
+      "funder_intent_signals": [
+        "need_based_mobility",
+        "women_advancement",
+        "family_stability"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["User #1 has confirmed mother and returning-learner evidence", "Potentially strong narrative fit if income and enrollment criteria are met"],
+      "watch_reason": [
+        "User #1 has confirmed mother and returning-learner evidence",
+        "Potentially strong narrative fit if income and enrollment criteria are met"
+      ],
       "actionability": "needs_verification",
       "current_status": "unknown",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 24,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "8505b14474de053fe7bf8f7f0204a725713ce1eae784895e391599971deff90e",
+      "last_observed_signal_summary": "signal_hits=education support award, scholarship, grant, woman, mother, full time enrollment; deadline_text=deadlines; amount_text=$5000",
       "failure_count": 0,
-      "notes": ["Requires financial need/income, enrollment load, and deadline verification before recommending."]
+      "notes": [
+        "Requires financial need/income, enrollment load, and deadline verification before recommending."
+      ]
     },
     {
       "source_id": "jeannette-rankin-scholar-grants",
@@ -174,24 +299,49 @@
       "provider": "Jeannette Rankin Foundation",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["scholar grant", "nontraditional student grant"],
-      "eligibility_signals": ["woman", "nonbinary", "age 35+", "financial need", "first associate degree", "first bachelor degree", "accredited U.S. institution"],
-      "narrative_signals": ["nontraditional student", "education after interruption", "economic mobility", "life transition"],
-      "funder_intent_signals": ["adult_education_completion", "need_based_mobility", "women_advancement"],
+      "opportunity_classes": [
+        "scholar grant",
+        "nontraditional student grant"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "nonbinary",
+        "age 35+",
+        "financial need",
+        "first associate degree",
+        "first bachelor degree",
+        "accredited U.S. institution"
+      ],
+      "narrative_signals": [
+        "nontraditional student",
+        "education after interruption",
+        "economic mobility",
+        "life transition"
+      ],
+      "funder_intent_signals": [
+        "adult_education_completion",
+        "need_based_mobility",
+        "women_advancement"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["User #1 appears to fit several known nontraditional-student signals", "Financial need and first-degree status remain unknown"],
+      "watch_reason": [
+        "User #1 appears to fit several known nontraditional-student signals",
+        "Financial need and first-degree status remain unknown"
+      ],
       "actionability": "watch_next_cycle",
       "current_status": "upcoming",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "72579cf1d431704ca7b3d514eb59e40e0c5819b5d97e8f17ed2cbeff51ed90da",
+      "last_observed_signal_summary": "signal_hits=scholar grant, nonbinary, accredited U.S. institution, nontraditional student; deadline_text=deadline: Feb",
       "failure_count": 0,
-      "notes": ["Treat as high-priority next-cycle watch unless current cycle opens earlier."]
+      "notes": [
+        "Treat as high-priority next-cycle watch unless current cycle opens earlier."
+      ]
     },
     {
       "source_id": "peo-program-for-continuing-education",
@@ -200,24 +350,49 @@
       "provider": "P.E.O. International",
       "source_tier": "official",
       "source_role": "application_source",
-      "opportunity_classes": ["need-based grant", "continuing education grant"],
-      "eligibility_signals": ["woman", "education interrupted", "degree", "certification", "job skills", "family support", "U.S. or Canada"],
-      "narrative_signals": ["returning learner", "family responsibility", "marketable skills", "education after interruption"],
-      "funder_intent_signals": ["adult_education_completion", "family_stability", "women_advancement"],
+      "opportunity_classes": [
+        "need-based grant",
+        "continuing education grant"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "education interrupted",
+        "degree",
+        "certification",
+        "job skills",
+        "family support",
+        "U.S. or Canada"
+      ],
+      "narrative_signals": [
+        "returning learner",
+        "family responsibility",
+        "marketable skills",
+        "education after interruption"
+      ],
+      "funder_intent_signals": [
+        "adult_education_completion",
+        "family_stability",
+        "women_advancement"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["User #1 is a working adult returning to formal education", "May require local P.E.O. chapter sponsorship rather than direct application"],
+      "watch_reason": [
+        "User #1 is a working adult returning to formal education",
+        "May require local P.E.O. chapter sponsorship rather than direct application"
+      ],
       "actionability": "needs_verification",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "b36b5569c9edb1d1a2a1be3570540c9506f755b92851cf3a03f490f146cb92b2",
+      "last_observed_signal_summary": "signal_hits=need-based grant, woman, degree, certification, job skills, marketable skills; amount_text=$4,000",
       "failure_count": 0,
-      "notes": ["Next action is sponsorship path verification, not blind application."]
+      "notes": [
+        "Next action is sponsorship path verification, not blind application."
+      ]
     },
     {
       "source_id": "peo-pce-eligibility-process",
@@ -226,24 +401,45 @@
       "provider": "P.E.O. International",
       "source_tier": "official",
       "source_role": "monitoring_source",
-      "opportunity_classes": ["continuing education grant", "eligibility process"],
-      "eligibility_signals": ["woman", "sponsorship", "education interrupted", "degree", "certification"],
-      "narrative_signals": ["returning learner", "education after interruption", "marketable skills"],
-      "funder_intent_signals": ["adult_education_completion", "women_advancement"],
+      "opportunity_classes": [
+        "continuing education grant",
+        "eligibility process"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "sponsorship",
+        "education interrupted",
+        "degree",
+        "certification"
+      ],
+      "narrative_signals": [
+        "returning learner",
+        "education after interruption",
+        "marketable skills"
+      ],
+      "funder_intent_signals": [
+        "adult_education_completion",
+        "women_advancement"
+      ],
       "user_001_relevance": "high",
-      "watch_reason": ["Clarifies application path for P.E.O. PCE", "Can identify whether User #1 needs chapter sponsorship"],
+      "watch_reason": [
+        "Clarifies application path for P.E.O. PCE",
+        "Can identify whether User #1 needs chapter sponsorship"
+      ],
       "actionability": "needs_verification",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "76c9157224e0dd5a3c40e9461ab10f385b75a96dd16eb847f69c6cc48f24e724",
+      "last_observed_signal_summary": "signal_hits=continuing education grant, woman, sponsorship, degree, certification; amount_text=$4,000",
       "failure_count": 0,
-      "notes": ["Use with P.E.O. main page; do not duplicate as separate grant in matching."]
+      "notes": [
+        "Use with P.E.O. main page; do not duplicate as separate grant in matching."
+      ]
     },
     {
       "source_id": "florida-osfa-financial-aid-scholarships",
@@ -252,24 +448,44 @@
       "provider": "Florida Department of Education",
       "source_tier": "official",
       "source_role": "monitoring_source",
-      "opportunity_classes": ["state aid", "grant", "scholarship"],
-      "eligibility_signals": ["Florida resident", "undergraduate", "financial need", "state program"],
-      "narrative_signals": ["state financial aid access", "education affordability"],
-      "funder_intent_signals": ["need_based_mobility", "state_student_support"],
+      "opportunity_classes": [
+        "state aid",
+        "grant",
+        "scholarship"
+      ],
+      "eligibility_signals": [
+        "Florida resident",
+        "undergraduate",
+        "financial need",
+        "state program"
+      ],
+      "narrative_signals": [
+        "state financial aid access",
+        "education affordability"
+      ],
+      "funder_intent_signals": [
+        "need_based_mobility",
+        "state_student_support"
+      ],
       "user_001_relevance": "medium",
-      "watch_reason": ["State aid source may affect User #1 financial-aid strategy", "Useful for FSAG/Bright Futures/state-program monitoring"],
+      "watch_reason": [
+        "State aid source may affect User #1 financial-aid strategy",
+        "Useful for FSAG/Bright Futures/state-program monitoring"
+      ],
       "actionability": "monitor_only",
       "current_status": "recurring",
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
-      "notes": ["Program-level eligibility may need FGCU financial-aid office confirmation."]
+      "failure_count": 1,
+      "notes": [
+        "Program-level eligibility may need FGCU financial-aid office confirmation."
+      ]
     },
     {
       "source_id": "careeronestop-scholarship-finder",
@@ -278,24 +494,45 @@
       "provider": "CareerOneStop",
       "source_tier": "semi_official",
       "source_role": "discovery_source",
-      "opportunity_classes": ["scholarship directory", "grant directory", "fellowship directory"],
-      "eligibility_signals": ["award type", "location", "level of study", "gender restriction", "professional development"],
-      "narrative_signals": ["broad discovery", "external scholarship search"],
-      "funder_intent_signals": ["opportunity_discovery", "directory_navigation"],
+      "opportunity_classes": [
+        "scholarship directory",
+        "grant directory",
+        "fellowship directory"
+      ],
+      "eligibility_signals": [
+        "award type",
+        "location",
+        "level of study",
+        "gender restriction",
+        "professional development"
+      ],
+      "narrative_signals": [
+        "broad discovery",
+        "external scholarship search"
+      ],
+      "funder_intent_signals": [
+        "opportunity_discovery",
+        "directory_navigation"
+      ],
       "user_001_relevance": "medium",
-      "watch_reason": ["Broad discovery source for external awards", "Useful for finding leads that must be verified at sponsor pages"],
+      "watch_reason": [
+        "Broad discovery source for external awards",
+        "Useful for finding leads that must be verified at sponsor pages"
+      ],
       "actionability": "monitor_only",
       "current_status": "recurring",
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
-      "notes": ["Do not treat directory data as current eligibility without sponsor verification."]
+      "failure_count": 1,
+      "notes": [
+        "Do not treat directory data as current eligibility without sponsor verification."
+      ]
     },
     {
       "source_id": "college-board-bigfuture-scholarship-directory",
@@ -304,24 +541,42 @@
       "provider": "College Board BigFuture",
       "source_tier": "aggregator",
       "source_role": "discovery_source",
-      "opportunity_classes": ["scholarship directory", "external scholarship"],
-      "eligibility_signals": ["college scholarships", "external organizations", "student profile filters"],
-      "narrative_signals": ["broad discovery", "external scholarship search"],
-      "funder_intent_signals": ["opportunity_discovery", "directory_navigation"],
+      "opportunity_classes": [
+        "scholarship directory",
+        "external scholarship"
+      ],
+      "eligibility_signals": [
+        "college scholarships",
+        "external organizations",
+        "student profile filters"
+      ],
+      "narrative_signals": [
+        "broad discovery",
+        "external scholarship search"
+      ],
+      "funder_intent_signals": [
+        "opportunity_discovery",
+        "directory_navigation"
+      ],
       "user_001_relevance": "medium",
-      "watch_reason": ["Broad scholarship discovery source", "Can expose awards missed by institution-specific search"],
+      "watch_reason": [
+        "Broad scholarship discovery source",
+        "Can expose awards missed by institution-specific search"
+      ],
       "actionability": "monitor_only",
       "current_status": "recurring",
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 168,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
+      "last_success_at": "2026-07-29T19:47:38.742Z",
+      "last_changed_at": "2026-07-29T19:47:38.742Z",
+      "content_hash": "9fc827b93e20cd33bb05a58529398de0b4bcaa1ec8afc667103277e10e353694",
+      "last_observed_signal_summary": "signal_hits=scholarship directory; amount_text=$1",
       "failure_count": 0,
-      "notes": ["Aggregator-only matches are discovery leads, not application-ready opportunities."]
+      "notes": [
+        "Aggregator-only matches are discovery leads, not application-ready opportunities."
+      ]
     },
     {
       "source_id": "aauw-career-development-grants",
@@ -330,24 +585,45 @@
       "provider": "AAUW",
       "source_tier": "official",
       "source_role": "pattern_archive",
-      "opportunity_classes": ["career development grant", "women advancement grant"],
-      "eligibility_signals": ["woman", "career advancement", "certificate", "training program", "employment outcome"],
-      "narrative_signals": ["career transition", "women leadership", "workforce advancement"],
-      "funder_intent_signals": ["women_advancement", "workforce_pipeline"],
+      "opportunity_classes": [
+        "career development grant",
+        "women advancement grant"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "career advancement",
+        "certificate",
+        "training program",
+        "employment outcome"
+      ],
+      "narrative_signals": [
+        "career transition",
+        "women leadership",
+        "workforce advancement"
+      ],
+      "funder_intent_signals": [
+        "women_advancement",
+        "workforce_pipeline"
+      ],
       "user_001_relevance": "pattern_only",
-      "watch_reason": ["Useful pattern source for women career-transition funding", "May not fit User #1 if formal degree programs are excluded"],
+      "watch_reason": [
+        "Useful pattern source for women career-transition funding",
+        "May not fit User #1 if formal degree programs are excluded"
+      ],
       "actionability": "pattern_only",
       "current_status": "pattern_only",
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-29T19:47:38.742Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
-      "notes": ["Do not recommend without checking degree-program restrictions; keep mainly as pattern evidence."]
+      "failure_count": 1,
+      "notes": [
+        "Do not recommend without checking degree-program restrictions; keep mainly as pattern evidence."
+      ]
     }
   ]
 }
