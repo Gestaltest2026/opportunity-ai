@@ -5,6 +5,7 @@ import {
   HumanExceptionQueueSchema,
   resolveException,
 } from "./exceptionQueue";
+import type { HumanException } from "./exceptionQueue";
 import {
   createAcquisitionException,
   exceptionFromCandidateClassification,
@@ -33,12 +34,13 @@ const classification = CandidateClassificationSchema.parse({
   disposition: "human_review",
 });
 
-const classificationException = exceptionFromCandidateClassification(
+const maybeClassificationException = exceptionFromCandidateClassification(
   candidate,
   classification,
   "2026-07-29T00:00:00.000Z"
 );
-assert(classificationException, "Expected candidate ambiguity exception");
+assert(maybeClassificationException, "Expected candidate ambiguity exception");
+const classificationException: HumanException = maybeClassificationException;
 assert(
   classificationException.resume_stage === "classification",
   "Classification ambiguity must resume at classification"

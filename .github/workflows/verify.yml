@@ -21,5 +21,44 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run deterministic verification
-        run: npm run verify
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Hash regression
+        run: npm run evaluate:hash
+
+      - name: Databank schema regression
+        run: npm run evaluate:databank-schema
+
+      - name: Fixture schema validation
+        run: npm run evaluate:fixtures
+
+      - name: Pure domain regression
+        run: npm run evaluate:domain
+
+      - name: Discovery URL policy regression
+        run: npm run evaluate:discovery-url-policy
+
+      - name: Discovery candidate extraction regression
+        run: npm run evaluate:discovery-candidates
+
+      - name: Discovery candidate classification regression
+        run: npm run evaluate:discovery-classification
+
+      - name: Opportunity identity regression
+        run: npm run evaluate:opportunity-identity
+
+      - name: Raw change regression
+        run: npm run evaluate:raw-change
+
+      - name: Semantic change regression
+        run: npm run evaluate:semantic-change
+
+      - name: Stale source regression
+        run: npm run evaluate:stale-source
+
+      - name: Targeted rematch regression
+        run: npm run evaluate:rematch-targets
+
+      - name: Human exception queue regression
+        run: npm run evaluate:exception-queue

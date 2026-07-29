@@ -5,22 +5,27 @@ function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
 }
 
+const baseOpportunity = {
+  provider: "Example Provider",
+  opportunity_type: "scholarship" as const,
+  award: { amount: null, currency: null, description: null },
+  deadline: null,
+  eligibility: [],
+  selection_preferences: [],
+  narrative_preferences: [],
+  application_requirements: [],
+  restrictions: [],
+  source_evidence: ["Official provider page"],
+};
+
 const databank = OpportunityDatabankSchema.parse({
   records: [
     {
       opportunity: {
+        ...baseOpportunity,
         opportunity_id: "opportunity-open",
         title: "Open Scholarship",
-        provider: "Example Provider",
-        opportunity_type: "scholarship",
         availability_status: "open",
-        award: null,
-        deadline: null,
-        eligibility: [],
-        selection_preferences: [],
-        narrative_preferences: [],
-        application_requirements: [],
-        restrictions: [],
       },
       source_url: "https://example.edu/open-scholarship",
       first_seen_at: "2026-07-29T00:00:00.000Z",
@@ -31,18 +36,10 @@ const databank = OpportunityDatabankSchema.parse({
     },
     {
       opportunity: {
+        ...baseOpportunity,
         opportunity_id: "opportunity-closed",
         title: "Closed Scholarship",
-        provider: "Example Provider",
-        opportunity_type: "scholarship",
         availability_status: "closed",
-        award: null,
-        deadline: null,
-        eligibility: [],
-        selection_preferences: [],
-        narrative_preferences: [],
-        application_requirements: [],
-        restrictions: [],
       },
       source_url: "https://example.edu/closed-scholarship",
       first_seen_at: "2026-07-29T00:00:00.000Z",

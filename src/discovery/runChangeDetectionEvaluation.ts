@@ -5,8 +5,12 @@ import { detectOpportunityChange, opportunitiesNeedingRematch } from "./changeDe
 import { isStale } from "./refreshSources";
 import { OpportunitySourceSchema } from "./schema";
 
-function assert(condition: unknown, message: string): asserts condition {
-  if (!condition) throw new Error(message);
+function assertStep(name: string, condition: unknown, details: unknown): asserts condition {
+  if (!condition) {
+    console.error(JSON.stringify({ failed_step: name, details }, null, 2));
+    throw new Error(`Change loop regression failed: ${name}`);
+  }
+  console.log(`[change-loop] ${name}: ok`);
 }
 
 const opportunity = OpportunitySchema.parse({
@@ -16,12 +20,13 @@ const opportunity = OpportunitySchema.parse({
   opportunity_type: "scholarship",
   availability_status: "open",
   award: { amount: 1000, currency: "USD", description: null },
-  deadline: { date: "2026-12-01", timezone: null, description: null },
+  deadline: "2026-12-01",
   eligibility: [],
   selection_preferences: [],
   narrative_preferences: [],
   application_requirements: [],
   restrictions: [],
+  source_evidence: ["Official scholarship page"],
 });
 
 const empty: OpportunityDatabank = { records: [] };
@@ -46,16 +51,17 @@ const rawOnlySignal = detectOpportunityChange(
   "source-test",
   opportunity.opportunity_id
 );
-assert(rawOnlySignal.raw_changed, "Expected raw source change");
-assert(!rawOnlySignal.semantic_changed, "Raw-only change must not be semantic");
-assert(
+assertStep("raw source changed", rawOnlySignal.raw_changed, rawOnlySignal);
+assertStep("raw-only not semantic", !rawOnlySignal.semantic_changed, rawOnlySignal);
+assertStep(
+  "raw-only does not rematch",
   opportunitiesNeedingRematch([rawOnlySignal]).length === 0,
-  "Raw-only change must not trigger rematch"
+  opportunitiesNeedingRematch([rawOnlySignal])
 );
 
 const changedOpportunity = OpportunitySchema.parse({
   ...opportunity,
-  deadline: { date: "2026-12-15", timezone: null, description: null },
+  deadline: "2026-12-15",
 });
 const semantic = upsertOpportunity(
   rawOnly,
@@ -70,10 +76,11 @@ const semanticSignal = detectOpportunityChange(
   "source-test",
   opportunity.opportunity_id
 );
-assert(semanticSignal.semantic_changed, "Expected semantic change");
-assert(
+assertStep("semantic change detected", semanticSignal.semantic_changed, semanticSignal);
+assertStep(
+  "semantic change rematches",
   opportunitiesNeedingRematch([semanticSignal])[0] === opportunity.opportunity_id,
-  "Semantic change must trigger rematch"
+  opportunitiesNeedingRematch([semanticSignal])
 );
 
 const staleSource = OpportunitySourceSchema.parse({
@@ -85,12 +92,13 @@ const staleSource = OpportunitySourceSchema.parse({
   enabled: true,
   refresh_interval_hours: 24,
   last_fetched_at: "2026-07-29T00:00:00.000Z",
-  last_success_at: "2026-07-27T00:00:00.000Z",
+  last_success_at: "2026-07-26T00:00:00.000Z",
   failure_count: 2,
 });
-assert(
+assertStep(
+  "stale source surfaced",
   isStale(staleSource, new Date("2026-07-30T00:00:00.000Z")),
-  "Repeated failures beyond two refresh intervals must surface as stale"
+  staleSource
 );
 
 console.log(
