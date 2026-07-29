@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "source_id": "source-universe-fgcu-foundation",
+      "provider": "Florida Gulf Coast University",
+      "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/fgcufoundationscholarships",
+      "source_type": "provider_index",
+      "enabled": true,
+      "discovery_depth": 1,
+      "refresh_interval_hours": 168,
+      "last_scanned_at": null,
+      "last_success_at": null,
+      "failure_count": 0
+    },
+    {
+      "source_id": "source-universe-fgcu-transfer",
+      "provider": "Florida Gulf Coast University",
+      "url": "https://www.fgcu.edu/admissionsandaid/undergraduateadmissions/scholarshipsandwaivers",
+      "source_type": "provider_index",
+      "enabled": true,
+      "discovery_depth": 1,
+      "refresh_interval_hours": 168,
+      "last_scanned_at": null,
+      "last_success_at": null,
+      "failure_count": 0
+    },
+    {
+      "source_id": "source-universe-fgcu-study-abroad",
+      "provider": "Florida Gulf Coast University",
+      "url": "https://www.fgcu.edu/academics/studyabroad/scholarships",
+      "source_type": "provider_index",
+      "enabled": true,
+      "discovery_depth": 1,
+      "refresh_interval_hours": 168,
+      "last_scanned_at": null,
+      "last_success_at": null,
+      "failure_count": 0
+    }
+  ]
+}
