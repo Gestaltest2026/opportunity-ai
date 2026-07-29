@@ -24,6 +24,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:domain"],
   },
+  {
+    name: "discovery URL policy regression",
+    command: "npm",
+    args: ["run", "evaluate:discovery-url-policy"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
