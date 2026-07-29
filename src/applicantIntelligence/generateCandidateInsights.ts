@@ -25,6 +25,9 @@ const CandidateInsightGenerationSchema = z.object({
   candidate_chains: z.array(CandidateInsightChainSchema).min(3).max(5),
 });
 
+export const APPLICANT_INTELLIGENCE_BASELINE_MODEL = "gpt-5.4-mini";
+export const APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES = 1;
+
 export type CandidateInsightGeneration = z.infer<
   typeof CandidateInsightGenerationSchema
 >;
@@ -51,6 +54,15 @@ Rules:
 - The purpose of this benchmark is to discover meaning that is new relative to prior interpretation. Do not receive or imitate prior inferred narrative themes during generation.
 `;
 
+export function applicantIntelligenceBaselineGenerationConfig() {
+  return {
+    treatment: "d3-baseline-v1",
+    model: APPLICANT_INTELLIGENCE_BASELINE_MODEL,
+    transport_retries: APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES,
+    prompt_contract: "FACT->RELATION->PATTERN->ABSTRACTION/CONCEPT->optional HYPOTHESIS",
+  } as const;
+}
+
 export async function generateCandidateInsights(
   applicant: CanonicalApplicantView | ApplicantIntelligenceBenchmarkEvidence
 ): Promise<CandidateInsightGeneration> {
@@ -65,6 +77,8 @@ export async function generateCandidateInsights(
     schema: CandidateInsightGenerationSchema,
     instructions: INSTRUCTIONS,
     input: JSON.stringify(generationInput),
+    model: APPLICANT_INTELLIGENCE_BASELINE_MODEL,
+    transport_retries: APPLICANT_INTELLIGENCE_BASELINE_TRANSPORT_RETRIES,
   });
 
   // Re-parse nodes explicitly so this boundary fails closed if future schema changes drift.
