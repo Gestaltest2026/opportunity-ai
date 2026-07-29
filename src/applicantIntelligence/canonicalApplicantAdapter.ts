@@ -21,6 +21,12 @@ export interface CanonicalApplicantView {
   claims: CanonicalApplicantClaimView[];
 }
 
+export interface ApplicantIntelligenceBenchmarkEvidence {
+  applicant_id: string;
+  evidence_claims: CanonicalApplicantClaimView[];
+  prior_interpretations: CanonicalApplicantClaimView[];
+}
+
 export function createCanonicalApplicantView(
   applicantId: string,
   input: Applicant
@@ -46,5 +52,25 @@ export function createCanonicalApplicantView(
   return {
     applicant_id: applicantId,
     claims,
+  };
+}
+
+/**
+ * D5 is intended to test whether Applicant Intelligence can generate new meaning
+ * from evidence. Existing inferred claims and narrative themes are therefore
+ * separated from generation input and retained only as a novelty/duplication
+ * reference set for human review.
+ */
+export function createApplicantIntelligenceBenchmarkEvidence(
+  applicant: CanonicalApplicantView
+): ApplicantIntelligenceBenchmarkEvidence {
+  return {
+    applicant_id: applicant.applicant_id,
+    evidence_claims: applicant.claims.filter(
+      (claim) => claim.canonical_type === "explicit" && claim.canonical_status === "confirmed"
+    ),
+    prior_interpretations: applicant.claims.filter(
+      (claim) => claim.canonical_type === "inferred" || claim.canonical_status === "unreviewed"
+    ),
   };
 }
