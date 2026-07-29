@@ -24,7 +24,7 @@ Issue #2 (User #1 Applicant experiment) is also closed.
 
 The current product can ingest Applicant facts, ingest Opportunities, construct Opportunity-specific representations, evaluate fit, and continuously acquire/update Opportunities from trusted sources.
 
-Applicant Intelligence now exists as an implemented layer between canonical Applicant facts and strategic Opportunity search.
+Applicant Intelligence is now implemented through the D5 human meaning-review infrastructure. The unresolved core is no longer whether to define or code this layer, but whether the current D3 generation actually produces a real User #1 Aha that clears the D5 gate before Strategic Projection begins.
 
 ```text
 Canonical Applicant
@@ -38,7 +38,7 @@ Opportunity-space
 Opportunity Acquisition
 ```
 
-The implementation is intentionally paused at the D5 meaning-review gate before Strategic Projection.
+The strategy below remains the governing product contract; implementation is intentionally paused at D5 pending real human validation.
 
 ## Updated product thesis from founder Q1-Q5
 
@@ -259,6 +259,8 @@ Near-term benchmarks cannot yet prove causal resource lift, so current evaluatio
 
 ## Short-horizon vs long-horizon Opportunity markets
 
+Founder Q3 identifies a major time-horizon distinction.
+
 ### Short-horizon market — current build focus
 
 These are Opportunities close enough that the Applicant cannot materially reinvent their profile before application.
@@ -299,6 +301,8 @@ Do not build this now. Preserve it as a future product thesis and architectural 
 
 ## Opportunity access and reversal of advantage
 
+Founder Q3 also introduces a product mission beyond convenience.
+
 Opportunity markets often reward pre-existing advantages such as:
 
 - information access;
@@ -321,9 +325,11 @@ A useful mission formulation is:
 
 > Reduce the information, search, and interpretation friction between human potential and the systems that allocate resources to it.
 
+This is compatible with the longer-term two-sided allocation thesis without requiring a Side B product now.
+
 ## Q4 — Inference boundary and epistemic separation
 
-Applicant self-understanding is not the same thing as market-facing assessment, and a derived interpretation is not the same thing as an observed fact.
+Founder Q4 adds two important separations: **Applicant self-understanding** is not the same thing as **market-facing assessment**, and a derived interpretation is not the same thing as an observed fact.
 
 ### Self Model vs Market Model
 
@@ -345,29 +351,60 @@ The system should preserve two different views rather than collapsing them into 
 
 The system may identify a mismatch between Self Model and Market Model as an insight, but it must not silently rewrite Applicant intent.
 
-### Current epistemic states
+A useful principle is:
+
+> Applicant intent should normally be asked or explicitly provided; external fit may be inferred from evidence and market context, with uncertainty preserved.
+
+### Provisional epistemic states
+
+The following states are now encoded in the Applicant Intelligence benchmark contract and guarded by D4. Their meanings remain the same:
 
 ```text
 OBSERVED
+Directly supported by source evidence or explicit Applicant statement.
+
 DERIVED
+A defensible relationship or pattern generated from supporting evidence.
+
 HYPOTHESIZED
+Plausible and potentially useful, but materially sensitive to missing evidence or alternative explanations.
+
 UNKNOWN
+Insufficient evidence to make a useful claim.
+
 QUESTION
+An unresolved item worth asking because the answer may materially change understanding or strategy.
 ```
 
-These are now encoded in the Applicant Intelligence benchmark contract and guarded by D4 checks. Do not introduce a numeric confidence score until the benchmark shows that one improves decisions.
+These states are intentionally categorical for now. Do not introduce a numeric confidence score until the benchmark shows that a score improves decisions.
 
 ### Question-value principle
 
+Do not ask every uncertain question.
+
 A candidate question becomes more valuable when uncertainty is meaningful **and** the answer could materially change strategy.
+
+A provisional heuristic is:
 
 ```text
 Question Value ∝ Uncertainty × Strategic Consequence
 ```
 
-This remains a design principle, not a locked algorithm.
+This is a design principle, not a locked algorithm. Q5 adds likely additional factors such as user burden, evidence gain, psychological sensitivity, timing, and whether asking now delays immediate short-horizon action.
+
+### Current inference rule
+
+The system may generate evidence-grounded external-fit hypotheses without waiting for Applicant confirmation, but it must:
+
+- preserve provenance;
+- preserve the epistemic state;
+- avoid presenting hypotheses as facts;
+- ask the Applicant when intent, preference, or strategically consequential missing information cannot be safely inferred;
+- allow market-facing interpretations to coexist with, rather than overwrite, the Applicant's self-conception.
 
 ## Q5 — Product behavior / UX contract
+
+Founder Q5 clarifies the desired short-horizon user experience.
 
 The ideal 30-minute interaction should not end with a generic profile summary. It should leave the Applicant with materially improved optionality and a concrete next move.
 
@@ -402,6 +439,8 @@ At minimum, a first-session user should leave with:
 5. the most important missing information or evidence that could change the decision;
 6. a concrete next action for the current session or immediately afterward.
 
+The system should not promise guaranteed immediate cash. Founder Q5 used a small cash outcome as an intuitive symbol of user value, but the current product contract is to improve actionable access to resources, not to guarantee a payment within 30 minutes.
+
 ### Difference from generic ChatGPT
 
 Opportunity AI should become meaningfully different from a general-purpose chat model through the combination of:
@@ -414,11 +453,15 @@ Persistent Applicant Memory
 × Closed-loop application and outcome learning
 ```
 
-## World coverage and trusted-source discipline
+The differentiation is therefore systemic rather than merely conversational.
 
-The long-run system should have a global Opportunity horizon, but breadth must not override trust.
+A general model may generate good advice from a resume. Opportunity AI should know the Applicant longitudinally, know the Opportunity environment continuously, preserve evidence and uncertainty, and turn those two knowledge systems into persistent decisions and actions.
 
-Current acquisition principles remain:
+### World coverage and trusted-source discipline
+
+Founder Q5 emphasizes breadth: the long-run system should have a global Opportunity horizon rather than forcing many Applicants into the same small set of visible programs.
+
+However, breadth must not override trust. Current acquisition principles remain:
 
 - prefer official or trusted sources;
 - track freshness and semantic change;
@@ -429,6 +472,8 @@ Current acquisition principles remain:
 Global coverage is a strategic direction, not a requirement to build unrestricted crawling now.
 
 ## Two-sided strategic model
+
+Founder Q2 identifies a second side of the market, and Q5 sharpens the long-term position.
 
 ### Side A — Resource Seeker
 
@@ -443,29 +488,71 @@ This remains the current product surface.
 
 ### Side B — Resource Holder
 
-Potential future actors include foundations, companies, institutions, governments, alumni networks, philanthropists, and other organizations with capital, access, or support to allocate.
+Potential future actors include:
+
+- foundations
+- philanthropists
+- companies
+- institutions
+- governments
+- alumni networks
+- other organizations with capital, access, or support to allocate
 
 Their inverse problem is:
 
 > "Given what we value and want to advance, who or what should we support?"
 
-Long-term, Opportunity AI may become an allocation layer between human potential and resources.
+Long-term, Opportunity AI may become an allocation layer between human potential and resources:
 
-Do **not** build a Side B product in the current phase.
+```text
+Human Potential
+      ↕
+Opportunity AI
+      ↕
+Capital / Education / Networks / Institutions
+```
+
+### Constraint for the current phase
+
+Do **not** build a Side B product, foundation dashboard, donor marketplace, or institutional sales workflow now.
+
+Side B is a **future product hypothesis and a current architectural constraint**: internal representations should avoid assumptions that make the system permanently one-directional, but current experiments remain Applicant-first.
 
 ## Future strategic theses — not current product requirements
 
-Preserve without implementing:
+Q4-Q5 surface larger possibilities that should be preserved without contaminating the current MVP.
 
-- independent third-party assessment;
-- evidence-backed Applicant signaling;
-- standardized capability assessment;
-- Resource Holder intelligence;
-- aggregate Talent Intelligence;
-- new Opportunity creation / program design;
-- long-horizon Applicant Development.
+Potential future theses include:
+
+- Opportunity AI as an independent third-party assessment layer between Applicant claims and Resource Holder decisions;
+- evidence-backed Applicant signaling infrastructure;
+- standardized or semi-standardized capability assessment across Applicants;
+- Resource Holder reports about talent availability, missing capabilities, or market bottlenecks;
+- aggregate Talent Intelligence derived from many Applicants;
+- a multi-provider ecosystem in which multiple assessment providers reduce monopoly risk;
+- Opportunity AI helping Resource Holders design or create new funding programs when existing Opportunity supply does not match observed human potential or social needs;
+- Opportunity AI becoming a trusted intermediary whose value comes partly from longitudinal evidence and consistent assessment rather than one-off self-report.
+
+The credit-score analogy is a useful strategic metaphor for independent signaling, but **do not** build an Applicant score, universal ranking, credit-score analogue, or institutional decision product during the current phase.
+
+The "0→1" thesis is also future-facing: current work optimizes access to existing Opportunities (1→100). Future work may help create new resource-allocation channels or Opportunities themselves (0→1). Do not mix these in the current implementation.
 
 These future theses introduce major concerns—gaming, verification, appeal rights, transparency, bias, feedback loops, legitimacy, and power concentration—and require separate validation before implementation.
+
+## Business-model hypothesis — preserve, do not implement
+
+Founder Q5 raises an important alignment constraint: users seeking scholarships or grants are often resource-constrained, so extracting large fees from Side A may conflict with the mission.
+
+A future working hypothesis is:
+
+```text
+Side A: free or very low-friction access
+Side B: potential institutional revenue
+```
+
+Possible future Side B revenue categories include institutional intelligence, sourcing, program design, sponsored Opportunity creation, allocation analytics, or other services to Resource Holders.
+
+No pricing model is selected. Do not implement success fees, transaction fees, institutional billing, or marketplace economics during the current phase.
 
 ## Model-provider strategy
 
@@ -480,13 +567,16 @@ Naming / Linguistic Compression
 Critique / Verification
 ```
 
-No multi-model routing should be implemented until a benchmark demonstrates material benefit.
+These capabilities may eventually route to different models. For example, one model could perform grounded reasoning while another specializes in naming or language generation.
+
+No multi-model routing should be implemented until a benchmark demonstrates that the separation materially improves output.
 
 ## Design principles to preserve
 
 - Canonical facts and derived inference must remain distinguishable.
 - Self Model and Market Model must remain distinguishable.
 - Applicant intent must not be silently inferred and written back as fact.
+- Relations, patterns, abstractions, concepts, and hypotheses are not interchangeable epistemic states.
 - Derived claims need evidence, uncertainty, and reviewability.
 - Creative language must never sever traceability to evidence.
 - Opportunity-specific representation must not rewrite canonical facts.
@@ -496,12 +586,37 @@ No multi-model routing should be implemented until a benchmark demonstrates mate
 - Applicant Intelligence should ultimately cash out into real resource or opportunity outcomes.
 - Build the short-horizon wedge first; preserve long-horizon development as a future thesis.
 - Do not confuse Applicant self-esteem uplift with strategic or economic value.
-- Do not build universal Applicant scoring or institutional decision infrastructure in the current phase.
+- Do not build universal Applicant scoring or third-party institutional decision infrastructure in the current phase.
+- Do not confuse global Opportunity ambition with unrestricted crawling or low-trust ingestion.
+- The first-session UX should produce concrete optionality and action, not merely insight.
 - The product's moat should come from persistent knowledge, fresh Opportunity data, evidence-grounded reasoning, and closed-loop learning—not from a single clever prompt.
+
+## Frozen areas until current D5 gate is resolved
+
+Do not expand these areas unless a concrete blocking defect appears:
+
+- Opportunity Acquisition D1–D7
+- generic Next Best Question / information-gain optimization
+- vector DB / RAG
+- unrestricted open-web crawling
+- large-scale source expansion
+- UI redesign
+- persistence migration (SQLite/Supabase/etc.)
+- multi-applicant generalization
+- generic Narrative Fit formulas
+- Side B product surfaces
+- donor/foundation marketplace features
+- multi-model provider routing
+- long-horizon Applicant Development / Opportunity Engineering
+- Applicant scoring / credit-score analogues
+- institutional Applicant assessment products
+- aggregate Talent Intelligence
+- new Opportunity creation / 0→1 institutional program design
+- pricing / transaction / success-fee systems
 
 ## Founder strategy status
 
-Q1-Q5 have been answered provisionally and incorporated into the current strategy.
+Q1-Q5 have now been answered provisionally and incorporated into this strategy checkpoint.
 
 ```text
 Q1 — Understanding                 SYNTHESIZED
@@ -511,32 +626,78 @@ Q4 — Inference boundary            SYNTHESIZED
 Q5 — Product behavior / UX         SYNTHESIZED
 ```
 
-## Current implementation and validation status
+The founder-question phase is complete.
 
-The strategy documents have been converted into product requirements, epistemic rules, evaluation criteria, minimal architecture, development sequence, and the User #1 benchmark contract.
+## Implementation gate — current state
 
-Current engineering state:
+The strategy has already been converted into:
+
+1. product behavior requirements;
+2. epistemic rules;
+3. evaluation criteria;
+4. minimal architecture;
+5. development sequence;
+6. User #1 benchmark contract;
+7. D0–D5 implementation and deterministic support infrastructure.
+
+The remaining gate is empirical rather than architectural.
+
+Sequence:
 
 ```text
-D0 — seam inspection                         IMPLEMENTED
-D1 — benchmark fixture contract              IMPLEMENTED + DETERMINISTICALLY VERIFIED
-D2 — canonical Applicant adapter             IMPLEMENTED + DETERMINISTICALLY VERIFIED
-D3 — candidate insight generation            IMPLEMENTED; HUMAN QUALITY UNVERIFIED
-D4 — epistemic guard                         IMPLEMENTED + DETERMINISTICALLY VERIFIED
-D5 — human meaning-review infrastructure     IMPLEMENTED + DETERMINISTIC GATE VERIFIED
-D5 — real User #1 Aha / Recognition          NOT YET OBSERVED
-D6 — strategic projection                    NOT STARTED BY DESIGN
+Founder answers                DONE
+→ Strategy synthesis           DONE
+→ Product requirements         DONE
+→ Evaluation design            DONE
+→ Architecture                 DONE
+→ D0–D5 implementation         DONE
+→ User #1 D5 baseline run      NEXT
+→ Human Aha / Recognition      UNVERIFIED
+→ D6 Strategic Projection      BLOCKED UNTIL D5 PASSES
 ```
 
-## Current next step
+## First real experiment after D5 infrastructure
+
+The default validation target remains User #1.
+
+The current Applicant Intelligence baseline should take the existing canonical profile and generate a small number of candidate insights using the evidence-isolated path:
 
 ```text
-Freeze current D3 baseline
-→ run User #1 through the evidence-isolated D5 path
-→ inspect 3–5 real candidate insight chains
-→ perform human meaning review
-→ if no chain passes, diagnose D3 and test reasoning-v2 treatment
-→ if at least one chain passes, proceed to D6 Strategic Projection
+Explicit confirmed Facts
+→ Relations
+→ Patterns
+→ Abstractions / Concepts
+→ optional Hypotheses
 ```
 
-Do not claim Applicant Intelligence success until a real User #1 insight is retained/revised with scores >=2 across Groundedness, Novelty, Recognition, Compression, and External Legibility.
+At D5, each candidate insight must preserve provenance and epistemic state and be scored on:
+
+```text
+Groundedness
+Novelty
+Recognition
+Compression
+External Legibility
+```
+
+Do not proceed to Strategic Directions or Opportunity-space integration unless at least one chain is retained or revised with scores >=2 across all five dimensions and no hard epistemic failure.
+
+If the current D3 baseline fails, use the documented reasoning-v2 experiment plan rather than silently replacing the baseline.
+
+## Phase transition status
+
+```text
+Issue #2 — User #1 experiment                     CLOSED
+Issue #3 — Opportunity Acquisition                CLOSED
+Engineering closeout / CI                         VERIFIED
+Founder strategy Q1                               SYNTHESIZED
+Founder strategy Q2                               SYNTHESIZED
+Founder strategy Q3                               SYNTHESIZED
+Founder strategy Q4                               SYNTHESIZED
+Founder strategy Q5                               SYNTHESIZED
+Founder-question phase                            COMPLETE
+Applicant Intelligence D0–D5 infrastructure       IMPLEMENTED
+Applicant Intelligence deterministic boundaries  VERIFIED
+Real User #1 D5 Aha / Recognition                 UNVERIFIED
+Next step                                          RUN USER #1 D5 BASELINE
+```
