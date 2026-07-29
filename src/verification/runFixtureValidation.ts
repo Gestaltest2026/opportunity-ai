@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { ApplicationSchema } from "../application/schema";
 import { OpportunityDatabankSchema } from "../databank/schema";
 import { SourceRegistrySchema } from "../discovery/schema";
+import { SourceUniverseSchema } from "../discovery/sourceUniverseSchema";
 import { ApplicantExtractionGroundTruthSchema } from "../extraction/evaluateExtraction";
 import { ApplicantSchema } from "../extraction/applicantSchema";
 import { OpportunityFeedbackSchema } from "../feedback/schema";
@@ -22,6 +23,7 @@ async function main() {
     opportunityGroundTruth,
     matchGroundTruth,
     sourceRegistry,
+    sourceUniverse,
     databank,
     realityDataset,
     humanMatchReviews,
@@ -31,6 +33,7 @@ async function main() {
     readJson("examples/opportunity-001/expected_opportunity.json"),
     readJson("examples/match-001/expected_match.json"),
     readJson("data/sources.json"),
+    readJson("data/source-universe.json"),
     readJson("data/opportunities.json"),
     readJson("examples/reality-dataset/manifest.json"),
     readJson("examples/applicant-001/human-match-reviews-v0.json"),
@@ -41,6 +44,7 @@ async function main() {
   OpportunityGroundTruthSchema.parse(opportunityGroundTruth);
   MatchGroundTruthSchema.parse(matchGroundTruth);
   SourceRegistrySchema.parse(sourceRegistry);
+  SourceUniverseSchema.parse(sourceUniverse);
   OpportunityDatabankSchema.parse(databank);
   RealityDatasetManifestSchema.parse(realityDataset);
   const parsedHumanMatchReviews = HumanMatchReviewSchema.array().parse(humanMatchReviews);
@@ -118,6 +122,7 @@ async function main() {
         opportunity_ground_truth: "valid",
         match_ground_truth: "valid",
         source_registry: "valid",
+        source_universe: "valid",
         databank: "valid",
         reality_dataset: "valid",
         human_match_reviews: "valid",
