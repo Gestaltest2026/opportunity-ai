@@ -24,7 +24,7 @@ Issue #2 (User #1 Applicant experiment) is also closed.
 
 The current product can ingest Applicant facts, ingest Opportunities, construct Opportunity-specific representations, evaluate fit, and continuously acquire/update Opportunities from trusted sources.
 
-The next unresolved core is the layer between canonical Applicant facts and strategic Opportunity search.
+Applicant Intelligence is now implemented through the D5 human meaning-review infrastructure. The unresolved core is no longer whether to define or code this layer, but whether the current D3 generation actually produces a real User #1 Aha that clears the D5 gate before Strategic Projection begins.
 
 ```text
 Canonical Applicant
@@ -38,7 +38,7 @@ Opportunity-space
 Opportunity Acquisition
 ```
 
-The strategy phase defines Applicant Intelligence before implementation.
+The strategy below remains the governing product contract; implementation is intentionally paused at D5 pending real human validation.
 
 ## Updated product thesis from founder Q1-Q5
 
@@ -357,7 +357,7 @@ A useful principle is:
 
 ### Provisional epistemic states
 
-Do not encode these as a final schema yet. Use them as the current reasoning contract to be tested on User #1.
+The following states are now encoded in the Applicant Intelligence benchmark contract and guarded by D4. Their meanings remain the same:
 
 ```text
 OBSERVED
@@ -591,7 +591,7 @@ No multi-model routing should be implemented until a benchmark demonstrates that
 - The first-session UX should produce concrete optionality and action, not merely insight.
 - The product's moat should come from persistent knowledge, fresh Opportunity data, evidence-grounded reasoning, and closed-loop learning—not from a single clever prompt.
 
-## Frozen areas until strategy synthesis is converted into an implementation contract
+## Frozen areas until current D5 gate is resolved
 
 Do not expand these areas unless a concrete blocking defect appears:
 
@@ -628,51 +628,49 @@ Q5 — Product behavior / UX         SYNTHESIZED
 
 The founder-question phase is complete.
 
-## Implementation gate — next work
+## Implementation gate — current state
 
-Do not create an Applicant Intelligence schema, service, class hierarchy, graph model, or LLM prompt architecture until the complete strategy above has been converted into:
+The strategy has already been converted into:
 
 1. product behavior requirements;
-2. epistemic rules (fact vs relation vs pattern vs abstraction vs concept vs hypothesis vs unknown vs question);
+2. epistemic rules;
 3. evaluation criteria;
 4. minimal architecture;
 5. development sequence;
-6. first end-to-end benchmark using User #1.
+6. User #1 benchmark contract;
+7. D0–D5 implementation and deterministic support infrastructure.
+
+The remaining gate is empirical rather than architectural.
 
 Sequence:
 
 ```text
 Founder answers                DONE
 → Strategy synthesis           DONE
-→ Product requirements         NEXT
-→ Evaluation design
-→ Architecture
-→ Smallest real experiment
-→ Code
+→ Product requirements         DONE
+→ Evaluation design            DONE
+→ Architecture                 DONE
+→ D0–D5 implementation         DONE
+→ User #1 D5 baseline run      NEXT
+→ Human Aha / Recognition      UNVERIFIED
+→ D6 Strategic Projection      BLOCKED UNTIL D5 PASSES
 ```
 
-## First experiment after design
+## First real experiment after D5 infrastructure
 
 The default validation target remains User #1.
 
-The first Applicant Intelligence benchmark should take the existing canonical profile and generate a small number of candidate insights using the pipeline:
+The current Applicant Intelligence baseline should take the existing canonical profile and generate a small number of candidate insights using the evidence-isolated path:
 
 ```text
-Facts
+Explicit confirmed Facts
 → Relations
 → Patterns
 → Abstractions / Concepts
-→ Hypotheses
-→ Strategic Directions
-→ Opportunity-space implications
-→ Unknown / next useful question
+→ optional Hypotheses
 ```
 
-Each candidate insight should preserve provenance back to supporting evidence and be tagged using the provisional epistemic states where appropriate.
-
-Human evaluation should initially score Level 1 insight quality, then record whether each accepted insight creates observable Level 2 strategic lift.
-
-The first benchmark should therefore capture at least:
+At D5, each candidate insight must preserve provenance and epistemic state and be scored on:
 
 ```text
 Groundedness
@@ -680,34 +678,26 @@ Novelty
 Recognition
 Compression
 External Legibility
-Strategic change caused
 ```
 
-The first benchmark should also record whether the output produces the minimum useful short-horizon session artifact:
+Do not proceed to Strategic Directions or Opportunity-space integration unless at least one chain is retained or revised with scores >=2 across all five dimensions and no hard epistemic failure.
 
-```text
-new insight
-+ new Opportunity-space
-+ concrete Opportunity candidate(s)
-+ fit explanation
-+ missing evidence / key question
-+ next action
-```
-
-The first objective is not to prove scholarship win-rate improvement or immediate cash delivery. It is to establish whether Opportunity AI can reliably generate defensible new meaning that changes understanding or short-horizon strategic search direction and produces actionable Opportunity pursuit, while preserving eventual Resource Outcome as the terminal objective.
+If the current D3 baseline fails, use the documented reasoning-v2 experiment plan rather than silently replacing the baseline.
 
 ## Phase transition status
 
 ```text
-Issue #2 — User #1 experiment          CLOSED
-Issue #3 — Opportunity Acquisition     CLOSED
-Engineering closeout / CI              VERIFIED
-Founder strategy Q1                    SYNTHESIZED
-Founder strategy Q2                    SYNTHESIZED
-Founder strategy Q3                    SYNTHESIZED
-Founder strategy Q4                    SYNTHESIZED
-Founder strategy Q5                    SYNTHESIZED
-Founder-question phase                 COMPLETE
-Applicant Intelligence implementation  NOT STARTED
-Next step                               PRODUCT REQUIREMENTS
+Issue #2 — User #1 experiment                     CLOSED
+Issue #3 — Opportunity Acquisition                CLOSED
+Engineering closeout / CI                         VERIFIED
+Founder strategy Q1                               SYNTHESIZED
+Founder strategy Q2                               SYNTHESIZED
+Founder strategy Q3                               SYNTHESIZED
+Founder strategy Q4                               SYNTHESIZED
+Founder strategy Q5                               SYNTHESIZED
+Founder-question phase                            COMPLETE
+Applicant Intelligence D0–D5 infrastructure       IMPLEMENTED
+Applicant Intelligence deterministic boundaries  VERIFIED
+Real User #1 D5 Aha / Recognition                 UNVERIFIED
+Next step                                          RUN USER #1 D5 BASELINE
 ```
