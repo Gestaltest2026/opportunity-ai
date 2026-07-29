@@ -25,7 +25,7 @@ const html = `
   <a href="https://example.edu/scholarships/beta?b=2&a=1">Beta <strong>Award</strong></a>
   <a href="https://external.example.com/scholarship">External</a>
   <a href="mailto:test@example.edu">Email</a>
-  <a href="::::">Broken</a>
+  <a href="javascript:void(0)">Non-web link</a>
 </body></html>`;
 
 const result = extractDiscoveryCandidates({
