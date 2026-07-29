@@ -34,6 +34,11 @@ const checks: Check[] = [
     command: "npm",
     args: ["run", "evaluate:discovery-candidates"],
   },
+  {
+    name: "discovery candidate classification regression",
+    command: "npm",
+    args: ["run", "evaluate:discovery-classification"],
+  },
 ];
 
 function runCheck(check: Check): Promise<void> {
