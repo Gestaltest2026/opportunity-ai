@@ -1,6 +1,9 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { ApplicantSchema } from "../extraction/applicantSchema";
-import { createCanonicalApplicantView } from "./canonicalApplicantAdapter";
+import {
+  createApplicantIntelligenceBenchmarkEvidence,
+  createCanonicalApplicantView,
+} from "./canonicalApplicantAdapter";
 import { generateCandidateInsights } from "./generateCandidateInsights";
 import { guardInsightChain } from "./epistemicGuard";
 import { HumanMeaningReviewInputSchema } from "./humanMeaningReview";
@@ -11,7 +14,8 @@ async function main() {
   );
   const applicant = ApplicantSchema.parse(raw);
   const canonicalView = createCanonicalApplicantView("applicant-001", applicant);
-  const generated = await generateCandidateInsights(canonicalView);
+  const benchmarkEvidence = createApplicantIntelligenceBenchmarkEvidence(canonicalView);
+  const generated = await generateCandidateInsights(benchmarkEvidence);
 
   const guardedChains = generated.candidate_chains
     .map((chain) => guardInsightChain(chain, canonicalView))
@@ -25,6 +29,11 @@ async function main() {
   const reviewInput = HumanMeaningReviewInputSchema.parse({
     applicant_id: canonicalView.applicant_id,
     candidate_chains: guardedChains,
+    prior_interpretations: benchmarkEvidence.prior_interpretations.map((claim) => ({
+      claim_id: claim.claim_id,
+      domain: claim.domain,
+      text: claim.text,
+    })),
   });
 
   const outputPath = "examples/applicant-001/d5-human-review-input.json";
@@ -34,6 +43,8 @@ async function main() {
     JSON.stringify(
       {
         applicant_id: canonicalView.applicant_id,
+        generation_evidence_count: benchmarkEvidence.evidence_claims.length,
+        prior_interpretation_count: benchmarkEvidence.prior_interpretations.length,
         generated_chain_count: generated.candidate_chains.length,
         reviewable_chain_count: guardedChains.length,
         output_path: outputPath,
