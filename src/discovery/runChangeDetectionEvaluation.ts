@@ -20,12 +20,13 @@ const opportunity = OpportunitySchema.parse({
   opportunity_type: "scholarship",
   availability_status: "open",
   award: { amount: 1000, currency: "USD", description: null },
-  deadline: { date: "2026-12-01", timezone: null, description: null },
+  deadline: "2026-12-01",
   eligibility: [],
   selection_preferences: [],
   narrative_preferences: [],
   application_requirements: [],
   restrictions: [],
+  source_evidence: ["Official scholarship page"],
 });
 
 const empty: OpportunityDatabank = { records: [] };
@@ -60,7 +61,7 @@ assertStep(
 
 const changedOpportunity = OpportunitySchema.parse({
   ...opportunity,
-  deadline: { date: "2026-12-15", timezone: null, description: null },
+  deadline: "2026-12-15",
 });
 const semantic = upsertOpportunity(
   rawOnly,
