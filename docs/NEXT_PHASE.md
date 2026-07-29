@@ -40,13 +40,17 @@ Opportunity Acquisition
 
 The strategy phase defines Applicant Intelligence before implementation.
 
-## Updated product thesis from founder Q1-Q2
+## Updated product thesis from founder Q1-Q3
 
 Opportunity AI is not merely a search, matching, or profile-enrichment system.
 
 Its stronger thesis is:
 
-> Opportunity AI should discover evidence-grounded meaning in a person's history, translate that meaning into forms that other people and institutions can understand, and use that understanding to expand the space of resources and opportunities worth pursuing.
+> Opportunity AI should discover evidence-grounded meaning in a person's history, translate that meaning into forms that other people and institutions can understand, and use that understanding to improve how resources and opportunities reach that person.
+
+The current product wedge is narrower:
+
+> Use the Applicant's existing evidence to discover under-recognized value and improve the discovery, selection, representation, and pursuit of near-term Opportunities.
 
 The current working pipeline is:
 
@@ -65,7 +69,7 @@ Raw Evidence
 → Economic / Opportunity Outcome
 ```
 
-The objective is not sophisticated language for its own sake. Understanding must eventually improve real allocation outcomes: money, tuition support, living support, access, networks, or other valuable opportunities.
+The objective is not sophisticated language for its own sake. Understanding is instrumental: it should ultimately improve real allocation outcomes such as money, tuition support, living support, access, networks, or other valuable opportunities.
 
 ## What "understanding" means
 
@@ -142,6 +146,28 @@ Concept
 
 Applicant understanding should therefore be capable of expanding the Source Universe rather than merely ranking Opportunities already known to the system.
 
+## External-world understanding is required
+
+Founder Q3 adds an important constraint: the system cannot judge Applicant value from Applicant data alone.
+
+A useful working model is:
+
+```text
+Deep Applicant Model
+× External World Knowledge
+× Opportunity / Resource-holder Model
+= Strategically useful Applicant Intelligence
+```
+
+The system should eventually be able to distinguish between:
+
+- something the Applicant personally finds impressive;
+- something that is statistically or socially unusual;
+- something a particular Resource Holder is likely to value;
+- something that can materially improve Opportunity pursuit.
+
+This suggests future knowledge layers such as Applicant knowledge, Opportunity knowledge, Resource-holder knowledge, selection knowledge, and external benchmark knowledge. These are architectural possibilities, not current implementation commitments.
+
 ## Opportunity-space expansion
 
 A key working principle is:
@@ -168,14 +194,134 @@ A successful Applicant Intelligence system should sometimes create a reaction eq
 
 > "I had not thought of myself that way, but the evidence supports it."
 
-This is not sufficient by itself, because novelty can also be wrong. Candidate insights should eventually be evaluated on at least four dimensions:
+This matters because Applicants may normalize or undervalue things they have done. The system should help surface under-recognized value, not merely flatter the Applicant.
+
+Aha is not the terminal objective. Novelty can be wrong, and self-recognition can be strategically irrelevant.
+
+## Meaning-quality and outcome evaluation
+
+Founder Q3 changes the evaluation hierarchy. Insight quality remains necessary, but it is only an upstream measure.
+
+### Level 1 — Insight Quality
+
+Candidate insights can initially be reviewed on dimensions such as:
 
 - **Groundedness** — is it actually supported by evidence?
 - **Novelty** — does it add something beyond restating the Applicant's own words?
 - **Recognition** — does the Applicant regard it as meaningfully true or illuminating?
-- **Actionability** — does it change search direction, representation, application strategy, or resource allocation?
+- **Compression** — does it organize multiple facts into a useful higher-order structure?
+- **External Legibility** — can another person or institution understand why this matters?
 
-Initial User #1 evaluation can use simple human ratings before any automated metric is designed.
+### Level 2 — Strategic Lift
+
+A useful insight should change a decision or strategy, for example:
+
+- reveal a previously unseen Opportunity-space;
+- change which Opportunities should be pursued;
+- expose new evidence worth collecting;
+- improve Applicant representation;
+- change application or essay strategy;
+- improve prioritization under limited time.
+
+### Level 3 — Resource Outcome
+
+The long-run product objective is real-world allocation improvement, such as:
+
+- qualified Opportunities discovered;
+- applications submitted;
+- awards or acceptances;
+- money, tuition support, living support, access, or networks acquired;
+- eventually, incremental resource gain attributable to Opportunity AI relative to a plausible baseline.
+
+A useful shorthand is:
+
+```text
+Insight Quality
+→ Strategic Lift
+→ Resource Outcome
+```
+
+This prevents the product from optimizing for sophisticated-sounding AI output rather than actual Applicant advantage.
+
+## Current North Star and supporting metrics
+
+The current North Star is not "number of insights" or "number of matched scholarships."
+
+The strongest long-run North Star is:
+
+> Increase the Applicant's ability to acquire valuable resources and Opportunities.
+
+Near-term benchmarks cannot yet prove causal resource lift, so current evaluation should use upstream and intermediate metrics while preserving the downstream objective.
+
+## Short-horizon vs long-horizon Opportunity markets
+
+Founder Q3 identifies a major time-horizon distinction.
+
+### Short-horizon market — current build focus
+
+These are Opportunities close enough that the Applicant cannot materially reinvent their profile before application.
+
+The system should optimize the Applicant's current assets through:
+
+```text
+Discovery
+× Qualification
+× Selection
+× Representation
+× Application Execution
+```
+
+This is the current execution wedge.
+
+### Long-horizon market — future thesis
+
+For Opportunities six months or more away, the problem can change from matching to development:
+
+```text
+Target Opportunity
+↓
+Desired Applicant State
+↓
+Gap from Current Applicant
+↓
+Development Strategy
+↓
+Actions / Experiences / Evidence
+↓
+Future Applicant
+```
+
+This could eventually turn Opportunity AI from a Matching Engine into an Applicant Development / Opportunity Engineering system.
+
+Do not build this now. Preserve it as a future product thesis and architectural consideration only.
+
+## Opportunity access and reversal of advantage
+
+Founder Q3 also introduces a product mission beyond convenience.
+
+Opportunity markets often reward pre-existing advantages such as:
+
+- information access;
+- mentors and networks;
+- school brand;
+- prior application experience;
+- available time;
+- language and writing support;
+- familiarity with funding ecosystems.
+
+Opportunity AI cannot erase all of these advantages, but it may be able to reduce gaps in:
+
+```text
+information search ability
++ self-interpretation ability
++ strategic planning ability
+```
+
+A useful mission formulation is:
+
+> Reduce the information, search, and interpretation friction between human potential and the systems that allocate resources to it.
+
+This is compatible with the longer-term two-sided allocation thesis without requiring a Side B product now.
 
 ## Questioning / Akinator direction
 
@@ -269,6 +415,8 @@ No multi-model routing should be implemented until a benchmark demonstrates that
 - Real observed failures should drive complexity; do not pre-build theoretical machinery without evidence.
 - The system should generate strategic search directions before recommending individual Opportunities.
 - Applicant Intelligence should ultimately cash out into real resource or opportunity outcomes.
+- Build the short-horizon wedge first; preserve long-horizon development as a future thesis.
+- Do not confuse Applicant self-esteem uplift with strategic or economic value.
 
 ## Frozen areas until strategy is resolved
 
@@ -286,16 +434,16 @@ Do not expand these areas during the strategy phase unless a concrete blocking d
 - Side B product surfaces
 - donor/foundation marketplace features
 - multi-model provider routing
+- long-horizon Applicant Development / Opportunity Engineering
 
 ## Remaining strategy questions
 
-Q1 and Q2 have now been answered provisionally and incorporated above.
+Q1, Q2, and Q3 have now been answered provisionally and incorporated above.
 
-The next questions should focus on validation and boundaries:
+The remaining questions should focus on boundaries and behavior:
 
-1. **Meaning quality:** How should Opportunity AI decide whether a newly generated interpretation, abstraction, or concept is actually good?
-2. **Inference boundary:** How far may the system infer beyond explicit Applicant facts before it must label something a hypothesis or ask the Applicant?
-3. **Product behavior / UX:** After an ideal interaction, what should materially change for the Applicant, and how should questioning, insights, search, and action fit together?
+1. **Q4 — Inference boundary:** How far may the system infer beyond explicit Applicant facts before it must label something a hypothesis or ask the Applicant?
+2. **Q5 — Product behavior / UX:** After an ideal interaction, what should materially change for the Applicant, and how should questioning, insights, search, and action fit together?
 
 These answers should be grounded in real examples rather than abstract preference alone.
 
@@ -340,16 +488,20 @@ Facts
 
 Each candidate insight should preserve provenance back to supporting evidence.
 
-Human evaluation should initially score:
+Human evaluation should initially score Level 1 insight quality, then record whether each accepted insight creates observable Level 2 strategic lift.
+
+The first benchmark should therefore capture at least:
 
 ```text
 Groundedness
 Novelty
 Recognition
-Actionability
+Compression
+External Legibility
+Strategic change caused
 ```
 
-The first objective is not to prove ranking lift or scholarship win-rate improvement. It is to establish whether Opportunity AI can reliably generate evidence-grounded meaning that changes understanding or strategic search direction.
+The first objective is not to prove scholarship win-rate improvement. It is to establish whether Opportunity AI can reliably generate defensible new meaning that changes understanding or short-horizon strategic search direction, while preserving eventual Resource Outcome as the terminal objective.
 
 ## Phase transition status
 
@@ -359,6 +511,7 @@ Issue #3 — Opportunity Acquisition     CLOSED
 Engineering closeout / CI              VERIFIED
 Founder strategy Q1                    SYNTHESIZED
 Founder strategy Q2                    SYNTHESIZED
-Remaining strategy questions           OPEN
+Founder strategy Q3                    SYNTHESIZED
+Remaining strategy questions           Q4-Q5 OPEN
 Applicant Intelligence implementation  NOT STARTED
 ```
