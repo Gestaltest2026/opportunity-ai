@@ -1,0 +1,60 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_for": "User #1 evidence collection and inquiry/application tracking",
+  "purpose": "Record real-world User #1 actions required after Phase 2 source-universe completion, without storing private financial details or sensitive documents in the public repository.",
+  "rules": [
+    "This ledger records action status; it does not prove eligibility.",
+    "Do not store SSNs, tax documents, FAFSA forms, exact private income values, or sensitive document contents in this public repository.",
+    "Evidence requests prepare action but do not satisfy the inquiry/application gate.",
+    "A completed inquiry/application must reference a curated source_id and record an outcome before Phase 3 can be considered.",
+    "Use summaries and document names only; keep private evidence outside the repo."
+  ],
+  "actions": [
+    {
+      "action_id": "action-request-user-001-evidence-v0",
+      "action_type": "evidence_request",
+      "status": "planned",
+      "source_id": null,
+      "source_name": null,
+      "created_at": "2026-07-30T01:36:00.000Z",
+      "requested_at": null,
+      "executed_at": null,
+      "outcome_recorded_at": null,
+      "summary": "Ask User #1 for missing scholarship evidence needed to evaluate curated sources.",
+      "evidence_collected": [],
+      "missing_evidence_addressed": [
+        "FGCU GPA / current academic record",
+        "FAFSA completion and aid year",
+        "financial need / SAI / Pell status or equivalent documentation summary",
+        "Florida residency for tuition or aid purposes",
+        "first bachelor's degree / first undergraduate degree status",
+        "2026-27 enrollment status and course load",
+        "updated resume and personal statement"
+      ],
+      "next_step": "Send the generated evidence request to User #1 and update this record to completed only after a response is received and summarized outside the repo.",
+      "notes": [
+        "Keep private documents out of the public repository.",
+        "Use this as the first real-world action after Phase 2 readiness."
+      ]
+    },
+    {
+      "action_id": "action-first-curated-source-inquiry-v0",
+      "action_type": "inquiry",
+      "status": "planned",
+      "source_id": null,
+      "source_name": null,
+      "created_at": "2026-07-30T01:36:00.000Z",
+      "requested_at": null,
+      "executed_at": null,
+      "outcome_recorded_at": null,
+      "summary": "Placeholder for the first real inquiry/application from the curated User #1 source universe.",
+      "evidence_collected": [],
+      "missing_evidence_addressed": [],
+      "next_step": "After the shortlist and evidence request are reviewed, select one curated NEEDS_VERIFICATION source and record the real inquiry/application here.",
+      "notes": [
+        "This remains planned until an actual inquiry or application is sent.",
+        "Do not use this placeholder to unlock Phase 3."
+      ]
+    }
+  ]
+}
