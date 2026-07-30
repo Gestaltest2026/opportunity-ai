@@ -43,6 +43,12 @@ jobs:
       - name: Verify source coverage model
         run: npm run evaluate:source-coverage
 
+      - name: Verify watchlist source merge
+        run: npm run evaluate:watchlist-merge
+
+      - name: Fold Phase 2 curated source additions into User #1 watchlist
+        run: npm run watchlist:merge -- data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/phase-2-source-additions.user-001.json
+
       - name: Monitor curated User #1 opportunity sources
         run: npm run watchlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md --max-sources=${{ inputs.max_sources || 20 }}
 
@@ -58,6 +64,7 @@ jobs:
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
           git add \
             data/opportunity-source-universe/curated-watchlist.user-001.json \
+            data/opportunity-source-universe/phase-2-source-additions.user-001.json \
             examples/applicant-001/opportunity-watchlist-report-v0.md \
             examples/applicant-001/opportunity-shortlist-v0.json \
             examples/applicant-001/opportunity-shortlist-v0.md \
