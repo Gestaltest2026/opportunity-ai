@@ -1,0 +1,146 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-30T19:55:32.281Z",
+  "purpose": "Prevent Opportunity AI from presenting a scholarship as application-ready when hard eligibility evidence is missing.",
+  "rule": "No evidence, no eligibility. No eligibility, no application. No application, only inquiry.",
+  "status_counts": {
+    "APPLICATION_READY": 0,
+    "NEEDS_VERIFICATION": 4,
+    "EXPIRED": 1,
+    "PATTERN_ONLY": 0,
+    "REJECTED": 0
+  },
+  "application_ready_count": 0,
+  "needs_verification_count": 4,
+  "expired_count": 1,
+  "pattern_only_count": 0,
+  "rejected_count": 0,
+  "findings": [
+    {
+      "applicant_id": "applicant-001",
+      "opportunity_id": "nfpa-pcce-scholarship-2026",
+      "name": "NFPA PCCE Scholarship 2026",
+      "status": "EXPIRED",
+      "apply_now": false,
+      "hard_blockers": [
+        "DEADLINE_EXPIRED"
+      ],
+      "missing_evidence": [
+        "Current-cycle deadline must be open."
+      ],
+      "required_documents": [
+        "certification-related application materials"
+      ],
+      "reason": "The official or controlled deadline evidence marks this opportunity as expired for the current cycle.",
+      "recommended_next_action": "monitor_next_cycle",
+      "fit_signal_summary": "Strong legal/paralegal certification fit, but current-cycle deadline blocks application."
+    },
+    {
+      "applicant_id": "applicant-001",
+      "opportunity_id": "paf-professional-development-2026",
+      "name": "PAF Professional Development Scholarship 2026",
+      "status": "NEEDS_VERIFICATION",
+      "apply_now": false,
+      "hard_blockers": [
+        "MEMBERSHIP_REQUIRED"
+      ],
+      "missing_evidence": [
+        "paf_membership_good_standing"
+      ],
+      "required_documents": [
+        "professional goals statement",
+        "proof of payment after program/exam",
+        "successful completion evidence after program/exam"
+      ],
+      "reason": "Do not apply yet. Strict gate found unresolved blocker(s): MEMBERSHIP_REQUIRED.",
+      "recommended_next_action": "send_inquiry",
+      "fit_signal_summary": "Strong Florida paralegal professional-development fit; legal work history is aligned."
+    },
+    {
+      "applicant_id": "applicant-001",
+      "opportunity_id": "paf-student-education-dues-2026",
+      "name": "PAF Student Education & Dues Reimbursement Scholarship 2026",
+      "status": "NEEDS_VERIFICATION",
+      "apply_now": false,
+      "hard_blockers": [
+        "ENROLLMENT_UNKNOWN",
+        "MEMBERSHIP_REQUIRED",
+        "RECOMMENDATION_REQUIRED"
+      ],
+      "missing_evidence": [
+        "current_enrollment_documentation",
+        "paf_student_membership_good_standing",
+        "professor_recommendation_available"
+      ],
+      "required_documents": [
+        "goals statement",
+        "current transcript",
+        "professor recommendation",
+        "possible employer recommendation"
+      ],
+      "reason": "Do not apply yet. Strict gate found unresolved blocker(s): ENROLLMENT_UNKNOWN, MEMBERSHIP_REQUIRED, RECOMMENDATION_REQUIRED.",
+      "recommended_next_action": "send_inquiry",
+      "fit_signal_summary": "Legal Studies and GPA fit the student-support theory, but student membership and enrollment evidence remain unresolved."
+    },
+    {
+      "applicant_id": "applicant-001",
+      "opportunity_id": "swfpa-professional-development-2026",
+      "name": "SWFPA Professional Development Scholarship 2026",
+      "status": "NEEDS_VERIFICATION",
+      "apply_now": false,
+      "hard_blockers": [
+        "MEMBERSHIP_REQUIRED"
+      ],
+      "missing_evidence": [
+        "swfpa_active_membership"
+      ],
+      "required_documents": [
+        "resume",
+        "personal statement",
+        "course or certification information"
+      ],
+      "reason": "Do not apply yet. Strict gate found unresolved blocker(s): MEMBERSHIP_REQUIRED.",
+      "recommended_next_action": "send_inquiry",
+      "fit_signal_summary": "Strong Southwest Florida paralegal professional-development fit; amount is smaller but form is lightweight."
+    },
+    {
+      "applicant_id": "applicant-001",
+      "opportunity_id": "buckfire-paralegal-scholarship-2026",
+      "name": "Buckfire & Buckfire Paralegal Scholarship 2026",
+      "status": "NEEDS_VERIFICATION",
+      "apply_now": false,
+      "hard_blockers": [
+        "CITIZENSHIP_UNKNOWN",
+        "PROGRAM_TYPE_UNKNOWN",
+        "SEMESTER_COMPLETION_UNKNOWN"
+      ],
+      "missing_evidence": [
+        "citizenship",
+        "one_semester_completed",
+        "paralegal_program_status"
+      ],
+      "required_documents": [
+        "online application",
+        "transcript",
+        "essay or application responses"
+      ],
+      "reason": "Do not apply yet. Strict gate found unresolved blocker(s): CITIZENSHIP_UNKNOWN, PROGRAM_TYPE_UNKNOWN, SEMESTER_COMPLETION_UNKNOWN.",
+      "recommended_next_action": "send_inquiry",
+      "fit_signal_summary": "Strong essay/GPA/legal-studies fit and larger award amount, but citizenship and paralegal-program requirements are unresolved."
+    }
+  ],
+  "required_next_actions": [
+    "Do not force a top-three application list. APPLICATION_READY is 0 under the strict gate.",
+    "Convert the closest candidates into eligibility inquiries, not applications.",
+    "Send eligibility inquiry for PAF Professional Development Scholarship 2026; unresolved blocker(s): MEMBERSHIP_REQUIRED.",
+    "Send eligibility inquiry for PAF Student Education & Dues Reimbursement Scholarship 2026; unresolved blocker(s): ENROLLMENT_UNKNOWN, MEMBERSHIP_REQUIRED, RECOMMENDATION_REQUIRED.",
+    "Send eligibility inquiry for SWFPA Professional Development Scholarship 2026; unresolved blocker(s): MEMBERSHIP_REQUIRED."
+  ],
+  "guardrails": [
+    "Strict mode may return zero application-ready opportunities; that is a valid output, not a failure.",
+    "Do not infer citizenship, membership, enrollment, financial need, or program eligibility from narrative fit.",
+    "Expired sources should be retained only as pattern-only or next-cycle monitoring inputs.",
+    "Membership blockers require source-backed confirmation that the applicant is already in good standing or can become eligible before the scholarship deadline.",
+    "The gate does not search the web; it evaluates curated, source-backed records only."
+  ]
+}
