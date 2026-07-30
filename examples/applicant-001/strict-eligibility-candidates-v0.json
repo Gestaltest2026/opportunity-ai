@@ -1,0 +1,214 @@
+[
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "nfpa-pcce-scholarship-2026",
+    "name": "NFPA PCCE Scholarship 2026",
+    "source_type": "official",
+    "official_source_urls": [
+      "https://www.paralegals.org/page/awards-scholarships"
+    ],
+    "deadline": "2026-07-01",
+    "deadline_status": "expired",
+    "deadline_evidence": "Current-cycle deadline has passed in the recorded research note.",
+    "pattern_only": false,
+    "fit_signal_summary": "Strong legal/paralegal certification fit, but current-cycle deadline blocks application.",
+    "required_documents": [
+      "certification-related application materials"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "deadline-current",
+        "description": "Current-cycle deadline must be open.",
+        "official_evidence_summary": "Recorded as past deadline.",
+        "applicant_evidence_key": null,
+        "evaluation": "not_satisfied",
+        "blocker_if_unknown": null,
+        "blocker_if_not_satisfied": "DEADLINE_EXPIRED"
+      }
+    ],
+    "notes": [
+      "Keep as pattern-only source for future legal certification scholarships."
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "paf-professional-development-2026",
+    "name": "PAF Professional Development Scholarship 2026",
+    "source_type": "official",
+    "official_source_urls": [
+      "https://pafinc.org/scholarships/",
+      "https://imembersdb.com/iMembersdb/Accounts/1021/assets/2026%20Professional%20Development%20Scholarship%20Application.pdf"
+    ],
+    "deadline": "2026-11-30",
+    "deadline_status": "future",
+    "deadline_evidence": "Official PAF scholarship materials identify a November 30, 2026 deadline.",
+    "pattern_only": false,
+    "fit_signal_summary": "Strong Florida paralegal professional-development fit; legal work history is aligned.",
+    "required_documents": [
+      "professional goals statement",
+      "proof of payment after program/exam",
+      "successful completion evidence after program/exam"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "paf-good-standing",
+        "description": "Applicant must be a PAF and local chapter member in good standing.",
+        "official_evidence_summary": "Official materials require PAF/local chapter good standing.",
+        "applicant_evidence_key": "paf_membership_good_standing",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "MEMBERSHIP_REQUIRED",
+        "blocker_if_not_satisfied": "MEMBERSHIP_REQUIRED"
+      },
+      {
+        "requirement_id": "florida-work-reside",
+        "description": "Applicant must work or reside in Florida.",
+        "official_evidence_summary": "Official materials tie eligibility to Florida work/residence.",
+        "applicant_evidence_key": "florida_work_or_residence",
+        "evaluation": "satisfied",
+        "blocker_if_unknown": "LOCATION_REQUIRED",
+        "blocker_if_not_satisfied": "LOCATION_REQUIRED"
+      }
+    ],
+    "notes": [
+      "Closest candidate, but not application-ready until membership good standing is verified."
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "paf-student-education-dues-2026",
+    "name": "PAF Student Education & Dues Reimbursement Scholarship 2026",
+    "source_type": "official",
+    "official_source_urls": [
+      "https://pafinc.org/scholarships/",
+      "https://imembersdb.com/iMembersdb/Accounts/1021/assets/2026%20Student%20Education%20%26%20Dues%20Scholarship%20Application.pdf"
+    ],
+    "deadline": "2026-11-30",
+    "deadline_status": "future",
+    "deadline_evidence": "Official PAF student scholarship materials identify a November 30, 2026 deadline.",
+    "pattern_only": false,
+    "fit_signal_summary": "Legal Studies and GPA fit the student-support theory, but student membership and enrollment evidence remain unresolved.",
+    "required_documents": [
+      "goals statement",
+      "current transcript",
+      "professor recommendation",
+      "possible employer recommendation"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "student-member-good-standing",
+        "description": "Applicant must be a student member in good standing.",
+        "official_evidence_summary": "Official materials require student member good standing.",
+        "applicant_evidence_key": "paf_student_membership_good_standing",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "MEMBERSHIP_REQUIRED",
+        "blocker_if_not_satisfied": "MEMBERSHIP_REQUIRED"
+      },
+      {
+        "requirement_id": "current-enrollment-proof",
+        "description": "Applicant must provide current student/enrollment evidence.",
+        "official_evidence_summary": "Official materials require student education documentation.",
+        "applicant_evidence_key": "current_enrollment_documentation",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "ENROLLMENT_UNKNOWN",
+        "blocker_if_not_satisfied": "ENROLLMENT_UNKNOWN"
+      },
+      {
+        "requirement_id": "professor-recommendation",
+        "description": "Applicant must provide a professor recommendation.",
+        "official_evidence_summary": "Official materials request professor recommendation.",
+        "applicant_evidence_key": "professor_recommendation_available",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "RECOMMENDATION_REQUIRED",
+        "blocker_if_not_satisfied": "RECOMMENDATION_REQUIRED"
+      }
+    ],
+    "notes": [
+      "Potentially useful, but heavier than the Professional Development route."
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "swfpa-professional-development-2026",
+    "name": "SWFPA Professional Development Scholarship 2026",
+    "source_type": "official",
+    "official_source_urls": [
+      "https://www.swfloridaparalegals.org/continuing_education/scholarships.php",
+      "https://www.swfloridaparalegals.org/Editor/assets/PDF/SWFPA-Scholarship-Application.pdf"
+    ],
+    "deadline": "2026-10-01",
+    "deadline_status": "future",
+    "deadline_evidence": "Official SWFPA page records an October 1 current-year deadline.",
+    "pattern_only": false,
+    "fit_signal_summary": "Strong Southwest Florida paralegal professional-development fit; amount is smaller but form is lightweight.",
+    "required_documents": [
+      "resume",
+      "personal statement",
+      "course or certification information"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "active-member",
+        "description": "Applicant must be an active SWFPA member.",
+        "official_evidence_summary": "Official SWFPA scholarship page requires active member status.",
+        "applicant_evidence_key": "swfpa_active_membership",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "MEMBERSHIP_REQUIRED",
+        "blocker_if_not_satisfied": "MEMBERSHIP_REQUIRED"
+      }
+    ],
+    "notes": [
+      "Do not apply until active membership timing is confirmed."
+    ]
+  },
+  {
+    "applicant_id": "applicant-001",
+    "opportunity_id": "buckfire-paralegal-scholarship-2026",
+    "name": "Buckfire & Buckfire Paralegal Scholarship 2026",
+    "source_type": "official",
+    "official_source_urls": [
+      "https://buckfirelaw.com/scholarships/paralegal/"
+    ],
+    "deadline": "2026-10-01",
+    "deadline_status": "future",
+    "deadline_evidence": "Official page records an October 1, 2026 deadline and open web form.",
+    "pattern_only": false,
+    "fit_signal_summary": "Strong essay/GPA/legal-studies fit and larger award amount, but citizenship and paralegal-program requirements are unresolved.",
+    "required_documents": [
+      "online application",
+      "transcript",
+      "essay or application responses"
+    ],
+    "requirements": [
+      {
+        "requirement_id": "us-citizen",
+        "description": "Applicant must be a U.S. citizen.",
+        "official_evidence_summary": "Official Buckfire page requires U.S. citizenship.",
+        "applicant_evidence_key": "citizenship",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "CITIZENSHIP_UNKNOWN",
+        "blocker_if_not_satisfied": "CITIZENSHIP_UNKNOWN"
+      },
+      {
+        "requirement_id": "paralegal-program",
+        "description": "Applicant must be enrolled in a paralegal education program.",
+        "official_evidence_summary": "Official Buckfire page requires paralegal education program enrollment.",
+        "applicant_evidence_key": "paralegal_program_status",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "PROGRAM_TYPE_UNKNOWN",
+        "blocker_if_not_satisfied": "PROGRAM_TYPE_UNKNOWN"
+      },
+      {
+        "requirement_id": "one-semester-completed",
+        "description": "Applicant must have completed at least one semester of classes.",
+        "official_evidence_summary": "Official Buckfire page requires at least one completed semester.",
+        "applicant_evidence_key": "one_semester_completed",
+        "evaluation": "unknown",
+        "blocker_if_unknown": "SEMESTER_COMPLETION_UNKNOWN",
+        "blocker_if_not_satisfied": "SEMESTER_COMPLETION_UNKNOWN"
+      }
+    ],
+    "notes": [
+      "Membership is not the blocker here; applicant evidence is."
+    ]
+  }
+]
