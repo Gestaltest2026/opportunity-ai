@@ -1,0 +1,593 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_for": "User #1 Phase 2 curated source expansion",
+  "purpose": "Expand the curated User #1 Opportunity Source Universe from 13 to 25 sources without autonomous web discovery, LLM extraction, or unverified recommendations.",
+  "rules": [
+    "These sources are curated Phase 2 additions, not web-wide discovery output.",
+    "New sources enter the watchlist as unobserved until the scheduled monitor fetches them.",
+    "Official-source verification is still required before any applicant-facing eligibility claim.",
+    "Aggregator or connector sources are discovery aids only and must be verified at sponsor pages.",
+    "UNKNOWN applicant facts must remain unknown until User #1 or source evidence confirms them."
+  ],
+  "sources": [
+    {
+      "source_id": "fgcu-undergraduate-grants-official",
+      "name": "FGCU Undergraduate Grants",
+      "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/grants",
+      "provider": "Florida Gulf Coast University",
+      "source_tier": "official",
+      "source_role": "monitoring_source",
+      "opportunity_classes": [
+        "university internal grant",
+        "state aid",
+        "undergraduate grant"
+      ],
+      "eligibility_signals": [
+        "FGCU undergraduate",
+        "Florida resident",
+        "financial need",
+        "FAFSA",
+        "Pell Grant",
+        "Florida Student Assistance Grant",
+        "minimum credit hours"
+      ],
+      "narrative_signals": [
+        "education affordability",
+        "institutional financial aid process"
+      ],
+      "funder_intent_signals": [
+        "need_based_mobility",
+        "state_student_support"
+      ],
+      "user_001_relevance": "high",
+      "watch_reason": [
+        "User #1 is an FGCU undergraduate",
+        "Need-based grants may depend on FAFSA, Florida residency, Pell status, and enrollment load"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 168,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Do not treat grant visibility as eligibility until User #1 FAFSA, SAI/Pell, residency, and enrollment load are confirmed."
+      ]
+    },
+    {
+      "source_id": "fgcu-summer-financial-aid-official",
+      "name": "FGCU Summer Financial Aid",
+      "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/summerfunding",
+      "provider": "Florida Gulf Coast University",
+      "source_tier": "official",
+      "source_role": "monitoring_source",
+      "opportunity_classes": [
+        "university internal grant",
+        "summer grant",
+        "undergraduate aid"
+      ],
+      "eligibility_signals": [
+        "FGCU undergraduate",
+        "FAFSA",
+        "financial need",
+        "Pell Grant",
+        "minimum credits",
+        "summer enrollment"
+      ],
+      "narrative_signals": [
+        "continuous enrollment",
+        "education completion",
+        "aid strategy"
+      ],
+      "funder_intent_signals": [
+        "degree_completion_support",
+        "need_based_mobility"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Useful if User #1 takes summer credits",
+        "Can affect completion planning and gap funding"
+      ],
+      "actionability": "monitor_only",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Keep as planning context unless User #1 confirms summer enrollment."
+      ]
+    },
+    {
+      "source_id": "soroptimist-live-your-dream-awards",
+      "name": "Soroptimist Live Your Dream Awards",
+      "url": "https://www.liveyourdream.org/get-help/apply-for-an-educational-grant/index.html",
+      "provider": "Soroptimist International of the Americas",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "education and training award",
+        "women education grant",
+        "scholarship"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "primary financial support",
+        "dependent child",
+        "financial need",
+        "education or training program",
+        "undergraduate degree"
+      ],
+      "narrative_signals": [
+        "mother pursuing education",
+        "family responsibility",
+        "economic mobility",
+        "education after interruption"
+      ],
+      "funder_intent_signals": [
+        "women_advancement",
+        "family_stability",
+        "need_based_mobility"
+      ],
+      "user_001_relevance": "high",
+      "watch_reason": [
+        "User #1 has confirmed mother evidence and returning-learner evidence",
+        "Potentially strong if primary-support and financial-need definitions are met"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 168,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Requires User #1 financial support role, dependent-child language, financial need, and current cycle verification."
+      ]
+    },
+    {
+      "source_id": "soroptimist-live-your-dream-application-help",
+      "name": "Soroptimist Live Your Dream Application Help Guide",
+      "url": "https://apply.soroptimist.org/res/p/help-app/",
+      "provider": "Soroptimist International of the Americas",
+      "source_tier": "official",
+      "source_role": "monitoring_source",
+      "opportunity_classes": [
+        "application help guide",
+        "women education grant process"
+      ],
+      "eligibility_signals": [
+        "woman",
+        "financial need",
+        "family support",
+        "school or training program",
+        "career goals"
+      ],
+      "narrative_signals": [
+        "career goals",
+        "education plan",
+        "family responsibility"
+      ],
+      "funder_intent_signals": [
+        "women_advancement",
+        "family_stability"
+      ],
+      "user_001_relevance": "high",
+      "watch_reason": [
+        "Clarifies application mechanics and local-club routing for Soroptimist Live Your Dream"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Use with the main Soroptimist source; do not duplicate as a separate award in matching."
+      ]
+    },
+    {
+      "source_id": "collaboratory-scholarships",
+      "name": "Collaboratory Scholarships",
+      "url": "https://collaboratory.org/scholarships/",
+      "provider": "Collaboratory",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "community foundation scholarship",
+        "Southwest Florida scholarship",
+        "local scholarship"
+      ],
+      "eligibility_signals": [
+        "Southwest Florida",
+        "Lee County",
+        "Collier County",
+        "undergraduate college student",
+        "FAFSA",
+        "career goals"
+      ],
+      "narrative_signals": [
+        "local civic contribution",
+        "education completion",
+        "workforce pathway"
+      ],
+      "funder_intent_signals": [
+        "local_civic_investment",
+        "workforce_pipeline",
+        "need_based_mobility"
+      ],
+      "user_001_relevance": "high",
+      "watch_reason": [
+        "Major Southwest Florida scholarship source",
+        "Potentially relevant if User #1 meets local residency or school history rules"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 168,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Requires local eligibility verification; likely needs FAFSA and transcript materials."
+      ]
+    },
+    {
+      "source_id": "collaboratory-scholarship-program-details",
+      "name": "Collaboratory Scholarship Program Details",
+      "url": "https://collaboratory.org/more/our-scholarships-program/",
+      "provider": "Collaboratory",
+      "source_tier": "official",
+      "source_role": "monitoring_source",
+      "opportunity_classes": [
+        "community foundation scholarship process",
+        "Southwest Florida scholarship"
+      ],
+      "eligibility_signals": [
+        "Southwest Florida",
+        "FAFSA",
+        "transcript",
+        "qualified programs",
+        "application process"
+      ],
+      "narrative_signals": [
+        "local education support",
+        "career preparation",
+        "application readiness"
+      ],
+      "funder_intent_signals": [
+        "local_civic_investment",
+        "workforce_pipeline"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Clarifies Collaboratory application requirements and documents"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Use with Collaboratory main scholarship page; not a separate award."
+      ]
+    },
+    {
+      "source_id": "collier-community-foundation-scholarships",
+      "name": "Collier Community Foundation Scholarships",
+      "url": "https://colliercf.org/scholarships/",
+      "provider": "Collier Community Foundation",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "community foundation scholarship",
+        "Collier County scholarship",
+        "local scholarship"
+      ],
+      "eligibility_signals": [
+        "Collier County",
+        "resident",
+        "level of education",
+        "area of study",
+        "GPA",
+        "financial need"
+      ],
+      "narrative_signals": [
+        "local civic contribution",
+        "education completion",
+        "community investment"
+      ],
+      "funder_intent_signals": [
+        "local_civic_investment",
+        "need_based_mobility"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Local Southwest Florida source with many scholarship funds",
+        "May matter if User #1 meets Collier residency or program criteria"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Treat as local source; do not assume Collier eligibility without address/residency confirmation."
+      ]
+    },
+    {
+      "source_id": "collier-scholarship-connector",
+      "name": "Scholarship Connector",
+      "url": "https://www.swflscholarships.org/finder/search/results/listall/1",
+      "provider": "Collier Community Foundation / Scholarship Connector",
+      "source_tier": "aggregator",
+      "source_role": "discovery_source",
+      "opportunity_classes": [
+        "scholarship directory",
+        "Southwest Florida scholarship connector",
+        "local scholarship"
+      ],
+      "eligibility_signals": [
+        "Lee County",
+        "Collier County",
+        "Southwest Florida",
+        "Florida Gulf Coast University",
+        "undergraduate college student"
+      ],
+      "narrative_signals": [
+        "local scholarship discovery",
+        "community foundation navigation"
+      ],
+      "funder_intent_signals": [
+        "opportunity_discovery",
+        "local_civic_investment"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Broad local discovery source for Southwest Florida scholarships",
+        "May identify funds that must be verified at original sponsor pages"
+      ],
+      "actionability": "monitor_only",
+      "current_status": "recurring",
+      "verification_policy": "aggregator_must_be_verified_at_sponsor",
+      "enabled": true,
+      "refresh_interval_hours": 720,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Discovery only. Do not treat connector listings as final eligibility evidence."
+      ]
+    },
+    {
+      "source_id": "rotary-club-fort-myers-scholarships",
+      "name": "Rotary Club of Fort Myers Scholarships",
+      "url": "https://rotaryfortmyers.org/scholarships/",
+      "provider": "Rotary Club of Fort Myers",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "Rotary scholarship",
+        "Lee County scholarship",
+        "local civic scholarship"
+      ],
+      "eligibility_signals": [
+        "Lee County resident",
+        "Florida college or university",
+        "GPA",
+        "community service",
+        "undergraduate"
+      ],
+      "narrative_signals": [
+        "local civic contribution",
+        "community service",
+        "education persistence"
+      ],
+      "funder_intent_signals": [
+        "local_civic_investment",
+        "civic_leadership"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Potential local civic scholarship if User #1 meets Lee County and college-enrollment criteria"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Requires location, GPA, enrollment, and age/degree constraints verification before recommendation."
+      ]
+    },
+    {
+      "source_id": "naples-womans-club-scholarships",
+      "name": "Naples Woman's Club Scholarship Support",
+      "url": "https://napleswomansclub.org/help/",
+      "provider": "Naples Woman's Club",
+      "source_tier": "official",
+      "source_role": "monitoring_source",
+      "opportunity_classes": [
+        "women scholarship fund",
+        "mature women education support",
+        "local civic scholarship"
+      ],
+      "eligibility_signals": [
+        "women",
+        "mature women",
+        "college student",
+        "technical education",
+        "Naples",
+        "Collier County"
+      ],
+      "narrative_signals": [
+        "returning learner",
+        "women returning to school",
+        "community support"
+      ],
+      "funder_intent_signals": [
+        "women_advancement",
+        "local_civic_investment",
+        "adult_education_completion"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Pattern and possible local fit for mature women returning to education"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 720,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "May require manual inquiry; page is source-level evidence, not a full application page."
+      ]
+    },
+    {
+      "source_id": "paralegal-association-florida-scholarships",
+      "name": "Paralegal Association of Florida Scholarships",
+      "url": "https://pafinc.org/scholarships/",
+      "provider": "Paralegal Association of Florida, Inc.",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "paralegal scholarship",
+        "legal studies scholarship",
+        "professional association scholarship"
+      ],
+      "eligibility_signals": [
+        "paralegal",
+        "legal studies",
+        "student member",
+        "Florida",
+        "association member"
+      ],
+      "narrative_signals": [
+        "legal profession access",
+        "professional-to-academic legal transition",
+        "career transition into law"
+      ],
+      "funder_intent_signals": [
+        "legal_profession_access",
+        "workforce_pipeline"
+      ],
+      "user_001_relevance": "high",
+      "watch_reason": [
+        "User #1 works as a paralegal/office manager and studies Legal Studies",
+        "May require PAF student membership and program-specific eligibility"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "High strategic fit, but membership and student-status requirements must be verified."
+      ]
+    },
+    {
+      "source_id": "nfpa-awards-scholarships",
+      "name": "NFPA Awards and Scholarships",
+      "url": "https://www.paralegals.org/page/awards-scholarships",
+      "provider": "National Federation of Paralegal Associations",
+      "source_tier": "official",
+      "source_role": "application_source",
+      "opportunity_classes": [
+        "paralegal student scholarship",
+        "professional association scholarship",
+        "legal profession award"
+      ],
+      "eligibility_signals": [
+        "paralegal",
+        "student scholarship",
+        "association membership",
+        "legal studies",
+        "essay"
+      ],
+      "narrative_signals": [
+        "legal profession access",
+        "public service",
+        "career transition into law",
+        "professional identity"
+      ],
+      "funder_intent_signals": [
+        "legal_profession_access",
+        "professional_development"
+      ],
+      "user_001_relevance": "medium",
+      "watch_reason": [
+        "Legal/paralegal scholarship source aligned with User #1's work and academic direction"
+      ],
+      "actionability": "needs_verification",
+      "current_status": "recurring",
+      "verification_policy": "official_source_required",
+      "enabled": true,
+      "refresh_interval_hours": 336,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "last_changed_at": null,
+      "content_hash": null,
+      "last_observed_signal_summary": null,
+      "failure_count": 0,
+      "notes": [
+        "Verify membership, student, and deadline requirements before recommending."
+      ]
+    }
+  ]
+}
