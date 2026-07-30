@@ -170,11 +170,12 @@ const fillerSources = Array.from({ length: 43 }, (_, index) =>
   makeSource(index + 100, {
     source_id: `filler-${index}`,
     name: `Filler Official Application Source ${index}`,
-    provider: "Fixture Official Provider",
+    provider: index < 33 ? "Florida Gulf Coast University" : "Archive Fixture",
     source_tier: index < 32 ? "official" : "archive",
     source_role: index < 20 ? "application_source" : index < 33 ? "monitoring_source" : "pattern_archive",
-    opportunity_classes: index < 33 ? ["scholarship"] : ["archive scholarship"],
-    eligibility_signals: index < 15 ? ["woman", "financial need"] : ["undergraduate"],
+    opportunity_classes: index < 33 ? ["FGCU scholarship"] : ["scholarship directory archive"],
+    eligibility_signals:
+      index < 15 ? ["woman", "financial need", "FGCU undergraduate"] : ["FGCU undergraduate"],
     narrative_signals: index < 15 ? ["returning learner"] : ["student persistence"],
     funder_intent_signals: index < 15 ? ["women_advancement"] : ["need_based_mobility"],
     user_001_relevance: index < 15 ? "high" : index < 33 ? "medium" : "pattern_only",
