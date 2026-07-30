@@ -1,0 +1,1302 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-30T03:36:29.544Z",
+  "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
+  "guardrails": [
+    "This shortlist is a triage artifact, not final scholarship advice.",
+    "A source cannot become APPLICATION_READY while required applicant facts remain unknown.",
+    "Official-source verification is required immediately before application or outreach.",
+    "Closed, upcoming, blocked, and pattern-only sources must not be presented as currently actionable."
+  ],
+  "counts": {
+    "APPLICATION_READY": 0,
+    "NEEDS_VERIFICATION": 36,
+    "WATCH_NEXT_CYCLE": 3,
+    "SOURCE_ACCESS_BLOCKED": 5,
+    "PATTERN_ONLY": 9
+  },
+  "buckets": {
+    "APPLICATION_READY": [],
+    "NEEDS_VERIFICATION": [
+      {
+        "source_id": "collaboratory-scholarships",
+        "name": "Collaboratory Scholarships",
+        "provider": "Collaboratory",
+        "url": "https://collaboratory.org/scholarships/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Major Southwest Florida scholarship source",
+          "Potentially relevant if User #1 meets local residency or school history rules"
+        ],
+        "observed_signal_summary": "signal_hits=Southwest Florida, career goals, workforce_pipeline; amount_text=$132",
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year; Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; .... Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-admissions-scholarships-waivers",
+        "name": "FGCU Admissions Scholarships and Waivers",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/undergraduateadmissions/scholarshipsandwaivers",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Contains transfer scholarship rules relevant to User #1",
+          "May identify automatic-consideration scholarships"
+        ],
+        "observed_signal_summary": "signal_hits=transfer scholarship, admissions scholarship, tuition waiver, transfer student, GPA, AA degree, Florida resident, academic achievement; deadline_text=Application Deadlines Transfer Student Specialized Admissions Programs Admission Forms Non-Degree Student Admissions Returning Student Admissions International; amount_text=$10,000",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "Florida residency for tuition or aid purposes",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; Florida residency for tuition or aid purposes; 2026-27 enrollment status and course load; .... Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-financial-aid-contact-official",
+        "name": "FGCU Financial Aid and Scholarships Contact",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/formsandresources/contactus",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Primary office for confirming User #1 scholarship eligibility, FAFSA status, and award timing",
+          "Useful when automated source pages are ambiguous or access-blocked"
+        ],
+        "observed_signal_summary": "signal_hits=financial aid, FAFSA",
+        "missing_evidence": [
+          "FAFSA completion and aid year"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-transfer-aid-official",
+        "name": "FGCU Aid for Transfer Students",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/aidfortransfer",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 is a transfer student",
+          "Transfer-specific funding may be automatic or deadline-driven"
+        ],
+        "observed_signal_summary": "signal_hits=transfer scholarship, transfer student; deadline_text=apply by January 1 of each year will be given priority",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-undergraduate-grants-official",
+        "name": "FGCU Undergraduate Grants",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/grants",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 is an FGCU undergraduate",
+          "Need-based grants may depend on FAFSA, Florida residency, Pell status, and enrollment load"
+        ],
+        "observed_signal_summary": "signal_hits=undergraduate grant, FGCU undergraduate, Florida resident, financial need, FAFSA, Pell Grant, Florida Student Assistance Grant; deadline_text=deadline requirements will receive this grant; amount_text=$7,395",
+        "missing_evidence": [
+          "Florida residency for tuition or aid purposes",
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement"
+        ],
+        "next_action": "Ask User #1 for: Florida residency for tuition or aid purposes; FAFSA completion and aid year; Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load; .... Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "paralegal-association-florida-scholarships",
+        "name": "Paralegal Association of Florida Scholarships",
+        "provider": "Paralegal Association of Florida, Inc.",
+        "url": "https://pafinc.org/scholarships/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 works as a paralegal/office manager and studies Legal Studies",
+          "May require PAF student membership and program-specific eligibility"
+        ],
+        "observed_signal_summary": "signal_hits=paralegal, legal studies, student member, Florida; amount_text=$ 500.00",
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "patsy-mink-education-support-award",
+        "name": "Patsy Takemoto Mink Education Support Award",
+        "provider": "Patsy Takemoto Mink Education Foundation",
+        "url": "https://www.patsyminkfoundation.org/education-support-application",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 has confirmed mother and returning-learner evidence",
+          "Potentially strong narrative fit if income and enrollment criteria are met"
+        ],
+        "observed_signal_summary": "signal_hits=education support award, scholarship, grant, woman, mother, full time enrollment; deadline_text=deadlines; amount_text=$5000",
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
+          "Funder-specific mother/dependent-child eligibility language"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; Funder-specific mother/dependent-child eligibility language. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "peo-pce-eligibility-process",
+        "name": "P.E.O. PCE Eligibility and Application Process",
+        "provider": "P.E.O. International",
+        "url": "https://www.peointernational.org/educational-support/program-for-continuing-education/eligibility-and-application-process/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Clarifies application path for P.E.O. PCE",
+          "Can identify whether User #1 needs chapter sponsorship"
+        ],
+        "observed_signal_summary": "signal_hits=continuing education grant, woman, sponsorship, degree, certification; amount_text=$4,000",
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "P.E.O. chapter sponsorship path or local contact"
+        ],
+        "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; P.E.O. chapter sponsorship path or local contact. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "peo-program-for-continuing-education",
+        "name": "P.E.O. Program for Continuing Education",
+        "provider": "P.E.O. International",
+        "url": "https://www.peointernational.org/educational-support/program-for-continuing-education/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 is a working adult returning to formal education",
+          "May require local P.E.O. chapter sponsorship rather than direct application"
+        ],
+        "observed_signal_summary": "signal_hits=need-based grant, woman, degree, certification, job skills, marketable skills; amount_text=$4,000",
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "Funder-specific mother/dependent-child eligibility language",
+          "P.E.O. chapter sponsorship path or local contact"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load; Funder-specific mother/dependent-child eligibility language; P.E.O. chapter sponsorship path or local contact. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "soroptimist-live-your-dream-application-help",
+        "name": "Soroptimist Live Your Dream Application Help Guide",
+        "provider": "Soroptimist International of the Americas",
+        "url": "https://apply.soroptimist.org/res/p/help-app/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Clarifies application mechanics and local-club routing for Soroptimist Live Your Dream"
+        ],
+        "observed_signal_summary": "signal_hits=financial need, career goals; deadline_text=application deadline is November 15",
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "Funder-specific mother/dependent-child eligibility language"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; Funder-specific mother/dependent-child eligibility language. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "soroptimist-live-your-dream-awards",
+        "name": "Soroptimist Live Your Dream Awards",
+        "provider": "Soroptimist International of the Americas",
+        "url": "https://www.liveyourdream.org/get-help/apply-for-an-educational-grant/index.html",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 has confirmed mother evidence and returning-learner evidence",
+          "Potentially strong if primary-support and financial-need definitions are met"
+        ],
+        "observed_signal_summary": "signal_hits=woman, primary financial support, financial need, undergraduate degree; amount_text=$3",
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "Funder-specific mother/dependent-child eligibility language"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load; Funder-specific mother/dependent-child eligibility language. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "collaboratory-scholarship-program-details",
+        "name": "Collaboratory Scholarship Program Details",
+        "provider": "Collaboratory",
+        "url": "https://collaboratory.org/more/our-scholarships-program/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Clarifies Collaboratory application requirements and documents"
+        ],
+        "observed_signal_summary": "signal_hits=Southwest Florida, FAFSA, transcript, qualified programs, application process, workforce_pipeline; deadline_text=Application Deadline: January 14, 2027 Recipients are notified between late April and end of May 2027; amount_text=$132",
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "collier-community-foundation-apply-scholarships",
+        "name": "Collier Community Foundation Apply for Scholarships",
+        "provider": "Collier Community Foundation",
+        "url": "https://colliercf.org/scholarships/apply-for-scholarships",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "High-quality local official source for Southwest Florida scholarship patterns",
+          "May contain awards that depend on Collier residence or local history"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "collier-community-foundation-scholarships",
+        "name": "Collier Community Foundation Scholarships",
+        "provider": "Collier Community Foundation",
+        "url": "https://colliercf.org/scholarships/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Local Southwest Florida source with many scholarship funds",
+          "May matter if User #1 meets Collier residency or program criteria"
+        ],
+        "observed_signal_summary": "signal_hits=community foundation scholarship, Collier County, GPA; amount_text=$2",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-financial-aid-forms-resources-official",
+        "name": "FGCU Financial Aid Forms and Resources",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/formsandresources/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Can reveal required documentation for User #1 financial-aid verification",
+          "Supports application-readiness without inferring eligibility"
+        ],
+        "observed_signal_summary": "signal_hits=financial aid forms, financial aid, forms, FAFSA, verification",
+        "missing_evidence": [
+          "FAFSA completion and aid year"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-summer-financial-aid-official",
+        "name": "FGCU Summer Financial Aid",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/summerfunding",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Useful if User #1 takes summer credits",
+          "Can affect completion planning and gap funding"
+        ],
+        "observed_signal_summary": "signal_hits=summer grant, FAFSA, Pell Grant; amount_text=$1,500",
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year; Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation; 2026-27 enrollment status and course load. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fgcu-undergraduate-scholarships-overview",
+        "name": "FGCU Undergraduate Scholarships Overview",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/scholarships",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Institutional overview may redirect to internal and outside scholarship process changes"
+        ],
+        "observed_signal_summary": "signal_hits=outside scholarship, undergraduate scholarship, financial aid; amount_text=$30",
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year; 2026-27 enrollment status and course load. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "florida-bright-futures-official",
+        "name": "Florida Bright Futures Scholarship Program",
+        "provider": "Florida Department of Education / Florida Lottery",
+        "url": "https://floridabrightfutures.gov/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Florida scholarship ecosystem context for User #1",
+          "May be pattern/context rather than direct eligibility for a returning transfer student"
+        ],
+        "observed_signal_summary": "signal_hits=credit hours",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "Florida residency for tuition or aid purposes"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; Florida residency for tuition or aid purposes. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "nala-certification-exam-scholarship",
+        "name": "NALA Certification Exam Scholarship",
+        "provider": "NALA - The Paralegal Association",
+        "url": "https://nala.org/certification/exam-scholarship/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "User #1 has legal assistant/paralegal work evidence",
+          "May support professional credentials even if not undergraduate tuition"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "naples-womans-club-scholarships",
+        "name": "Naples Woman's Club Scholarship Support",
+        "provider": "Naples Woman's Club",
+        "url": "https://napleswomansclub.org/help/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Pattern and possible local fit for mature women returning to education"
+        ],
+        "observed_signal_summary": "signal_hits=women, mature women, college student, technical education, Naples, Collier County",
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "rotary-club-fort-myers-scholarships",
+        "name": "Rotary Club of Fort Myers Scholarships",
+        "provider": "Rotary Club of Fort Myers",
+        "url": "https://rotaryfortmyers.org/scholarships/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Potential local civic scholarship if User #1 meets Lee County and college-enrollment criteria"
+        ],
+        "observed_signal_summary": "signal_hits=Lee County resident, Florida college or university, GPA; deadline_text=application deadlines are the 30th of March; amount_text=$2,000.00",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "high",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "aafpe-paralegal-education-resources",
+        "name": "AAfPE Paralegal Education Resources",
+        "provider": "American Association for Paralegal Education",
+        "url": "https://www.aafpe.org/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "unknown",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Legal studies/paralegal source universe coverage",
+          "May surface professional education scholarships or association links"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "community-foundation-cape-coral-scholarships",
+        "name": "Community Foundation Cape Coral Area Scholarships",
+        "provider": "The Community Foundation",
+        "url": "https://www.charitablecommunity.org/scholarships",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Southwest Florida scholarship ecosystem source",
+          "May surface local awards requiring residency or local history verification"
+        ],
+        "observed_signal_summary": "signal_hits=Lee County, Cape Coral, GPA, accredited institution, community_service; amount_text=$1000",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "medium",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "executive-women-international-scholarship-program",
+        "name": "Executive Women International Scholarship Program",
+        "provider": "Executive Women International",
+        "url": "https://www.ewiconnect.com/page/scholarship_program",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Women/adult learner funding-pattern source",
+          "May require chapter-specific or local eligibility confirmation"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "P.E.O. chapter sponsorship path or local contact"
+        ],
+        "next_action": "Ask User #1 for: P.E.O. chapter sponsorship path or local contact. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "rotary-fort-myers-trust-fund-action",
+        "name": "Rotary Club of Fort Myers Trust Fund in Action",
+        "provider": "Rotary Club of Fort Myers",
+        "url": "https://rotaryfortmyers.org/the-trust-fund-in-action/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "semi_official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Potential local scholarship route if User #1 meets Lee County and Florida institution criteria",
+          "Complements Rotary scholarship application source"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; .... Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "scholarship-america-students",
+        "name": "Scholarship America Student Resources",
+        "provider": "Scholarship America",
+        "url": "https://scholarshipamerica.org/students/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "High-quality national scholarship program discovery source",
+          "Specific programs still require sponsor/program verification"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "college-board-bigfuture-scholarship-directory",
+        "name": "College Board BigFuture Scholarship Directory",
+        "provider": "College Board BigFuture",
+        "url": "https://bigfuture.collegeboard.org/pay-for-college/scholarship-directory",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Broad scholarship discovery source",
+          "Can expose awards missed by institution-specific search"
+        ],
+        "observed_signal_summary": "signal_hits=scholarship directory; amount_text=$1",
+        "missing_evidence": [],
+        "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "collier-scholarship-connector",
+        "name": "Scholarship Connector",
+        "provider": "Collier Community Foundation / Scholarship Connector",
+        "url": "https://www.swflscholarships.org/finder/search/results/listall/1",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Broad local discovery source for Southwest Florida scholarships",
+          "May identify funds that must be verified at original sponsor pages"
+        ],
+        "observed_signal_summary": "signal_hits=local scholarship, Lee County, Collier County, Southwest Florida, Florida Gulf Coast University, undergraduate college student; deadline_text=application closes 1/12/2026 View Details Add to Basket Andrew A; amount_text=$1,000",
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "fastweb-scholarship-search",
+        "name": "Fastweb Scholarship Search",
+        "provider": "Fastweb",
+        "url": "https://www.fastweb.com/college-scholarships",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Broad discovery source for sponsor leads that must be verified independently",
+          "Useful after curated source universe reaches official-source coverage minimums"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [],
+        "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "going-merry-scholarship-platform",
+        "name": "Going Merry Scholarship Platform",
+        "provider": "Going Merry",
+        "url": "https://www.goingmerry.com/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Discovery and workflow-pattern source",
+          "May identify external sponsors after applicant evidence is known"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "FAFSA completion and aid year"
+        ],
+        "next_action": "Ask User #1 for: FAFSA completion and aid year. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "scholarships-com-directory",
+        "name": "Scholarships.com Scholarship Directory",
+        "provider": "Scholarships.com",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarship-directory",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Can reveal sponsor pages for adult learner, women, legal, and Florida scholarships",
+          "Cannot prove current eligibility"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+        ],
+        "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "zonta-international-education-awards",
+        "name": "Zonta International Education Awards",
+        "provider": "Zonta International",
+        "url": "https://www.zonta.org/Web/Web/Programs/Education.aspx",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "Women-advancement funding-pattern source",
+          "May not fit User #1 unless a specific program aligns"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "cape-coral-mayors-scholarship-fund",
+        "name": "Cape Coral Mayor's Scholarship Fund",
+        "provider": "Cape Coral Mayor's Scholarship Foundation",
+        "url": "https://www.capecoralmayorscholarship.com/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "Local Southwest Florida funding-pattern source",
+          "Likely requires Cape Coral-specific eligibility confirmation"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "the-community-foundation-students-scholarships",
+        "name": "The Community Foundation Students Scholarships",
+        "provider": "The Community Foundation",
+        "url": "https://www.thecommunityfoundation.com/scholarship/students",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "General community foundation pattern source",
+          "Needs geographic confirmation before User #1 relevance"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "bold-org-scholarship-platform",
+        "name": "Bold.org Scholarship Platform",
+        "provider": "Bold.org",
+        "url": "https://bold.org/scholarships/",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "Broad scholarship discovery source",
+          "May surface essay-based opportunities but cannot verify eligibility alone"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [],
+        "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
+        "source_id": "unigo-scholarship-directory",
+        "name": "Unigo Scholarship Directory",
+        "provider": "Unigo",
+        "url": "https://www.unigo.com/scholarships",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "Secondary broad discovery source",
+          "Useful only after official source coverage is sufficient"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [],
+        "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
+        "confidence": "low",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      }
+    ],
+    "WATCH_NEXT_CYCLE": [
+      {
+        "source_id": "fgcu-foundation-scholarships-official",
+        "name": "FGCU Foundation Scholarships",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://www.fgcu.edu/admissionsandaid/financialaid/undergraduate/typesofaid/fgcufoundationscholarships",
+        "bucket": "WATCH_NEXT_CYCLE",
+        "current_status": "closed",
+        "actionability": "watch_next_cycle",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 is an FGCU Legal Studies transfer student",
+          "Primary institutional scholarship source"
+        ],
+        "observed_signal_summary": "signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 APPLY HERE Frequently Asked Questions: Expand All What are Foundation Scholarships; amount_text=$6",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "AA degree or Florida college transfer status",
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Keep monitoring this source and do not present it as currently actionable until the official page shows an open cycle.",
+        "confidence": "high",
+        "guardrail": "Useful for timing and cycle prediction, not current submission unless the source reopens."
+      },
+      {
+        "source_id": "fgcu-scholarship-application-portal",
+        "name": "FGCU Scholarship Application Portal",
+        "provider": "Florida Gulf Coast University",
+        "url": "https://scholarship.fgcu.edu/Apply/Applications/Scholarships",
+        "bucket": "WATCH_NEXT_CYCLE",
+        "current_status": "recurring",
+        "actionability": "watch_next_cycle",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Direct application portal for FGCU foundation scholarships",
+          "High action value when the next cycle opens"
+        ],
+        "observed_signal_summary": "signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2026 Final deadline - May 1, 2026 FGCU foundation scholarships are awarded annually based on academic achievement, financial nee",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+        ],
+        "next_action": "Keep monitoring this source and do not present it as currently actionable until the official page shows an open cycle.",
+        "confidence": "high",
+        "guardrail": "Useful for timing and cycle prediction, not current submission unless the source reopens."
+      },
+      {
+        "source_id": "jeannette-rankin-scholar-grants",
+        "name": "Jeannette Rankin Scholar Grants",
+        "provider": "Jeannette Rankin Foundation",
+        "url": "https://rankinfoundation.org/scholar-grants/",
+        "bucket": "WATCH_NEXT_CYCLE",
+        "current_status": "upcoming",
+        "actionability": "watch_next_cycle",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "User #1 appears to fit several known nontraditional-student signals",
+          "Financial need and first-degree status remain unknown"
+        ],
+        "observed_signal_summary": "signal_hits=scholar grant, nonbinary, accredited U.S. institution, nontraditional student; deadline_text=deadline: Feb",
+        "missing_evidence": [
+          "AA degree or Florida college transfer status",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "First bachelor's degree / first undergraduate degree status",
+          "2026-27 enrollment status and course load",
+          "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement"
+        ],
+        "next_action": "Keep monitoring this source and do not present it as currently actionable until the official page shows an open cycle.",
+        "confidence": "high",
+        "guardrail": "Useful for timing and cycle prediction, not current submission unless the source reopens."
+      }
+    ],
+    "SOURCE_ACCESS_BLOCKED": [
+      {
+        "source_id": "federal-pell-grant-studentaid-official",
+        "name": "Federal Pell Grant Overview",
+        "provider": "Federal Student Aid",
+        "url": "https://studentaid.gov/understand-aid/types/grants/pell",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "Need-based federal aid can affect eligibility and matching for many other sources",
+          "Pell/SAI context is a missing User #1 evidence category"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "federal-student-aid-fafsa-official",
+        "name": "FAFSA Application and Federal Student Aid Entry Point",
+        "provider": "Federal Student Aid",
+        "url": "https://studentaid.gov/h/apply-for-aid/fafsa",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "high",
+        "why_relevant": [
+          "FAFSA completion is a blocking missing evidence item for User #1",
+          "Many FGCU and need-based sources depend on FAFSA context"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "florida-osfa-financial-aid-scholarships",
+        "name": "Florida Department of Education Financial Aid and Scholarships",
+        "provider": "Florida Department of Education",
+        "url": "https://www.fldoe.org/finance/financial-aid-scholarships/",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "State aid source may affect User #1 financial-aid strategy",
+          "Useful for FSAG/Bright Futures/state-program monitoring"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Florida residency for tuition or aid purposes",
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "nfpa-awards-scholarships",
+        "name": "NFPA Awards and Scholarships",
+        "provider": "National Federation of Paralegal Associations",
+        "url": "https://www.paralegals.org/page/awards-scholarships",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Legal/paralegal scholarship source aligned with User #1's work and academic direction"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "careeronestop-scholarship-finder",
+        "name": "CareerOneStop Scholarship Finder",
+        "provider": "CareerOneStop",
+        "url": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Broad discovery source for external awards",
+          "Useful for finding leads that must be verified at sponsor pages"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      }
+    ],
+    "PATTERN_ONLY": [
+      {
+        "source_id": "florida-public-student-assistance-grant-statute",
+        "name": "Florida Public Student Assistance Grant Statute",
+        "provider": "Florida Senate",
+        "url": "https://flsenate.gov/Laws/Statutes/2025/1009.50",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Provides legal/statutory context for Florida need-based public student aid",
+          "Useful for pattern and verification language"
+        ],
+        "observed_signal_summary": "signal_hits=unmet financial need, state university, Florida College System; deadline_text=deadline may be granted if the institution documents to the department how it plans to disburse awards to students for the subsequent summer term; amount_text=$200",
+        "missing_evidence": [
+          "AA degree or Florida college transfer status",
+          "Florida residency for tuition or aid purposes",
+          "FAFSA completion and aid year",
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "high",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "florida-registered-paralegal-program",
+        "name": "Florida Registered Paralegal Program",
+        "provider": "The Florida Bar",
+        "url": "https://www.floridabar.org/about/frp/",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Not a scholarship, but important pattern/source for User #1 legal-profession readiness",
+          "Can inform scholarship narrative and professional pathway"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "aauw-career-development-grants",
+        "name": "AAUW Career Development Grants",
+        "provider": "AAUW",
+        "url": "https://www.aauw.org/resources/programs/fellowships-grants/career-development-grants/",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Useful pattern source for women career-transition funding",
+          "May not fit User #1 if formal degree programs are excluded"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "collier-community-foundation-education-employment-indicators",
+        "name": "Collier Community Foundation Education and Employment Indicators",
+        "provider": "Collier Community Foundation",
+        "url": "https://colliercf.org/what-we-do/community-indicators/education-employment/",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Pattern source for local workforce/education funding intent",
+          "Not an application source"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "florida-bright-futures-statutory-eligibility",
+        "name": "Florida Bright Futures Statutory Eligibility Requirements",
+        "provider": "Florida Legislature",
+        "url": "https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=1000-1099/1009/Sections/1009.531.html",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Useful for state-aid pattern learning and Bright Futures boundary conditions",
+          "Likely not a direct User #1 application source"
+        ],
+        "observed_signal_summary": "signal_hits=Florida resident, credit hours, initial award, student eligibility; deadline_text=deadlines, may be allowed additional time to complete the requirements, if the principal of the student’s school or the district superintendent veri",
+        "missing_evidence": [
+          "FGCU transfer GPA / current academic record",
+          "Florida residency for tuition or aid purposes"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "high",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "cape-coral-kiwanis-scholarships",
+        "name": "Cape Coral Kiwanis Scholarships",
+        "provider": "Kiwanis Cape Coral",
+        "url": "https://capecoralkiwanis.org/scholarships/",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "semi_official",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Useful local civic scholarship pattern source",
+          "Likely not directly relevant if limited to graduating high school seniors"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "adult-student-scholarship-pattern-source",
+        "name": "Adult Student Scholarship Pattern Source",
+        "provider": "Scholarships.com",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/adult-students-scholarships",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "aggregator",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Pattern source for adult learner scholarship language",
+          "Sponsor pages required for any actual candidate"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "2026-27 enrollment status and course load"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "legal-scholarship-pattern-source",
+        "name": "Legal Scholarship Pattern Source",
+        "provider": "Scholarships.com",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/academic-scholarships/law-scholarships",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "aggregator",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Pattern source for legal/public-service scholarship language",
+          "Specific scholarships must be verified at official sponsor pages"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      },
+      {
+        "source_id": "women-in-transition-scholarship-pattern-source",
+        "name": "Women in Transition Scholarship Pattern Source",
+        "provider": "Scholarships.com",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/women-scholarships",
+        "bucket": "PATTERN_ONLY",
+        "current_status": "pattern_only",
+        "actionability": "pattern_only",
+        "source_tier": "aggregator",
+        "verification_policy": "pattern_only_no_recommendation",
+        "user_001_relevance": "pattern_only",
+        "why_relevant": [
+          "Pattern source for women/returning-student funding language",
+          "Aggregator page should not be used for recommendation"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+        ],
+        "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
+        "confidence": "low",
+        "guardrail": "Pattern-learning artifact only; not a recommendation."
+      }
+    ]
+  }
+}

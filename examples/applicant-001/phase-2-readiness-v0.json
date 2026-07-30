@@ -1,0 +1,374 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-30T03:36:30.467Z",
+  "status": "PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR",
+  "source_universe_v0_complete": false,
+  "phase_3_allowed": false,
+  "phase_3_deferral_reason": "Phase 3 autonomous discovery remains deferred until Phase 2 is v0-complete and at least one User #1 inquiry/application has been executed and recorded from the curated universe.",
+  "primary_source_count": 53,
+  "staged_source_count": 40,
+  "merged_source_count": 53,
+  "coverage_completed": false,
+  "maintenance_blocking_issue_count": 0,
+  "coverage_gap_count": 3,
+  "blocking_issues": [],
+  "coverage_gaps": [
+    "Pattern/archive sources: 9/10; add 1 more.",
+    "Watch-next-cycle sources: 3/10; add 7 more.",
+    "Unclassified sources: 1/0; reduce by 1."
+  ],
+  "required_next_actions": [
+    "Use the coverage gaps to guide the next curated additions or source-state repair.",
+    "Keep additions source-level only; do not introduce crawler behavior, LLM extraction, or applicant-facing recommendations.",
+    "Let the scheduled monitor observe unobserved official sources before treating them as stable inputs."
+  ],
+  "user_action_gate": "No further strategic expansion should replace collecting missing User #1 evidence and executing at least one real inquiry/application from the curated universe.",
+  "generated_artifacts": [
+    "examples/applicant-001/source-universe-maintenance-v0.md",
+    "examples/applicant-001/source-universe-coverage-v0.md",
+    "examples/applicant-001/opportunity-shortlist-v0.md",
+    "examples/applicant-001/user-001-evidence-request-v0.md",
+    "examples/applicant-001/phase-2-readiness-v0.md"
+  ],
+  "guardrails": [
+    "This readiness gate does not recommend scholarships or infer User #1 eligibility.",
+    "A complete source universe is not the same as an application-ready opportunity.",
+    "Missing User #1 evidence still blocks application-ready classification.",
+    "Aggregator and pattern-only sources remain discovery/pattern inputs, not eligibility proof.",
+    "Phase 3 autonomous discovery is explicitly blocked until a real User #1 inquiry/application has happened."
+  ],
+  "coverage": {
+    "applicant_id": "applicant-001",
+    "generated_at": "2026-07-30T03:36:30.467Z",
+    "phase": "PHASE_2",
+    "purpose": "Measure whether User #1's curated Opportunity Source Universe is broad enough to be called v0-complete without web-wide discovery.",
+    "source_count": 53,
+    "completion_completed": false,
+    "thresholds": [
+      {
+        "id": "min_total_sources",
+        "label": "Total curated sources",
+        "operator": "at_least",
+        "target": 50,
+        "actual": 53,
+        "passed": true
+      },
+      {
+        "id": "min_source_categories",
+        "label": "Covered source categories",
+        "operator": "at_least",
+        "target": 7,
+        "actual": 7,
+        "passed": true
+      },
+      {
+        "id": "min_official_or_semi_official_sources",
+        "label": "Official or semi-official sources",
+        "operator": "at_least",
+        "target": 30,
+        "actual": 43,
+        "passed": true
+      },
+      {
+        "id": "min_official_application_sources",
+        "label": "Official application sources",
+        "operator": "at_least",
+        "target": 10,
+        "actual": 15,
+        "passed": true
+      },
+      {
+        "id": "min_pattern_or_archive_sources",
+        "label": "Pattern/archive sources",
+        "operator": "at_least",
+        "target": 10,
+        "actual": 9,
+        "passed": false
+      },
+      {
+        "id": "min_high_relevance_sources",
+        "label": "High-relevance User #1 sources",
+        "operator": "at_least",
+        "target": 15,
+        "actual": 16,
+        "passed": true
+      },
+      {
+        "id": "min_watch_next_cycle_sources",
+        "label": "Watch-next-cycle sources",
+        "operator": "at_least",
+        "target": 10,
+        "actual": 3,
+        "passed": false
+      },
+      {
+        "id": "max_unclassified_sources",
+        "label": "Unclassified sources",
+        "operator": "at_most",
+        "target": 0,
+        "actual": 1,
+        "passed": false
+      }
+    ],
+    "category_counts": {
+      "FGCU_INTERNAL": 12,
+      "FLORIDA_PUBLIC_AID": 6,
+      "ADULT_RETURNING_LEARNER": 12,
+      "WOMEN_MOTHERS_CAREGIVERS": 12,
+      "LEGAL_PARALEGAL_PUBLIC_SERVICE": 8,
+      "LOCAL_SOUTHWEST_FLORIDA": 13,
+      "DISCOVERY_AGGREGATOR_ARCHIVE": 24
+    },
+    "category_source_ids": {
+      "FGCU_INTERNAL": [
+        "fgcu-foundation-scholarships-official",
+        "fgcu-scholarship-application-portal",
+        "fgcu-transfer-aid-official",
+        "fgcu-admissions-scholarships-waivers",
+        "fgcu-undergraduate-scholarships-overview",
+        "florida-osfa-financial-aid-scholarships",
+        "fgcu-undergraduate-grants-official",
+        "fgcu-summer-financial-aid-official",
+        "collier-scholarship-connector",
+        "fgcu-financial-aid-contact-official",
+        "fgcu-financial-aid-forms-resources-official",
+        "federal-student-aid-fafsa-official"
+      ],
+      "FLORIDA_PUBLIC_AID": [
+        "fgcu-admissions-scholarships-waivers",
+        "florida-osfa-financial-aid-scholarships",
+        "fgcu-undergraduate-grants-official",
+        "florida-bright-futures-official",
+        "florida-public-student-assistance-grant-statute",
+        "florida-bright-futures-statutory-eligibility"
+      ],
+      "ADULT_RETURNING_LEARNER": [
+        "patsy-mink-education-support-award",
+        "jeannette-rankin-scholar-grants",
+        "peo-program-for-continuing-education",
+        "peo-pce-eligibility-process",
+        "soroptimist-live-your-dream-awards",
+        "naples-womans-club-scholarships",
+        "cape-coral-kiwanis-scholarships",
+        "rotary-fort-myers-trust-fund-action",
+        "scholarships-com-directory",
+        "executive-women-international-scholarship-program",
+        "women-in-transition-scholarship-pattern-source",
+        "adult-student-scholarship-pattern-source"
+      ],
+      "WOMEN_MOTHERS_CAREGIVERS": [
+        "patsy-mink-education-support-award",
+        "jeannette-rankin-scholar-grants",
+        "peo-program-for-continuing-education",
+        "peo-pce-eligibility-process",
+        "aauw-career-development-grants",
+        "soroptimist-live-your-dream-awards",
+        "soroptimist-live-your-dream-application-help",
+        "naples-womans-club-scholarships",
+        "scholarships-com-directory",
+        "executive-women-international-scholarship-program",
+        "zonta-international-education-awards",
+        "women-in-transition-scholarship-pattern-source"
+      ],
+      "LEGAL_PARALEGAL_PUBLIC_SERVICE": [
+        "fgcu-foundation-scholarships-official",
+        "paralegal-association-florida-scholarships",
+        "nfpa-awards-scholarships",
+        "cape-coral-mayors-scholarship-fund",
+        "nala-certification-exam-scholarship",
+        "florida-registered-paralegal-program",
+        "aafpe-paralegal-education-resources",
+        "legal-scholarship-pattern-source"
+      ],
+      "LOCAL_SOUTHWEST_FLORIDA": [
+        "collaboratory-scholarships",
+        "collaboratory-scholarship-program-details",
+        "collier-community-foundation-scholarships",
+        "collier-scholarship-connector",
+        "rotary-club-fort-myers-scholarships",
+        "naples-womans-club-scholarships",
+        "community-foundation-cape-coral-scholarships",
+        "cape-coral-mayors-scholarship-fund",
+        "cape-coral-kiwanis-scholarships",
+        "rotary-fort-myers-trust-fund-action",
+        "collier-community-foundation-apply-scholarships",
+        "collier-community-foundation-education-employment-indicators",
+        "the-community-foundation-students-scholarships"
+      ],
+      "DISCOVERY_AGGREGATOR_ARCHIVE": [
+        "careeronestop-scholarship-finder",
+        "college-board-bigfuture-scholarship-directory",
+        "aauw-career-development-grants",
+        "collier-scholarship-connector",
+        "florida-public-student-assistance-grant-statute",
+        "florida-bright-futures-statutory-eligibility",
+        "community-foundation-cape-coral-scholarships",
+        "cape-coral-kiwanis-scholarships",
+        "collier-community-foundation-apply-scholarships",
+        "collier-community-foundation-education-employment-indicators",
+        "the-community-foundation-students-scholarships",
+        "scholarships-com-directory",
+        "fastweb-scholarship-search",
+        "going-merry-scholarship-platform",
+        "florida-registered-paralegal-program",
+        "aafpe-paralegal-education-resources",
+        "executive-women-international-scholarship-program",
+        "zonta-international-education-awards",
+        "unigo-scholarship-directory",
+        "bold-org-scholarship-platform",
+        "scholarship-america-students",
+        "women-in-transition-scholarship-pattern-source",
+        "adult-student-scholarship-pattern-source",
+        "legal-scholarship-pattern-source"
+      ]
+    },
+    "source_tier_counts": {
+      "official": 34,
+      "semi_official": 9,
+      "aggregator": 10
+    },
+    "source_role_counts": {
+      "application_source": 15,
+      "monitoring_source": 15,
+      "discovery_source": 14,
+      "pattern_archive": 9
+    },
+    "actionability_counts": {
+      "watch_next_cycle": 3,
+      "needs_verification": 22,
+      "monitor_only": 19,
+      "pattern_only": 9
+    },
+    "current_status_counts": {
+      "closed": 1,
+      "recurring": 37,
+      "unknown": 5,
+      "upcoming": 1,
+      "pattern_only": 9
+    },
+    "official_or_semi_official_source_count": 43,
+    "official_application_source_count": 15,
+    "pattern_or_archive_source_count": 9,
+    "high_relevance_source_count": 16,
+    "watch_next_cycle_source_count": 3,
+    "source_access_blocked_ids": [
+      "florida-osfa-financial-aid-scholarships",
+      "careeronestop-scholarship-finder",
+      "aauw-career-development-grants",
+      "nfpa-awards-scholarships",
+      "federal-pell-grant-studentaid-official",
+      "federal-student-aid-fafsa-official"
+    ],
+    "unclassified_source_ids": [
+      "federal-pell-grant-studentaid-official"
+    ],
+    "coverage_gaps": [
+      "Pattern/archive sources: 9/10; add 1 more.",
+      "Watch-next-cycle sources: 3/10; add 7 more.",
+      "Unclassified sources: 1/0; reduce by 1."
+    ],
+    "phase_3_deferral": "Do not start autonomous web discovery until Phase 2 is v0-complete and at least one User #1 application or inquiry has been executed from the curated universe."
+  },
+  "maintenance": {
+    "applicant_id": "applicant-001",
+    "generated_at": "2026-07-30T03:36:30.467Z",
+    "purpose": "Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 25 to 50 curated sources.",
+    "primary_source_count": 53,
+    "staged_source_count": 40,
+    "merged_source_count_estimate": 53,
+    "duplicate_ids_within_primary": [],
+    "duplicate_ids_within_staged_additions": [],
+    "staged_sources_already_in_primary": [
+      "aafpe-paralegal-education-resources",
+      "adult-student-scholarship-pattern-source",
+      "bold-org-scholarship-platform",
+      "cape-coral-kiwanis-scholarships",
+      "cape-coral-mayors-scholarship-fund",
+      "collaboratory-scholarship-program-details",
+      "collaboratory-scholarships",
+      "collier-community-foundation-apply-scholarships",
+      "collier-community-foundation-education-employment-indicators",
+      "collier-community-foundation-scholarships",
+      "collier-scholarship-connector",
+      "community-foundation-cape-coral-scholarships",
+      "executive-women-international-scholarship-program",
+      "fastweb-scholarship-search",
+      "federal-pell-grant-studentaid-official",
+      "federal-student-aid-fafsa-official",
+      "fgcu-financial-aid-contact-official",
+      "fgcu-financial-aid-forms-resources-official",
+      "fgcu-summer-financial-aid-official",
+      "fgcu-undergraduate-grants-official",
+      "florida-bright-futures-official",
+      "florida-bright-futures-statutory-eligibility",
+      "florida-public-student-assistance-grant-statute",
+      "florida-registered-paralegal-program",
+      "going-merry-scholarship-platform",
+      "legal-scholarship-pattern-source",
+      "nala-certification-exam-scholarship",
+      "naples-womans-club-scholarships",
+      "nfpa-awards-scholarships",
+      "paralegal-association-florida-scholarships",
+      "rotary-club-fort-myers-scholarships",
+      "rotary-fort-myers-trust-fund-action",
+      "scholarship-america-students",
+      "scholarships-com-directory",
+      "soroptimist-live-your-dream-application-help",
+      "soroptimist-live-your-dream-awards",
+      "the-community-foundation-students-scholarships",
+      "unigo-scholarship-directory",
+      "women-in-transition-scholarship-pattern-source",
+      "zonta-international-education-awards"
+    ],
+    "staged_sources_not_yet_in_primary": [],
+    "unobserved_source_ids": [
+      "aafpe-paralegal-education-resources",
+      "adult-student-scholarship-pattern-source",
+      "bold-org-scholarship-platform",
+      "cape-coral-kiwanis-scholarships",
+      "cape-coral-mayors-scholarship-fund",
+      "collier-community-foundation-apply-scholarships",
+      "collier-community-foundation-education-employment-indicators",
+      "executive-women-international-scholarship-program",
+      "fastweb-scholarship-search",
+      "florida-registered-paralegal-program",
+      "going-merry-scholarship-platform",
+      "legal-scholarship-pattern-source",
+      "nala-certification-exam-scholarship",
+      "rotary-fort-myers-trust-fund-action",
+      "scholarship-america-students",
+      "scholarships-com-directory",
+      "the-community-foundation-students-scholarships",
+      "unigo-scholarship-directory",
+      "women-in-transition-scholarship-pattern-source",
+      "zonta-international-education-awards"
+    ],
+    "source_access_blocked_ids": [
+      "aauw-career-development-grants",
+      "careeronestop-scholarship-finder",
+      "federal-pell-grant-studentaid-official",
+      "federal-student-aid-fafsa-official",
+      "florida-osfa-financial-aid-scholarships",
+      "nfpa-awards-scholarships"
+    ],
+    "high_relevance_unobserved_source_ids": [
+      "federal-pell-grant-studentaid-official",
+      "federal-student-aid-fafsa-official"
+    ],
+    "application_ready_source_ids": [],
+    "suspicious_application_ready_source_ids": [],
+    "blocking_issues": [],
+    "maintenance_warnings": [
+      "20 enabled sources are unobserved and should remain non-recommendations until the scheduled monitor fetches them.",
+      "6 sources are access-blocked for automation and require manual browser verification."
+    ],
+    "ready_for_phase_2_50_source_expansion": true,
+    "guardrails": [
+      "Maintenance audits source hygiene; it does not recommend scholarships.",
+      "Staged sources may be folded into the primary watchlist, but observed primary state must not be overwritten.",
+      "Unobserved sources remain non-recommendations until successfully monitored or manually verified.",
+      "Application-ready status is blocked unless the source is open, official-source verified, successfully observed, and not blocked by missing User #1 facts.",
+      "Do not begin Phase 3 autonomous web discovery before Phase 2 is v0-complete and at least one User #1 application or inquiry is executed."
+    ]
+  }
+}

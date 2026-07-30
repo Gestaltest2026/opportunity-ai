@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-07-29T19:47:38.742Z
+Generated at: 2026-07-30T03:33:46.044Z
 Applicant: applicant-001
 
 ## Scope
@@ -11,28 +11,35 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 | Metric | Count |
 | --- | ---: |
-| Total sources | 13 |
-| Attempted sources | 13 |
-| Skipped: not due | 0 |
+| Total sources | 53 |
+| Attempted sources | 20 |
+| Skipped: not due | 13 |
 | Skipped: disabled | 0 |
-| Skipped: run limit | 0 |
-| First observations | 10 |
+| Skipped: run limit | 20 |
+| First observations | 17 |
 | Changed sources | 0 |
 | Unchanged sources | 0 |
 | Failed sources | 3 |
 
 ## First Observations
 
-- fgcu-foundation-scholarships-official
-- fgcu-scholarship-application-portal
-- fgcu-transfer-aid-official
-- fgcu-admissions-scholarships-waivers
-- fgcu-undergraduate-scholarships-overview
-- patsy-mink-education-support-award
-- jeannette-rankin-scholar-grants
-- peo-program-for-continuing-education
-- peo-pce-eligibility-process
-- college-board-bigfuture-scholarship-directory
+- fgcu-undergraduate-grants-official
+- fgcu-summer-financial-aid-official
+- soroptimist-live-your-dream-awards
+- soroptimist-live-your-dream-application-help
+- collaboratory-scholarships
+- collaboratory-scholarship-program-details
+- collier-community-foundation-scholarships
+- collier-scholarship-connector
+- rotary-club-fort-myers-scholarships
+- naples-womans-club-scholarships
+- paralegal-association-florida-scholarships
+- fgcu-financial-aid-contact-official
+- fgcu-financial-aid-forms-resources-official
+- florida-bright-futures-official
+- florida-public-student-assistance-grant-statute
+- florida-bright-futures-statutory-eligibility
+- community-foundation-cape-coral-scholarships
 
 ## Changed Sources
 
@@ -40,9 +47,9 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
-- careeronestop-scholarship-finder: Source fetch returned empty text.
-- aauw-career-development-grants: Source fetch failed: 403 Forbidden
+- nfpa-awards-scholarships: Source fetch failed: 403 Forbidden
+- federal-pell-grant-studentaid-official: fetch failed
+- federal-student-aid-fafsa-official: fetch failed
 
 ## High-Relevance Actionable Sources
 
@@ -56,6 +63,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | jeannette-rankin-scholar-grants | upcoming | watch_next_cycle | official_source_required | signal_hits=scholar grant, nonbinary, accredited U.S. institution, nontraditional student; deadline_text=deadline: Feb |
 | peo-program-for-continuing-education | recurring | needs_verification | official_source_required | signal_hits=need-based grant, woman, degree, certification, job skills, marketable skills; amount_text=$4,000 |
 | peo-pce-eligibility-process | recurring | needs_verification | official_source_required | signal_hits=continuing education grant, woman, sponsorship, degree, certification; amount_text=$4,000 |
+| fgcu-undergraduate-grants-official | recurring | needs_verification | official_source_required | signal_hits=undergraduate grant, FGCU undergraduate, Florida resident, financial need, FAFSA, Pell Grant, Florida Student Assistance Grant; deadline_text=deadline requirements will receive this grant; amount_text=$7,395 |
+| soroptimist-live-your-dream-awards | recurring | needs_verification | official_source_required | signal_hits=woman, primary financial support, financial need, undergraduate degree; amount_text=$3 |
+| soroptimist-live-your-dream-application-help | recurring | needs_verification | official_source_required | signal_hits=financial need, career goals; deadline_text=application deadline is November 15 |
+| collaboratory-scholarships | recurring | needs_verification | official_source_required | signal_hits=Southwest Florida, career goals, workforce_pipeline; amount_text=$132 |
+| paralegal-association-florida-scholarships | recurring | needs_verification | official_source_required | signal_hits=paralegal, legal studies, student member, Florida; amount_text=$ 500.00 |
+| fgcu-financial-aid-contact-official | recurring | needs_verification | official_source_required | signal_hits=financial aid, FAFSA |
+| federal-pell-grant-studentaid-official | recurring | needs_verification | official_source_required | not checked yet |
+| federal-student-aid-fafsa-official | recurring | needs_verification | official_source_required | not checked yet |
 
 ## Guardrails
 

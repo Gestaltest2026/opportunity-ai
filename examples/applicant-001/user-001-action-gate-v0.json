@@ -1,0 +1,26 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-30T03:36:30.930Z",
+  "purpose": "Determine whether Phase 2 should move from source-universe building into recorded User #1 action, without allowing Phase 3 autonomous discovery prematurely.",
+  "source_universe_v0_complete": false,
+  "phase_2_status": "PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR",
+  "completed_inquiry_or_application_count": 0,
+  "completed_inquiry_or_application_ids": [],
+  "completed_evidence_request_count": 0,
+  "evidence_request_action_ids": [],
+  "blocked_action_ids": [],
+  "phase_3_unlock_candidate": false,
+  "phase_3_status": "BLOCKED_USER_ACTION_REQUIRED",
+  "required_next_actions": [
+    "Do not begin Phase 3. Repair or complete Phase 2 source-universe coverage first.",
+    "Use phase-2-readiness-v0.md and source-universe-coverage-v0.md to decide whether to repair or expand curated sources."
+  ],
+  "action_ledger_warnings": [],
+  "guardrails": [
+    "This gate records real-world action; it does not infer eligibility or recommend scholarships.",
+    "Evidence requests may prepare action, but they do not satisfy the inquiry/application gate.",
+    "A completed inquiry/application must reference a curated source_id and record an outcome.",
+    "Phase 3 autonomous discovery remains blocked until Phase 2 is v0-complete and at least one real User #1 inquiry/application outcome is recorded.",
+    "Do not put private financial amounts, SSNs, full tax records, or sensitive documents into the public repository."
+  ]
+}
