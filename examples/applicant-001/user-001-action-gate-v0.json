@@ -1,13 +1,15 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-07-30T03:36:30.930Z",
+  "generated_at": "2026-07-30T09:07:16.162Z",
   "purpose": "Determine whether Phase 2 should move from source-universe building into recorded User #1 action, without allowing Phase 3 autonomous discovery prematurely.",
   "source_universe_v0_complete": false,
   "phase_2_status": "PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR",
   "completed_inquiry_or_application_count": 0,
   "completed_inquiry_or_application_ids": [],
-  "completed_evidence_request_count": 0,
-  "evidence_request_action_ids": [],
+  "completed_evidence_request_count": 1,
+  "evidence_request_action_ids": [
+    "action-request-user-001-evidence-v0"
+  ],
   "blocked_action_ids": [],
   "phase_3_unlock_candidate": false,
   "phase_3_status": "BLOCKED_USER_ACTION_REQUIRED",

@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-07-30T03:33:45.599Z",
+  "generated_at": "2026-07-30T09:07:01.101Z",
   "purpose": "Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 25 to 50 curated sources.",
   "primary_source_count": 53,
   "staged_source_count": 40,
@@ -56,37 +56,17 @@
     "bold-org-scholarship-platform",
     "cape-coral-kiwanis-scholarships",
     "cape-coral-mayors-scholarship-fund",
-    "collaboratory-scholarship-program-details",
-    "collaboratory-scholarships",
     "collier-community-foundation-apply-scholarships",
     "collier-community-foundation-education-employment-indicators",
-    "collier-community-foundation-scholarships",
-    "collier-scholarship-connector",
-    "community-foundation-cape-coral-scholarships",
     "executive-women-international-scholarship-program",
     "fastweb-scholarship-search",
-    "federal-pell-grant-studentaid-official",
-    "federal-student-aid-fafsa-official",
-    "fgcu-financial-aid-contact-official",
-    "fgcu-financial-aid-forms-resources-official",
-    "fgcu-summer-financial-aid-official",
-    "fgcu-undergraduate-grants-official",
-    "florida-bright-futures-official",
-    "florida-bright-futures-statutory-eligibility",
-    "florida-public-student-assistance-grant-statute",
     "florida-registered-paralegal-program",
     "going-merry-scholarship-platform",
     "legal-scholarship-pattern-source",
     "nala-certification-exam-scholarship",
-    "naples-womans-club-scholarships",
-    "nfpa-awards-scholarships",
-    "paralegal-association-florida-scholarships",
-    "rotary-club-fort-myers-scholarships",
     "rotary-fort-myers-trust-fund-action",
     "scholarship-america-students",
     "scholarships-com-directory",
-    "soroptimist-live-your-dream-application-help",
-    "soroptimist-live-your-dream-awards",
     "the-community-foundation-students-scholarships",
     "unigo-scholarship-directory",
     "women-in-transition-scholarship-pattern-source",
@@ -95,24 +75,21 @@
   "source_access_blocked_ids": [
     "aauw-career-development-grants",
     "careeronestop-scholarship-finder",
-    "florida-osfa-financial-aid-scholarships"
-  ],
-  "high_relevance_unobserved_source_ids": [
-    "collaboratory-scholarships",
     "federal-pell-grant-studentaid-official",
     "federal-student-aid-fafsa-official",
-    "fgcu-financial-aid-contact-official",
-    "fgcu-undergraduate-grants-official",
-    "paralegal-association-florida-scholarships",
-    "soroptimist-live-your-dream-application-help",
-    "soroptimist-live-your-dream-awards"
+    "florida-osfa-financial-aid-scholarships",
+    "nfpa-awards-scholarships"
+  ],
+  "high_relevance_unobserved_source_ids": [
+    "federal-pell-grant-studentaid-official",
+    "federal-student-aid-fafsa-official"
   ],
   "application_ready_source_ids": [],
   "suspicious_application_ready_source_ids": [],
   "blocking_issues": [],
   "maintenance_warnings": [
-    "40 enabled sources are unobserved and should remain non-recommendations until the scheduled monitor fetches them.",
-    "3 sources are access-blocked for automation and require manual browser verification."
+    "20 enabled sources are unobserved and should remain non-recommendations until the scheduled monitor fetches them.",
+    "6 sources are access-blocked for automation and require manual browser verification."
   ],
   "ready_for_phase_2_50_source_expansion": true,
   "guardrails": [

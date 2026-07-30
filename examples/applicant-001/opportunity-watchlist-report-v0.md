@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-07-30T03:33:46.044Z
+Generated at: 2026-07-30T09:07:01.549Z
 Applicant: applicant-001
 
 ## Scope
@@ -13,33 +13,30 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | --- | ---: |
 | Total sources | 53 |
 | Attempted sources | 20 |
-| Skipped: not due | 13 |
+| Skipped: not due | 33 |
 | Skipped: disabled | 0 |
-| Skipped: run limit | 20 |
-| First observations | 17 |
+| Skipped: run limit | 0 |
+| First observations | 14 |
 | Changed sources | 0 |
 | Unchanged sources | 0 |
-| Failed sources | 3 |
+| Failed sources | 6 |
 
 ## First Observations
 
-- fgcu-undergraduate-grants-official
-- fgcu-summer-financial-aid-official
-- soroptimist-live-your-dream-awards
-- soroptimist-live-your-dream-application-help
-- collaboratory-scholarships
-- collaboratory-scholarship-program-details
-- collier-community-foundation-scholarships
-- collier-scholarship-connector
-- rotary-club-fort-myers-scholarships
-- naples-womans-club-scholarships
-- paralegal-association-florida-scholarships
-- fgcu-financial-aid-contact-official
-- fgcu-financial-aid-forms-resources-official
-- florida-bright-futures-official
-- florida-public-student-assistance-grant-statute
-- florida-bright-futures-statutory-eligibility
-- community-foundation-cape-coral-scholarships
+- cape-coral-mayors-scholarship-fund
+- cape-coral-kiwanis-scholarships
+- rotary-fort-myers-trust-fund-action
+- collier-community-foundation-apply-scholarships
+- collier-community-foundation-education-employment-indicators
+- the-community-foundation-students-scholarships
+- scholarships-com-directory
+- fastweb-scholarship-search
+- aafpe-paralegal-education-resources
+- unigo-scholarship-directory
+- bold-org-scholarship-platform
+- scholarship-america-students
+- women-in-transition-scholarship-pattern-source
+- adult-student-scholarship-pattern-source
 
 ## Changed Sources
 
@@ -47,9 +44,12 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- nfpa-awards-scholarships: Source fetch failed: 403 Forbidden
-- federal-pell-grant-studentaid-official: fetch failed
-- federal-student-aid-fafsa-official: fetch failed
+- going-merry-scholarship-platform: fetch failed
+- nala-certification-exam-scholarship: Source fetch failed: 404 Not Found
+- florida-registered-paralegal-program: Source fetch failed: 403 Forbidden
+- executive-women-international-scholarship-program: Source fetch failed: 403 Forbidden
+- zonta-international-education-awards: Source fetch failed: 404 Not Found
+- legal-scholarship-pattern-source: Source fetch failed: 404 Not Found
 
 ## High-Relevance Actionable Sources
 

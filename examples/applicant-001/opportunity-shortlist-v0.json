@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-07-30T03:36:29.544Z",
+  "generated_at": "2026-07-30T09:07:14.817Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -10,9 +10,9 @@
   ],
   "counts": {
     "APPLICATION_READY": 0,
-    "NEEDS_VERIFICATION": 36,
+    "NEEDS_VERIFICATION": 32,
     "WATCH_NEXT_CYCLE": 3,
-    "SOURCE_ACCESS_BLOCKED": 5,
+    "SOURCE_ACCESS_BLOCKED": 9,
     "PATTERN_ONLY": 9
   },
   "buckets": {
@@ -322,7 +322,7 @@
         "source_id": "collier-community-foundation-apply-scholarships",
         "name": "Collier Community Foundation Apply for Scholarships",
         "provider": "Collier Community Foundation",
-        "url": "https://colliercf.org/scholarships/apply-for-scholarships",
+        "url": "https://colliercf.org/scholarships/apply-for-scholarships/",
         "bucket": "NEEDS_VERIFICATION",
         "current_status": "recurring",
         "actionability": "needs_verification",
@@ -333,12 +333,12 @@
           "High-quality local official source for Southwest Florida scholarship patterns",
           "May contain awards that depend on Collier residence or local history"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=scholarship connector, Collier County, post-secondary education, scholarship application; deadline_text=deadline",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "high",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -464,30 +464,6 @@
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
-        "source_id": "nala-certification-exam-scholarship",
-        "name": "NALA Certification Exam Scholarship",
-        "provider": "NALA - The Paralegal Association",
-        "url": "https://nala.org/certification/exam-scholarship/",
-        "bucket": "NEEDS_VERIFICATION",
-        "current_status": "unknown",
-        "actionability": "needs_verification",
-        "source_tier": "official",
-        "verification_policy": "official_source_required",
-        "user_001_relevance": "medium",
-        "why_relevant": [
-          "User #1 has legal assistant/paralegal work evidence",
-          "May support professional credentials even if not undergraduate tuition"
-        ],
-        "observed_signal_summary": null,
-        "missing_evidence": [
-          "2026-27 enrollment status and course load",
-          "Resume, updated personal statement, and evidence for legal work/community leadership"
-        ],
-        "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
-        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
-      },
-      {
         "source_id": "naples-womans-club-scholarships",
         "name": "Naples Woman's Club Scholarship Support",
         "provider": "Naples Woman's Club",
@@ -538,7 +514,7 @@
         "source_id": "aafpe-paralegal-education-resources",
         "name": "AAfPE Paralegal Education Resources",
         "provider": "American Association for Paralegal Education",
-        "url": "https://www.aafpe.org/",
+        "url": "https://sites.google.com/aafpe.org/aafpe/home",
         "bucket": "NEEDS_VERIFICATION",
         "current_status": "unknown",
         "actionability": "monitor_only",
@@ -549,12 +525,12 @@
           "Legal studies/paralegal source universe coverage",
           "May surface professional education scholarships or association links"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=paralegal education, program, student",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -583,29 +559,6 @@
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
-        "source_id": "executive-women-international-scholarship-program",
-        "name": "Executive Women International Scholarship Program",
-        "provider": "Executive Women International",
-        "url": "https://www.ewiconnect.com/page/scholarship_program",
-        "bucket": "NEEDS_VERIFICATION",
-        "current_status": "unknown",
-        "actionability": "needs_verification",
-        "source_tier": "semi_official",
-        "verification_policy": "aggregator_must_be_verified_at_sponsor",
-        "user_001_relevance": "medium",
-        "why_relevant": [
-          "Women/adult learner funding-pattern source",
-          "May require chapter-specific or local eligibility confirmation"
-        ],
-        "observed_signal_summary": null,
-        "missing_evidence": [
-          "P.E.O. chapter sponsorship path or local contact"
-        ],
-        "next_action": "Ask User #1 for: P.E.O. chapter sponsorship path or local contact. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
-        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
-      },
-      {
         "source_id": "rotary-fort-myers-trust-fund-action",
         "name": "Rotary Club of Fort Myers Trust Fund in Action",
         "provider": "Rotary Club of Fort Myers",
@@ -620,7 +573,7 @@
           "Potential local scholarship route if User #1 meets Lee County and Florida institution criteria",
           "Complements Rotary scholarship application source"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=Lee County, Florida college, GPA; deadline_text=application deadlines are the 15th of July, October, January and April; amount_text=$3,000",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "AA degree or Florida college transfer status",
@@ -629,7 +582,7 @@
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; .... Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -647,12 +600,12 @@
           "High-quality national scholarship program discovery source",
           "Specific programs still require sponsor/program verification"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=scholarship programs, student resources, student, scholarship, application",
         "missing_evidence": [
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
         ],
         "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -715,32 +668,9 @@
           "Broad discovery source for sponsor leads that must be verified independently",
           "Useful after curated source universe reaches official-source coverage minimums"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=scholarship search, student profile, college scholarships, major, state; amount_text=$1,000",
         "missing_evidence": [],
         "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
-        "confidence": "low",
-        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
-      },
-      {
-        "source_id": "going-merry-scholarship-platform",
-        "name": "Going Merry Scholarship Platform",
-        "provider": "Going Merry",
-        "url": "https://www.goingmerry.com/",
-        "bucket": "NEEDS_VERIFICATION",
-        "current_status": "recurring",
-        "actionability": "monitor_only",
-        "source_tier": "aggregator",
-        "verification_policy": "aggregator_must_be_verified_at_sponsor",
-        "user_001_relevance": "medium",
-        "why_relevant": [
-          "Discovery and workflow-pattern source",
-          "May identify external sponsors after applicant evidence is known"
-        ],
-        "observed_signal_summary": null,
-        "missing_evidence": [
-          "FAFSA completion and aid year"
-        ],
-        "next_action": "Ask User #1 for: FAFSA completion and aid year. Then re-check the official source before moving it to application-ready.",
         "confidence": "low",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
@@ -759,34 +689,11 @@
           "Can reveal sponsor pages for adult learner, women, legal, and Florida scholarships",
           "Cannot prove current eligibility"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=scholarship directory, major, state, gender, financial need; deadline_text=Deadline School Year Special Attributes Physical Disabilities Scholarship Amount Race Scholarships By: Academic Major ACT Score Age Artistic Ability; amount_text=$10,000",
         "missing_evidence": [
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
         ],
         "next_action": "Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
-        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
-      },
-      {
-        "source_id": "zonta-international-education-awards",
-        "name": "Zonta International Education Awards",
-        "provider": "Zonta International",
-        "url": "https://www.zonta.org/Web/Web/Programs/Education.aspx",
-        "bucket": "NEEDS_VERIFICATION",
-        "current_status": "recurring",
-        "actionability": "monitor_only",
-        "source_tier": "official",
-        "verification_policy": "official_source_required",
-        "user_001_relevance": "low",
-        "why_relevant": [
-          "Women-advancement funding-pattern source",
-          "May not fit User #1 unless a specific program aligns"
-        ],
-        "observed_signal_summary": null,
-        "missing_evidence": [
-          "Resume, updated personal statement, and evidence for legal work/community leadership"
-        ],
-        "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
         "confidence": "low",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
@@ -805,13 +712,13 @@
           "Local Southwest Florida funding-pattern source",
           "Likely requires Cape Coral-specific eligibility confirmation"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=four-year scholarship, technical scholarship, Cape Coral, public service program; amount_text=$ 0",
         "missing_evidence": [
           "2026-27 enrollment status and course load",
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Ask User #1 for: 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -829,12 +736,12 @@
           "General community foundation pattern source",
           "Needs geographic confirmation before User #1 relevance"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=community foundation scholarship, local scholarship, transcript, local student, scholarship application; deadline_text=Applications Open March 27: Scholarship Applications Close at 11:59 pm Mid-May: Scholarship Decisions Will Be Communicated With All Student Applicants May 18; amount_text=$310,500",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
@@ -852,7 +759,7 @@
           "Broad scholarship discovery source",
           "May surface essay-based opportunities but cannot verify eligibility alone"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=scholarship, education, essay; deadline_text=Deadlines in 2026 $ 426,797 in total 120 120 31 Open 87 Awarded Top Art Scholarships (Updated July 2026) $ 301,817 in total 120 120 30 Open 89 Award; amount_text=$ 426,797",
         "missing_evidence": [],
         "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
         "confidence": "low",
@@ -873,7 +780,7 @@
           "Secondary broad discovery source",
           "Useful only after official source coverage is sufficient"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=major, state, age, scholarship; deadline_text=deadlines for applying; amount_text=$10",
         "missing_evidence": [],
         "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
         "confidence": "low",
@@ -1039,6 +946,30 @@
         "guardrail": "Automation could not verify this source; manual verification is required."
       },
       {
+        "source_id": "nala-certification-exam-scholarship",
+        "name": "NALA Certification Exam Scholarship",
+        "provider": "NALA - The Paralegal Association",
+        "url": "https://nala.org/certification/exam-scholarship/",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "User #1 has legal assistant/paralegal work evidence",
+          "May support professional credentials even if not undergraduate tuition"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "2026-27 enrollment status and course load",
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
         "source_id": "nfpa-awards-scholarships",
         "name": "NFPA Awards and Scholarships",
         "provider": "National Federation of Paralegal Associations",
@@ -1077,6 +1008,75 @@
         ],
         "observed_signal_summary": null,
         "missing_evidence": [],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "executive-women-international-scholarship-program",
+        "name": "Executive Women International Scholarship Program",
+        "provider": "Executive Women International",
+        "url": "https://www.ewiconnect.com/page/scholarship_program",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "unknown",
+        "actionability": "needs_verification",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Women/adult learner funding-pattern source",
+          "May require chapter-specific or local eligibility confirmation"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "P.E.O. chapter sponsorship path or local contact"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "going-merry-scholarship-platform",
+        "name": "Going Merry Scholarship Platform",
+        "provider": "Going Merry",
+        "url": "https://www.goingmerry.com/",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "aggregator",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Discovery and workflow-pattern source",
+          "May identify external sponsors after applicant evidence is known"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "FAFSA completion and aid year"
+        ],
+        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
+        "confidence": "low",
+        "guardrail": "Automation could not verify this source; manual verification is required."
+      },
+      {
+        "source_id": "zonta-international-education-awards",
+        "name": "Zonta International Education Awards",
+        "provider": "Zonta International",
+        "url": "https://www.zonta.org/Web/Web/Programs/Education.aspx",
+        "bucket": "SOURCE_ACCESS_BLOCKED",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "official",
+        "verification_policy": "official_source_required",
+        "user_001_relevance": "low",
+        "why_relevant": [
+          "Women-advancement funding-pattern source",
+          "May not fit User #1 unless a specific program aligns"
+        ],
+        "observed_signal_summary": null,
+        "missing_evidence": [
+          "Resume, updated personal statement, and evidence for legal work/community leadership"
+        ],
         "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
         "confidence": "low",
         "guardrail": "Automation could not verify this source; manual verification is required."
@@ -1172,12 +1172,12 @@
           "Pattern source for local workforce/education funding intent",
           "Not an application source"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=career-focused scholarship, post-secondary education, workforce; amount_text=$18",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
-        "confidence": "low",
+        "confidence": "high",
         "guardrail": "Pattern-learning artifact only; not a recommendation."
       },
       {
@@ -1219,19 +1219,19 @@
           "Useful local civic scholarship pattern source",
           "Likely not directly relevant if limited to graduating high school seniors"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=Kiwanis scholarship, Cape Coral, graduating high school senior, community involvement, academic potential, community_service; deadline_text=deadline",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
         "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
-        "confidence": "low",
+        "confidence": "medium",
         "guardrail": "Pattern-learning artifact only; not a recommendation."
       },
       {
         "source_id": "adult-student-scholarship-pattern-source",
         "name": "Adult Student Scholarship Pattern Source",
         "provider": "Scholarships.com",
-        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/adult-students-scholarships",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type",
         "bucket": "PATTERN_ONLY",
         "current_status": "pattern_only",
         "actionability": "pattern_only",
@@ -1242,10 +1242,11 @@
           "Pattern source for adult learner scholarship language",
           "Sponsor pages required for any actual candidate"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=adult student, degree; deadline_text=Deadline Scholarships by Academic Major Scholarships by Religion Small Scholarships Child of Single Parent Scholarships Company About Us FAQ Contact",
         "missing_evidence": [
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
-          "2026-27 enrollment status and course load"
+          "2026-27 enrollment status and course load",
+          "Funder-specific mother/dependent-child eligibility language"
         ],
         "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
         "confidence": "low",
@@ -1278,7 +1279,7 @@
         "source_id": "women-in-transition-scholarship-pattern-source",
         "name": "Women in Transition Scholarship Pattern Source",
         "provider": "Scholarships.com",
-        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/women-scholarships",
+        "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type",
         "bucket": "PATTERN_ONLY",
         "current_status": "pattern_only",
         "actionability": "pattern_only",
@@ -1289,9 +1290,10 @@
           "Pattern source for women/returning-student funding language",
           "Aggregator page should not be used for recommendation"
         ],
-        "observed_signal_summary": null,
+        "observed_signal_summary": "signal_hits=none; deadline_text=Deadline Scholarships by Academic Major Scholarships by Religion Small Scholarships Child of Single Parent Scholarships Company About Us FAQ Contact",
         "missing_evidence": [
-          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation"
+          "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
+          "Funder-specific mother/dependent-child eligibility language"
         ],
         "next_action": "Use this only for pattern learning; do not use it as an applicant-facing recommendation.",
         "confidence": "low",

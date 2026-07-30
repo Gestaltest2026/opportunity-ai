@@ -1618,11 +1618,11 @@
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "04280aee27bc45b6e5c76dd8e20f0e07c83355445c2894e0b907deb3c96da9c0",
+      "last_observed_signal_summary": "signal_hits=four-year scholarship, technical scholarship, Cape Coral, public service program; amount_text=$ 0",
       "failure_count": 0,
       "notes": [
         "Do not elevate without User #1 local eligibility evidence."
@@ -1664,11 +1664,11 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "4740a129e4028222331885c25f7fcc37b56056d5e4d4ec4c2e97175cc039a6f6",
+      "last_observed_signal_summary": "signal_hits=Kiwanis scholarship, Cape Coral, graduating high school senior, community involvement, academic potential, community_service; deadline_text=deadline",
       "failure_count": 0,
       "notes": [
         "Pattern learning only unless adult/returning-student route is separately verified."
@@ -1712,11 +1712,11 @@
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "fd250e442b4a49c3986d2f271f25dfef20cf92188ab80fda9b0bfb569ee7f85d",
+      "last_observed_signal_summary": "signal_hits=Lee County, Florida college, GPA; deadline_text=application deadlines are the 15th of July, October, January and April; amount_text=$3,000",
       "failure_count": 0,
       "notes": [
         "Verify adult/returning student and Lee County residency eligibility before applicant-facing action."
@@ -1725,7 +1725,7 @@
     {
       "source_id": "collier-community-foundation-apply-scholarships",
       "name": "Collier Community Foundation Apply for Scholarships",
-      "url": "https://colliercf.org/scholarships/apply-for-scholarships",
+      "url": "https://colliercf.org/scholarships/apply-for-scholarships/",
       "provider": "Collier Community Foundation",
       "source_tier": "official",
       "source_role": "application_source",
@@ -1760,11 +1760,11 @@
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "256ffd42352e09ea35ffab4f1767f937cac8400c4fb7363cb1709a980ea7d8a9",
+      "last_observed_signal_summary": "signal_hits=scholarship connector, Collier County, post-secondary education, scholarship application; deadline_text=deadline",
       "failure_count": 0,
       "notes": [
         "Keep separate from aggregator Scholarship Connector records."
@@ -1808,11 +1808,11 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "34f3d2dc692c5aec8281aa0a9b2e5359c7f40afdb4677d746816125daa2fb354",
+      "last_observed_signal_summary": "signal_hits=career-focused scholarship, post-secondary education, workforce; amount_text=$18",
       "failure_count": 0,
       "notes": [
         "Useful for pattern layer, not for User #1 application shortlist."
@@ -1854,11 +1854,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "c3d53a41d457f63596b14905d1e1618f8385f1979d23ff4d267695ab89816d10",
+      "last_observed_signal_summary": "signal_hits=community foundation scholarship, local scholarship, transcript, local student, scholarship application; deadline_text=Applications Open March 27: Scholarship Applications Close at 11:59 pm Mid-May: Scholarship Decisions Will Be Communicated With All Student Applicants May 18; amount_text=$310,500",
       "failure_count": 0,
       "notes": [
         "Discovery/pattern source only until geography is verified."
@@ -1901,11 +1901,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "16164a1a04c03ddc9a2d0862e2e3ae5a005a0c568027a1083736468cddc56f36",
+      "last_observed_signal_summary": "signal_hits=scholarship directory, major, state, gender, financial need; deadline_text=Deadline School Year Special Attributes Physical Disabilities Scholarship Amount Race Scholarships By: Academic Major ACT Score Age Artistic Ability; amount_text=$10,000",
       "failure_count": 0,
       "notes": [
         "Aggregator-only leads must be verified at sponsor pages."
@@ -1948,11 +1948,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "ca98096fb25e8f83e9b95ae678d102317005267d1c75655d9026d7da047d931f",
+      "last_observed_signal_summary": "signal_hits=scholarship search, student profile, college scholarships, major, state; amount_text=$1,000",
       "failure_count": 0,
       "notes": [
         "Do not use as application-ready evidence."
@@ -1994,12 +1994,12 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Aggregator/platform records are discovery leads only."
       ]
@@ -2043,12 +2043,12 @@
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Verify whether this fits User #1's education/career goal before prioritizing over tuition scholarships."
       ]
@@ -2091,12 +2091,12 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Pattern/source context only; not a funding recommendation."
       ]
@@ -2104,7 +2104,7 @@
     {
       "source_id": "aafpe-paralegal-education-resources",
       "name": "AAfPE Paralegal Education Resources",
-      "url": "https://www.aafpe.org/",
+      "url": "https://sites.google.com/aafpe.org/aafpe/home",
       "provider": "American Association for Paralegal Education",
       "source_tier": "semi_official",
       "source_role": "discovery_source",
@@ -2137,11 +2137,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "36fb3ef2b005b97dc92bf060c35d79d990e4ccbaa9474fa0ea390f633e61abf4",
+      "last_observed_signal_summary": "signal_hits=paralegal education, program, student",
       "failure_count": 0,
       "notes": [
         "Discovery source; verify any funding lead at sponsor page."
@@ -2186,12 +2186,12 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Do not prioritize until current program and local/chapter path are verified."
       ]
@@ -2236,12 +2236,12 @@
       "verification_policy": "official_source_required",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Discovery/pattern source; evaluate specific award fit separately."
       ]
@@ -2283,11 +2283,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "4d7363187b518bb31926adb68dc8870658e3f9c340d98eb8f9545fce2e182565",
+      "last_observed_signal_summary": "signal_hits=major, state, age, scholarship; deadline_text=deadlines for applying; amount_text=$10",
       "failure_count": 0,
       "notes": [
         "Aggregator-only; sponsor verification required."
@@ -2329,11 +2329,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "97e57d9087f1fd9d49039cf6df9aabdccb59b665eff42100f481410dd203e6e0",
+      "last_observed_signal_summary": "signal_hits=scholarship, education, essay; deadline_text=Deadlines in 2026 $ 426,797 in total 120 120 31 Open 87 Awarded Top Art Scholarships (Updated July 2026) $ 301,817 in total 120 120 30 Open 89 Award; amount_text=$ 426,797",
       "failure_count": 0,
       "notes": [
         "Use only as discovery source."
@@ -2376,11 +2376,11 @@
       "verification_policy": "aggregator_must_be_verified_at_sponsor",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "4ddc6aec109bc6d9d99992bfc5d57b88605413b440158e56e82175eb35eb8ecb",
+      "last_observed_signal_summary": "signal_hits=scholarship programs, student resources, student, scholarship, application",
       "failure_count": 0,
       "notes": [
         "Discovery source for curated future candidates, not application-ready evidence."
@@ -2389,7 +2389,7 @@
     {
       "source_id": "women-in-transition-scholarship-pattern-source",
       "name": "Women in Transition Scholarship Pattern Source",
-      "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/women-scholarships",
+      "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type",
       "provider": "Scholarships.com",
       "source_tier": "aggregator",
       "source_role": "pattern_archive",
@@ -2425,11 +2425,11 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "6f304079c9484c7ccc41e7dc7b2cf73b3fd33de4f2224e5f294c9ca0ced161b0",
+      "last_observed_signal_summary": "signal_hits=none; deadline_text=Deadline Scholarships by Academic Major Scholarships by Religion Small Scholarships Child of Single Parent Scholarships Company About Us FAQ Contact",
       "failure_count": 0,
       "notes": [
         "Use to learn language/categories, not to claim eligibility."
@@ -2438,7 +2438,7 @@
     {
       "source_id": "adult-student-scholarship-pattern-source",
       "name": "Adult Student Scholarship Pattern Source",
-      "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type/adult-students-scholarships",
+      "url": "https://www.scholarships.com/financial-aid/college-scholarships/scholarships-by-type",
       "provider": "Scholarships.com",
       "source_tier": "aggregator",
       "source_role": "pattern_archive",
@@ -2473,11 +2473,11 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_changed_at": null,
-      "content_hash": null,
-      "last_observed_signal_summary": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
+      "last_success_at": "2026-07-30T09:07:01.549Z",
+      "last_changed_at": "2026-07-30T09:07:01.549Z",
+      "content_hash": "6f304079c9484c7ccc41e7dc7b2cf73b3fd33de4f2224e5f294c9ca0ced161b0",
+      "last_observed_signal_summary": "signal_hits=adult student, degree; deadline_text=Deadline Scholarships by Academic Major Scholarships by Religion Small Scholarships Child of Single Parent Scholarships Company About Us FAQ Contact",
       "failure_count": 0,
       "notes": [
         "Use for pattern vocabulary only."
@@ -2522,12 +2522,12 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 2160,
-      "last_checked_at": null,
+      "last_checked_at": "2026-07-30T09:07:01.549Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 0,
+      "failure_count": 1,
       "notes": [
         "Pattern learning only."
       ]

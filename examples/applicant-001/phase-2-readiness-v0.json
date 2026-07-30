@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-07-30T03:36:30.467Z",
+  "generated_at": "2026-07-30T09:07:15.726Z",
   "status": "PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR",
   "source_universe_v0_complete": false,
   "phase_3_allowed": false,
@@ -39,7 +39,7 @@
   ],
   "coverage": {
     "applicant_id": "applicant-001",
-    "generated_at": "2026-07-30T03:36:30.467Z",
+    "generated_at": "2026-07-30T09:07:15.726Z",
     "phase": "PHASE_2",
     "purpose": "Measure whether User #1's curated Opportunity Source Universe is broad enough to be called v0-complete without web-wide discovery.",
     "source_count": 53,
@@ -257,7 +257,13 @@
       "aauw-career-development-grants",
       "nfpa-awards-scholarships",
       "federal-pell-grant-studentaid-official",
-      "federal-student-aid-fafsa-official"
+      "federal-student-aid-fafsa-official",
+      "going-merry-scholarship-platform",
+      "nala-certification-exam-scholarship",
+      "florida-registered-paralegal-program",
+      "executive-women-international-scholarship-program",
+      "zonta-international-education-awards",
+      "legal-scholarship-pattern-source"
     ],
     "unclassified_source_ids": [
       "federal-pell-grant-studentaid-official"
@@ -271,7 +277,7 @@
   },
   "maintenance": {
     "applicant_id": "applicant-001",
-    "generated_at": "2026-07-30T03:36:30.467Z",
+    "generated_at": "2026-07-30T09:07:15.726Z",
     "purpose": "Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 25 to 50 curated sources.",
     "primary_source_count": 53,
     "staged_source_count": 40,
@@ -321,35 +327,20 @@
       "zonta-international-education-awards"
     ],
     "staged_sources_not_yet_in_primary": [],
-    "unobserved_source_ids": [
-      "aafpe-paralegal-education-resources",
-      "adult-student-scholarship-pattern-source",
-      "bold-org-scholarship-platform",
-      "cape-coral-kiwanis-scholarships",
-      "cape-coral-mayors-scholarship-fund",
-      "collier-community-foundation-apply-scholarships",
-      "collier-community-foundation-education-employment-indicators",
+    "unobserved_source_ids": [],
+    "source_access_blocked_ids": [
+      "aauw-career-development-grants",
+      "careeronestop-scholarship-finder",
       "executive-women-international-scholarship-program",
-      "fastweb-scholarship-search",
+      "federal-pell-grant-studentaid-official",
+      "federal-student-aid-fafsa-official",
+      "florida-osfa-financial-aid-scholarships",
       "florida-registered-paralegal-program",
       "going-merry-scholarship-platform",
       "legal-scholarship-pattern-source",
       "nala-certification-exam-scholarship",
-      "rotary-fort-myers-trust-fund-action",
-      "scholarship-america-students",
-      "scholarships-com-directory",
-      "the-community-foundation-students-scholarships",
-      "unigo-scholarship-directory",
-      "women-in-transition-scholarship-pattern-source",
+      "nfpa-awards-scholarships",
       "zonta-international-education-awards"
-    ],
-    "source_access_blocked_ids": [
-      "aauw-career-development-grants",
-      "careeronestop-scholarship-finder",
-      "federal-pell-grant-studentaid-official",
-      "federal-student-aid-fafsa-official",
-      "florida-osfa-financial-aid-scholarships",
-      "nfpa-awards-scholarships"
     ],
     "high_relevance_unobserved_source_ids": [
       "federal-pell-grant-studentaid-official",
@@ -359,8 +350,7 @@
     "suspicious_application_ready_source_ids": [],
     "blocking_issues": [],
     "maintenance_warnings": [
-      "20 enabled sources are unobserved and should remain non-recommendations until the scheduled monitor fetches them.",
-      "6 sources are access-blocked for automation and require manual browser verification."
+      "12 sources are access-blocked for automation and require manual browser verification."
     ],
     "ready_for_phase_2_50_source_expansion": true,
     "guardrails": [

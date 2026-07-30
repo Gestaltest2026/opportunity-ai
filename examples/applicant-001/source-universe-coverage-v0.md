@@ -1,6 +1,6 @@
 # User #1 Opportunity Source Universe Coverage v0
 
-Generated at: 2026-07-30T03:36:30.002Z
+Generated at: 2026-07-30T09:07:15.263Z
 Applicant: applicant-001
 Phase: PHASE_2
 Completion: INCOMPLETE
@@ -86,6 +86,12 @@ Measure whether User #1's curated Opportunity Source Universe is broad enough to
 - nfpa-awards-scholarships
 - federal-pell-grant-studentaid-official
 - federal-student-aid-fafsa-official
+- going-merry-scholarship-platform
+- nala-certification-exam-scholarship
+- florida-registered-paralegal-program
+- executive-women-international-scholarship-program
+- zonta-international-education-awards
+- legal-scholarship-pattern-source
 
 ## Unclassified Sources
 

@@ -1,6 +1,6 @@
 # User #1 Action Gate v0
 
-Generated at: 2026-07-30T03:36:30.930Z
+Generated at: 2026-07-30T09:07:16.162Z
 Applicant: applicant-001
 Status: BLOCKED_USER_ACTION_REQUIRED
 
@@ -10,7 +10,7 @@ Status: BLOCKED_USER_ACTION_REQUIRED
 | --- | ---: |
 | Phase 2 status | PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR |
 | Source universe v0 complete | no |
-| Completed evidence requests | 0 |
+| Completed evidence requests | 1 |
 | Completed inquiries/applications | 0 |
 | Phase 3 unlock candidate | no |
 
@@ -29,7 +29,7 @@ Determine whether Phase 2 should move from source-universe building into recorde
 
 ## Evidence Request Action IDs
 
-- None
+- action-request-user-001-evidence-v0
 
 ## Blocked Action IDs
 

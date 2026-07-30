@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-07-30T03:36:30.002Z",
+  "generated_at": "2026-07-30T09:07:15.263Z",
   "phase": "PHASE_2",
   "purpose": "Measure whether User #1's curated Opportunity Source Universe is broad enough to be called v0-complete without web-wide discovery.",
   "source_count": 53,
@@ -218,7 +218,13 @@
     "aauw-career-development-grants",
     "nfpa-awards-scholarships",
     "federal-pell-grant-studentaid-official",
-    "federal-student-aid-fafsa-official"
+    "federal-student-aid-fafsa-official",
+    "going-merry-scholarship-platform",
+    "nala-certification-exam-scholarship",
+    "florida-registered-paralegal-program",
+    "executive-women-international-scholarship-program",
+    "zonta-international-education-awards",
+    "legal-scholarship-pattern-source"
   ],
   "unclassified_source_ids": [
     "federal-pell-grant-studentaid-official"
