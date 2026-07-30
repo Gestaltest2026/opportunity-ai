@@ -46,20 +46,12 @@ function combineStagedAdditions(
   primary: CuratedOpportunityWatchlist,
   stagedAdditions: CuratedOpportunityWatchlist[]
 ): CuratedOpportunityWatchlist {
-  const merged = mergeCuratedWatchlists(
-    {
-      ...primary,
-      sources: [],
-    },
-    stagedAdditions
-  );
-
   return {
     ...primary,
     generated_for: "Combined staged Phase 2 additions for maintenance/readiness analysis",
     purpose:
-      "Represent all staged Phase 2 additions as one synthetic watchlist for deterministic maintenance and readiness checks.",
-    sources: merged.watchlist.sources,
+      "Represent all staged Phase 2 additions as one synthetic watchlist for deterministic maintenance and readiness checks without hiding duplicate staged IDs.",
+    sources: stagedAdditions.flatMap((addition) => addition.sources),
   };
 }
 
