@@ -31,6 +31,7 @@
     "evaluate:user-001-shortlist": "tsx src/opportunitySourceUniverse/runUser001ShortlistEvaluation.ts",
     "evaluate:source-coverage": "tsx src/opportunitySourceUniverse/runSourceCoverageEvaluation.ts",
     "evaluate:watchlist-merge": "tsx src/opportunitySourceUniverse/runMergeCuratedWatchlistsEvaluation.ts",
+    "evaluate:watchlist-maintenance": "tsx src/opportunitySourceUniverse/runWatchlistMaintenanceEvaluation.ts",
     "prepare:applicant-intelligence-d5": "tsx src/applicantIntelligence/runD5User001ReviewPreparation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:applicant-intelligence": "tsx src/verification/runApplicantIntelligenceVerification.ts",
@@ -43,6 +44,7 @@
     "watchlist:user-001": "tsx src/opportunitySourceUniverse/runCuratedWatchlist.ts",
     "shortlist:user-001": "tsx src/opportunitySourceUniverse/runUser001Shortlist.ts",
     "coverage:user-001": "tsx src/opportunitySourceUniverse/runUser001SourceCoverage.ts",
+    "maintenance:user-001": "tsx src/opportunitySourceUniverse/runUser001WatchlistMaintenance.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
