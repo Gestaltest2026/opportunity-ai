@@ -34,6 +34,7 @@
     "evaluate:watchlist-maintenance": "tsx src/opportunitySourceUniverse/runWatchlistMaintenanceEvaluation.ts",
     "evaluate:phase-2-readiness": "tsx src/opportunitySourceUniverse/runPhase2ReadinessEvaluation.ts",
     "evaluate:user-001-action-gate": "tsx src/opportunitySourceUniverse/runUser001ActionGateEvaluation.ts",
+    "evaluate:user-001-execution-packet": "tsx src/opportunitySourceUniverse/runUser001ExecutionPacketEvaluation.ts",
     "prepare:applicant-intelligence-d5": "tsx src/applicantIntelligence/runD5User001ReviewPreparation.ts",
     "verify": "tsx src/verification/runOfflineVerification.ts",
     "verify:applicant-intelligence": "tsx src/verification/runApplicantIntelligenceVerification.ts",
@@ -49,6 +50,7 @@
     "maintenance:user-001": "tsx src/opportunitySourceUniverse/runUser001WatchlistMaintenance.ts",
     "phase2:user-001": "tsx src/opportunitySourceUniverse/runUser001Phase2Readiness.ts",
     "action-gate:user-001": "tsx src/opportunitySourceUniverse/runUser001ActionGate.ts",
+    "execution-packet:user-001": "tsx src/opportunitySourceUniverse/runUser001ExecutionPacket.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
