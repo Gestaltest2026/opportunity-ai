@@ -13,47 +13,64 @@
     {
       "action_id": "action-request-user-001-evidence-v0",
       "action_type": "evidence_request",
-      "status": "planned",
+      "status": "completed",
       "source_id": null,
       "source_name": null,
       "created_at": "2026-07-30T01:36:00.000Z",
-      "requested_at": null,
-      "executed_at": null,
-      "outcome_recorded_at": null,
-      "summary": "Ask User #1 for missing scholarship evidence needed to evaluate curated sources.",
-      "evidence_collected": [],
+      "requested_at": "2026-07-30T04:11:00.000Z",
+      "executed_at": "2026-07-30T04:56:00.000Z",
+      "outcome_recorded_at": "2026-07-30T04:56:00.000Z",
+      "summary": "User #1 provided a first public-safe evidence response: GPA 3.808; FAFSA submitted; no current SAI/Pell/financial-need summary available; first bachelor's/first undergraduate status yes; AA exists from Kawamura Junior College; fall enrollment reported as part-time but institution wording remains ambiguous; Florida residency remains unanswered; private personal statement draft is available outside the public repo.",
+      "evidence_collected": [
+        "GPA reported as 3.808",
+        "FAFSA reported as submitted",
+        "No current SAI/Pell/financial-need summary available",
+        "First bachelor's / first undergraduate status reported as yes",
+        "AA degree exists from Kawamura Junior College",
+        "Fall enrollment reported as part-time, with institution ambiguity to clarify",
+        "Private personal statement draft available outside the public repo"
+      ],
       "missing_evidence_addressed": [
         "FGCU GPA / current academic record",
         "FAFSA completion and aid year",
         "financial need / SAI / Pell status or equivalent documentation summary",
-        "Florida residency for tuition or aid purposes",
         "first bachelor's degree / first undergraduate degree status",
         "2026-27 enrollment status and course load",
         "updated resume and personal statement"
       ],
-      "next_step": "Send the generated evidence request to User #1 and update this record to completed only after a response is received and summarized outside the repo.",
+      "next_step": "Clarify Florida residency, institution for Fall 2026/2026-27 enrollment, expected credits, and whether the GPA is FGCU/cumulative/other. Then choose one curated source for a real inquiry/application.",
       "notes": [
-        "Keep private documents out of the public repository.",
-        "Use this as the first real-world action after Phase 2 readiness."
+        "Florida residency for tuition or aid purposes remains missing.",
+        "Fall enrollment is reported as part-time, but the user mentioned UF; repo currently tracks User #1 as FGCU, so institution must be clarified before scholarship advice.",
+        "Kawamura Junior College AA should not be treated as Florida college AA status without source confirmation.",
+        "Do not infer financial need from narrative or family history.",
+        "Do not commit the full personal statement or sensitive records to the public repository."
       ]
     },
     {
       "action_id": "action-first-curated-source-inquiry-v0",
       "action_type": "inquiry",
       "status": "planned",
-      "source_id": null,
-      "source_name": null,
+      "source_id": "fgcu-admissions-scholarships-waivers",
+      "source_name": "FGCU Admissions Scholarships and Waivers",
       "created_at": "2026-07-30T01:36:00.000Z",
       "requested_at": null,
       "executed_at": null,
       "outcome_recorded_at": null,
-      "summary": "Placeholder for the first real inquiry/application from the curated User #1 source universe.",
-      "evidence_collected": [],
+      "summary": "Planned first curated-source inquiry should focus on whether GPA 3.808, part-time enrollment, non-Florida AA background, and current institution/enrollment status affect FGCU transfer/admissions scholarship eligibility.",
+      "evidence_collected": [
+        "GPA 3.808",
+        "FAFSA submitted",
+        "First bachelor's / first undergraduate status yes",
+        "AA degree exists from Kawamura Junior College",
+        "Fall enrollment part-time, institution ambiguity unresolved"
+      ],
       "missing_evidence_addressed": [],
-      "next_step": "After the shortlist and evidence request are reviewed, select one curated NEEDS_VERIFICATION source and record the real inquiry/application here.",
+      "next_step": "Before sending, clarify Florida residency and Fall 2026 institution/credit load. Then send a concise eligibility-confirmation inquiry to the official FGCU scholarship/admissions or financial-aid contact.",
       "notes": [
         "This remains planned until an actual inquiry or application is sent.",
-        "Do not use this placeholder to unlock Phase 3."
+        "Do not use this placeholder to unlock Phase 3.",
+        "If Fall 2026 enrollment is not FGCU, switch the first inquiry source before execution."
       ]
     }
   ]
