@@ -37,13 +37,24 @@ jobs:
       - name: Verify curated watchlist monitor
         run: npm run evaluate:curated-watchlist
 
+      - name: Verify User #1 shortlist triage
+        run: npm run evaluate:user-001-shortlist
+
       - name: Monitor curated User #1 opportunity sources
         run: npm run watchlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md --max-sources=${{ inputs.max_sources || 20 }}
 
-      - name: Commit watchlist updates
+      - name: Build guarded User #1 opportunity shortlist
+        run: npm run shortlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-shortlist-v0.json examples/applicant-001/opportunity-shortlist-v0.md examples/applicant-001/user-001-evidence-request-v0.md
+
+      - name: Commit watchlist and shortlist updates
         run: |
           git config user.name "opportunity-ai-bot"
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
-          git add data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md
-          git commit -m "Update User #1 opportunity watchlist" || echo "No watchlist changes"
+          git add \
+            data/opportunity-source-universe/curated-watchlist.user-001.json \
+            examples/applicant-001/opportunity-watchlist-report-v0.md \
+            examples/applicant-001/opportunity-shortlist-v0.json \
+            examples/applicant-001/opportunity-shortlist-v0.md \
+            examples/applicant-001/user-001-evidence-request-v0.md
+          git commit -m "Update User #1 opportunity watchlist and shortlist" || echo "No watchlist or shortlist changes"
           git push
