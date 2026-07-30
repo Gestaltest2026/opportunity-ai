@@ -55,6 +55,9 @@ jobs:
       - name: Verify User #1 action gate
         run: npm run evaluate:user-001-action-gate
 
+      - name: Verify User #1 execution packet
+        run: npm run evaluate:user-001-execution-packet
+
       - name: Fold Phase 2 curated source additions into User #1 watchlist
         run: npm run watchlist:merge -- data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/phase-2-source-additions.user-001.json data/opportunity-source-universe/phase-2-source-additions-50.user-001.json
 
@@ -76,7 +79,10 @@ jobs:
       - name: Build User #1 action gate report
         run: npm run action-gate:user-001 -- examples/applicant-001/phase-2-readiness-v0.json examples/applicant-001/user-001-action-ledger-v0.json examples/applicant-001/user-001-action-gate-v0.json examples/applicant-001/user-001-action-gate-v0.md
 
-      - name: Commit watchlist, shortlist, coverage, maintenance, readiness, and action-gate updates
+      - name: Build User #1 execution packet
+        run: npm run execution-packet:user-001 -- examples/applicant-001/user-001-action-ledger-v0.json examples/applicant-001/user-001-action-gate-v0.json examples/applicant-001/user-001-evidence-request-v0.md examples/applicant-001/user-001-execution-packet-v0.md
+
+      - name: Commit watchlist, shortlist, coverage, maintenance, readiness, action-gate, and execution-packet updates
         run: |
           git config user.name "opportunity-ai-bot"
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
@@ -94,8 +100,8 @@ jobs:
             examples/applicant-001/source-universe-maintenance-v0.md \
             examples/applicant-001/phase-2-readiness-v0.json \
             examples/applicant-001/phase-2-readiness-v0.md \
-            examples/applicant-001/user-001-action-ledger-v0.json \
             examples/applicant-001/user-001-action-gate-v0.json \
-            examples/applicant-001/user-001-action-gate-v0.md
-          git commit -m "Update User #1 opportunity watchlist, readiness, and action gate" || echo "No User #1 opportunity updates"
+            examples/applicant-001/user-001-action-gate-v0.md \
+            examples/applicant-001/user-001-execution-packet-v0.md
+          git commit -m "Update User #1 opportunity execution packet" || echo "No User #1 opportunity updates"
           git push
