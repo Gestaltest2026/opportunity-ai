@@ -46,8 +46,14 @@ jobs:
       - name: Verify watchlist source merge
         run: npm run evaluate:watchlist-merge
 
+      - name: Verify watchlist maintenance audit
+        run: npm run evaluate:watchlist-maintenance
+
       - name: Fold Phase 2 curated source additions into User #1 watchlist
         run: npm run watchlist:merge -- data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/phase-2-source-additions.user-001.json
+
+      - name: Build User #1 source universe maintenance report
+        run: npm run maintenance:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/phase-2-source-additions.user-001.json examples/applicant-001/source-universe-maintenance-v0.json examples/applicant-001/source-universe-maintenance-v0.md
 
       - name: Monitor curated User #1 opportunity sources
         run: npm run watchlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md --max-sources=${{ inputs.max_sources || 20 }}
@@ -58,7 +64,7 @@ jobs:
       - name: Build User #1 source universe coverage report
         run: npm run coverage:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/source-universe-coverage-v0.json examples/applicant-001/source-universe-coverage-v0.md
 
-      - name: Commit watchlist, shortlist, and coverage updates
+      - name: Commit watchlist, shortlist, coverage, and maintenance updates
         run: |
           git config user.name "opportunity-ai-bot"
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
@@ -70,6 +76,8 @@ jobs:
             examples/applicant-001/opportunity-shortlist-v0.md \
             examples/applicant-001/user-001-evidence-request-v0.md \
             examples/applicant-001/source-universe-coverage-v0.json \
-            examples/applicant-001/source-universe-coverage-v0.md
-          git commit -m "Update User #1 opportunity watchlist, shortlist, and coverage" || echo "No watchlist, shortlist, or coverage changes"
+            examples/applicant-001/source-universe-coverage-v0.md \
+            examples/applicant-001/source-universe-maintenance-v0.json \
+            examples/applicant-001/source-universe-maintenance-v0.md
+          git commit -m "Update User #1 opportunity watchlist, shortlist, coverage, and maintenance" || echo "No watchlist, shortlist, coverage, or maintenance changes"
           git push
