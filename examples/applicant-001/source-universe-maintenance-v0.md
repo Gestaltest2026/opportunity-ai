@@ -1,6 +1,6 @@
 # User #1 Source Universe Maintenance Report
 
-Generated at: 2026-07-30T09:07:01.101Z
+Generated at: 2026-07-30T14:36:05.897Z
 Applicant: applicant-001
 
 ## Purpose
@@ -16,8 +16,8 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 | Merged source count estimate | 53 |
 | Staged already in primary | 40 |
 | Staged not yet in primary | 0 |
-| Unobserved enabled sources | 20 |
-| Automation access-blocked sources | 6 |
+| Unobserved enabled sources | 0 |
+| Automation access-blocked sources | 12 |
 | Application-ready sources | 0 |
 | Suspicious application-ready sources | 0 |
 | Blocking issues | 0 |
@@ -36,8 +36,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 
 ## Maintenance Warnings
 
-- 20 enabled sources are unobserved and should remain non-recommendations until the scheduled monitor fetches them.
-- 6 sources are access-blocked for automation and require manual browser verification.
+- 12 sources are access-blocked for automation and require manual browser verification.
 
 ## Staged Sources Not Yet in Primary
 
@@ -88,35 +87,22 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 
 ## Unobserved Sources
 
-- aafpe-paralegal-education-resources
-- adult-student-scholarship-pattern-source
-- bold-org-scholarship-platform
-- cape-coral-kiwanis-scholarships
-- cape-coral-mayors-scholarship-fund
-- collier-community-foundation-apply-scholarships
-- collier-community-foundation-education-employment-indicators
-- executive-women-international-scholarship-program
-- fastweb-scholarship-search
-- florida-registered-paralegal-program
-- going-merry-scholarship-platform
-- legal-scholarship-pattern-source
-- nala-certification-exam-scholarship
-- rotary-fort-myers-trust-fund-action
-- scholarship-america-students
-- scholarships-com-directory
-- the-community-foundation-students-scholarships
-- unigo-scholarship-directory
-- women-in-transition-scholarship-pattern-source
-- zonta-international-education-awards
+- None
 
 ## Automation Access-Blocked Sources
 
 - aauw-career-development-grants
 - careeronestop-scholarship-finder
+- executive-women-international-scholarship-program
 - federal-pell-grant-studentaid-official
 - federal-student-aid-fafsa-official
 - florida-osfa-financial-aid-scholarships
+- florida-registered-paralegal-program
+- going-merry-scholarship-platform
+- legal-scholarship-pattern-source
+- nala-certification-exam-scholarship
 - nfpa-awards-scholarships
+- zonta-international-education-awards
 
 ## High-Relevance Unobserved Sources
 

@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-07-30T09:07:01.549Z
+Generated at: 2026-07-30T14:36:06.364Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,31 +12,18 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 20 |
-| Skipped: not due | 33 |
+| Attempted sources | 0 |
+| Skipped: not due | 53 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
-| First observations | 14 |
+| First observations | 0 |
 | Changed sources | 0 |
 | Unchanged sources | 0 |
-| Failed sources | 6 |
+| Failed sources | 0 |
 
 ## First Observations
 
-- cape-coral-mayors-scholarship-fund
-- cape-coral-kiwanis-scholarships
-- rotary-fort-myers-trust-fund-action
-- collier-community-foundation-apply-scholarships
-- collier-community-foundation-education-employment-indicators
-- the-community-foundation-students-scholarships
-- scholarships-com-directory
-- fastweb-scholarship-search
-- aafpe-paralegal-education-resources
-- unigo-scholarship-directory
-- bold-org-scholarship-platform
-- scholarship-america-students
-- women-in-transition-scholarship-pattern-source
-- adult-student-scholarship-pattern-source
+- None
 
 ## Changed Sources
 
@@ -44,12 +31,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- going-merry-scholarship-platform: fetch failed
-- nala-certification-exam-scholarship: Source fetch failed: 404 Not Found
-- florida-registered-paralegal-program: Source fetch failed: 403 Forbidden
-- executive-women-international-scholarship-program: Source fetch failed: 403 Forbidden
-- zonta-international-education-awards: Source fetch failed: 404 Not Found
-- legal-scholarship-pattern-source: Source fetch failed: 404 Not Found
+- None
 
 ## High-Relevance Actionable Sources
 
