@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { CuratedOpportunityWatchlistSchema } from "./schema";
+import { CuratedOpportunityWatchlistSchema, type CuratedOpportunityWatchlist } from "./schema";
 import {
   analyzeWatchlistMaintenance,
   generateWatchlistMaintenanceMarkdownReport,
@@ -12,20 +12,53 @@ async function writeTextFile(path: string, content: string): Promise<void> {
   await writeFile(path, content, "utf8");
 }
 
+async function readWatchlist(path: string): Promise<CuratedOpportunityWatchlist> {
+  const raw = JSON.parse(await readFile(path, "utf8"));
+  return CuratedOpportunityWatchlistSchema.parse(raw);
+}
+
+function combineStagedAdditions(
+  stagedAdditions: CuratedOpportunityWatchlist[]
+): CuratedOpportunityWatchlist {
+  const [first, ...rest] = stagedAdditions;
+  if (!first) throw new Error("At least one staged additions file is required");
+
+  for (const staged of rest) {
+    if (staged.applicant_id !== first.applicant_id) {
+      throw new Error(
+        `Cannot combine staged additions for ${staged.applicant_id} with ${first.applicant_id}`
+      );
+    }
+  }
+
+  return {
+    ...first,
+    generated_for: "Combined staged User #1 source additions for maintenance audit",
+    purpose:
+      "Combined staged additions view used only for deterministic maintenance checks.",
+    sources: stagedAdditions.flatMap((staged) => staged.sources),
+  };
+}
+
 async function main() {
-  const [primaryPath, stagedAdditionsPath, jsonReportPath, markdownReportPath] =
+  const [primaryPath, jsonReportPath, markdownReportPath, ...stagedAdditionsPaths] =
     process.argv.slice(2);
 
-  if (!primaryPath || !stagedAdditionsPath || !jsonReportPath || !markdownReportPath) {
+  if (
+    !primaryPath ||
+    !jsonReportPath ||
+    !markdownReportPath ||
+    stagedAdditionsPaths.length === 0
+  ) {
     throw new Error(
-      "Usage: npm run maintenance:user-001 -- <primary-watchlist.json> <staged-additions.json> <maintenance-report.json> <maintenance-report.md>"
+      "Usage: npm run maintenance:user-001 -- <primary-watchlist.json> <maintenance-report.json> <maintenance-report.md> <staged-additions.json> [...more-staged-additions.json]"
     );
   }
 
-  const primaryRaw = JSON.parse(await readFile(primaryPath, "utf8"));
-  const stagedRaw = JSON.parse(await readFile(stagedAdditionsPath, "utf8"));
-  const primary = CuratedOpportunityWatchlistSchema.parse(primaryRaw);
-  const stagedAdditions = CuratedOpportunityWatchlistSchema.parse(stagedRaw);
+  const primary = await readWatchlist(primaryPath);
+  const stagedAdditions = combineStagedAdditions(
+    await Promise.all(stagedAdditionsPaths.map(readWatchlist))
+  );
 
   const report = analyzeWatchlistMaintenance(primary, stagedAdditions);
 
