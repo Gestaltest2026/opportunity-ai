@@ -40,13 +40,19 @@ jobs:
       - name: Verify User #1 shortlist triage
         run: npm run evaluate:user-001-shortlist
 
+      - name: Verify source coverage model
+        run: npm run evaluate:source-coverage
+
       - name: Monitor curated User #1 opportunity sources
         run: npm run watchlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-watchlist-report-v0.md --max-sources=${{ inputs.max_sources || 20 }}
 
       - name: Build guarded User #1 opportunity shortlist
         run: npm run shortlist:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/opportunity-shortlist-v0.json examples/applicant-001/opportunity-shortlist-v0.md examples/applicant-001/user-001-evidence-request-v0.md
 
-      - name: Commit watchlist and shortlist updates
+      - name: Build User #1 source universe coverage report
+        run: npm run coverage:user-001 -- data/opportunity-source-universe/curated-watchlist.user-001.json examples/applicant-001/source-universe-coverage-v0.json examples/applicant-001/source-universe-coverage-v0.md
+
+      - name: Commit watchlist, shortlist, and coverage updates
         run: |
           git config user.name "opportunity-ai-bot"
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
@@ -55,6 +61,8 @@ jobs:
             examples/applicant-001/opportunity-watchlist-report-v0.md \
             examples/applicant-001/opportunity-shortlist-v0.json \
             examples/applicant-001/opportunity-shortlist-v0.md \
-            examples/applicant-001/user-001-evidence-request-v0.md
-          git commit -m "Update User #1 opportunity watchlist and shortlist" || echo "No watchlist or shortlist changes"
+            examples/applicant-001/user-001-evidence-request-v0.md \
+            examples/applicant-001/source-universe-coverage-v0.json \
+            examples/applicant-001/source-universe-coverage-v0.md
+          git commit -m "Update User #1 opportunity watchlist, shortlist, and coverage" || echo "No watchlist, shortlist, or coverage changes"
           git push
