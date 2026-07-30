@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
-import { Phase2ReadinessReport } from "./phase2ReadinessGate";
+import type { Phase2ReadinessReport } from "./phase2ReadinessGate";
 import {
   evaluateUser001ActionGate,
   generateUser001ActionGateMarkdownReport,
