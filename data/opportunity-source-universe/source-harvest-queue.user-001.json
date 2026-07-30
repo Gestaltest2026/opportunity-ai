@@ -1,0 +1,262 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_for": "User #1 legal/paralegal source harvest queue",
+  "purpose": "Create a manual harvest queue for the two highest-fit source-universe lanes so the candidate pool expands before strict eligibility gating is asked to find application-ready scholarships.",
+  "rules": [
+    "Harvesting creates candidate source leads, not applicant eligibility.",
+    "Official, sponsor, professional-body, and law-firm source pages are preferred over aggregators.",
+    "Aggregator results may discover leads but cannot prove current eligibility.",
+    "No harvested candidate source becomes application-ready until the source is verified and strict eligibility gating runs downstream.",
+    "Do not store private FAFSA, tax, SSN, income, or full personal-statement material in the public repository."
+  ],
+  "source_universe_current_count": 50,
+  "source_universe_phase_1_goal": 150,
+  "harvest_queue_target_candidate_count": 50,
+  "lanes": [
+    {
+      "lane_id": "legal-paralegal-professional-bodies",
+      "name": "Legal / paralegal professional bodies",
+      "priority": "critical",
+      "purpose": "Harvest paralegal, legal assistant, bar-adjacent, certification-body, and professional-association sources that may offer scholarships, awards, CLE funding, or certification-support funds.",
+      "target_candidate_count": 30,
+      "minimum_official_or_sponsor_candidates": 20,
+      "query_tasks": [
+        {
+          "task_id": "legal-body-query-001",
+          "query": "state paralegal association scholarship professional development",
+          "target_candidate_count": 4,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Open the sponsor or professional-body page.",
+            "Confirm current application cycle, deadline, membership requirement, eligible expense type, and required documents.",
+            "Record only public-safe summary facts before watchlist insertion."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Broad state-association query for professional development scholarships."]
+        },
+        {
+          "task_id": "legal-body-query-002",
+          "query": "Florida paralegal association scholarship professional development member good standing",
+          "target_candidate_count": 4,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Open the Florida sponsor page.",
+            "Confirm whether new members may apply in the same cycle or must wait for good-standing history.",
+            "Separate eligibility from narrative fit."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Prioritizes Florida legal professional context."
+          ]
+        },
+        {
+          "task_id": "legal-body-query-003",
+          "query": "county paralegal association scholarship Florida certification exam CLE",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Confirm sponsor geography and membership rules.",
+            "Confirm whether certification exams, CLE, or professional dues are eligible expenses.",
+            "Record deadline and source URL only after sponsor page is opened."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Targets local/county paralegal groups beyond current known sources."]
+        },
+        {
+          "task_id": "legal-body-query-004",
+          "query": "paralegal certification scholarship CP exam NALA affiliate",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Open the affiliate or certification-body page.",
+            "Confirm certification cost coverage and applicant type.",
+            "Do not infer NALA CP eligibility from job title alone."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Targets certification-support routes rather than degree-only aid."]
+        },
+        {
+          "task_id": "legal-body-query-005",
+          "query": "PCCE PACE scholarship paralegal association award application deadline",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor", "pattern_archive"],
+          "required_verification_steps": [
+            "Check whether the current cycle is open or expired.",
+            "Classify expired current-cycle pages as pattern_archive or watch_next_cycle, not application-ready.",
+            "Record membership blocker if present."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Captures NFPA-style certification support while preventing expired-cycle reuse."]
+        },
+        {
+          "task_id": "legal-body-query-006",
+          "query": "legal assistant association scholarship professional development continuing education",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Confirm that paralegal/legal assistant applicants are included.",
+            "Confirm current deadline and eligible education expenses.",
+            "Record whether membership is required before application."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Expands beyond paralegal-only naming."
+          ]
+        },
+        {
+          "task_id": "legal-body-query-007",
+          "query": "bar association paralegal scholarship legal assistant Florida",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Open bar-association or foundation page.",
+            "Confirm whether non-attorney legal staff or legal studies students are eligible.",
+            "Mark attorney-only scholarships as rejected for User #1."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Tests bar-adjacent public-service/legal-staff sources."
+          ]
+        },
+        {
+          "task_id": "legal-body-query-008",
+          "query": "legal studies paralegal certificate scholarship adult learner professional association",
+          "target_candidate_count": 4,
+          "expected_source_types": ["professional_body", "official_sponsor", "database"],
+          "required_verification_steps": [
+            "Find the sponsor page behind any database result.",
+            "Confirm whether legal studies or paralegal certificate paths qualify.",
+            "Keep database pages as discovery leads until sponsor verification."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Bridges legal studies and professional association language."
+          ]
+        },
+        {
+          "task_id": "legal-body-query-009",
+          "query": "paralegal association scholarship application member in good standing deadline",
+          "target_candidate_count": 3,
+          "expected_source_types": ["professional_body", "official_sponsor"],
+          "required_verification_steps": [
+            "Confirm good-standing requirement.",
+            "Confirm whether applicants can join before applying.",
+            "If membership duration is required, send eligibility inquiry instead of application packet."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Designed to expose the exact blocker that stopped prior candidates."
+          ]
+        }
+      ],
+      "guardrails": [
+        "Membership requirements are hard blockers until observed.",
+        "Professional fit does not equal application readiness.",
+        "Expired pages can train timing and pattern recognition only."
+      ],
+      "notes": [
+        "This lane is first because User #1's strongest evidence is legal-office progression and legal studies.",
+        "The target is to create many NEEDS_VERIFICATION records, not fake APPLICATION_READY results."
+      ]
+    },
+    {
+      "lane_id": "law-firm-scholarship-programs",
+      "name": "Law-firm scholarship programs",
+      "priority": "critical",
+      "purpose": "Harvest law-firm-sponsored scholarships whose eligibility may include legal studies, paralegal education, nontraditional undergraduates, adult learners, or community-service narratives.",
+      "target_candidate_count": 20,
+      "minimum_official_or_sponsor_candidates": 15,
+      "query_tasks": [
+        {
+          "task_id": "law-firm-query-001",
+          "query": "law firm paralegal scholarship 2026 legal studies student",
+          "target_candidate_count": 4,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Open the law-firm scholarship page.",
+            "Confirm citizenship, enrollment, transcript, essay, and deadline requirements.",
+            "Do not infer that Legal Studies is a paralegal education program unless the sponsor permits it."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Direct paralegal law-firm scholarship search."
+          ]
+        },
+        {
+          "task_id": "law-firm-query-002",
+          "query": "Florida law firm scholarship legal studies undergraduate adult student",
+          "target_candidate_count": 3,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Confirm Florida residency, school location, or U.S. citizenship rules.",
+            "Confirm whether part-time enrollment is allowed.",
+            "Record hard blockers before ranking."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Tests Florida law-firm scholarships beyond paralegal naming."
+          ]
+        },
+        {
+          "task_id": "law-firm-query-003",
+          "query": "personal injury law firm paralegal scholarship application deadline transcript essay",
+          "target_candidate_count": 3,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Open sponsor page and confirm current cycle.",
+            "Check if the scholarship is open to paralegal or legal studies applicants.",
+            "Record essay prompt and transcript requirement."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Law-firm scholarships often use essay/transcript filters."
+          ]
+        },
+        {
+          "task_id": "law-firm-query-004",
+          "query": "legal assistant scholarship law firm undergraduate legal studies",
+          "target_candidate_count": 3,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Verify whether legal assistant experience is relevant or irrelevant to eligibility.",
+            "Confirm current deadline and application form.",
+            "Separate legal-office story fit from hard eligibility."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Uses User #1's legal assistant history as a search angle, not an eligibility assumption."
+          ]
+        },
+        {
+          "task_id": "law-firm-query-005",
+          "query": "community service legal studies scholarship law firm adult learner",
+          "target_candidate_count": 3,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Open sponsor page and confirm whether nontraditional/adult applicants qualify.",
+            "Confirm whether community-service narrative is requested or useful.",
+            "Keep financial-need assumptions UNKNOWN unless the source requires documentation and User #1 evidence exists."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Targets the hula/community-service/conflict-prevention narrative without assuming financial need."
+          ]
+        },
+        {
+          "task_id": "law-firm-query-006",
+          "query": "paralegal education scholarship law firm official rules 2026",
+          "target_candidate_count": 4,
+          "expected_source_types": ["law_firm", "official_sponsor"],
+          "required_verification_steps": [
+            "Find official rules or sponsor page.",
+            "Confirm exact education-program language.",
+            "Send eligibility inquiry if Legal Studies vs paralegal program is ambiguous."
+          ],
+          "harvested_candidate_ids": [],
+          "notes": ["Designed to avoid repeating Buckfire-style program ambiguity."
+          ]
+        }
+      ],
+      "guardrails": [
+        "Law-firm scholarship pages can be real sources, but every applicant requirement still needs official verification.",
+        "Do not treat marketing language as eligibility language.",
+        "When program wording is ambiguous, output inquiry, not application."
+      ],
+      "notes": [
+        "This lane is second because it is university-independent and often essay-driven.",
+        "The goal is to widen the market before asking the strict gate for application-ready results."
+      ]
+    }
+  ],
+  "candidates": []
+}

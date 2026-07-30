@@ -64,6 +64,9 @@ jobs:
       - name: Verify source expansion lanes
         run: npm run evaluate:source-expansion-lanes
 
+      - name: Verify source harvest queue
+        run: npm run evaluate:source-harvest-queue
+
       - name: Fold Phase 2 curated source additions into User #1 watchlist
         run: npm run watchlist:merge -- data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/curated-watchlist.user-001.json data/opportunity-source-universe/phase-2-source-additions.user-001.json data/opportunity-source-universe/phase-2-source-additions-50.user-001.json
 
@@ -94,7 +97,10 @@ jobs:
       - name: Build User #1 source expansion lane report
         run: npm run source-expansion:user-001 -- data/opportunity-source-universe/source-expansion-lanes.user-001.json examples/applicant-001/source-expansion-lanes-v0.json examples/applicant-001/source-expansion-lanes-v0.md
 
-      - name: Commit watchlist, shortlist, coverage, maintenance, readiness, action-gate, execution-packet, eligibility, and source-expansion updates
+      - name: Build User #1 source harvest queue report
+        run: npm run harvest-queue:user-001 -- data/opportunity-source-universe/source-harvest-queue.user-001.json examples/applicant-001/source-harvest-queue-v0.json examples/applicant-001/source-harvest-queue-v0.md
+
+      - name: Commit watchlist, shortlist, coverage, maintenance, readiness, action-gate, execution-packet, eligibility, source-expansion, and harvest-queue updates
         run: |
           git config user.name "opportunity-ai-bot"
           git config user.email "opportunity-ai-bot@users.noreply.github.com"
@@ -103,6 +109,7 @@ jobs:
             data/opportunity-source-universe/phase-2-source-additions.user-001.json \
             data/opportunity-source-universe/phase-2-source-additions-50.user-001.json \
             data/opportunity-source-universe/source-expansion-lanes.user-001.json \
+            data/opportunity-source-universe/source-harvest-queue.user-001.json \
             examples/applicant-001/opportunity-watchlist-report-v0.md \
             examples/applicant-001/opportunity-shortlist-v0.json \
             examples/applicant-001/opportunity-shortlist-v0.md \
@@ -119,6 +126,8 @@ jobs:
             examples/applicant-001/strict-eligibility-report-v0.json \
             examples/applicant-001/strict-eligibility-report-v0.md \
             examples/applicant-001/source-expansion-lanes-v0.json \
-            examples/applicant-001/source-expansion-lanes-v0.md
-          git commit -m "Update User #1 opportunity execution, eligibility, and source expansion reports" || echo "No User #1 opportunity updates"
+            examples/applicant-001/source-expansion-lanes-v0.md \
+            examples/applicant-001/source-harvest-queue-v0.json \
+            examples/applicant-001/source-harvest-queue-v0.md
+          git commit -m "Update User #1 opportunity execution, eligibility, source expansion, and harvest queue reports" || echo "No User #1 opportunity updates"
           git push
