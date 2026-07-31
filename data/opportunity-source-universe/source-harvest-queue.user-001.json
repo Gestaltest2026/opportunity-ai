@@ -44,9 +44,8 @@
             "Confirm whether new members may apply in the same cycle or must wait for good-standing history.",
             "Separate eligibility from narrative fit."
           ],
-          "harvested_candidate_ids": [],
-          "notes": ["Prioritizes Florida legal professional context."
-          ]
+          "harvested_candidate_ids": ["paf-professional-development-scholarship"],
+          "notes": ["Prioritizes Florida legal professional context."]
         },
         {
           "task_id": "legal-body-query-003",
@@ -58,7 +57,7 @@
             "Confirm whether certification exams, CLE, or professional dues are eligible expenses.",
             "Record deadline and source URL only after sponsor page is opened."
           ],
-          "harvested_candidate_ids": [],
+          "harvested_candidate_ids": ["swfpa-professional-development-scholarship"],
           "notes": ["Targets local/county paralegal groups beyond current known sources."]
         },
         {
@@ -98,8 +97,7 @@
             "Record whether membership is required before application."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Expands beyond paralegal-only naming."
-          ]
+          "notes": ["Expands beyond paralegal-only naming."]
         },
         {
           "task_id": "legal-body-query-007",
@@ -112,8 +110,7 @@
             "Mark attorney-only scholarships as rejected for User #1."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Tests bar-adjacent public-service/legal-staff sources."
-          ]
+          "notes": ["Tests bar-adjacent public-service/legal-staff sources."]
         },
         {
           "task_id": "legal-body-query-008",
@@ -126,8 +123,7 @@
             "Keep database pages as discovery leads until sponsor verification."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Bridges legal studies and professional association language."
-          ]
+          "notes": ["Bridges legal studies and professional association language."]
         },
         {
           "task_id": "legal-body-query-009",
@@ -139,9 +135,8 @@
             "Confirm whether applicants can join before applying.",
             "If membership duration is required, send eligibility inquiry instead of application packet."
           ],
-          "harvested_candidate_ids": [],
-          "notes": ["Designed to expose the exact blocker that stopped prior candidates."
-          ]
+          "harvested_candidate_ids": ["paf-professional-development-scholarship", "swfpa-professional-development-scholarship"],
+          "notes": ["Designed to expose the exact blocker that stopped prior candidates."]
         }
       ],
       "guardrails": [
@@ -172,9 +167,8 @@
             "Confirm citizenship, enrollment, transcript, essay, and deadline requirements.",
             "Do not infer that Legal Studies is a paralegal education program unless the sponsor permits it."
           ],
-          "harvested_candidate_ids": [],
-          "notes": ["Direct paralegal law-firm scholarship search."
-          ]
+          "harvested_candidate_ids": ["lucas-law-legal-leaders-scholarship", "petersen-criminal-defense-law-scholarship"],
+          "notes": ["Direct paralegal law-firm scholarship search."]
         },
         {
           "task_id": "law-firm-query-002",
@@ -187,8 +181,7 @@
             "Record hard blockers before ranking."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Tests Florida law-firm scholarships beyond paralegal naming."
-          ]
+          "notes": ["Tests Florida law-firm scholarships beyond paralegal naming."]
         },
         {
           "task_id": "law-firm-query-003",
@@ -201,8 +194,7 @@
             "Record essay prompt and transcript requirement."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Law-firm scholarships often use essay/transcript filters."
-          ]
+          "notes": ["Law-firm scholarships often use essay/transcript filters."]
         },
         {
           "task_id": "law-firm-query-004",
@@ -215,8 +207,7 @@
             "Separate legal-office story fit from hard eligibility."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Uses User #1's legal assistant history as a search angle, not an eligibility assumption."
-          ]
+          "notes": ["Uses User #1's legal assistant history as a search angle, not an eligibility assumption."]
         },
         {
           "task_id": "law-firm-query-005",
@@ -228,9 +219,8 @@
             "Confirm whether community-service narrative is requested or useful.",
             "Keep financial-need assumptions UNKNOWN unless the source requires documentation and User #1 evidence exists."
           ],
-          "harvested_candidate_ids": [],
-          "notes": ["Targets the hula/community-service/conflict-prevention narrative without assuming financial need."
-          ]
+          "harvested_candidate_ids": ["anidjar-levine-community-service-scholarship"],
+          "notes": ["Targets the hula/community-service/conflict-prevention narrative without assuming financial need."]
         },
         {
           "task_id": "law-firm-query-006",
@@ -243,8 +233,7 @@
             "Send eligibility inquiry if Legal Studies vs paralegal program is ambiguous."
           ],
           "harvested_candidate_ids": [],
-          "notes": ["Designed to avoid repeating Buckfire-style program ambiguity."
-          ]
+          "notes": ["Designed to avoid repeating Buckfire-style program ambiguity."]
         }
       ],
       "guardrails": [
@@ -258,5 +247,101 @@
       ]
     }
   ],
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "paf-professional-development-scholarship",
+      "lane_id": "legal-paralegal-professional-bodies",
+      "title": "PAF Professional Development Scholarship",
+      "url": "https://pafinc.org/scholarships/",
+      "source_type_hint": "professional_body",
+      "status": "ready_for_watchlist_insert",
+      "evidence_basis": [
+        "Sponsor/professional-body source observed at PAF scholarships page.",
+        "Harvest Sprint 1 verification recorded annual November 30 deadline and professional development / dues scholarship purpose.",
+        "Candidate is a source lead only; no applicant eligibility is asserted."
+      ],
+      "blocker_notes": [
+        "PAF membership in good standing is unverified for User #1.",
+        "New-member same-cycle eligibility is unknown.",
+        "Eligible expense fit for User #1 needs sponsor confirmation."
+      ],
+      "next_action": "Insert into curated watchlist as needs_verification and send eligibility inquiry about good-standing membership, new-member timing, eligible expenses, and required documents."
+    },
+    {
+      "candidate_id": "swfpa-professional-development-scholarship",
+      "lane_id": "legal-paralegal-professional-bodies",
+      "title": "SWFPA Professional Development Scholarship",
+      "url": "https://www.swfloridaparalegals.org/continuing_education/scholarships.php",
+      "source_type_hint": "professional_body",
+      "status": "ready_for_watchlist_insert",
+      "evidence_basis": [
+        "Sponsor/professional-body source observed at Southwest Florida Paralegals scholarship page.",
+        "Harvest Sprint 1 verification recorded October 1 current-year deadline and professional development / certification / legal-profession purpose.",
+        "Candidate is a source lead only; no applicant eligibility is asserted."
+      ],
+      "blocker_notes": [
+        "Active SWFPA membership is unverified for User #1.",
+        "Join-then-apply timing for the same cycle is unknown.",
+        "Eligible professional-development expense must be confirmed before application."
+      ],
+      "next_action": "Insert into curated watchlist as needs_verification and send eligibility inquiry about active membership, join timing, covered expenses, and application documents."
+    },
+    {
+      "candidate_id": "lucas-law-legal-leaders-scholarship",
+      "lane_id": "law-firm-scholarship-programs",
+      "title": "Lucas Law Legal Leaders Scholarship",
+      "url": "https://www.lucaslaw.com/scholarship",
+      "source_type_hint": "law_firm",
+      "status": "ready_for_watchlist_insert",
+      "evidence_basis": [
+        "Sponsor law-firm source observed at Lucas Law scholarship page.",
+        "Harvest Sprint 1 verification recorded November 11, 2026 deadline and legal-career applicant fit signals.",
+        "Candidate is a source lead only; no applicant eligibility is asserted."
+      ],
+      "blocker_notes": [
+        "Official GPA evidence and transcript availability must be confirmed.",
+        "Accredited U.S. undergraduate or graduate enrollment proof must be confirmed.",
+        "Legal-career essay fit is strong but does not prove eligibility."
+      ],
+      "next_action": "Insert into curated watchlist as needs_verification and confirm GPA, enrollment, transcript/proof-of-enrollment, essay prompt, and part-time eligibility before application strategy."
+    },
+    {
+      "candidate_id": "anidjar-levine-community-service-scholarship",
+      "lane_id": "law-firm-scholarship-programs",
+      "title": "Anidjar & Levine Community Service Scholarship",
+      "url": "https://www.anidjarlevine.com/about/scholarship/community-service-scholarship/",
+      "source_type_hint": "law_firm",
+      "status": "ready_for_watchlist_insert",
+      "evidence_basis": [
+        "Sponsor law-firm source observed at Anidjar & Levine community service scholarship page.",
+        "Harvest Sprint 1 verification recorded October 1, 2026 deadline and community-service narrative fit.",
+        "Candidate is a source lead only; no applicant eligibility is asserted."
+      ],
+      "blocker_notes": [
+        "U.S. student and enrollment requirements must be confirmed against User #1's current school status.",
+        "GPA, transcript, resume, and essay requirements must be confirmed before application packet.",
+        "Community service narrative fit is strong but does not prove eligibility."
+      ],
+      "next_action": "Insert into curated watchlist as needs_verification and verify U.S. student, enrollment, GPA/transcript, resume, and essay requirements."
+    },
+    {
+      "candidate_id": "petersen-criminal-defense-law-scholarship",
+      "lane_id": "law-firm-scholarship-programs",
+      "title": "Petersen Criminal Defense Law Scholarship",
+      "url": "https://www.criminaldefensene.com/criminal-public-law-scholarship/",
+      "source_type_hint": "law_firm",
+      "status": "official_verification_needed",
+      "evidence_basis": [
+        "Sponsor law-firm source observed at Petersen Criminal Defense Law scholarship page.",
+        "Harvest Sprint 1 verification recorded August 1, 2026 deadline pressure and pre-law / law-student fit ambiguity.",
+        "Candidate is a source lead only; no applicant eligibility is asserted."
+      ],
+      "blocker_notes": [
+        "Deadline is extremely close and may be impractical for User #1 without immediate document readiness.",
+        "User #1's Legal Studies undergraduate status may or may not satisfy pre-law / law-student wording.",
+        "Proof of enrollment and essay readiness must be confirmed immediately."
+      ],
+      "next_action": "Keep as official_verification_needed; only escalate if official page confirms User #1 qualifies and required documents can be prepared before the deadline."
+    }
+  ]
 }
