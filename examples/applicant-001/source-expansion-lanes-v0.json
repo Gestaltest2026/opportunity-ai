@@ -1,0 +1,269 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-31T03:54:33.551Z",
+  "status": "SOURCE_UNIVERSE_UNDERSEEDED",
+  "purpose": "Define a broader source-universe acquisition plan so User #1 scholarship search does not depend on a tiny hand-picked candidate pie.",
+  "current_known_curated_source_count": 50,
+  "phase_1_curated_source_goal": 150,
+  "total_source_universe_goal": 300,
+  "source_universe_gap_count": 100,
+  "lane_count": 10,
+  "underseeded_lane_count": 10,
+  "blocked_lane_count": 0,
+  "critical_underseeded_lane_ids": [
+    "legal-paralegal-professional-bodies",
+    "women-adult-returning-learners"
+  ],
+  "highest_priority_next_lane_ids": [
+    "women-adult-returning-learners",
+    "legal-paralegal-professional-bodies",
+    "law-firm-scholarship-programs",
+    "southwest-florida-local-civic",
+    "certification-exam-and-cle-funding"
+  ],
+  "lane_reports": [
+    {
+      "lane_id": "legal-paralegal-professional-bodies",
+      "name": "Legal / paralegal professional bodies",
+      "priority": "critical",
+      "status": "underseeded",
+      "target_source_count": 40,
+      "current_seed_count": 3,
+      "source_gap_count": 37,
+      "official_or_semi_official_gap_count": 27,
+      "application_source_gap_count": 13,
+      "next_harvest_action": "Build a Florida and national paralegal-association source queue before claiming application readiness.",
+      "acquisition_queries": [
+        "Florida paralegal association scholarship professional development",
+        "paralegal certification scholarship professional development application",
+        "paralegal association student scholarship legal studies Florida",
+        "paralegal professional development grant certification fee scholarship"
+      ],
+      "guardrails": [
+        "Do not infer membership eligibility.",
+        "Do not treat certification information as funding.",
+        "Membership-required sources must remain NEEDS_VERIFICATION until evidence exists."
+      ]
+    },
+    {
+      "lane_id": "law-firm-scholarship-programs",
+      "name": "Law-firm scholarship programs",
+      "priority": "high",
+      "status": "underseeded",
+      "target_source_count": 60,
+      "current_seed_count": 1,
+      "source_gap_count": 59,
+      "official_or_semi_official_gap_count": 44,
+      "application_source_gap_count": 24,
+      "next_harvest_action": "Harvest law-firm scholarships as a separate source class and send program-eligibility inquiries when requirements are ambiguous.",
+      "acquisition_queries": [
+        "2026 paralegal scholarship law firm application",
+        "legal studies scholarship law firm 2026 application deadline",
+        "adult student legal studies scholarship law firm",
+        "paralegal education scholarship transcript essay"
+      ],
+      "guardrails": [
+        "Verify each deadline at the sponsor page.",
+        "Do not assume Legal Studies equals paralegal education program.",
+        "Do not use third-party deadline summaries as final source of truth."
+      ]
+    },
+    {
+      "lane_id": "women-adult-returning-learners",
+      "name": "Women / adult returning learners",
+      "priority": "critical",
+      "status": "underseeded",
+      "target_source_count": 50,
+      "current_seed_count": 4,
+      "source_gap_count": 46,
+      "official_or_semi_official_gap_count": 31,
+      "application_source_gap_count": 12,
+      "next_harvest_action": "Expand beyond the obvious national awards and separate financial-need blockers from narrative fit.",
+      "acquisition_queries": [
+        "adult learner scholarship first bachelor's degree women application",
+        "returning student scholarship mother caregiver first degree",
+        "nontraditional student scholarship women 2026 FAFSA",
+        "single parent returning student education award application"
+      ],
+      "guardrails": [
+        "Do not infer financial need without official aid evidence.",
+        "Do not expose private family or financial documents in public repo.",
+        "Need-based sources stay NEEDS_VERIFICATION until SAI/Pell/income evidence is available."
+      ]
+    },
+    {
+      "lane_id": "southwest-florida-local-civic",
+      "name": "Southwest Florida local civic and community foundations",
+      "priority": "high",
+      "status": "underseeded",
+      "target_source_count": 45,
+      "current_seed_count": 4,
+      "source_gap_count": 41,
+      "official_or_semi_official_gap_count": 31,
+      "application_source_gap_count": 10,
+      "next_harvest_action": "Create a county-by-county local civic source queue, then mark each source official/application/aggregator separately.",
+      "acquisition_queries": [
+        "Lee County Florida adult student scholarship application",
+        "Collier County returning student scholarship application",
+        "Fort Myers Rotary scholarship adult student",
+        "Naples women's club scholarship returning student"
+      ],
+      "guardrails": [
+        "Do not assume county residency.",
+        "Local scholarships often require high school, residency, or specific county evidence.",
+        "Use local sources for discovery but keep blockers explicit."
+      ]
+    },
+    {
+      "lane_id": "certification-exam-and-cle-funding",
+      "name": "Certification exam and CLE funding",
+      "priority": "high",
+      "status": "underseeded",
+      "target_source_count": 25,
+      "current_seed_count": 2,
+      "source_gap_count": 23,
+      "official_or_semi_official_gap_count": 16,
+      "application_source_gap_count": 8,
+      "next_harvest_action": "Separate certification eligibility sources from funding sources; funding requires a distinct official grant/scholarship page.",
+      "acquisition_queries": [
+        "NALA CP scholarship certification fee assistance",
+        "paralegal certification exam fee scholarship",
+        "CLE professional development scholarship paralegal",
+        "legal assistant certification grant continuing education"
+      ],
+      "guardrails": [
+        "Certification eligibility is not scholarship eligibility.",
+        "Do not represent reimbursement as available unless official source says so.",
+        "Record exam, dues, and CLE support as different cost categories."
+      ]
+    },
+    {
+      "lane_id": "university-independent-national-databases",
+      "name": "University-independent national databases",
+      "priority": "medium",
+      "status": "underseeded",
+      "target_source_count": 20,
+      "current_seed_count": 3,
+      "source_gap_count": 17,
+      "official_or_semi_official_gap_count": 0,
+      "application_source_gap_count": 0,
+      "next_harvest_action": "Use aggregators to harvest leads only, then convert each lead to a sponsor-source verification task.",
+      "acquisition_queries": [
+        "scholarship database paralegal adult learner",
+        "scholarship finder legal studies returning student",
+        "adult learner scholarship directory legal studies",
+        "women returning student scholarship database Florida"
+      ],
+      "guardrails": [
+        "Aggregators do not prove current deadlines.",
+        "Aggregator-only candidates cannot become APPLICATION_READY.",
+        "Do not count duplicates across databases as separate sponsor opportunities."
+      ]
+    },
+    {
+      "lane_id": "florida-state-and-public-aid",
+      "name": "Florida state and public aid",
+      "priority": "medium",
+      "status": "underseeded",
+      "target_source_count": 25,
+      "current_seed_count": 2,
+      "source_gap_count": 23,
+      "official_or_semi_official_gap_count": 18,
+      "application_source_gap_count": 7,
+      "next_harvest_action": "Collect public-aid sources but keep Florida residency, SAI/Pell, and institution blockers unresolved until evidence is available.",
+      "acquisition_queries": [
+        "Florida adult learner grant FAFSA part time undergraduate",
+        "Florida resident scholarship first bachelor's degree adult student",
+        "Florida OSFA scholarship legal studies undergraduate",
+        "Florida public aid returning student part time"
+      ],
+      "guardrails": [
+        "Do not infer Florida residency.",
+        "Do not infer Pell eligibility or financial need from FAFSA submitted alone.",
+        "Do not mix FGCU/UF-dependent aid into university-independent shortlist."
+      ]
+    },
+    {
+      "lane_id": "employer-and-workforce-development",
+      "name": "Employer and workforce-development funding",
+      "priority": "medium",
+      "status": "underseeded",
+      "target_source_count": 25,
+      "current_seed_count": 1,
+      "source_gap_count": 24,
+      "official_or_semi_official_gap_count": 14,
+      "application_source_gap_count": 5,
+      "next_harvest_action": "Build a non-scholarship funding lane for credential and job-advancement support.",
+      "acquisition_queries": [
+        "Florida workforce development grant adult learner legal studies",
+        "career advancement grant paralegal certification Florida",
+        "professional retraining scholarship adult student legal assistant",
+        "employer tuition reimbursement paralegal certification scholarship"
+      ],
+      "guardrails": [
+        "Separate scholarships, reimbursements, loans, and employer benefits.",
+        "Do not suggest employer-facing action without User #1 consent.",
+        "Keep private employment details out of public repo."
+      ]
+    },
+    {
+      "lane_id": "fgcu-uf-and-institutional-backstop",
+      "name": "FGCU / UF and institutional backstop",
+      "priority": "low",
+      "status": "underseeded",
+      "target_source_count": 20,
+      "current_seed_count": 5,
+      "source_gap_count": 15,
+      "official_or_semi_official_gap_count": 13,
+      "application_source_gap_count": 5,
+      "next_harvest_action": "Do not expand this lane first until FGCU/UF status is clarified; maintain it as backstop.",
+      "acquisition_queries": [
+        "FGCU Legal Studies scholarship undergraduate transfer adult learner",
+        "UF legal studies scholarship adult learner FAFSA",
+        "FGCU foundation scholarship part time undergraduate",
+        "University of Florida nontraditional student scholarship legal studies"
+      ],
+      "guardrails": [
+        "Do not mix institution-dependent sources into the FGCU/UF-independent shortlist.",
+        "Do not infer enrollment institution from ambiguous notes.",
+        "Institutional aid still requires official school-status evidence."
+      ]
+    },
+    {
+      "lane_id": "pattern-archives-and-expired-pages",
+      "name": "Pattern archives and expired pages",
+      "priority": "low",
+      "status": "underseeded",
+      "target_source_count": 15,
+      "current_seed_count": 1,
+      "source_gap_count": 14,
+      "official_or_semi_official_gap_count": 4,
+      "application_source_gap_count": 0,
+      "next_harvest_action": "Use expired pages only for pattern learning and next-cycle monitoring, never for current application readiness.",
+      "acquisition_queries": [
+        "expired paralegal scholarship application deadline",
+        "prior year legal studies scholarship paralegal application",
+        "paralegal scholarship 2025 deadline archive",
+        "professional development scholarship previous cycle paralegal"
+      ],
+      "guardrails": [
+        "Expired pages cannot support current application recommendations.",
+        "Cycle predictions must be labeled as predictions until official source updates.",
+        "Do not create false urgency from past deadlines."
+      ]
+    }
+  ],
+  "required_next_actions": [
+    "Expand the Opportunity Source Universe before asking for three application-ready scholarships.",
+    "Prioritize these lanes first: women-adult-returning-learners, legal-paralegal-professional-bodies, law-firm-scholarship-programs, southwest-florida-local-civic, certification-exam-and-cle-funding.",
+    "Harvest sources into a queue first; do not claim applicant eligibility until strict eligibility gate confirms the source."
+  ],
+  "guardrails": [
+    "The source universe must expand before the product promises three application-ready scholarships.",
+    "A source lane is not an eligibility claim; it is a structured acquisition target.",
+    "Aggregator leads expand search surface but cannot prove current applicant eligibility.",
+    "Official or sponsor sources remain required before applicant-facing claims.",
+    "Strict eligibility gating remains downstream from source expansion and may still return APPLICATION_READY: 0.",
+    "Do not store private FAFSA forms, exact income, SSNs, tax records, or full personal statements in the public repository."
+  ]
+}

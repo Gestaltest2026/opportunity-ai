@@ -1,0 +1,85 @@
+{
+  "applicant_id": "applicant-001",
+  "generated_at": "2026-07-31T03:54:33.938Z",
+  "status": "READY_FOR_WATCHLIST_INSERTION",
+  "purpose": "Create a manual harvest queue for the two highest-fit source-universe lanes so the candidate pool expands before strict eligibility gating is asked to find application-ready scholarships.",
+  "source_universe_current_count": 50,
+  "source_universe_phase_1_goal": 150,
+  "source_universe_gap_count": 100,
+  "harvest_queue_target_candidate_count": 50,
+  "lane_count": 2,
+  "query_task_count": 15,
+  "query_target_candidate_count": 50,
+  "harvested_candidate_count": 5,
+  "ready_for_watchlist_insert_count": 4,
+  "official_verification_needed_count": 1,
+  "rejected_candidate_count": 0,
+  "candidate_gap_count": 45,
+  "highest_priority_next_lane_ids": [
+    "legal-paralegal-professional-bodies",
+    "law-firm-scholarship-programs"
+  ],
+  "lane_reports": [
+    {
+      "lane_id": "legal-paralegal-professional-bodies",
+      "name": "Legal / paralegal professional bodies",
+      "priority": "critical",
+      "target_candidate_count": 30,
+      "query_task_count": 9,
+      "query_target_candidate_count": 30,
+      "harvested_candidate_count": 2,
+      "ready_for_watchlist_insert_count": 2,
+      "official_verification_needed_count": 0,
+      "candidate_gap_count": 28,
+      "official_or_sponsor_gap_count": 18,
+      "next_queries": [
+        "state paralegal association scholarship professional development",
+        "Florida paralegal association scholarship professional development member good standing",
+        "county paralegal association scholarship Florida certification exam CLE",
+        "paralegal certification scholarship CP exam NALA affiliate",
+        "PCCE PACE scholarship paralegal association award application deadline"
+      ],
+      "guardrails": [
+        "Membership requirements are hard blockers until observed.",
+        "Professional fit does not equal application readiness.",
+        "Expired pages can train timing and pattern recognition only."
+      ]
+    },
+    {
+      "lane_id": "law-firm-scholarship-programs",
+      "name": "Law-firm scholarship programs",
+      "priority": "critical",
+      "target_candidate_count": 20,
+      "query_task_count": 6,
+      "query_target_candidate_count": 20,
+      "harvested_candidate_count": 3,
+      "ready_for_watchlist_insert_count": 2,
+      "official_verification_needed_count": 1,
+      "candidate_gap_count": 17,
+      "official_or_sponsor_gap_count": 12,
+      "next_queries": [
+        "law firm paralegal scholarship 2026 legal studies student",
+        "Florida law firm scholarship legal studies undergraduate adult student",
+        "personal injury law firm paralegal scholarship application deadline transcript essay",
+        "legal assistant scholarship law firm undergraduate legal studies",
+        "community service legal studies scholarship law firm adult learner"
+      ],
+      "guardrails": [
+        "Law-firm scholarship pages can be real sources, but every applicant requirement still needs official verification.",
+        "Do not treat marketing language as eligibility language.",
+        "When program wording is ambiguous, output inquiry, not application."
+      ]
+    }
+  ],
+  "required_next_actions": [
+    "Review ready_for_watchlist_insert candidates and convert only sponsor or official-source records into curated watchlist entries.",
+    "Run strict eligibility gating after watchlist insertion; harvesting never creates application-ready status by itself."
+  ],
+  "guardrails": [
+    "Harvesting creates candidate source leads, not applicant eligibility.",
+    "Official, sponsor, professional-body, and law-firm source pages are preferred over aggregators.",
+    "Aggregator results may discover leads but cannot prove current eligibility.",
+    "No harvested candidate source becomes application-ready until the source is verified and strict eligibility gating runs downstream.",
+    "Do not store private FAFSA, tax, SSN, income, or full personal-statement material in the public repository."
+  ]
+}
