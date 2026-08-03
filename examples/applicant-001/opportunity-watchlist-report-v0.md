@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-08-03T03:59:06.799Z
+Generated at: 2026-08-03T10:08:41.997Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,13 +12,13 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 3 |
-| Skipped: not due | 50 |
+| Attempted sources | 0 |
+| Skipped: not due | 53 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 1 |
-| Unchanged sources | 2 |
+| Changed sources | 0 |
+| Unchanged sources | 0 |
 | Failed sources | 0 |
 
 ## First Observations
@@ -27,7 +27,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- patsy-mink-education-support-award
+- None
 
 ## Failed Sources
 
