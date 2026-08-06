@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-08-05T19:58:32.643Z",
+  "generated_at": "2026-08-06T03:43:34.987Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -33,7 +33,7 @@
           "Major Southwest Florida scholarship source",
           "Potentially relevant if User #1 meets local residency or school history rules"
         ],
-        "observed_signal_summary": "signal_hits=Southwest Florida, career goals, workforce_pipeline; amount_text=$132",
+        "observed_signal_summary": "signal_hits=Southwest Florida, workforce_pipeline; amount_text=$132",
         "missing_evidence": [
           "FAFSA completion and aid year",
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",

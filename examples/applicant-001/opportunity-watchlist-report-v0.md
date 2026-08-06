@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-08-05T19:58:30.279Z
+Generated at: 2026-08-06T03:43:31.904Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 7 |
-| Skipped: not due | 46 |
+| Attempted sources | 5 |
+| Skipped: not due | 48 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 5 |
-| Failed sources | 2 |
+| Changed sources | 1 |
+| Unchanged sources | 4 |
+| Failed sources | 0 |
 
 ## First Observations
 
@@ -27,12 +27,11 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- collaboratory-scholarships
 
 ## Failed Sources
 
-- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
-- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
+- None
 
 ## High-Relevance Actionable Sources
 
@@ -49,7 +48,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | fgcu-undergraduate-grants-official | recurring | needs_verification | official_source_required | signal_hits=undergraduate grant, FGCU undergraduate, Florida resident, financial need, FAFSA, Pell Grant, Florida Student Assistance Grant; deadline_text=deadline requirements will receive this grant; amount_text=$7,395 |
 | soroptimist-live-your-dream-awards | recurring | needs_verification | official_source_required | signal_hits=woman, primary financial support, financial need, undergraduate degree; amount_text=$3 |
 | soroptimist-live-your-dream-application-help | recurring | needs_verification | official_source_required | signal_hits=financial need, career goals; deadline_text=application deadline is November 15 |
-| collaboratory-scholarships | recurring | needs_verification | official_source_required | signal_hits=Southwest Florida, career goals, workforce_pipeline; amount_text=$132 |
+| collaboratory-scholarships | recurring | needs_verification | official_source_required | signal_hits=Southwest Florida, workforce_pipeline; amount_text=$132 |
 | paralegal-association-florida-scholarships | recurring | needs_verification | official_source_required | signal_hits=paralegal, legal studies, student member, Florida; amount_text=$ 500.00 |
 | fgcu-financial-aid-contact-official | recurring | needs_verification | official_source_required | signal_hits=financial aid, FAFSA |
 | federal-pell-grant-studentaid-official | recurring | needs_verification | official_source_required | not checked yet |
