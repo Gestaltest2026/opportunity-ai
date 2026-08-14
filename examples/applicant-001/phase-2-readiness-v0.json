@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-08-13T19:28:38.838Z",
+  "generated_at": "2026-08-14T02:48:54.031Z",
   "status": "PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR",
   "source_universe_v0_complete": false,
   "phase_3_allowed": false,
@@ -39,7 +39,7 @@
   ],
   "coverage": {
     "applicant_id": "applicant-001",
-    "generated_at": "2026-08-13T19:28:38.838Z",
+    "generated_at": "2026-08-14T02:48:54.031Z",
     "phase": "PHASE_2",
     "purpose": "Measure whether User #1's curated Opportunity Source Universe is broad enough to be called v0-complete without web-wide discovery.",
     "source_count": 53,
@@ -277,7 +277,7 @@
   },
   "maintenance": {
     "applicant_id": "applicant-001",
-    "generated_at": "2026-08-13T19:28:38.838Z",
+    "generated_at": "2026-08-14T02:48:54.031Z",
     "purpose": "Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 25 to 50 curated sources.",
     "primary_source_count": 53,
     "staged_source_count": 40,
