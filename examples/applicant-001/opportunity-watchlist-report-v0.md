@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-08-20T01:54:33.281Z
+Generated at: 2026-08-20T07:09:25.045Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 10 |
+| Skipped: not due | 43 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 0 |
-| Failed sources | 0 |
+| Changed sources | 1 |
+| Unchanged sources | 7 |
+| Failed sources | 2 |
 
 ## First Observations
 
@@ -27,11 +27,12 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- jeannette-rankin-scholar-grants
 
 ## Failed Sources
 
-- None
+- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
+- careeronestop-scholarship-finder: Source fetch returned empty text.
 
 ## High-Relevance Actionable Sources
 
