@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-08-24T01:59:56.013Z
+Generated at: 2026-08-24T07:31:28.886Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,13 +12,13 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 2 |
-| Skipped: not due | 51 |
+| Attempted sources | 0 |
+| Skipped: not due | 53 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
 | Changed sources | 0 |
-| Unchanged sources | 2 |
+| Unchanged sources | 0 |
 | Failed sources | 0 |
 
 ## First Observations
