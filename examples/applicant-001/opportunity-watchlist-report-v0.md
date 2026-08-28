@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-08-28T11:29:45.713Z
+Generated at: 2026-08-28T22:26:06.354Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 4 |
+| Skipped: not due | 49 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
 | Changed sources | 0 |
-| Unchanged sources | 0 |
-| Failed sources | 0 |
+| Unchanged sources | 3 |
+| Failed sources | 1 |
 
 ## First Observations
 
@@ -31,7 +31,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- None
+- aauw-career-development-grants: Source fetch failed: 403 Forbidden
 
 ## High-Relevance Actionable Sources
 
