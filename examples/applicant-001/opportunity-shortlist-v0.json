@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-08-28T22:26:07.907Z",
+  "generated_at": "2026-08-29T07:11:46.962Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -548,7 +548,7 @@
           "Southwest Florida scholarship ecosystem source",
           "May surface local awards requiring residency or local history verification"
         ],
-        "observed_signal_summary": "signal_hits=Lee County, Cape Coral, GPA, accredited institution, community_service; amount_text=$1000",
+        "observed_signal_summary": "signal_hits=community foundation scholarship, Lee County, Cape Coral, GPA, accredited institution, community_service; deadline_text=Applications Open January 5, 2026 Mar 31 Applications Close March 31, 2026 3; amount_text=$1000",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
