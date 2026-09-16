@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-09-15T21:26:32.737Z",
+  "generated_at": "2026-09-16T04:55:50.544Z",
   "status": "READY_FOR_WATCHLIST_INSERTION",
   "purpose": "Create a manual harvest queue for the two highest-fit source-universe lanes so the candidate pool expands before strict eligibility gating is asked to find application-ready scholarships.",
   "source_universe_current_count": 50,
