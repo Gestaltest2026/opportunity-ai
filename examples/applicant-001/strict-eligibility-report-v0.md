@@ -1,6 +1,6 @@
 # Strict Eligibility Gate v0
 
-Generated at: 2026-09-19T11:07:58.533Z
+Generated at: 2026-09-19T15:56:32.006Z
 Applicant: applicant-001
 
 ## Rule
