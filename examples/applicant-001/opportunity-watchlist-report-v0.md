@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-09-24T11:54:44.476Z
+Generated at: 2026-09-24T17:17:02.891Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 14 |
-| Skipped: not due | 39 |
+| Attempted sources | 2 |
+| Skipped: not due | 51 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 3 |
-| Unchanged sources | 8 |
-| Failed sources | 3 |
+| Changed sources | 0 |
+| Unchanged sources | 2 |
+| Failed sources | 0 |
 
 ## First Observations
 
@@ -27,15 +27,11 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- fgcu-summer-financial-aid-official
-- collaboratory-scholarship-program-details
-- paralegal-association-florida-scholarships
+- None
 
 ## Failed Sources
 
-- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
-- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
-- nfpa-awards-scholarships: Source fetch failed: 403 Forbidden
+- None
 
 ## High-Relevance Actionable Sources
 
