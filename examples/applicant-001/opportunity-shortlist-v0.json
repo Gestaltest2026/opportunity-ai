@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-10-02T12:46:03.757Z",
+  "generated_at": "2026-10-02T22:18:55.974Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -831,7 +831,7 @@
           "Direct application portal for FGCU foundation scholarships",
           "High action value when the next cycle opens"
         ],
-        "observed_signal_summary": "signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2026 Final deadline - May 1, 2026 FGCU foundation scholarships are awarded annually based on academic achievement, financial nee",
+        "observed_signal_summary": "signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2027 Final deadline - May 1, 2027 FGCU foundation scholarships are awarded annually based on academic achievement, financial nee",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "FAFSA completion and aid year",
