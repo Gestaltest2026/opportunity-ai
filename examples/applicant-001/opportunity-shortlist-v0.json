@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-10-08T06:13:47.492Z",
+  "generated_at": "2026-10-08T13:41:26.311Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -856,7 +856,7 @@
           "User #1 appears to fit several known nontraditional-student signals",
           "Financial need and first-degree status remain unknown"
         ],
-        "observed_signal_summary": "signal_hits=scholar grant, nonbinary, accredited U.S. institution, nontraditional student; deadline_text=deadline: Feb",
+        "observed_signal_summary": "signal_hits=scholar grant, nontraditional student; deadline_text=deadline: Feb",
         "missing_evidence": [
           "AA degree or Florida college transfer status",
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
