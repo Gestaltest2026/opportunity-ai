@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-10-08T13:41:26.311Z",
+  "generated_at": "2026-10-08T23:25:05.062Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -803,7 +803,7 @@
           "User #1 is an FGCU Legal Studies transfer student",
           "Primary institutional scholarship source"
         ],
-        "observed_signal_summary": "signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 APPLY HERE Frequently Asked Questions: Expand All What are Foundation Scholarships; amount_text=$6",
+        "observed_signal_summary": "signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 (Application currently closed for maintenance ) Frequently Asked Questions: Expand All Wh; amount_text=$6",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "AA degree or Florida college transfer status",
