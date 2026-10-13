@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-13T00:47:34.934Z
+Generated at: 2026-10-13T14:19:54.576Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 2 |
+| Skipped: not due | 51 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
 | Changed sources | 0 |
 | Unchanged sources | 0 |
-| Failed sources | 0 |
+| Failed sources | 2 |
 
 ## First Observations
 
@@ -31,7 +31,8 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- None
+- fgcu-transfer-aid-official: Source fetch failed: 502 Bad Gateway
+- fgcu-admissions-scholarships-waivers: Source fetch failed: 502 Bad Gateway
 
 ## High-Relevance Actionable Sources
 
