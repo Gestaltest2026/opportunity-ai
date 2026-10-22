@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-22T12:01:22.123Z
+Generated at: 2026-10-22T17:16:28.079Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 14 |
+| Skipped: not due | 39 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 0 |
-| Failed sources | 0 |
+| Changed sources | 2 |
+| Unchanged sources | 9 |
+| Failed sources | 3 |
 
 ## First Observations
 
@@ -27,11 +27,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- collier-community-foundation-scholarships
+- paralegal-association-florida-scholarships
 
 ## Failed Sources
 
-- None
+- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
+- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
+- nfpa-awards-scholarships: Source fetch failed: 403 Forbidden
 
 ## High-Relevance Actionable Sources
 
