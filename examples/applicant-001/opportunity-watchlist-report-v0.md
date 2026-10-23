@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-23T04:59:48.905Z
+Generated at: 2026-10-23T11:46:53.043Z
 Applicant: applicant-001
 
 ## Scope
@@ -27,9 +27,9 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- fgcu-foundation-scholarships-official
-- fgcu-transfer-aid-official
-- fgcu-admissions-scholarships-waivers
+- fgcu-undergraduate-grants-official
+- fgcu-financial-aid-contact-official
+- fgcu-financial-aid-forms-resources-official
 
 ## Failed Sources
 
