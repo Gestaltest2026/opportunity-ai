@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-10-26T04:55:55.753Z",
+  "generated_at": "2026-10-26T13:13:51.791Z",
   "purpose": "Prevent Opportunity AI from presenting a scholarship as application-ready when hard eligibility evidence is missing.",
   "rule": "No evidence, no eligibility. No eligibility, no application. No application, only inquiry.",
   "status_counts": {
