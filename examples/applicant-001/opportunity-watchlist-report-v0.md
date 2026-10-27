@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-27T12:21:23.760Z
+Generated at: 2026-10-27T22:21:03.806Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,13 +12,13 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 3 |
+| Skipped: not due | 50 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 0 |
+| Changed sources | 1 |
+| Unchanged sources | 2 |
 | Failed sources | 0 |
 
 ## First Observations
@@ -27,7 +27,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- fgcu-foundation-scholarships-official
 
 ## Failed Sources
 
@@ -37,7 +37,7 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 | Source | Status | Actionability | Verification policy | Last observed signals |
 | --- | --- | --- | --- | --- |
-| fgcu-foundation-scholarships-official | closed | watch_next_cycle | official_source_required | signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 (Application currently closed for maintenance ) Frequently Asked Questions: Expand All Wh; amount_text=$6 |
+| fgcu-foundation-scholarships-official | closed | watch_next_cycle | official_source_required | signal_hits=foundation scholarship, financial need, academic achievement, FAFSA; deadline_text=Deadline - March 1st Final Deadline Extended for 2026-2027 APPLY HERE Details about 2027–2028 Foundation Scholarships will be available in January 2; amount_text=$6 |
 | fgcu-scholarship-application-portal | recurring | watch_next_cycle | official_source_required | signal_hits=FAFSA, academic achievement, financial need, major of study; deadline_text=deadline - March 1, 2026 Final deadline - December 30, 2026 FGCU foundation scholarships are awarded annually based on academic achievement, financi |
 | fgcu-transfer-aid-official | unknown | needs_verification | official_source_required | signal_hits=transfer scholarship, transfer student; deadline_text=apply by January 1 of each year will be given priority |
 | fgcu-admissions-scholarships-waivers | recurring | needs_verification | official_source_required | signal_hits=transfer scholarship, admissions scholarship, tuition waiver, transfer student, GPA, AA degree, Florida resident, academic achievement; deadline_text=Application Deadlines Transfer Student Specialized Admissions Programs Admission Forms Non-Degree Student Admissions Returning Student Admissions International; amount_text=$10,000 |
