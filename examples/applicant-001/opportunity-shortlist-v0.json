@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-10-28T05:51:51.244Z",
+  "generated_at": "2026-10-28T13:06:59.732Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -668,7 +668,7 @@
           "Broad discovery source for sponsor leads that must be verified independently",
           "Useful after curated source universe reaches official-source coverage minimums"
         ],
-        "observed_signal_summary": "signal_hits=scholarship search, student profile, college scholarships, major, state; amount_text=$1,000",
+        "observed_signal_summary": "signal_hits=scholarship search, student profile, college scholarships, major, state; deadline_text=deadline falls; amount_text=$1,000",
         "missing_evidence": [],
         "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
         "confidence": "low",
