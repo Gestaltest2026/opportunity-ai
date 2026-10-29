@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-29T05:56:08.276Z
+Generated at: 2026-10-29T13:12:35.147Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 4 |
-| Skipped: not due | 49 |
+| Attempted sources | 0 |
+| Skipped: not due | 53 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 1 |
-| Unchanged sources | 2 |
-| Failed sources | 1 |
+| Changed sources | 0 |
+| Unchanged sources | 0 |
+| Failed sources | 0 |
 
 ## First Observations
 
@@ -27,11 +27,11 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- collier-community-foundation-apply-scholarships
+- None
 
 ## Failed Sources
 
-- nala-certification-exam-scholarship: Source fetch failed: 404 Not Found
+- None
 
 ## High-Relevance Actionable Sources
 
