@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-29T13:12:35.147Z
+Generated at: 2026-10-29T22:49:21.321Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 0 |
-| Skipped: not due | 53 |
+| Attempted sources | 12 |
+| Skipped: not due | 41 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 0 |
-| Failed sources | 0 |
+| Changed sources | 1 |
+| Unchanged sources | 9 |
+| Failed sources | 2 |
 
 ## First Observations
 
@@ -27,11 +27,12 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- college-board-bigfuture-scholarship-directory
 
 ## Failed Sources
 
-- None
+- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
+- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
 
 ## High-Relevance Actionable Sources
 
