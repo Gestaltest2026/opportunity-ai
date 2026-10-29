@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-10-28T22:40:17.044Z
+Generated at: 2026-10-29T05:56:08.276Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 9 |
-| Skipped: not due | 44 |
+| Attempted sources | 4 |
+| Skipped: not due | 49 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 2 |
-| Unchanged sources | 4 |
-| Failed sources | 3 |
+| Changed sources | 1 |
+| Unchanged sources | 2 |
+| Failed sources | 1 |
 
 ## First Observations
 
@@ -27,14 +27,11 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- collier-scholarship-connector
-- community-foundation-cape-coral-scholarships
+- collier-community-foundation-apply-scholarships
 
 ## Failed Sources
 
-- naples-womans-club-scholarships: Source fetch returned empty text.
-- federal-pell-grant-studentaid-official: fetch failed
-- federal-student-aid-fafsa-official: fetch failed
+- nala-certification-exam-scholarship: Source fetch failed: 404 Not Found
 
 ## High-Relevance Actionable Sources
 
