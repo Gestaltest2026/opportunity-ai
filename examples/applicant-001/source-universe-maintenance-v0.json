@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-11-06T06:56:42.907Z",
+  "generated_at": "2026-11-06T19:29:01.913Z",
   "purpose": "Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 25 to 50 curated sources.",
   "primary_source_count": 53,
   "staged_source_count": 40,
@@ -53,7 +53,6 @@
   "unobserved_source_ids": [],
   "source_access_blocked_ids": [
     "aauw-career-development-grants",
-    "careeronestop-scholarship-finder",
     "executive-women-international-scholarship-program",
     "federal-pell-grant-studentaid-official",
     "federal-student-aid-fafsa-official",
@@ -73,7 +72,7 @@
   "suspicious_application_ready_source_ids": [],
   "blocking_issues": [],
   "maintenance_warnings": [
-    "12 sources are access-blocked for automation and require manual browser verification."
+    "11 sources are access-blocked for automation and require manual browser verification."
   ],
   "ready_for_phase_2_50_source_expansion": true,
   "guardrails": [

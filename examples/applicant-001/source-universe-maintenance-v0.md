@@ -1,6 +1,6 @@
 # User #1 Source Universe Maintenance Report
 
-Generated at: 2026-11-06T06:56:42.907Z
+Generated at: 2026-11-06T19:29:01.913Z
 Applicant: applicant-001
 
 ## Purpose
@@ -17,7 +17,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 | Staged already in primary | 40 |
 | Staged not yet in primary | 0 |
 | Unobserved enabled sources | 0 |
-| Automation access-blocked sources | 12 |
+| Automation access-blocked sources | 11 |
 | Application-ready sources | 0 |
 | Suspicious application-ready sources | 0 |
 | Blocking issues | 0 |
@@ -36,7 +36,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 
 ## Maintenance Warnings
 
-- 12 sources are access-blocked for automation and require manual browser verification.
+- 11 sources are access-blocked for automation and require manual browser verification.
 
 ## Staged Sources Not Yet in Primary
 
@@ -92,7 +92,6 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 ## Automation Access-Blocked Sources
 
 - aauw-career-development-grants
-- careeronestop-scholarship-finder
 - executive-women-international-scholarship-program
 - federal-pell-grant-studentaid-official
 - federal-student-aid-fafsa-official
