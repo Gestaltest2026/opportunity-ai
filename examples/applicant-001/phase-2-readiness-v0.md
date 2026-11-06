@@ -1,6 +1,6 @@
 # User #1 Phase 2 Readiness Gate v0
 
-Generated at: 2026-11-05T20:02:17.514Z
+Generated at: 2026-11-06T06:56:49.563Z
 Applicant: applicant-001
 Status: PHASE_2_INCOMPLETE_EXPAND_OR_REPAIR
 
@@ -61,7 +61,7 @@ No further strategic expansion should replace collecting missing User #1 evidenc
 
 # User #1 Source Universe Maintenance Report
 
-Generated at: 2026-11-05T20:02:17.514Z
+Generated at: 2026-11-06T06:56:49.563Z
 Applicant: applicant-001
 
 ## Purpose
@@ -78,7 +78,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 | Staged already in primary | 40 |
 | Staged not yet in primary | 0 |
 | Unobserved enabled sources | 0 |
-| Automation access-blocked sources | 12 |
+| Automation access-blocked sources | 11 |
 | Application-ready sources | 0 |
 | Suspicious application-ready sources | 0 |
 | Blocking issues | 0 |
@@ -97,7 +97,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 
 ## Maintenance Warnings
 
-- 12 sources are access-blocked for automation and require manual browser verification.
+- 11 sources are access-blocked for automation and require manual browser verification.
 
 ## Staged Sources Not Yet in Primary
 
@@ -153,7 +153,6 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 ## Automation Access-Blocked Sources
 
 - aauw-career-development-grants
-- careeronestop-scholarship-finder
 - executive-women-international-scholarship-program
 - federal-pell-grant-studentaid-official
 - federal-student-aid-fafsa-official
@@ -183,7 +182,7 @@ Audit User #1 Opportunity Source Universe hygiene before expanding Phase 2 from 
 
 # User #1 Opportunity Source Universe Coverage v0
 
-Generated at: 2026-11-05T20:02:17.514Z
+Generated at: 2026-11-06T06:56:49.563Z
 Applicant: applicant-001
 Phase: PHASE_2
 Completion: INCOMPLETE
@@ -264,7 +263,6 @@ Measure whether User #1's curated Opportunity Source Universe is broad enough to
 ## Access Blocked Sources
 
 - florida-osfa-financial-aid-scholarships
-- careeronestop-scholarship-finder
 - aauw-career-development-grants
 - nfpa-awards-scholarships
 - federal-pell-grant-studentaid-official

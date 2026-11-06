@@ -1,6 +1,6 @@
 # User #1 Opportunity Source Universe Coverage v0
 
-Generated at: 2026-11-05T20:02:17.048Z
+Generated at: 2026-11-06T06:56:49.132Z
 Applicant: applicant-001
 Phase: PHASE_2
 Completion: INCOMPLETE
@@ -81,7 +81,6 @@ Measure whether User #1's curated Opportunity Source Universe is broad enough to
 ## Access Blocked Sources
 
 - florida-osfa-financial-aid-scholarships
-- careeronestop-scholarship-finder
 - aauw-career-development-grants
 - nfpa-awards-scholarships
 - federal-pell-grant-studentaid-official

@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-11-05T20:02:16.592Z",
+  "generated_at": "2026-11-06T06:56:48.725Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -10,9 +10,9 @@
   ],
   "counts": {
     "APPLICATION_READY": 0,
-    "NEEDS_VERIFICATION": 32,
+    "NEEDS_VERIFICATION": 33,
     "WATCH_NEXT_CYCLE": 3,
-    "SOURCE_ACCESS_BLOCKED": 9,
+    "SOURCE_ACCESS_BLOCKED": 8,
     "PATTERN_ONLY": 9
   },
   "buckets": {
@@ -534,6 +534,27 @@
         "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
       },
       {
+        "source_id": "careeronestop-scholarship-finder",
+        "name": "CareerOneStop Scholarship Finder",
+        "provider": "CareerOneStop",
+        "url": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
+        "bucket": "NEEDS_VERIFICATION",
+        "current_status": "recurring",
+        "actionability": "monitor_only",
+        "source_tier": "semi_official",
+        "verification_policy": "aggregator_must_be_verified_at_sponsor",
+        "user_001_relevance": "medium",
+        "why_relevant": [
+          "Broad discovery source for external awards",
+          "Useful for finding leads that must be verified at sponsor pages"
+        ],
+        "observed_signal_summary": "signal_hits=award type, location, level of study, professional development; deadline_text=deadline Narrow your list with \"Search by keyword; amount_text=$1000",
+        "missing_evidence": [],
+        "next_action": "Verify source-specific eligibility and current deadline at the official source before any applicant-facing action.",
+        "confidence": "medium",
+        "guardrail": "Must not be represented as eligible until missing applicant facts are confirmed."
+      },
+      {
         "source_id": "community-foundation-cape-coral-scholarships",
         "name": "Community Foundation Cape Coral Area Scholarships",
         "provider": "The Community Foundation",
@@ -987,27 +1008,6 @@
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
-        "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
-        "confidence": "low",
-        "guardrail": "Automation could not verify this source; manual verification is required."
-      },
-      {
-        "source_id": "careeronestop-scholarship-finder",
-        "name": "CareerOneStop Scholarship Finder",
-        "provider": "CareerOneStop",
-        "url": "https://www.careeronestop.org/Toolkit/Training/find-scholarships.aspx",
-        "bucket": "SOURCE_ACCESS_BLOCKED",
-        "current_status": "recurring",
-        "actionability": "monitor_only",
-        "source_tier": "semi_official",
-        "verification_policy": "aggregator_must_be_verified_at_sponsor",
-        "user_001_relevance": "medium",
-        "why_relevant": [
-          "Broad discovery source for external awards",
-          "Useful for finding leads that must be verified at sponsor pages"
-        ],
-        "observed_signal_summary": null,
-        "missing_evidence": [],
         "next_action": "Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant.",
         "confidence": "low",
         "guardrail": "Automation could not verify this source; manual verification is required."

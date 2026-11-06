@@ -1,6 +1,6 @@
 # User #1 Opportunity Shortlist v0
 
-Generated at: 2026-11-05T20:02:16.592Z
+Generated at: 2026-11-06T06:56:48.725Z
 Applicant: applicant-001
 
 ## Purpose
@@ -12,9 +12,9 @@ Convert the curated User #1 source monitor into a guarded action shortlist witho
 | Bucket | Count |
 | --- | ---: |
 | APPLICATION_READY | 0 |
-| NEEDS_VERIFICATION | 32 |
+| NEEDS_VERIFICATION | 33 |
 | WATCH_NEXT_CYCLE | 3 |
-| SOURCE_ACCESS_BLOCKED | 9 |
+| SOURCE_ACCESS_BLOCKED | 8 |
 | PATTERN_ONLY | 9 |
 
 ## APPLICATION_READY
@@ -48,6 +48,7 @@ Convert the curated User #1 source monitor into a guarded action shortlist witho
 | naples-womans-club-scholarships | Naples Woman's Club Scholarship Support | recurring | needs_verification | high | Resume, updated personal statement, and evidence for legal work/community leadership | Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready. |
 | rotary-club-fort-myers-scholarships | Rotary Club of Fort Myers Scholarships | recurring | needs_verification | high | FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load | Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready. |
 | aafpe-paralegal-education-resources | AAfPE Paralegal Education Resources | unknown | monitor_only | medium | Resume, updated personal statement, and evidence for legal work/community leadership | Ask User #1 for: Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready. |
+| careeronestop-scholarship-finder | CareerOneStop Scholarship Finder | recurring | monitor_only | medium | none | Verify source-specific eligibility and current deadline at the official source before any applicant-facing action. |
 | community-foundation-cape-coral-scholarships | Community Foundation Cape Coral Area Scholarships | recurring | monitor_only | medium | FGCU transfer GPA / current academic record; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; Resume, updated personal statement, and evidence for legal work/community leadership | Ask User #1 for: FGCU transfer GPA / current academic record; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; Resume, updated personal statement, and evidence for legal work/community leadership. Then re-check the official source before moving it to application-ready. |
 | rotary-fort-myers-trust-fund-action | Rotary Club of Fort Myers Trust Fund in Action | recurring | needs_verification | medium | FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load | Ask User #1 for: FGCU transfer GPA / current academic record; AA degree or Florida college transfer status; 2026-27 enrollment status and course load; U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement; .... Then re-check the official source before moving it to application-ready. |
 | scholarship-america-students | Scholarship America Student Resources | recurring | monitor_only | medium | Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation | Ask User #1 for: Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation. Then re-check the official source before moving it to application-ready. |
@@ -77,7 +78,6 @@ Convert the curated User #1 source monitor into a guarded action shortlist witho
 | florida-osfa-financial-aid-scholarships | Florida Department of Education Financial Aid and Scholarships | recurring | monitor_only | low | Florida residency for tuition or aid purposes; FAFSA completion and aid year; Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
 | nala-certification-exam-scholarship | NALA Certification Exam Scholarship | unknown | needs_verification | low | 2026-27 enrollment status and course load; Resume, updated personal statement, and evidence for legal work/community leadership | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
 | nfpa-awards-scholarships | NFPA Awards and Scholarships | recurring | needs_verification | low | Resume, updated personal statement, and evidence for legal work/community leadership | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
-| careeronestop-scholarship-finder | CareerOneStop Scholarship Finder | recurring | monitor_only | low | none | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
 | executive-women-international-scholarship-program | Executive Women International Scholarship Program | unknown | needs_verification | low | P.E.O. chapter sponsorship path or local contact | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
 | going-merry-scholarship-platform | Going Merry Scholarship Platform | recurring | monitor_only | low | FAFSA completion and aid year | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
 | zonta-international-education-awards | Zonta International Education Awards | recurring | monitor_only | low | Resume, updated personal statement, and evidence for legal work/community leadership | Open this source manually in a browser, verify current status at the official or sponsor page, then update the watchlist if it remains relevant. |
