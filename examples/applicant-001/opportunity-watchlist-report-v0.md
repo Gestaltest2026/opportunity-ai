@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-11-17T08:01:53.997Z
+Generated at: 2026-11-17T21:01:19.981Z
 Applicant: applicant-001
 
 ## Scope
