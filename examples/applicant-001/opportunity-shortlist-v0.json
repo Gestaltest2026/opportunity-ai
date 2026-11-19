@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-11-19T07:34:42.001Z",
+  "generated_at": "2026-11-19T20:44:36.151Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -356,7 +356,7 @@
           "Local Southwest Florida source with many scholarship funds",
           "May matter if User #1 meets Collier residency or program criteria"
         ],
-        "observed_signal_summary": "signal_hits=community foundation scholarship, Collier County, GPA; amount_text=$2",
+        "observed_signal_summary": "signal_hits=none",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "Financial need evidence, income threshold, SAI, Pell status, or equivalent documentation",
@@ -499,7 +499,7 @@
         "why_relevant": [
           "Potential local civic scholarship if User #1 meets Lee County and college-enrollment criteria"
         ],
-        "observed_signal_summary": "signal_hits=Lee County resident, Florida college or university, GPA; deadline_text=application deadlines are the 30th of March; amount_text=$2,000.00",
+        "observed_signal_summary": "signal_hits=none",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "AA degree or Florida college transfer status",
