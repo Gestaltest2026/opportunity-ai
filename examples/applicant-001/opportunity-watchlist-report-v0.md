@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-11-20T20:28:52.939Z
+Generated at: 2026-11-21T07:19:56.809Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 12 |
-| Skipped: not due | 41 |
+| Attempted sources | 3 |
+| Skipped: not due | 50 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
 | Changed sources | 1 |
-| Unchanged sources | 9 |
-| Failed sources | 2 |
+| Unchanged sources | 2 |
+| Failed sources | 0 |
 
 ## First Observations
 
@@ -27,12 +27,11 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- collaboratory-scholarships
+- patsy-mink-education-support-award
 
 ## Failed Sources
 
-- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
-- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
+- None
 
 ## High-Relevance Actionable Sources
 
