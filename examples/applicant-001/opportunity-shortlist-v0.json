@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-11-23T23:59:21.524Z",
+  "generated_at": "2026-11-24T10:01:15.157Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
