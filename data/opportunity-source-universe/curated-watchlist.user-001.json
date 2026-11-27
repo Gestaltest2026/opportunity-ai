@@ -615,12 +615,12 @@
       "verification_policy": "pattern_only_no_recommendation",
       "enabled": true,
       "refresh_interval_hours": 720,
-      "last_checked_at": "2026-10-28T05:51:49.933Z",
+      "last_checked_at": "2026-11-27T08:44:24.916Z",
       "last_success_at": null,
       "last_changed_at": null,
       "content_hash": null,
       "last_observed_signal_summary": null,
-      "failure_count": 4,
+      "failure_count": 5,
       "notes": [
         "Do not recommend without checking degree-program restrictions; keep mainly as pattern evidence."
       ]
