@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-11-27T08:44:24.916Z
+Generated at: 2026-11-27T21:25:18.425Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 1 |
-| Skipped: not due | 52 |
+| Attempted sources | 12 |
+| Skipped: not due | 41 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
 | Changed sources | 0 |
-| Unchanged sources | 0 |
-| Failed sources | 1 |
+| Unchanged sources | 10 |
+| Failed sources | 2 |
 
 ## First Observations
 
@@ -31,7 +31,8 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Failed Sources
 
-- aauw-career-development-grants: Source fetch failed: 403 Forbidden
+- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
+- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
 
 ## High-Relevance Actionable Sources
 
