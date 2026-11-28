@@ -1,6 +1,6 @@
 # User #1 Curated Opportunity Watchlist Report
 
-Generated at: 2026-11-27T21:25:18.425Z
+Generated at: 2026-11-28T07:58:12.592Z
 Applicant: applicant-001
 
 ## Scope
@@ -12,14 +12,14 @@ This report monitors a small, human-curated set of high-trust opportunity source
 | Metric | Count |
 | --- | ---: |
 | Total sources | 53 |
-| Attempted sources | 12 |
-| Skipped: not due | 41 |
+| Attempted sources | 15 |
+| Skipped: not due | 38 |
 | Skipped: disabled | 0 |
 | Skipped: run limit | 0 |
 | First observations | 0 |
-| Changed sources | 0 |
-| Unchanged sources | 10 |
-| Failed sources | 2 |
+| Changed sources | 4 |
+| Unchanged sources | 7 |
+| Failed sources | 4 |
 
 ## First Observations
 
@@ -27,12 +27,17 @@ This report monitors a small, human-curated set of high-trust opportunity source
 
 ## Changed Sources
 
-- None
+- community-foundation-cape-coral-scholarships
+- cape-coral-mayors-scholarship-fund
+- rotary-fort-myers-trust-fund-action
+- collier-community-foundation-apply-scholarships
 
 ## Failed Sources
 
-- florida-osfa-financial-aid-scholarships: Source fetch failed: 403 Forbidden
-- careeronestop-scholarship-finder: Source fetch failed: 403 Forbidden
+- collier-scholarship-connector: fetch failed
+- federal-pell-grant-studentaid-official: fetch failed
+- federal-student-aid-fafsa-official: fetch failed
+- nala-certification-exam-scholarship: Source fetch failed: 404 Not Found
 
 ## High-Relevance Actionable Sources
 

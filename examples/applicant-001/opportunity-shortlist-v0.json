@@ -1,6 +1,6 @@
 {
   "applicant_id": "applicant-001",
-  "generated_at": "2026-11-27T21:25:25.993Z",
+  "generated_at": "2026-11-28T08:00:43.444Z",
   "purpose": "Convert the curated User #1 source monitor into a guarded action shortlist without LLM calls, web-wide discovery, or unverified eligibility claims.",
   "guardrails": [
     "This shortlist is a triage artifact, not final scholarship advice.",
@@ -333,7 +333,7 @@
           "High-quality local official source for Southwest Florida scholarship patterns",
           "May contain awards that depend on Collier residence or local history"
         ],
-        "observed_signal_summary": "signal_hits=scholarship connector, Collier County, post-secondary education, scholarship application; deadline_text=deadline",
+        "observed_signal_summary": "signal_hits=none",
         "missing_evidence": [
           "Resume, updated personal statement, and evidence for legal work/community leadership"
         ],
@@ -569,7 +569,7 @@
           "Southwest Florida scholarship ecosystem source",
           "May surface local awards requiring residency or local history verification"
         ],
-        "observed_signal_summary": "signal_hits=community foundation scholarship, Lee County, Cape Coral, GPA, accredited institution, community_service; deadline_text=Applications OpenED January 5, 2026 Mar 31 Applications CloseD March 31, 2026 3; amount_text=$1000",
+        "observed_signal_summary": "signal_hits=Lee County, Cape Coral, GPA, accredited institution, community_service; deadline_text=Applications OpenED January 5, 2026 Mar 31 Applications CloseD March 31, 2026 3; amount_text=$1000",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "U.S. citizenship, permanent residency, eligible noncitizen, or funder-specific residency requirement",
@@ -594,7 +594,7 @@
           "Potential local scholarship route if User #1 meets Lee County and Florida institution criteria",
           "Complements Rotary scholarship application source"
         ],
-        "observed_signal_summary": "signal_hits=Lee County, Florida college, GPA; deadline_text=application deadlines are the 15th of July, October, January and April; amount_text=$3,000",
+        "observed_signal_summary": "signal_hits=none",
         "missing_evidence": [
           "FGCU transfer GPA / current academic record",
           "AA degree or Florida college transfer status",
@@ -733,7 +733,7 @@
           "Local Southwest Florida funding-pattern source",
           "Likely requires Cape Coral-specific eligibility confirmation"
         ],
-        "observed_signal_summary": "signal_hits=four-year scholarship, technical scholarship, Cape Coral, public service program; amount_text=$ 0",
+        "observed_signal_summary": "signal_hits=none",
         "missing_evidence": [
           "2026-27 enrollment status and course load",
           "Resume, updated personal statement, and evidence for legal work/community leadership"
